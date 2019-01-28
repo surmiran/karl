@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" class="app">
 		<!--<div class="green" v-html="svg"></div>
 		<img alt="Vue logo" src="./assets/logo.png">-->
 		<div class="equipmentSelectContainer">
@@ -79,6 +79,10 @@ export default {
 </script>
 
 <style>
+body {
+	display: flex;
+	justify-content: center;
+}
 #app {
 	font-family: "Avenir", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -86,6 +90,8 @@ export default {
 
 	color: #2c3e50;
 	margin-top: 60px;
+	max-width: 1280px;
+	background-color: #393220;
 }
 
 .mainContainer {
@@ -96,16 +102,16 @@ export default {
 
 .statsDisplay {
 	flex: 1;
-	background-color: red;
 	height: 100%;
 	width: 100%;
+	padding: 1rem;
 }
 
 .modSelection {
 	flex: 1;
-	background-color: green;
 	height: 100%;
 	width: 100%;
+	padding: 1rem;
 }
 
 @media (max-width: 1024px) {

@@ -24,7 +24,7 @@ export default {
 			{
 				selected: false,
 				name: "HIGH CAPACITY TANKS",
-				icon: "clip",
+				icon: "Icon_Upgrade_ClipSize",
 				type: "CLIP SIZE",
 				cost: {
 					credits: 1200,
@@ -44,7 +44,7 @@ export default {
 			{
 				selected: false,
 				name: "HIGH PRESSURE EJECTOR",
-				icon: "reach",
+				icon: "Icon_Upgrade_Distance",
 				type: "REACH",
 				cost: {
 					credits: 0,
@@ -64,7 +64,7 @@ export default {
 			{
 				selected: false,
 				name: "OVERSIZED VALVES",
-				icon: "rate",
+				icon: "Icon_Upgrade_FireRate",
 				type: "RATE OF FIRE",
 				cost: {
 					credits: 1200,
@@ -87,7 +87,7 @@ export default {
 			{
 				selected: false,
 				name: "UNFILTERED FUEL",
-				icon: "dmg",
+				icon: "Icon_Upgrade_DamageGeneral",
 				type: "DAMAGE",
 				cost: {
 					credits: 0,
@@ -107,7 +107,7 @@ export default {
 			{
 				selected: false,
 				name: "TRIPPLE FILTERED FUEL",
-				icon: "heat",
+				icon: "Icon_Upgrade_Heat",
 				type: "HEAT",
 				cost: {
 					credits: 2000,
@@ -121,13 +121,13 @@ export default {
 				},
 				text: "Fire it up! You set things ablaze much faster. Time to watch the world burn...!",
 				stats: {
-					ex8: { name: "Intensity Bonus", value: "40%" }
+					ex8: { name: "Intensity Bonus", value: 40, percent: true }
 				}
 			}, // 1/2
 			{
 				selected: false,
 				name: "STICKY FLAME DURATION",
-				icon: "duration",
+				icon: "Icon_Upgrade_Duration",
 				type: "DURATION",
 				cost: {
 					credits: 0,
@@ -150,7 +150,7 @@ export default {
 			{
 				selected: false,
 				name: "STICKY FLAME DURATION",
-				icon: "duration",
+				icon: "Icon_Upgrade_Duration",
 				type: "DURATION",
 				cost: {
 					credits: 0,
@@ -170,7 +170,7 @@ export default {
 			{
 				selected: false,
 				name: "STICKY FLAME SLOWDOWN",
-				icon: "slowdown",
+				icon: "Icon_Upgrade_Sticky",
 				type: "SLOWDOWN",
 				cost: {
 					credits: 0,
@@ -190,7 +190,7 @@ export default {
 			{
 				selected: false,
 				name: "MORE FUEL",
-				icon: "ammo",
+				icon: "Icon_Upgrade_Ammo",
 				type: "TOTAL AMMO",
 				cost: {
 					credits: 2800,
@@ -213,7 +213,7 @@ export default {
 			{
 				selected: false,
 				name: "MORE FUEL",
-				icon: "ammo",
+				icon: "Icon_Upgrade_Ammo",
 				type: "TOTAL AMMO",
 				cost: {
 					credits: 4800,
@@ -233,7 +233,7 @@ export default {
 			{
 				selected: false,
 				name: "STICKY FLAME DAMAGE",
-				icon: "dmg",
+				icon: "Icon_Upgrade_DamageGeneral",
 				type: "DAMAGE",
 				cost: {
 					credits: 0,
@@ -253,7 +253,7 @@ export default {
 			{
 				selected: false,
 				name: "STICKY FLAME IGNITION",
-				icon: "heat",
+				icon: "Icon_Upgrade_Heat",
 				type: "HEAT",
 				cost: {
 					credits: 0,
@@ -275,7 +275,7 @@ export default {
 			{
 				selected: false,
 				name: "HEAT RADIANCE",
-				icon: "heat",
+				icon: "Icon_Upgrade_Heat",
 				type: "HEAT",
 				cost: {
 					credits: 0,
@@ -295,7 +295,7 @@ export default {
 			{
 				selected: false,
 				name: "IT BURNS!",
-				icon: "fear",
+				icon: "Icon_Upgrade_ScareEnemies",
 				type: "FEAR",
 				cost: {
 					credits: 5600,
@@ -309,13 +309,13 @@ export default {
 				},
 				text: "A chance that your target will flee in terror for every second that it is in your flame.",
 				stats: {
-					ex5: { name: "Fear Factor", value: "13%" }
+					ex5: { name: "Fear Factor", value: 13, percent: true }
 				}
 			},
 			{
 				selected: false,
 				name: "TARGETS EXPLODE",
-				icon: "explosion",
+				icon: "Icon_Upgrade_Explosion",
 				type: "explosion",
 				cost: {
 					credits: 5600,
@@ -329,7 +329,7 @@ export default {
 				},
 				text: "Targets killed from direct damage have a chance to explode.",
 				stats: {
-					ex9: { name: "Killed Targets Explode %", value: "33%" }
+					ex9: { name: "Killed Targets Explode %", value: 33, percent: true }
 				}
 			}
 		]

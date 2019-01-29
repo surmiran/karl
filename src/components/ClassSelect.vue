@@ -35,4 +35,8 @@ export default {
 	display: flex;
 	cursor: pointer;
 }
+
+.equipmentText:hover {
+	color: #fffbff;
+}
 </style>

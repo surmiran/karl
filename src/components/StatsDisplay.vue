@@ -1,8 +1,11 @@
 <template>
 	<div class="statsDisplay">
 		<h1 class="equipmentTitle">{{equipment.name}}</h1>
-		<div v-for="(stat, statId) in calcStats" :key="statId">
-			<p class="stats">{{stat.name}}: {{stat.value}} <b>{{stat.modifier}}</b></p>
+		<h2 class="equipmentSubTitle">{{equipment.class}}</h2>
+		<div v-for="(stat, statId) in calcStats" :key="statId" class="statsContainer">
+			<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{stat.name}}:</span>
+			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']">{{stat.value}}</span>
+			<span class="statsModifier">{{stat.modifier}}</span>
 		</div>
 	</div>
 </template>
@@ -20,7 +23,7 @@ export default {
 			return store.state.selected.equipment;
 		},
 		equipment: function() {
-			return store.state.tree[this.selectedClassId][this.selectedEquipmentId]
+			return store.state.tree[this.selectedClassId][this.selectedEquipmentId];
 		},
 		baseStats: function() {
 			return store.state.tree[this.selectedClassId][this.selectedEquipmentId].baseStats;
@@ -42,26 +45,29 @@ export default {
 				});
 				let modifiedStats = Object.assign({}, this.baseStats[key]);
 				if (upgradeForKey.length > 0) {
-                    console.log(key);
-                    console.log(upgradeForKey);
-                    console.log(this.baseStats[key]);
-				    let modifier = {
-				        value: 0
+					console.log(key);
+					console.log(upgradeForKey);
+					console.log(this.baseStats[key]);
+					let modifier = {
+						value: 0
 					};
 					for (let upgrade of upgradeForKey) {
-					    if (upgrade.stats[key].subtract) {
-                            modifier.value = modifier.value - upgrade.stats[key].value;
-                            modifiedStats.value = modifiedStats.value - upgrade.stats[key].value;
+						if (upgrade.stats[key].subtract) {
+							modifier.value = modifier.value - upgrade.stats[key].value;
+							modifiedStats.value = modifiedStats.value - upgrade.stats[key].value;
 						} else {
-                            modifier.value = modifier.value + upgrade.stats[key].value;
-                            modifiedStats.value = modifiedStats.value + upgrade.stats[key].value;
+							modifier.value = modifier.value + upgrade.stats[key].value;
+							modifiedStats.value = modifiedStats.value + upgrade.stats[key].value;
 						}
 
-					    modifier.subtract = upgrade.stats[key].subtract;
-					    modifier.percent = upgrade.stats[key].percent;
-
+						modifier.subtract = upgrade.stats[key].subtract;
+						modifier.percent = upgrade.stats[key].percent;
 					}
-					modifiedStats.modifier = `${modifier.subtract ? '' : '+' }${modifier.value}${modifier.percent ? '%' : ''}`;
+					modifiedStats.modifier = `${modifier.subtract ? "" : "+"}${modifier.value}${modifier.percent ? "%" : ""}`;
+					modifiedStats.modified = true;
+				}
+				if (modifiedStats.value === 0) {
+					modifiedStats.inactive = true;
 				}
 				return modifiedStats;
 			});
@@ -71,12 +77,40 @@ export default {
 </script>
 
 <style scoped>
-	.equipmentTitle {
-		text-align: center;
-		color: #fffbff;
-	}
+.equipmentTitle {
+	text-align: center;
+	color: #fc9e00;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
 
-	.stats {
-		color: #fffbff;
-	}
+.equipmentSubTitle {
+	text-align: center;
+	color: #fffbff;
+	font-size: 1rem;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+.statsContainer {
+	display: flex;
+	width: 60%;
+}
+.statsText {
+	color: #fffbff;
+}
+.statsValue {
+	color: #fc9e00;
+	margin-left: auto;
+}
+.statsModifier {
+	width: 3rem;
+	text-align: right;
+	color: #fccc00;
+}
+.modifiedStat {
+	color: #fccc00;
+}
+.inactiveStat {
+	color: #ada195;
+}
 </style>

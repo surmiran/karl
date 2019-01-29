@@ -7,6 +7,8 @@
 			<ClassSelect :classId="'E'" :name="'Engineer'"/>
 			<ClassSelect :classId="'G'" :name="'Gunner'"/>
 			<ClassSelect :classId="'S'" :name="'Scout'"/>
+			<h1 class="shareText">Share Link</h1>
+			<!--todo: use https://sharingbuttons.io/ ?-->
 		</div>
 		<div>
 			<div v-if="selectedClass === 'D'" class="equipmentSelectContainer">
@@ -82,6 +84,12 @@ export default {
 body {
 	display: flex;
 	justify-content: center;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#322c20+0,5f5137+100 */
+	background: #322c20; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #322c20 0%, #5f5137 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #322c20 0%,#5f5137 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #322c20 0%,#5f5137 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#322c20', endColorstr='#5f5137',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 #app {
 	font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -93,13 +101,18 @@ body {
 	max-width: 1280px;
 	background-color: #393220;
 }
+/*todo: make all backgrounds transparent!*/
 
 .mainContainer {
 	display: flex;
 	flex-wrap: wrap;
 	/*height: 5rem;*/
 }
-
+.shareText {
+	color: #fc9e00;
+	margin-left: auto;
+	padding-right: 1rem
+}
 .statsDisplay {
 	flex: 1;
 	height: 100%;

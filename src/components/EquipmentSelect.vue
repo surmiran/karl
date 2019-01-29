@@ -62,6 +62,13 @@ export default {
 	display: flex;
 	cursor: pointer;
 }
+.weaponSelectContainer:hover .equipmentText {
+	color: #fffbff;
+}
+.weaponSelectContainer:hover .equipmentIcon {
+	fill: #fffbff;
+}
+
 .flexboxWeaponSelect {
 	display: flex;
 	align-items: center;

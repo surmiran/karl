@@ -9,7 +9,7 @@
 		</div>
 	</div>
 </template>
-
+<!--todo: show three values, base value, modified value, modification-->
 <script>
 import store from "../store";
 

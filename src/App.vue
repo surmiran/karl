@@ -7,7 +7,7 @@
 			<ClassSelect :classId="'E'" :name="'Engineer'"/>
 			<ClassSelect :classId="'G'" :name="'Gunner'"/>
 			<ClassSelect :classId="'S'" :name="'Scout'"/>
-			<h1 class="shareText">Share Link</h1>
+			<h1 class="shareText">Share Link</h1><!--upload configuration for management approval-->
 			<!--todo: use https://sharingbuttons.io/ ?-->
 		</div>
 		<div>

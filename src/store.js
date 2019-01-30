@@ -81,6 +81,7 @@ export default new Vuex.Store({
 			slot4: 0,
 			slot5: 0
 		},
+		hovered: {},
 		testJS: D_P1_CRSPR_SVG,
 		icons: {
 			equipment: {
@@ -174,6 +175,16 @@ export default new Vuex.Store({
 					state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
 				}
 			}
+		},
+		deSelectAllModifications: (state, indizes) => {
+			let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
+			for (let mod in tierOfModification) {
+				let modIdInLoop = parseInt(mod);
+				state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+			}
+		},
+		addToHovered: (state, indizes) => {
+			state.hovered = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID];
 		}
 	},
 	actions: {}

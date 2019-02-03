@@ -13,6 +13,7 @@
 </template>
 <!--todo: show three values, base value, modified value, modification-->
 <!--todo: show total cost of selected mods-->
+<!--todo: show most cost effective upgrade in tier (most change %)-->
 <script>
 import store from "../store";
 

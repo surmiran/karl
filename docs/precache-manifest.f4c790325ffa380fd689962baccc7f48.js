@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/karl/js/chunk-vendors.b6533bd5.js"
   },
   {
-    "revision": "27d37e04821907e7cfe9",
-    "url": "/karl/js/app.302be155.js"
+    "revision": "d5cf290126cef2c542ec",
+    "url": "/karl/js/app.b84ab667.js"
   },
   {
-    "revision": "da5752f3c2eec7f09ed6f3c740b68919",
+    "revision": "9088f788cf4987a3ecaf2e7e6daf75b6",
     "url": "/karl/index.html"
   },
   {
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/karl/img/Bismor_icon.ae9293f7.png"
   },
   {
-    "revision": "27d37e04821907e7cfe9",
-    "url": "/karl/css/app.dfa97630.css"
+    "revision": "d5cf290126cef2c542ec",
+    "url": "/karl/css/app.753feb28.css"
   }
 ];

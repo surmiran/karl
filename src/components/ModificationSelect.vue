@@ -1,6 +1,6 @@
 <template>
 	<div class="modSelection">
-		<h1 class="modSelectionTitle">Gear modifications</h1>
+		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2>Tier {{ tierId + 1 }}</h2>
 			<div class="tierSubContainer">
@@ -59,7 +59,7 @@
 				</div>
 				<div class="modTextBoxTitle">
 					<p>{{ hoveredMod.name }}</p>
-					<p>{{ hoveredMod.type }}</p>
+					<p class="allCaps">{{ hoveredMod.type }}</p>
 					<p class="costList">
 						<span class="costListItem" v-if="hoveredMod.cost.credits > 0">
 							<img src="../assets/img/20px-Credit.png" />
@@ -186,7 +186,6 @@ h2 {
 	color: #fffbff;
 	font-size: 2rem;
 	text-align: center;
-	text-transform: uppercase;
 }
 
 .tierContainer {

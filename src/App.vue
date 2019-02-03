@@ -150,6 +150,9 @@ h2 {
 	margin-left: auto;
 	padding-right: 1rem;
 }
+.allCaps {
+	text-transform: uppercase;
+}
 
 .defaultBackground {
 	background-color: rgba(0, 0, 0, 0.2);

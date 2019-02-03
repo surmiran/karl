@@ -1,17 +1,25 @@
 <template>
 	<div class="statsDisplay">
-		<h1 class="equipmentTitle">{{ equipment.name }}</h1>
-		<h2 class="equipmentSubTitle">{{ equipment.class }}</h2>
+		<h1 class="equipmentTitle allCaps">{{ equipment.name }}</h1>
+		<h2 class="equipmentSubTitle allCaps">{{ equipment.class }}</h2>
 		<div v-for="(stat, statId) in calcStats" :key="statId" class="statsContainer">
 			<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
-			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']">{{ stat.value }}</span>
+			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']">{{ stat.value }}<span v-if="stat.percent">%</span></span>
 			<span class="statsModifier">{{ stat.modifier }}</span>
 		</div>
 	</div>
 </template>
 <!--todo: show three values, base value, modified value, modification-->
+<!--todo: show total cost of selected mods-->
 <script>
 import store from "../store";
+
+const precision = (a) => {
+	if (!isFinite(a)) return 0;
+	var e = 1, p = 0;
+	while (Math.round(a * e) / e !== a) { e *= 10; p++; }
+	return p;
+};
 
 export default {
 	name: "StatsDisplay",
@@ -52,9 +60,13 @@ export default {
 						value: 0
 					};
 					for (let upgrade of upgradeForKey) {
-						if (upgrade.stats[key].subtract) {
+						// do tofixed to bigger precision of either modifier or stat..
+						if (upgrade.stats[key].subtract && upgrade.stats[key].percent) {
 							modifier.value = modifier.value - upgrade.stats[key].value;
 							modifiedStats.value = modifiedStats.value - upgrade.stats[key].value;
+						} else if (upgrade.stats[key].subtract) {
+							modifier.value = modifier.value - upgrade.stats[key].value;
+							modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(1);
 						} else {
 							modifier.value = modifier.value + upgrade.stats[key].value;
 							modifiedStats.value = modifiedStats.value + upgrade.stats[key].value;
@@ -95,7 +107,6 @@ export default {
 	text-align: center;
 	color: #fc9e00;
 	margin-bottom: 0;
-	text-transform: uppercase;
 }
 
 .equipmentSubTitle {
@@ -103,7 +114,6 @@ export default {
 	color: #fffbff;
 	font-size: 1rem;
 	margin-top: 0;
-	text-transform: uppercase;
 }
 .statsContainer {
 	display: flex;

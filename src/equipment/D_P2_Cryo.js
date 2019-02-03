@@ -5,27 +5,24 @@ export default {
 	icon: "equipment.D_P2_Cryo",
 	baseStats: {
 		dmg: { name: "Damage", value: 5 },
-		ammo: { name: "Max Ammo", value: 300 },
-		clip: { name: "Tank Size", value: 0 },
+		ammo: { name: "Max Ammo", value: 0 },
+		clip: { name: "Tank Size", value: 300 },
 		rate: { name: "Chargeup Time", value: 0.6 },
 		reload: { name: "Re-Pressurization Time", value: 1.5 },
 		ex1: { name: "Cold Stream Reach", value: 6 },
 		ex2: { name: "Freezing Power", value: 7 },
-		ex3: { name: "Pressure Drop Rate", value: 0 },
-		ex4: { name: "Pressure Gain Rate", value: 0 },
-		ex5: { name: "", value: 0 },
-		ex6: { name: "", value: 0 },
-		ex7: { name: "", value: 0 },
-		ex8: { name: "", value: 0 },
-		ex9: { name: "", value: 0 }
+		ex3: { name: "Pressure Drop Rate", value: 0, percent: true },
+		ex4: { name: "Pressure Gain Rate", value: 0, percent: true },
+		ex5: { name: "Frozen Targets can Shatter", value: 0 },
+		ex6: { name: "Area Cold Damage", value: 0 }
 	},
 	mods: [
 		[
 			{
-                selected: false,
+				selected: false,
 				name: "Larger Pressure Chamber",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "clip",
+				type: "Pressure Drop Rate",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -38,7 +35,7 @@ export default {
 				},
 				text: "Shoot longer before needing to recharge ",
 				stats: {
-					clip: {
+					ex3: {
 						name: "Pressure Drop Rate",
 						value: 30,
 						subtract: true,
@@ -47,10 +44,10 @@ export default {
 				}
 			},
 			{
-                selected: false,
+				selected: false,
 				name: "Improved 2nd Stage Pump",
 				icon: "Icon_Upgrade_ChargeUp",
-				type: "",
+				type: "chargeup time",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -71,10 +68,10 @@ export default {
 				}
 			},
 			{
-                selected: false,
-				name: "Stronger Cooling Unit ",
+				selected: false,
+				name: "Stronger Cooling Unit",
 				icon: "Icon_Upgrade_Cold",
-				type: "",
+				type: "freezing power",
 				cost: {
 					credits: 1200,
 					bismor: 25,
@@ -96,10 +93,10 @@ export default {
 		],
 		[
 			{
-                selected: false,
+				selected: false,
 				name: "High Pressure Reserve Tank",
 				icon: "Icon_Upgrade_Ammo",
-				type: "",
+				type: "tank size",
 				cost: {
 					credits: 2000,
 					bismor: 0,
@@ -112,14 +109,14 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-                    clip: { name: "Tank Size", value: 50 },
+					clip: { name: "Tank Size", value: 50 }
 				}
 			},
 			{
-                selected: false,
+				selected: false,
 				name: "Bypassed Integrity Check",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "",
+				type: "Re-Pressurization Time",
 				cost: {
 					credits: 2000,
 					bismor: 15,
@@ -130,18 +127,19 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Shorter repressurisation delay. After reaching minimum pressure, the weapon will start the recovery faster.",
+				text:
+					"Shorter repressurisation delay. After reaching minimum pressure, the weapon will start the recovery faster.",
 				stats: {
-                    reload: { name: "Re-Pressurization Time", value: 1, subtract: true },
+					reload: { name: "Re-Pressurization Time", value: 1, subtract: true }
 				}
 			}
 		],
 		[
 			{
-                selected: false,
+				selected: false,
 				name: "Overclocked Ejection Turbine",
 				icon: "Icon_Upgrade_Distance",
-				type: "",
+				type: "distance",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -154,14 +152,14 @@ export default {
 				},
 				text: "Longer reach",
 				stats: {
-                    ex1: { name: "Cold Stream Reach", value: 3 }
-                }
+					ex1: { name: "Cold Stream Reach", value: 3 }
+				}
 			},
 			{
-                selected: false,
+				selected: false,
 				name: "Faster 1st Stage Pump",
 				icon: "Icon_Upgrade_ChargeUp",
-				type: "",
+				type: "Pressure Gain Rate",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -174,137 +172,132 @@ export default {
 				},
 				text: "It recovers pressure faster when you are not shooting",
 				stats: {
-                    ex4: { name: "Pressure Gain Rate", value: 50, percent: true },}
+					ex4: { name: "Pressure Gain Rate", value: 50, percent: true }
+				}
 			},
 			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
+				selected: false,
+				name: "Increased Chamber Pressure",
+				icon: "Icon_Upgrade_ClipSize",
+				type: "Pressure Drop Rate",
 				cost: {
-					credits: 0,
+					credits: 2800,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					magnite: 35,
+					umanite: 50,
 					err: 0
 				},
-				text: "",
-				stats: {}
+				text: "Shoot longer before needing to recharge",
+				stats: {
+					ex3: { name: "Pressure Drop Rate", value: 30, percent: true, subtract: true }
+				}
 			}
 		],
 		[
 			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
+				selected: false,
+				name: "Higher Water Content",
+				icon: "Icon_Upgrade_DamageGeneral",
+				type: "damage",
 				cost: {
-					credits: 0,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
+					credits: 4800,
+					bismor: 72,
+					croppa: 48,
+					enorPearl: 50,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
 					err: 0
 				},
-				text: "",
-				stats: {}
+				text: "More ice formation in stream causing more damage",
+				stats: {
+					dmg: { name: "Damage", value: 2 }
+				}
 			},
 			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
+				selected: false,
+				name: "Improved Mixture",
+				icon: "Icon_Upgrade_Cold",
+				type: "freezing power",
 				cost: {
-					credits: 0,
+					credits: 4800,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
+					enorPearl: 50,
+					jadiz: 72,
+					magnite: 48,
 					umanite: 0,
 					err: 0
 				},
-				text: "",
-				stats: {}
+				text: "Freeze things faster",
+				stats: {
+					ex2: { name: "Freezing Power", value: 2 }
+				}
 			},
 			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
+				selected: false,
+				name: "Larger Reserve Tank",
+				icon: "Icon_Upgrade_Ammo",
+				type: "ammo",
 				cost: {
-					credits: 0,
+					credits: 4800,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					jadiz: 72,
+					magnite: 50,
+					umanite: 48,
 					err: 0
 				},
-				text: "",
-				stats: {}
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
+				stats: {
+					clip: { name: "Tank Size", value: 150 }
+				}
 			}
 		],
 		[
 			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
+				selected: false,
+				name: "Fragile",
+				icon: "Icon_Upgrade_Shot",
+				type: "shot",
+				text: "Frozen targets can spontaniously shatter",
+				stats: {
+					ex5: { name: "Frozen Targets can Shatter", value: 1 }
+				},
 				cost: {
-					credits: 0,
-					bismor: 0,
-					croppa: 0,
+					credits: 5600,
+					bismor: 64,
+					croppa: 70,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 140,
 					umanite: 0,
 					err: 0
-				},
-				text: "",
-				stats: {}
+				}
 			},
 			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
+				selected: false,
+				name: "Cold Radiance",
+				icon: "Icon_Upgrade_Cold",
+				type: "cold",
+				text: "Cool things down in a 5m radius around you ",
+				stats: {
+					ex6: { name: "Area Cold Damage", value: 0 }
+				},
 				cost: {
-					credits: 0,
+					credits: 5600,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
+					enorPearl: 140,
+					jadiz: 70,
 					magnite: 0,
-					umanite: 0,
+					umanite: 64,
 					err: 0
-				},
-				text: "",
-				stats: {}
-			},
-			{
-                selected: false,
-				name: "",
-				icon: "",
-				type: "",
-				cost: {
-					credits: 0,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				},
-				text: "",
-				stats: {}
+				}
 			}
 		]
 	]

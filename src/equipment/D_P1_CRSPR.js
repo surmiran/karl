@@ -13,19 +13,19 @@ export default {
 		ex2: { name: "Sticky Flame Burn", value: 0 },
 		ex3: { name: "Sticky Flame Slowdown", value: 0 },
 		ex4: { name: "Flame Duration", value: 3 },
-		ex5: { name: "Fear Factor", value: 0 },
+		ex5: { name: "Fear Factor", value: 0, percent: true },
 		ex6: { name: "Flame Reach", value: 0 },
 		ex7: { name: "Area Heat", value: 0 },
-		ex8: { name: "Intensity Bonus", value: 0 },
-		ex9: { name: "Killed Targets Explode %", value: 0 }
+		ex8: { name: "Intensity Bonus", value: 0, percent: true },
+		ex9: { name: "Killed Targets Explode %", value: 0, percent: true }
 	},
 	mods: [
 		[
 			{
 				selected: false,
-				name: "HIGH CAPACITY TANKS",
+				name: "High Capacity Tanks",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "CLIP SIZE",
+				type: "clip size",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -43,12 +43,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "HIGH PRESSURE EJECTOR",
+				name: "High Pressure Ejector",
 				icon: "Icon_Upgrade_Distance",
-				type: "REACH",
+				type: "distance",
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 1200,
+					bismor: 25,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
@@ -63,9 +63,9 @@ export default {
 			},
 			{
 				selected: false,
-				name: "OVERSIZED VALVES",
+				name: "Oversized Valves",
 				icon: "Icon_Upgrade_FireRate",
-				type: "RATE OF FIRE",
+				type: "rate of fire",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -86,14 +86,14 @@ export default {
 			// 1/0
 			{
 				selected: false,
-				name: "UNFILTERED FUEL",
+				name: "Unfiltered Fuel",
 				icon: "Icon_Upgrade_DamageGeneral",
-				type: "DAMAGE",
+				type: "damage",
 				cost: {
-					credits: 0,
+					credits: 2000,
 					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
+					croppa: 24,
+					enorPearl: 15,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -106,9 +106,9 @@ export default {
 			}, // 1/1
 			{
 				selected: false,
-				name: "TRIPPLE FILTERED FUEL",
+				name: "Triple Filtered Fuel",
 				icon: "Icon_Upgrade_Heat",
-				type: "HEAT",
+				type: "heat",
 				cost: {
 					credits: 2000,
 					bismor: 0,
@@ -126,16 +126,16 @@ export default {
 			}, // 1/2
 			{
 				selected: false,
-				name: "STICKY FLAME DURATION",
+				name: "Sticky flame duration",
 				icon: "Icon_Upgrade_Duration",
-				type: "DURATION",
+				type: "duration",
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 2000,
+					bismor: 15,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 24,
 					umanite: 0,
 					err: 0
 				},
@@ -149,16 +149,16 @@ export default {
 			// 2/0
 			{
 				selected: false,
-				name: "STICKY FLAME DURATION",
+				name: "Sticky flame duration",
 				icon: "Icon_Upgrade_Duration",
-				type: "DURATION",
+				type: "duration",
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 2800,
+					bismor: 50,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 35,
 					umanite: 0,
 					err: 0
 				},
@@ -169,17 +169,17 @@ export default {
 			}, // 2/1
 			{
 				selected: false,
-				name: "STICKY FLAME SLOWDOWN",
+				name: "Sticky Flame Slowdown",
 				icon: "Icon_Upgrade_Sticky",
-				type: "SLOWDOWN",
+				type: "slowdown",
 				cost: {
-					credits: 0,
+					credits: 2800,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 50,
 					magnite: 0,
-					umanite: 0,
+					umanite: 35,
 					err: 0
 				},
 				text: "Creatures moving through sticky flames are slowed.",
@@ -189,9 +189,9 @@ export default {
 			}, // 2/2
 			{
 				selected: false,
-				name: "MORE FUEL",
+				name: "More Fuel",
 				icon: "Icon_Upgrade_Ammo",
-				type: "TOTAL AMMO",
+				type: "total ammo",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -212,9 +212,9 @@ export default {
 			// 3/0
 			{
 				selected: false,
-				name: "MORE FUEL",
+				name: "More Fuel",
 				icon: "Icon_Upgrade_Ammo",
-				type: "TOTAL AMMO",
+				type: "total ammo",
 				cost: {
 					credits: 4800,
 					bismor: 72,
@@ -232,16 +232,16 @@ export default {
 			},
 			{
 				selected: false,
-				name: "STICKY FLAME DAMAGE",
+				name: "Sticky Flame Damage",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "DAMAGE",
 				cost: {
-					credits: 0,
+					credits: 4800,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
+					enorPearl: 50,
+					jadiz: 72,
+					magnite: 48,
 					umanite: 0,
 					err: 0
 				},
@@ -252,17 +252,17 @@ export default {
 			},
 			{
 				selected: false,
-				name: "STICKY FLAME IGNITION",
+				name: "Sticky Flame Ignition",
 				icon: "Icon_Upgrade_Heat",
-				type: "HEAT",
+				type: "heat",
 				cost: {
-					credits: 0,
+					credits: 4800,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					jadiz: 72,
+					magnite: 50,
+					umanite: 48,
 					err: 0
 				},
 				text: "Creatures moving through sticky flames are quickly set on fire.",
@@ -274,16 +274,16 @@ export default {
 		[
 			{
 				selected: false,
-				name: "HEAT RADIANCE",
+				name: "Heat Radiance",
 				icon: "Icon_Upgrade_Heat",
-				type: "HEAT",
+				type: "heat",
 				cost: {
-					credits: 0,
-					bismor: 0,
-					croppa: 0,
+					credits: 5600,
+					bismor: 70,
+					croppa: 140,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 64,
 					umanite: 0,
 					err: 0
 				},
@@ -294,9 +294,9 @@ export default {
 			},
 			{
 				selected: false,
-				name: "IT BURNS!",
+				name: "It Burns!",
 				icon: "Icon_Upgrade_ScareEnemies",
-				type: "FEAR",
+				type: "fear",
 				cost: {
 					credits: 5600,
 					bismor: 64,
@@ -314,7 +314,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "TARGETS EXPLODE",
+				name: "Targets Explode",
 				icon: "Icon_Upgrade_Explosion",
 				type: "explosion",
 				cost: {

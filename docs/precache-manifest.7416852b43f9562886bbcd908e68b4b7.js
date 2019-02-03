@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/karl/robots.txt"
   },
   {
-    "revision": "3c08476d0542bc022277",
-    "url": "/karl/js/chunk-vendors.3acebde3.js"
+    "revision": "545eeb25fbddd0f46c3f",
+    "url": "/karl/js/chunk-vendors.b6533bd5.js"
   },
   {
-    "revision": "4036632fbe8a8bdc44ac",
-    "url": "/karl/js/app.4c9df987.js"
+    "revision": "bd85b16464fda3488937",
+    "url": "/karl/js/app.701f5d20.js"
   },
   {
-    "revision": "d82367f5a2166a43c46e6a31d72becb7",
+    "revision": "51f9efc90ff8e66de9a928389c36bc22",
     "url": "/karl/index.html"
   },
   {
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/karl/img/Bismor_icon.ae9293f7.png"
   },
   {
-    "revision": "4036632fbe8a8bdc44ac",
-    "url": "/karl/css/app.85647732.css"
+    "revision": "bd85b16464fda3488937",
+    "url": "/karl/css/app.aa6635b6.css"
   }
 ];

@@ -11,14 +11,7 @@ export default {
 		revive: { name: "Revive Invulnerability", value: 3 },
 		carry: { name: "Extra Carrying Capacity", value: 0 },
 		ex1: { name: "AoE Damage On Shield Break", value: 0, binary: true },
-		ex2: { name: "AoE Stun On Shield Break", value: 0, binary: true },
-		ex3: { name: "", value: 0 },
-		ex4: { name: "", value: 0 },
-		ex5: { name: "", value: 0 },
-		ex6: { name: "", value: 0 },
-		ex7: { name: "", value: 0 },
-		ex8: { name: "", value: 0 },
-		ex9: { name: "", value: 0 }
+		ex2: { name: "AoE Stun On Shield Break", value: 0, binary: true }
 	},
 	mods: [
 		[
@@ -51,7 +44,7 @@ export default {
 				type: "Delay",
 				text: "Shield begins to regenerate sooner.",
 				stats: {
-					delay: { name: "Regeneration Delay", value: 1, subtract: true },
+					delay: { name: "Regeneration Delay", value: 1, subtract: true }
 				},
 				cost: {
 					credits: 0,
@@ -214,4 +207,3 @@ export default {
 		]
 	]
 };
-

@@ -13,11 +13,7 @@ export default {
 		ex2: { name: "Increased Accuracy", value: 0 },
 		ex3: { name: "Increased Stability ", value: 0 },
 		ex4: { name: "Damage Vs Burning", value: 0, percent: true },
-		ex5: { name: "Damage Vs Mactera ", value: 0, percent: true },
-		ex6: { name: "", value: 0 },
-		ex7: { name: "", value: 0 },
-		ex8: { name: "", value: 0 },
-		ex9: { name: "", value: 0 }
+		ex5: { name: "Damage Vs Mactera ", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -130,7 +126,8 @@ export default {
 				name: "Quicker Ejector",
 				icon: "Icon_Upgrade_Speed",
 				type: "speed",
-				text: "Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster.",
+				text:
+					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster.',
 				stats: {
 					reload: { name: "Reload Time", value: 0.4, subtract: true }
 				},
@@ -172,7 +169,8 @@ export default {
 				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
 				type: "weakspot",
-				text: "Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome. ",
+				text:
+					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome. ",
 				stats: {
 					ex1: { name: "Weakpoint Damage Bonus", value: 40, percent: true }
 				},

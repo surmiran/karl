@@ -207,11 +207,11 @@ h2 {
 
 .tierBackgroundGradient {
 	background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0) 40%,
-			rgba(40, 33, 23, 1) 40%,
-			rgba(40, 33, 23, 1) 60%,
-			rgba(0, 0, 0, 0) 60%
+		to bottom,
+		rgba(0, 0, 0, 0) 40%,
+		rgba(40, 33, 23, 1) 40%,
+		rgba(40, 33, 23, 1) 60%,
+		rgba(0, 0, 0, 0) 60%
 	);
 }
 
@@ -290,7 +290,6 @@ h2 {
 .costListItem > span {
 	padding-right: 0.6rem;
 }
-
 
 @media (max-width: 1024px) {
 	.modSelection {

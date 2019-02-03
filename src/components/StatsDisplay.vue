@@ -4,7 +4,9 @@
 		<h2 class="equipmentSubTitle allCaps">{{ equipment.class }}</h2>
 		<div v-for="(stat, statId) in calcStats" :key="statId" class="statsContainer">
 			<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
-			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']">{{ stat.value }}<span v-if="stat.percent">%</span></span>
+			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']"
+				>{{ stat.value }}<span v-if="stat.percent">%</span></span
+			>
 			<span class="statsModifier">{{ stat.modifier }}</span>
 		</div>
 	</div>
@@ -13,13 +15,6 @@
 <!--todo: show total cost of selected mods-->
 <script>
 import store from "../store";
-
-const precision = (a) => {
-	if (!isFinite(a)) return 0;
-	var e = 1, p = 0;
-	while (Math.round(a * e) / e !== a) { e *= 10; p++; }
-	return p;
-};
 
 export default {
 	name: "StatsDisplay",
@@ -47,6 +42,17 @@ export default {
 			console.log(aSelectedUpgrades);
 			console.log(this.baseStats);
 
+			const precisionCalc = a => {
+				if (!isFinite(a)) return 0;
+				var e = 1,
+					p = 0;
+				while (Math.round(a * e) / e !== a) {
+					e *= 10;
+					p++;
+				}
+				return p;
+			};
+
 			return Object.keys(this.baseStats).map(key => {
 				let upgradeForKey = aSelectedUpgrades.filter(element => {
 					return !!element.stats[key];
@@ -60,16 +66,21 @@ export default {
 						value: 0
 					};
 					for (let upgrade of upgradeForKey) {
-						// do tofixed to bigger precision of either modifier or stat..
-						if (upgrade.stats[key].subtract && upgrade.stats[key].percent) {
+						let upgradePrecision = precisionCalc(upgrade.stats[key].value);
+						let statsPrecision = precisionCalc(modifier.value);
+						let precision = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
+
+						// todo: binary values as (+) or ( ) instead of 1 and 0
+						if (upgrade.stats[key].subtract) {
 							modifier.value = modifier.value - upgrade.stats[key].value;
-							modifiedStats.value = modifiedStats.value - upgrade.stats[key].value;
-						} else if (upgrade.stats[key].subtract) {
-							modifier.value = modifier.value - upgrade.stats[key].value;
-							modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(1);
+							modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(
+								precision
+							);
 						} else {
 							modifier.value = modifier.value + upgrade.stats[key].value;
-							modifiedStats.value = modifiedStats.value + upgrade.stats[key].value;
+							modifiedStats.value = (parseFloat(modifiedStats.value) + parseFloat(upgrade.stats[key].value)).toFixed(
+								precision
+							);
 						}
 
 						modifier.subtract = upgrade.stats[key].subtract;

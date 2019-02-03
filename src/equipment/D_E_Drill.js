@@ -12,12 +12,7 @@ export default {
 		ex1: { name: "Overheat Duration", value: 8 },
 		ex2: { name: "Cooling Rate", value: 2 },
 		ex3: { name: "Movement speed while drilling", value: 0, percent: true },
-		ex4: { name: "Heat removal on Damage", value: 0, binary: true },
-		ex5: { name: "", value: 0 },
-		ex6: { name: "", value: 0 },
-		ex7: { name: "", value: 0 },
-		ex8: { name: "", value: 0 },
-		ex9: { name: "", value: 0 }
+		ex4: { name: "Heat removal on Damage", value: 0, binary: true }
 	},
 	mods: [
 		[

@@ -9,14 +9,7 @@ export default {
 		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Less fall damage", value: 0, binary: true },
-		ex2: { name: "Bug repellent", value: 0, binary: true },
-		ex3: { name: "", value: 0 },
-		ex4: { name: "", value: 0 },
-		ex5: { name: "", value: 0 },
-		ex6: { name: "", value: 0 },
-		ex7: { name: "", value: 0 },
-		ex8: { name: "", value: 0 },
-		ex9: { name: "", value: 0 }
+		ex2: { name: "Bug repellent", value: 0, binary: true }
 	},
 	mods: [
 		[

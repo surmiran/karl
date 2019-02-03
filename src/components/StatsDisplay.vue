@@ -1,11 +1,11 @@
 <template>
 	<div class="statsDisplay">
-		<h1 class="equipmentTitle">{{equipment.name}}</h1>
-		<h2 class="equipmentSubTitle">{{equipment.class}}</h2>
+		<h1 class="equipmentTitle">{{ equipment.name }}</h1>
+		<h2 class="equipmentSubTitle">{{ equipment.class }}</h2>
 		<div v-for="(stat, statId) in calcStats" :key="statId" class="statsContainer">
-			<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{stat.name}}:</span>
-			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']">{{stat.value}}</span>
-			<span class="statsModifier">{{stat.modifier}}</span>
+			<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
+			<span class="statsValue" :class="[stat.modified ? 'modifiedStat' : '']">{{ stat.value }}</span>
+			<span class="statsModifier">{{ stat.modifier }}</span>
 		</div>
 	</div>
 </template>
@@ -77,6 +77,20 @@ export default {
 </script>
 
 <style scoped>
+.statsDisplay {
+	flex: 1;
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+	.statsDisplay {
+		flex: 0 0 100%;
+		order: 2;
+	}
+}
+
 .equipmentTitle {
 	text-align: center;
 	color: #fc9e00;

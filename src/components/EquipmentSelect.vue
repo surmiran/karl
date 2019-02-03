@@ -3,11 +3,17 @@
 		<!--todo: either find a way to set the viewbox dynamically for each icon or set it on the svgs, so that all equipment icons have the same fixed viewbox..-->
 		<!-- https://www.creativebloq.com/how-to/10-golden-rules-for-responsive-svgs -->
 		<div class="flexboxWeaponSelect" :class="[getSelected ? 'equipmentActive' : 'equipment']">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 90" :class="[getSelected ? 'equipmentIconActive' : 'equipmentIcon']" height="70%"
-		     preserveAspectRatio="xMidYMid meet" v-html="getIconFromPath"></svg>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 180 90"
+				:class="[getSelected ? 'equipmentIconActive' : 'equipmentIcon']"
+				height="70%"
+				preserveAspectRatio="xMidYMid meet"
+				v-html="getIconFromPath"
+			></svg>
 		</div>
 		<div :class="[getSelected ? 'equipmentTextActive' : 'equipmentText']">
-			<h4>{{name}}</h4>
+			<h4>{{ name }}</h4>
 		</div>
 	</div>
 </template>

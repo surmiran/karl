@@ -1,7 +1,7 @@
 <template>
 	<div class="classSelectContainer" v-on:click="selectClass()">
 		<div :class="[isSelected ? 'equipmentTextActive' : 'equipmentText']">
-			<h4>{{name}}</h4>
+			<h4>{{ name }}</h4>
 		</div>
 	</div>
 </template>
@@ -34,9 +34,5 @@ export default {
 .classSelectContainer {
 	display: flex;
 	cursor: pointer;
-}
-
-.equipmentText:hover {
-	color: #fffbff;
 }
 </style>

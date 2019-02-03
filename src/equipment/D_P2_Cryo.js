@@ -5,7 +5,7 @@ export default {
 	icon: "equipment.D_P2_Cryo",
 	baseStats: {
 		dmg: { name: "Damage", value: 5 },
-		ammo: { name: "Max Ammo", value: 0 },
+		ammo: { name: "Max Ammo", value: 300 },
 		clip: { name: "Tank Size", value: 300 },
 		rate: { name: "Chargeup Time", value: 0.6 },
 		reload: { name: "Re-Pressurization Time", value: 1.5 },
@@ -109,7 +109,8 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					clip: { name: "Tank Size", value: 50 }
+					clip: { name: "Tank Size", value: 50 },
+					ammo: { name: "Max Ammo", value: 50 }
 				}
 			},
 			{
@@ -254,7 +255,8 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					clip: { name: "Tank Size", value: 150 }
+					clip: { name: "Tank Size", value: 150 },
+					ammo: { name: "Max Ammo", value: 150 }
 				}
 			}
 		],

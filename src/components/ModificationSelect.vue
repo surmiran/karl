@@ -3,7 +3,7 @@
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2>Tier {{ tierId + 1 }}</h2>
-			<div class="tierSubContainer">
+			<div class="tierSubContainer" :class="[tier.length === 1 ? '' : 'tierBackgroundGradient']">
 				<div
 					v-for="(mod, modId) in tier"
 					:key="modId"
@@ -12,7 +12,6 @@
 					class="tooltip-target modDisplay"
 					:class="[mod.selected ? 'selectedTemp' : '']"
 				>
-					<!--{{mod.name}}-->
 					<svg
 						viewBox="0 0 80 50"
 						height="100%"
@@ -58,8 +57,8 @@
 					</svg>
 				</div>
 				<div class="modTextBoxTitle">
-					<p>{{ hoveredMod.name }}</p>
 					<p class="allCaps">{{ hoveredMod.type }}</p>
+					<p class="allCaps modificationName">{{ hoveredMod.name }}</p>
 					<p class="costList">
 						<span class="costListItem" v-if="hoveredMod.cost.credits > 0">
 							<img src="../assets/img/20px-Credit.png" />
@@ -180,6 +179,10 @@ h2 {
 	padding: 1rem;
 }
 
+.modificationName {
+	font-size: 1.5rem;
+}
+
 .modSelectionTitle {
 	width: 100%;
 	/*background-color: #282117;*/
@@ -193,13 +196,6 @@ h2 {
 	padding: 0.5rem;
 	justify-content: start;
 	align-items: center;
-	/*background: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0) 40%,
-		rgba(40, 33, 23, 1) 40%,
-		rgba(40, 33, 23, 1) 60%,
-		rgba(0, 0, 0, 0) 60%
-	);*/
 	color: #282117;
 }
 
@@ -207,12 +203,15 @@ h2 {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+}
+
+.tierBackgroundGradient {
 	background: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0) 40%,
-		rgba(40, 33, 23, 1) 40%,
-		rgba(40, 33, 23, 1) 60%,
-		rgba(0, 0, 0, 0) 60%
+			to bottom,
+			rgba(0, 0, 0, 0) 40%,
+			rgba(40, 33, 23, 1) 40%,
+			rgba(40, 33, 23, 1) 60%,
+			rgba(0, 0, 0, 0) 60%
 	);
 }
 

@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 // imports for driller equipment
+import D_E_Armor from "./equipment/D_E_Armor.js";
+import D_E_Drill from "./equipment/D_E_Drill.js";
+import D_E_Drill_SVG from "./assets/D_E_Drill.js";
 import D_P1_CRSPR from "./equipment/D_P1_CRSPR.js";
 import D_P1_CRSPR_SVG from "./assets/D_P1_CRSPR.js";
 import D_P2_Cryo from "./equipment/D_P2_Cryo.js";
@@ -10,6 +13,9 @@ import D_S1_Subata_SVG from "./assets/D_S1_Subata.js";
 import D_S2_Plasma from "./equipment/D_S2_Plasma.js";
 import D_S2_Plasma_SVG from "./assets/D_S2_Plasma.js";
 // imports for engineer equipment
+import E_E_Armor from "./equipment/E_E_Armor.js";
+import E_E_Platform from "./equipment/E_E_Platform.js";
+import E_E_Platform_SVG from "./assets/E_E_Platform.js";
 import E_P1_Warthog from "./equipment/E_P1_Warthog.js";
 import E_P1_Warthog_SVG from "./assets/E_P1_Warthog.js";
 import E_P2_Stubby from "./equipment/E_P2_Stubby.js";
@@ -23,6 +29,7 @@ import E_S2_Breach_SVG from "./assets/E_S2_Breach.js";
 // imports for scout equipment
 
 // imports for shared equipment
+import X_E_Armor_SVG from "./assets/X_E_Armor.js";
 
 // imports for modification icons
 import Icon_Upgrade_Distance from "./assets/mods/Icon_Upgrade_Distance.js";
@@ -85,10 +92,13 @@ export default new Vuex.Store({
 		testJS: D_P1_CRSPR_SVG,
 		icons: {
 			equipment: {
+				X_E_Armor: X_E_Armor_SVG,
+				D_E_Drill: D_E_Drill_SVG,
 				D_P1_CRSPR: D_P1_CRSPR_SVG,
 				D_P2_Cryo: D_P2_Cryo_SVG,
 				D_S1_Subata: D_S1_Subata_SVG,
 				D_S2_Plasma: D_S2_Plasma_SVG,
+				E_E_Platform: E_E_Platform_SVG,
 				E_P1_Warthog: E_P1_Warthog_SVG,
 				E_P2_Stubby: E_P2_Stubby_SVG,
 				E_S1_PGL: E_S1_PGL_SVG,
@@ -138,13 +148,17 @@ export default new Vuex.Store({
 				P1: D_P1_CRSPR,
 				P2: D_P2_Cryo,
 				S1: D_S1_Subata,
-				S2: D_S2_Plasma
+				S2: D_S2_Plasma,
+				E1: D_E_Drill,
+				E2: D_E_Armor,
 			},
 			E: {
 				P1: E_P1_Warthog,
 				P2: E_P2_Stubby,
 				S1: E_S1_PGL,
-				S2: E_S2_Breach
+				S2: E_S2_Breach,
+				E1: E_E_Platform,
+				E2: E_E_Armor,
 			},
 			G: {},
 			S: {}

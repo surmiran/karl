@@ -25,9 +25,29 @@ import E_S1_PGL_SVG from "./assets/E_S1_PGL.js";
 import E_S2_Breach from "./equipment/E_S2_Breach.js";
 import E_S2_Breach_SVG from "./assets/E_S2_Breach.js";
 // imports for gunner equipment
-
+import G_E_Armor from "./equipment/G_E_Armor.js";
+import G_E_Zipline from "./equipment/G_E_Zipline.js";
+import G_E_Zipline_SVG from "./assets/G_E_Zipline.js";
+import G_P1_Lead from "./equipment/G_P1_Lead.js";
+import G_P1_Lead_SVG from "./assets/G_P1_Lead.js";
+import G_P2_Thunder from "./equipment/G_P2_Thunder.js";
+import G_P2_Thunder_SVG from "./assets/G_P2_Thunder.js";
+import G_S1_Bulldog from "./equipment/G_S1_Bulldog.js";
+import G_S1_Bulldog_SVG from "./assets/G_S1_Bulldog.js";
+import G_S2_Burst from "./equipment/G_S2_Burst.js";
+import G_S2_Burst_SVG from "./assets/G_S2_Burst.js";
 // imports for scout equipment
-
+import S_E_Armor from "./equipment/S_E_Armor.js";
+import S_E_Grapling from "./equipment/S_E_Grapling.js";
+import S_E_Grapling_SVG from "./assets/S_E_Grapling.js";
+import S_P1_GK2 from "./equipment/S_P1_GK2.js";
+import S_P1_GK2_SVG from "./assets/S_P1_GK2.js";
+import S_P2_M1000 from "./equipment/S_P2_M1000.js";
+import S_P2_M1000_SVG from "./assets/S_P2_M1000.js";
+import S_S1_Jury from "./equipment/S_S1_Jury.js";
+import S_S1_Jury_SVG from "./assets/S_S1_Jury.js";
+import S_S2_Zhuk from "./equipment/S_S2_Zhuk.js";
+import S_S2_Zhuk_SVG from "./assets/S_S2_Zhuk.js";
 // imports for shared equipment
 import X_E_Armor_SVG from "./assets/X_E_Armor.js";
 
@@ -102,7 +122,17 @@ export default new Vuex.Store({
 				E_P1_Warthog: E_P1_Warthog_SVG,
 				E_P2_Stubby: E_P2_Stubby_SVG,
 				E_S1_PGL: E_S1_PGL_SVG,
-				E_S2_Breach: E_S2_Breach_SVG
+				E_S2_Breach: E_S2_Breach_SVG,
+				G_E_Zipline: G_E_Zipline_SVG,
+				G_P1_Lead: G_P1_Lead_SVG,
+				G_P2_Thunder: G_P2_Thunder_SVG,
+				G_S1_Bulldog: G_S1_Bulldog_SVG,
+				G_S2_Burst: G_S2_Burst_SVG,
+				S_E_Grapling: S_E_Grapling_SVG,
+				S_P1_GK2: S_P1_GK2_SVG,
+				S_P2_M1000: S_P2_M1000_SVG,
+				S_S1_Jury: S_S1_Jury_SVG,
+				S_S2_Zhuk: S_S2_Zhuk_SVG
 			},
 			mods: {
 				Icon_Upgrade_Distance: Icon_Upgrade_Distance,
@@ -160,8 +190,22 @@ export default new Vuex.Store({
 				E1: E_E_Platform,
 				E2: E_E_Armor
 			},
-			G: {},
-			S: {}
+			G: {
+				P1: G_P1_Lead,
+				P2: G_P2_Thunder,
+				S1: G_S1_Bulldog,
+				S2: G_S2_Burst,
+				E1: G_E_Zipline,
+				E2: G_E_Armor
+			},
+			S: {
+				P1: S_P1_GK2,
+				P2: S_P2_M1000,
+				S1: S_S1_Jury,
+				S2: S_S2_Zhuk,
+				E1: S_E_Grapling,
+				E2: S_E_Armor
+			}
 		}
 	},
 	mutations: {

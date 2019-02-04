@@ -1,11 +1,11 @@
 export default {
 	selected: false,
-	name: "Engineering Suit",
+	name: "Light Scouting Suit",
 	class: "Armor",
 	icon: "equipment.X_E_Armor",
 	baseStats: {
 		shield: { name: "Shield", value: 25 },
-		poison: { name: "Poison Resistance", value: 0, percent: true },
+		fall: { name: "Fall Damage Reduction", value: 0, percent: true },
 		delay: { name: "Regeneration Delay", value: 7 },
 		rate: { name: "Regeneration Rate", value: 100, percent: true },
 		revive: { name: "Revive Invulnerability", value: 3 },
@@ -82,12 +82,12 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Hazmat System",
-				icon: "Icon_Upgrade_Poison_Resistance",
-				type: "Poison Resistance",
-				text: "Reduces the damage taken from poison.",
+				name: "Shock Absorbers",
+				icon: "Icon_Upgrade_",
+				type: "Fall Damage Resistance",
+				text: "Built-in shock absorbers make falling less painful.",
 				stats: {
-					poison: { name: "Poison Resistance", value: 50, percent: true }
+					fall: { name: "Fall Damage Reduction", value: 33, percent: true }
 				},
 				cost: {
 					credits: 0,

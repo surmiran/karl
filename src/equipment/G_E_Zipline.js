@@ -1,335 +1,142 @@
 export default {
-    selected: false,
-    name: "Breach",
-    class: "Heavy Weapon",
-    icon: "equipment.E_S2_Breach",
-    baseStats: {
-        dmg: { name: "", value: 0 },
-        ammo: { name: "", value: 0 },
-        clip: { name: "", value: 0 },
-        rate: { name: "", value: 0 },
-        reload: { name: "", value: 0 },
-        ex1: { name: "", value: 0 },
-        ex2: { name: "", value: 0 },
-        ex3: { name: "", value: 0 },
-        ex4: { name: "", value: 0 },
-        ex5: { name: "", value: 0 },
-        ex6: { name: "", value: 0 },
-        ex7: { name: "", value: 0 },
-        ex8: { name: "", value: 0 },
-        ex9: { name: "", value: 0 }
-    },
-    mods: [
-        [
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            }
-        ],
-        [
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            }
-        ],
-        [
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            }
-        ],
-        [
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            }
-        ],
-        [
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            },
-            {
-                selected: false,
-                name: "",
-                icon: "Icon_Upgrade_",
-                type: "",
-                text: "",
-                stats: {
-
-                },
-                cost: {
-                    credits: 0,
-                    bismor: 0,
-                    croppa: 0,
-                    enorPearl: 0,
-                    jadiz: 0,
-                    magnite: 0,
-                    umanite: 0,
-                    err: 0
-                }
-            }
-        ]
-    ]
+	selected: false,
+	name: "Zipline Gun",
+	class: "Support Tool",
+	icon: "equipment.G_E_Zipline",
+	baseStats: {
+		range: { name: "Max Range", value: 30 },
+		ammo: { name: "Max Ammo", value: 3 },
+		reload: { name: "Reload Time", value: 1.5 },
+		angle: { name: "Max Angle", value: 30 },
+		speed: { name: "Movement Speed", value: 250 },
+		ex1: { name: "Fall Damage Reduction", value: 0, binary: true }
+	},
+	mods: [
+		[
+			{
+				selected: false,
+				name: "Expanded Ammo Bags",
+				icon: "Icon_Upgrade_Ammo",
+				type: "Total Ammo",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
+				stats: {
+					ammo: { name: "Max Ammo", value: 1 }
+				},
+				cost: {
+					credits: 420,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Upgraded Connection Joint",
+				icon: "Icon_Upgrade_",
+				type: "Angle",
+				text: "Increases the operational angle of the zipline",
+				stats: {
+					angle: { name: "Max Angle", value: 5 }
+				},
+				cost: {
+					credits: 420,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Reinforced Anchor",
+				icon: "Icon_Upgrade_Distance",
+				type: "Reach",
+				text: "Zipline can span a greater distance",
+				stats: {
+					range: { name: "Max Range", value: 10 }
+				},
+				cost: {
+					credits: 420,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			}
+		],
+		[
+			{
+				selected: false,
+				name: "Reinforced Cable",
+				icon: "Icon_Upgrade_Distance",
+				type: "Reach",
+				text: "Zipline can span a greater distance",
+				stats: {
+					range: { name: "Max Range", value: 10 }
+				},
+				cost: {
+					credits: 0,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			}
+		],
+		[
+			{
+				selected: false,
+				name: "Disconnection Protection",
+				icon: "Icon_Upgrade_",
+				type: "Fall Damage Resistance",
+				text: "Take less damage if you fall off the zipline",
+				stats: {
+					ex1: { name: "Fall Damage Reduction", value: 1, binary: true }
+				},
+				cost: {
+					credits: 0,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Increased Motor Traction",
+				icon: "Icon_Upgrade_SpeedUp",
+				type: "",
+				text: "",
+				stats: {
+					speed: { name: "Movement Speed", value: 75 }
+				},
+				cost: {
+					credits: 0,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			}
+		]
+	]
 };
-

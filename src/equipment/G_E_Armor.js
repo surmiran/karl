@@ -18,7 +18,7 @@ export default {
 			{
 				selected: false,
 				name: "Larger Capacitors",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_Resistance",
 				type: "Resistance",
 				text: "Your shield can absorb more damage before breaking.",
 				stats: {
@@ -125,7 +125,7 @@ export default {
 			{
 				selected: false,
 				name: "Overcharger",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_Resistance",
 				type: "Resistance",
 				text: "Your shield can absorb more damage before breaking",
 				stats: {
@@ -147,7 +147,7 @@ export default {
 			{
 				selected: false,
 				name: "Shockwave",
-				icon: "Icon_Upgrade_Explosive",
+				icon: "Icon_Upgrade_AreaDamage",
 				type: "Area Damage",
 				text: "Your shield breaks violently, damaging all enemies around you in the process.",
 				stats: {
@@ -187,7 +187,7 @@ export default {
 			{
 				selected: false,
 				name: "Breathing Room",
-				icon: "Icon_Upgrade_Resistance",
+				icon: "Icon_Upgrade_Revive",
 				type: "Resistance",
 				text: "Temporary invulnerability after being revived.",
 				stats: {

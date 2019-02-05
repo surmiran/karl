@@ -81,7 +81,7 @@ export default {
 			{
 				selected: false,
 				name: "High velocity ejection system",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "Projectile Speed",
 				text: "Hook shoots out at a higher speed",
 				stats: {
@@ -101,7 +101,7 @@ export default {
 			{
 				selected: false,
 				name: "Overcharged Winch",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_MovementSpeed",
 				type: "Movement Speed",
 				text: "Faster hook retraction means a faster dwarf. Survival not guaranteed",
 				stats: {
@@ -123,7 +123,7 @@ export default {
 			{
 				selected: false,
 				name: "Safety First",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_Resistance",
 				type: "Resistance",
 				text: "Temporary fall damage reduction bonus after releasing the Grapling Gun",
 				stats: {
@@ -143,7 +143,7 @@ export default {
 			{
 				selected: false,
 				name: "Momentum",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_MovementSpeed",
 				type: "Movement Speed",
 				text: "Temporary movement speed bonus after releasing the Grapling Gun.",
 				stats: {

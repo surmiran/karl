@@ -7,7 +7,10 @@
 			<ClassSelect :classId="'E'" :name="'Engineer'" />
 			<ClassSelect :classId="'G'" :name="'Gunner'" />
 			<ClassSelect :classId="'S'" :name="'Scout'" />
-			<h1 class="shareText">Share Link</h1>
+			<div class="shareArea">
+				<a class="shareText" v-on:click="getLink()">Share Link</a>
+				<input class="copyTextArea" />
+			</div>
 			<!--upload configuration for management approval-->
 			<!--todo: use https://sharingbuttons.io/ ?-->
 		</div>
@@ -71,6 +74,12 @@ import ModificationSelect from "./components/ModificationSelect.vue";
 import StatsDisplay from "./components/StatsDisplay.vue";
 import store from "./store";
 
+let toastOptions = {
+	theme: "bubble",
+	position: "top-center",
+	duration: 2500
+};
+
 export default {
 	name: "app",
 	components: {
@@ -101,6 +110,48 @@ export default {
 		classes() {
 			return store.state.tree;
 		}
+	},
+	methods: {
+		getLink() {
+			console.log("get link!");
+			console.log(store.state.dataParts);
+			let parts = JSON.stringify(store.state.dataParts);
+			let uri = `https://surmiran.github.io/karl/?=${encodeURIComponent(parts)}`;
+			let copyTextarea = document.querySelector(".copyTextArea");
+			copyTextarea.value = uri;
+			copyTextarea.focus();
+			copyTextarea.select();
+			try {
+				let successful = document.execCommand("copy");
+
+				if (successful) {
+					this.$toasted.show("Copied Loadout to clipboard", toastOptions);
+				} else {
+					this.$toasted.show("I can't feel my beard!", toastOptions);
+				}
+			} catch (err) {
+				this.$toasted.show("By the beard! Copying to clipboard was not successful", toastOptions);
+			}
+		}
+	},
+	mounted: function() {
+		let dataString = window.location.search.substr(2);
+
+		if (dataString) {
+			try {
+				let parts = JSON.parse(decodeURIComponent(dataString));
+				this.$toasted.show("For Karl!", toastOptions);
+				store.commit("loadFromLink", parts);
+			} catch (err) {
+				this.$toasted.show("Management is unhappy about the shared link.", toastOptions);
+				console.log(err);
+			}
+		}
+
+		this.$nextTick(function() {
+			// Code that will run only after the
+			// entire view has been rendered
+		});
 	}
 };
 </script>
@@ -114,11 +165,12 @@ body {
 	justify-content: center;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#322c20+0,5f5137+100 */
 	background: #322c20; /* Old browsers */
-	background: -moz-linear-gradient(-45deg, #322c20 0%, #5f5137 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, #322c20 0%, #5f5137 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, #322c20 0%, #5f5137 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background-repeat: no-repeat;
+	background: -moz-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #322c20 0%, #5f5137 100%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#322c20', endColorstr='#5f5137',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	min-height: 100%;
+	height: 100%;
 }
 h2 {
 	color: #fffbff;
@@ -145,10 +197,24 @@ h2 {
 	flex-wrap: wrap;
 	/*height: 5rem;*/
 }
+
+.toasted.bubble {
+	background-color: #fc9e00 !important;
+	font-family: "Avenir", Helvetica, Arial, sans-serif;
+}
+
+.shareArea {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 10rem;
+	margin-left: auto;
+}
 .shareText {
 	color: #fc9e00;
-	margin-left: auto;
-	padding-right: 1rem;
+}
+.copyTextArea {
+	width: 80%;
 }
 .allCaps {
 	text-transform: uppercase;
@@ -206,5 +272,23 @@ h2 {
 
 .equipmentText:hover {
 	color: #fffbff;
+}
+
+.costList {
+	display: flex;
+	color: #fffbff;
+}
+
+.costListItem {
+	display: flex;
+	align-items: center;
+}
+
+.costListItem > img {
+	padding-right: 0.2rem;
+}
+
+.costListItem > span {
+	padding-right: 0.6rem;
 }
 </style>

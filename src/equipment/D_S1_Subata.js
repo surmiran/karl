@@ -20,7 +20,7 @@ export default {
 			{
 				selected: false,
 				name: "Improved Alignment",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Increased Accuracy",
 				text: "Pin-point accuracy on first shot",
 				stats: {
@@ -104,7 +104,7 @@ export default {
 			{
 				selected: false,
 				name: "Recoil Compensator",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Aim",
 				text: "Spread per shot reduced ",
 				stats: {

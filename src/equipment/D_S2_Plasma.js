@@ -108,7 +108,7 @@ export default {
 			{
 				selected: false,
 				name: "Charged Projectile Speed ",
-				icon: "Icon_Upgrade_SpeedUp",
+				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "speed",
 				text: "Doubles the speed of the charged projectile ",
 				stats: {
@@ -128,7 +128,7 @@ export default {
 			{
 				selected: false,
 				name: "Reactive Shockwave",
-				icon: "Icon_Upgrade_Flare_01",
+				icon: "Icon_Upgrade_AreaDamage",
 				type: "flare",
 				text: "More bang for the buck! Increases the damage done within the Area of Effect! ",
 				stats: {

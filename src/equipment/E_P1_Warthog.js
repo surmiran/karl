@@ -149,7 +149,7 @@ export default {
 			{
 				selected: false,
 				name: "Choke ",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Aim",
 				text: "Decreased shot spread ",
 				stats: {

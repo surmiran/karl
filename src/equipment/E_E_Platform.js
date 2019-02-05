@@ -57,7 +57,7 @@ export default {
 			{
 				selected: false,
 				name: "High Capacity Magazine",
-				icon: "Icon_Upgrade_ClipSIze",
+				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... you can always get bigger variants.",
 				stats: {
@@ -79,7 +79,7 @@ export default {
 			{
 				selected: false,
 				name: "Plastcrete MKII",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_FallDamageResistance",
 				type: "Fall Damage Resistance",
 				text: "Shock-absorbing compound reduces fall damage",
 				stats: {

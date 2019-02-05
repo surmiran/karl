@@ -36,7 +36,7 @@ export default {
 			{
 				selected: false,
 				name: "Upgraded Connection Joint",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_Angle",
 				type: "Angle",
 				text: "Increases the operational angle of the zipline",
 				stats: {
@@ -100,7 +100,7 @@ export default {
 			{
 				selected: false,
 				name: "Disconnection Protection",
-				icon: "Icon_Upgrade_",
+				icon: "Icon_Upgrade_FallDamageResistance",
 				type: "Fall Damage Resistance",
 				text: "Take less damage if you fall off the zipline",
 				stats: {
@@ -120,7 +120,7 @@ export default {
 			{
 				selected: false,
 				name: "Increased Motor Traction",
-				icon: "Icon_Upgrade_SpeedUp",
+				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "",
 				text: "",
 				stats: {

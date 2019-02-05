@@ -125,7 +125,7 @@ export default {
 			{
 				selected: false,
 				name: "High Velocity Grenades ",
-				icon: "Icon_Upgrade_SpeedUp",
+				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "Speed",
 				text:
 					"We souped up the ejection mechanisms of your gun, so the projectiles are now fired at a much higher velocity. ",

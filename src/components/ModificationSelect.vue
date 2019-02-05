@@ -274,23 +274,6 @@ h2 {
 	margin: 0;
 }
 
-.costList {
-	display: flex;
-}
-
-.costListItem {
-	display: flex;
-	align-items: center;
-}
-
-.costListItem > img {
-	padding-right: 0.2rem;
-}
-
-.costListItem > span {
-	padding-right: 0.6rem;
-}
-
 @media (max-width: 1024px) {
 	.modSelection {
 		flex: 0 0 100%;

@@ -7,7 +7,9 @@
 			<div v-for="(stat, statId) in calcStats.stats" :key="statId" class="statsContainer">
 				<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
 				<div class="statsValueContainer">
-					<span class="statsValue fixedWidth">{{ stat.baseValue }}</span>
+					<span class="statsValue fixedWidth">
+						{{ stat.baseValue }}<span v-if="stat.percent">%</span>
+					</span>
 					<span class="statsModifier fixedWidth">{{ stat.modifier }}</span>
 					<span class="statsValue fixedWidth" :class="[stat.modified ? 'modifiedStat' : '']">
 						{{ stat.value }}<span v-if="stat.percent">%</span>
@@ -159,8 +161,6 @@ export default {
 				totalCost.umanite += cost.umanite;
 				totalCost.err += cost.err;
 			}
-			console.error("sstats", stats);
-			console.error("costs", totalCost);
 			return { stats: stats, cost: totalCost, visible: visible};
 		}
 	}

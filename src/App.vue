@@ -7,9 +7,9 @@
 			<ClassSelect :classId="'E'" :name="'Engineer'" />
 			<ClassSelect :classId="'G'" :name="'Gunner'" />
 			<ClassSelect :classId="'S'" :name="'Scout'" />
-			<div class="shareArea">
-				<a class="shareText" v-on:click="getLink()">Share Link</a>
-				<input class="copyTextArea" />
+			<div class="shareArea" v-on:click="getLink()">
+				<label for="idCopyTextArea" class="shareText">Share Link</label>
+				<input id="idCopyTextArea" class="copyTextArea" disabled />
 			</div>
 			<!--upload configuration for management approval-->
 			<!--todo: use https://sharingbuttons.io/ ?-->
@@ -73,6 +73,7 @@ import EquipmentSelect from "./components/EquipmentSelect.vue";
 import ModificationSelect from "./components/ModificationSelect.vue";
 import StatsDisplay from "./components/StatsDisplay.vue";
 import store from "./store";
+import Lzs from "lz-string";
 
 let toastOptions = {
 	theme: "bubble",
@@ -114,12 +115,10 @@ export default {
 	},
 	methods: {
 		getLink() {
-			// todo: short links instead of full encoded object
-			console.log("get link!");
-			console.log(store.state.dataParts);
 			let parts = JSON.stringify(store.state.dataParts);
-			let uri = `https://surmiran.github.io/karl/?=${encodeURIComponent(parts)}`;
-			let copyTextarea = document.querySelector(".copyTextArea");
+			let uri = `https://surmiran.github.io/karl/?=${Lzs.compressToEncodedURIComponent(parts)}`;
+			let copyTextarea = document.getElementById("idCopyTextArea");
+			copyTextarea.disabled = false;
 			copyTextarea.value = uri;
 			copyTextarea.focus();
 			copyTextarea.select();
@@ -134,6 +133,7 @@ export default {
 			} catch (err) {
 				this.$toasted.show("By the beard! Copying to clipboard was not successful", toastOptions);
 			}
+			copyTextarea.disabled = true;
 		}
 	},
 	mounted: function() {
@@ -141,7 +141,7 @@ export default {
 
 		if (dataString) {
 			try {
-				let parts = JSON.parse(decodeURIComponent(dataString));
+				let parts = JSON.parse(Lzs.decompressFromEncodedURIComponent(dataString));
 				this.$toasted.show("For Karl!", toastOptions);
 				store.commit("loadFromLink", parts);
 			} catch (err) {
@@ -206,6 +206,7 @@ h2 {
 }
 
 .shareArea {
+	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -213,9 +214,11 @@ h2 {
 	margin-left: auto;
 }
 .shareText {
+	cursor: pointer;
 	color: #fc9e00;
 }
 .copyTextArea {
+	cursor: pointer;
 	width: 80%;
 }
 .allCaps {

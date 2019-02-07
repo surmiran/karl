@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "85059f61622a143858b71082ebd375a2",
-    "url": "/karl/img/Umanite_icon.85059f61.png"
+    "revision": "9d03e2e3988e268d968b41618c9c468e",
+    "url": "/karl/img/Magnite_icon.9d03e2e3.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/karl/robots.txt"
   },
   {
-    "revision": "4ad79b2b1311f8bddc09",
-    "url": "/karl/js/chunk-vendors.42a900f4.js"
+    "revision": "c60745f65c849a74e972",
+    "url": "/karl/js/chunk-vendors.34fce8ec.js"
   },
   {
-    "revision": "f6a132524acdbbc6b2fb",
-    "url": "/karl/js/app.f30a9dbb.js"
+    "revision": "23d6936eb9b329eb98d2",
+    "url": "/karl/js/app.982da193.js"
   },
   {
-    "revision": "369b49f0096ddf99e35e02a5a9a8a8ac",
+    "revision": "789596a76dfd1dd6635926907da9eaae",
     "url": "/karl/index.html"
   },
   {
-    "revision": "9d03e2e3988e268d968b41618c9c468e",
-    "url": "/karl/img/Magnite_icon.9d03e2e3.png"
+    "revision": "85059f61622a143858b71082ebd375a2",
+    "url": "/karl/img/Umanite_icon.85059f61.png"
   },
   {
     "revision": "efaa5489d9aff2d755de1a43c1dcbf69",
@@ -40,7 +40,11 @@ self.__precacheManifest = [
     "url": "/karl/img/Bismor_icon.ae9293f7.png"
   },
   {
-    "revision": "f6a132524acdbbc6b2fb",
-    "url": "/karl/css/app.9feaf899.css"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e",
+    "url": "/karl/favicon-16x16.png"
+  },
+  {
+    "revision": "23d6936eb9b329eb98d2",
+    "url": "/karl/css/app.a8fa4da3.css"
   }
 ];

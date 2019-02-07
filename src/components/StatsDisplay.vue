@@ -14,36 +14,36 @@
 					</span>
 				</div>
 			</div>
-			<h2>Total Costs:</h2>
+			<h2 v-if="calcStats.visible">Total Costs:</h2>
 			<p class="costList">
 				<span class="costListItem" v-if="calcStats.cost.credits > 0">
-					<img src="../assets/img/20px-Credit.png" />
+					<img src="../assets/img/20px-Credit.png" alt="Credits" title="Credits" />
 					<span>{{ calcStats.cost.credits }}</span>
 				</span>
 				<span class="costListItem" v-if="calcStats.cost.bismor > 0">
-					<img src="../assets/img/Bismor_icon.png" />
+					<img src="../assets/img/Bismor_icon.png" alt="Bismor" title="Bismor" />
 					<span>{{ calcStats.cost.bismor }}</span>
 				</span>
 				<span class="costListItem" v-if="calcStats.cost.croppa > 0">
-					<img src="../assets/img/Croppa_icon.png" />
+					<img src="../assets/img/Croppa_icon.png" alt="Croppa" title="Croppa" />
 					<span>{{ calcStats.cost.croppa }}</span>
 				</span>
 				<span class="costListItem" v-if="calcStats.cost.enorPearl > 0">
-					<img src="../assets/img/Enor_pearl_icon.png" />
+					<img src="../assets/img/Enor_pearl_icon.png" alt="Enor Pearl" title="Enor Pearl" />
 					<span>{{ calcStats.cost.enorPearl }}</span>
 				</span>
 				<span class="costListItem" v-if="calcStats.cost.jadiz > 0">
-					<img src="../assets/img/Jadiz_icon.png" />
+					<img src="../assets/img/Jadiz_icon.png" alt="Jadiz" title="Jadiz" />
 					<span>{{ calcStats.cost.jadiz }}</span>
 				</span>
 				<span class="costListItem" v-if="calcStats.cost.magnite > 0">
-					<img src="../assets/img/Magnite_icon.png" />
+					<img src="../assets/img/Magnite_icon.png" alt="Magnite" title="Magnite" />
 					<span>{{ calcStats.cost.magnite }}</span>
 				</span>
 				<span class="costListItem" v-if="calcStats.cost.umanite > 0">
-					<img src="../assets/img/Umanite_icon.png" />
+					<img src="../assets/img/Umanite_icon.png" alt="Umanite" title="Umanite" />
 					<span>{{ calcStats.cost.umanite }}</span>
-</span>
+				</span>
 			</p>
 		</div>
 	</div>
@@ -70,6 +70,7 @@ export default {
 			return store.state.tree[this.selectedClassId][this.selectedEquipmentId].baseStats;
 		},
 		calcStats: function() {
+			let visible = false;
 			let aSelectedUpgrades = store.state.tree[this.selectedClassId][this.selectedEquipmentId].mods.reduce(
 				(array, tierArray) => {
 					array.push(...tierArray.filter(mod => mod.selected));
@@ -99,6 +100,7 @@ export default {
 				let modifiedStats = Object.assign({}, this.baseStats[key]);
 				modifiedStats.baseValue = modifiedStats.value;
 				if (upgradeForKey.length > 0) {
+					visible = true;
 					/*console.log(key);
 					console.log(upgradeForKey);
 					console.log(this.baseStats[key]);*/
@@ -129,7 +131,7 @@ export default {
 					modifiedStats.modifier = `${modifier.subtract ? "" : "+"}${modifier.value}${modifier.percent ? "%" : ""}`;
 					modifiedStats.modified = true;
 
-                    costsArray.push(upgradeForKey[0].cost)
+					costsArray.push(upgradeForKey[0].cost);
 				}
 				if (modifiedStats.value === 0) {
 					modifiedStats.inactive = true;
@@ -138,28 +140,28 @@ export default {
 			});
 
 			let totalCost = {
-                credits: 0,
-                bismor: 0,
-                croppa: 0,
-                enorPearl: 0,
-                jadiz: 0,
-                magnite: 0,
-                umanite: 0,
-                err: 0
-            };
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			};
 			for (let cost of costsArray) {
-                totalCost.credits += cost.credits;
-                totalCost.bismor += cost.bismor;
-                totalCost.croppa += cost.croppa;
-                totalCost.enorPearl += cost.enorPearl;
-                totalCost.jadiz += cost.jadiz;
-                totalCost.magnite += cost.magnite;
-                totalCost.umanite += cost.umanite;
-                totalCost.err += cost.err;
+				totalCost.credits += cost.credits;
+				totalCost.bismor += cost.bismor;
+				totalCost.croppa += cost.croppa;
+				totalCost.enorPearl += cost.enorPearl;
+				totalCost.jadiz += cost.jadiz;
+				totalCost.magnite += cost.magnite;
+				totalCost.umanite += cost.umanite;
+				totalCost.err += cost.err;
 			}
-			console.error("sstats", stats)
-			console.error("costs", totalCost)
-			return {stats: stats, cost: totalCost};
+			console.error("sstats", stats);
+			console.error("costs", totalCost);
+			return { stats: stats, cost: totalCost, visible: visible};
 		}
 	}
 };

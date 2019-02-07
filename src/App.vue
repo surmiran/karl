@@ -92,6 +92,7 @@ export default {
 		svg() {
 			return store.state.testJS;
 		},
+		// todo: fix bug when chaning class.. selected equipment id stays the same..?
 		selectedClass() {
 			return store.state.selected.class;
 		},
@@ -113,6 +114,7 @@ export default {
 	},
 	methods: {
 		getLink() {
+			// todo: short links instead of full encoded object
 			console.log("get link!");
 			console.log(store.state.dataParts);
 			let parts = JSON.stringify(store.state.dataParts);

@@ -4,17 +4,16 @@ export default {
 	class: "Heavy Weapon",
 	icon: "equipment.D_P2_Cryo",
 	baseStats: {
-		dmg: { name: "Damage", value: 5 },
-		ammo: { name: "Max Ammo", value: 300 },
-		clip: { name: "Tank Size", value: 300 },
+		dmg: { name: "Damage", value: 7 },
+		clip: { name: "Tank Size", value: 400 },
 		rate: { name: "Chargeup Time", value: 0.6 },
 		reload: { name: "Re-Pressurization Time", value: 1.5 },
 		ex1: { name: "Cold Stream Reach", value: 6 },
-		ex2: { name: "Freezing Power", value: 7 },
-		ex3: { name: "Pressure Drop Rate", value: 0, percent: true },
+		ex2: { name: "Freezing Power", value: 5 },
+		ex3: { name: "Pressure Drop Rate", value: -30, percent: true },
 		ex4: { name: "Pressure Gain Rate", value: 0, percent: true },
-		ex5: { name: "Frozen Targets can Shatter", value: 0 },
-		ex6: { name: "Area Cold Damage", value: 0 }
+		ex5: { name: "Frozen Targets can Shatter", value: 0, binary: true },
+		ex6: { name: "Area Cold Damage", value: 0, binary: true }
 	},
 	mods: [
 		[
@@ -22,7 +21,7 @@ export default {
 				selected: false,
 				name: "Larger Pressure Chamber",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Pressure Drop Rate",
+				type: "Magazine Size",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -47,7 +46,7 @@ export default {
 				selected: false,
 				name: "Improved 2nd Stage Pump",
 				icon: "Icon_Upgrade_ChargeUp",
-				type: "chargeup time",
+				type: "Charge Speed",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -71,7 +70,7 @@ export default {
 				selected: false,
 				name: "Stronger Cooling Unit",
 				icon: "Icon_Upgrade_Cold",
-				type: "freezing power",
+				type: "Cold",
 				cost: {
 					credits: 1200,
 					bismor: 25,
@@ -96,7 +95,7 @@ export default {
 				selected: false,
 				name: "High Pressure Reserve Tank",
 				icon: "Icon_Upgrade_Ammo",
-				type: "tank size",
+				type: "Total Ammo",
 				cost: {
 					credits: 2000,
 					bismor: 0,
@@ -109,15 +108,14 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					clip: { name: "Tank Size", value: 50 },
-					ammo: { name: "Max Ammo", value: 50 }
+					clip: { name: "Tank Size", value: 50 }
 				}
 			},
 			{
 				selected: false,
 				name: "Bypassed Integrity Check",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Re-Pressurization Time",
+				type: "Overheat",
 				cost: {
 					credits: 2000,
 					bismor: 15,
@@ -140,7 +138,7 @@ export default {
 				selected: false,
 				name: "Overclocked Ejection Turbine",
 				icon: "Icon_Upgrade_Distance",
-				type: "distance",
+				type: "Reach",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -160,7 +158,7 @@ export default {
 				selected: false,
 				name: "Faster 1st Stage Pump",
 				icon: "Icon_Upgrade_ChargeUp",
-				type: "Pressure Gain Rate",
+				type: "Charge Speed",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -180,7 +178,7 @@ export default {
 				selected: false,
 				name: "Increased Chamber Pressure",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Pressure Drop Rate",
+				type: "Magazine Size",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -202,7 +200,7 @@ export default {
 				selected: false,
 				name: "Higher Water Content",
 				icon: "Icon_Upgrade_DamageGeneral",
-				type: "damage",
+				type: "Damage",
 				cost: {
 					credits: 4800,
 					bismor: 72,
@@ -222,7 +220,7 @@ export default {
 				selected: false,
 				name: "Improved Mixture",
 				icon: "Icon_Upgrade_Cold",
-				type: "freezing power",
+				type: "Cold",
 				cost: {
 					credits: 4800,
 					bismor: 0,
@@ -242,7 +240,7 @@ export default {
 				selected: false,
 				name: "Larger Reserve Tank",
 				icon: "Icon_Upgrade_Ammo",
-				type: "ammo",
+				type: "Total Ammo",
 				cost: {
 					credits: 4800,
 					bismor: 0,
@@ -255,8 +253,7 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					clip: { name: "Tank Size", value: 150 },
-					ammo: { name: "Max Ammo", value: 150 }
+					clip: { name: "Tank Size", value: 150 }
 				}
 			}
 		],
@@ -265,10 +262,10 @@ export default {
 				selected: false,
 				name: "Fragile",
 				icon: "Icon_Upgrade_Shot",
-				type: "shot",
+				type: "Special",
 				text: "Frozen targets can spontaniously shatter",
 				stats: {
-					ex5: { name: "Frozen Targets can Shatter", value: 1 }
+					ex5: { name: "Frozen Targets can Shatter", value: 1, binary: true }
 				},
 				cost: {
 					credits: 5600,
@@ -285,10 +282,10 @@ export default {
 				selected: false,
 				name: "Cold Radiance",
 				icon: "Icon_Upgrade_Cold",
-				type: "cold",
+				type: "Cold",
 				text: "Cool things down in a 5m radius around you ",
 				stats: {
-					ex6: { name: "Area Cold Damage", value: 0 }
+					ex6: { name: "Area Cold Damage", value: 1, binary: true }
 				},
 				cost: {
 					credits: 5600,

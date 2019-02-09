@@ -10,8 +10,8 @@ export default {
 		rate: { name: "Rate of Fire", value: 8.0 },
 		reload: { name: "Reload Time", value: 1.9 },
 		ex1: { name: "Weakpoint Damage Bonus", value: 30, percent: true },
-		ex2: { name: "Increased Accuracy", value: 0 },
-		ex3: { name: "Increased Stability ", value: 0 },
+		ex2: { name: "Increased Accuracy", value: 0, binary: true },
+		ex3: { name: "Increased Stability ", value: 0, binary: true },
 		ex4: { name: "Damage Vs Burning", value: 0, percent: true },
 		ex5: { name: "Damage Vs Mactera ", value: 0, percent: true }
 	},
@@ -21,10 +21,10 @@ export default {
 				selected: false,
 				name: "Improved Alignment",
 				icon: "Icon_Upgrade_Accuracy",
-				type: "Increased Accuracy",
+				type: "Accuracy",
 				text: "Pin-point accuracy on first shot",
 				stats: {
-					ex2: { name: "Increased Accuracy", value: 1 }
+					ex2: { name: "Increased Accuracy", value: 1, binary: true }
 				},
 				cost: {
 					credits: 1000,
@@ -41,7 +41,7 @@ export default {
 				selected: false,
 				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "clip size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... you can always get bigger variants.",
 				stats: {
 					clip: { name: "Clip Size", value: 5 }
@@ -63,7 +63,7 @@ export default {
 				selected: false,
 				name: "Extra Ammo",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "Expanded Ammo Bags ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 80 }
@@ -83,7 +83,7 @@ export default {
 				selected: false,
 				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
-				type: "damage",
+				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
 				stats: {
 					dmg: { name: "Damage", value: 2 }
@@ -105,10 +105,10 @@ export default {
 				selected: false,
 				name: "Recoil Compensator",
 				icon: "Icon_Upgrade_Accuracy",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Spread per shot reduced ",
 				stats: {
-					ex3: { name: "Increased Stability ", value: 1 }
+					ex3: { name: "Increased Stability ", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2200,
@@ -125,7 +125,7 @@ export default {
 				selected: false,
 				name: "Quicker Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type: "speed",
+				type: "Reload Speed",
 				text:
 					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster.',
 				stats: {
@@ -146,7 +146,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "ammo",
+				type: "Total Ammo",
 				text: "Expanded Ammo Bags ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 80 }
@@ -168,7 +168,7 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "weakspot",
+				type: "Weak Spot Bonus",
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome. ",
 				stats: {
@@ -189,7 +189,7 @@ export default {
 				selected: false,
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
-				type: "damage",
+				type: "Damage",
 				text: "The Good folk in R&D have been busy. The overall damage of your weapon is increased. ",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
@@ -211,7 +211,7 @@ export default {
 				selected: false,
 				name: "Volatile Bullets ",
 				icon: "Icon_Upgrade_Heat",
-				type: "heat",
+				type: "Heat",
 				text: "Bonus fire damage to burning targets. ",
 				stats: {
 					ex4: { name: "Damage Vs Burning", value: 50, percent: true }
@@ -229,12 +229,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Mactera Neurotoxin Coating",
+				name: "Mactera Toxin-Coating",
 				icon: "Icon_Upgrade_Shot",
-				type: "shot",
-				text: "Bonus damage against Mactera",
+				type: "Special",
+				text: "Bonus damage against Mactera aliens",
 				stats: {
-					ex5: { name: "Damage Vs Mactera", value: 10, percent: true }
+					ex5: { name: "Damage Vs Mactera", value: 20, percent: true }
 				},
 				cost: {
 					credits: 4400,

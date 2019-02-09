@@ -7,11 +7,9 @@
 			<div v-for="(stat, statId) in calcStats.stats" :key="statId" class="statsContainer">
 				<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
 				<div class="statsValueContainer">
-					<span class="statsValue fixedWidth">
-						{{ stat.baseValue }}<span v-if="stat.percent">%</span>
-					</span>
+					<span class="statsValue fixedWidth" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.baseValue }}<span v-if="stat.percent">%</span></span>
 					<span class="statsModifier fixedWidth">{{ stat.modifier }}</span>
-					<span class="statsValue fixedWidth" :class="[stat.modified ? 'modifiedStat' : '']">
+					<span class="statsValue fixedWidth" :class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']">
 						{{ stat.value }}<span v-if="stat.percent">%</span>
 					</span>
 				</div>
@@ -161,7 +159,7 @@ export default {
 				totalCost.umanite += cost.umanite;
 				totalCost.err += cost.err;
 			}
-			return { stats: stats, cost: totalCost, visible: visible};
+			return { stats: stats, cost: totalCost, visible: visible };
 		}
 	}
 };
@@ -215,7 +213,7 @@ export default {
 }
 .statsText {
 	width: 55%;
-	color: #fffbff;
+	color: rgba(255, 251, 255, 1);
 }
 .statsValue {
 	color: #fc9e00;
@@ -229,6 +227,6 @@ export default {
 	color: #fccc00;
 }
 .inactiveStat {
-	color: #ada195;
+	color: rgba(255, 251, 255, 0.2);
 }
 </style>

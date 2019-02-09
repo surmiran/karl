@@ -5,14 +5,12 @@ export default {
 	icon: "equipment.D_E_Drill",
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
-		ammo: { name: "Max Fuel", value: 35 },
-		clip: { name: "", value: 0 },
+		ammo: { name: "Max Fuel", value: 38 },
 		rate: { name: "Mining rate", value: 2 },
-		reload: { name: "", value: 0 },
 		ex1: { name: "Overheat Duration", value: 8 },
 		ex2: { name: "Cooling Rate", value: 2 },
 		ex3: { name: "Movement speed while drilling", value: 0, percent: true },
-		ex4: { name: "Heat removal on Damage", value: 0, binary: true }
+		ex4: { name: "Heat removal on Damage", value: 0 }
 	},
 	mods: [
 		[
@@ -44,8 +42,8 @@ export default {
 				text: "Drill faster",
 				stats: {
 					rate: { name: "Mining rate", value: 1 },
-					ex3: { name: "Movement speed while drilling", value: 10, percent: true },
-					ex4: { name: "Heat removal on Damage", value: 1, binary: true }
+					ex3: { name: "Movement speed while drilling", value: 20, percent: true },
+					ex4: { name: "Heat removal on Damage", value: 1 }
 				},
 				cost: {
 					credits: 420,
@@ -65,7 +63,7 @@ export default {
 				type: "Total Ammo",
 				text: "Carries more fuel",
 				stats: {
-					ammo: { name: "Max Fuel", value: 0 }
+					ammo: { name: "Max Fuel", value: 6 }
 				},
 				cost: {
 					credits: 420,
@@ -119,7 +117,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			}
 		],
 		[
 			{
@@ -130,8 +128,8 @@ export default {
 				text: "Drill faster.",
 				stats: {
 					rate: { name: "Mining rate", value: 1 },
-					ex3: { name: "Movement speed while drilling", value: 10, percent: true },
-					ex4: { name: "Heat removal on Damage", value: 1, binary: true }
+					ex3: { name: "Movement speed while drilling", value: 20, percent: true },
+					ex4: { name: "Heat removal on Damage", value: 1 }
 				},
 				cost: {
 					credits: 0,
@@ -153,7 +151,7 @@ export default {
 				type: "Total Ammo",
 				text: "Carries more fuel",
 				stats: {
-					ammo: { name: "Max Fuel", value: 0 }
+					ammo: { name: "Max Fuel", value: 6 }
 				},
 				cost: {
 					credits: 1100,
@@ -173,7 +171,7 @@ export default {
 				type: "Cooling",
 				text: "Your drills cool when drilling enemies!",
 				stats: {
-					ex4: { name: "Heat removal on Damage", value: 1, binary: true }
+					ex4: { name: "Heat removal on Damage", value: 1 }
 				},
 				cost: {
 					credits: 0,

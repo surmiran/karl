@@ -4,17 +4,17 @@ export default {
 	class: "Heavy Weapon",
 	icon: "equipment.D_P1_CRSPR",
 	baseStats: {
-		dmg: { name: "Damage", value: 5 },
+		dmg: { name: "Damage", value: 10 },
 		ammo: { name: "Max Fuel", value: 300 },
-		clip: { name: "Tank Size", value: 90 },
-		rate: { name: "Rate of Fire", value: 8.0 },
+		clip: { name: "Tank Size", value: 50 },
+		rate: { name: "Rate of Fire", value: 6.0 },
 		reload: { name: "Reload Time", value: 3.0 },
 		ex1: { name: "Sticky Flame Damage", value: 0 },
 		ex2: { name: "Sticky Flame Burn", value: 0 },
 		ex3: { name: "Sticky Flame Slowdown", value: 0 },
-		ex4: { name: "Flame Duration", value: 3 },
+		ex4: { name: "Sticky Flame Duration", value: 2 },
 		ex5: { name: "Fear Factor", value: 0, percent: true },
-		ex6: { name: "Flame Reach", value: 0 },
+		ex6: { name: "Flame Reach", value: 10 },
 		ex7: { name: "Area Heat", value: 0 },
 		ex8: { name: "Intensity Bonus", value: 0, percent: true },
 		ex9: { name: "Killed Targets Explode %", value: 0, percent: true }
@@ -25,7 +25,7 @@ export default {
 				selected: false,
 				name: "High Capacity Tanks",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "clip size",
+				type: "Magazine Size",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -38,14 +38,14 @@ export default {
 				},
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... you can always get bigger variants.",
 				stats: {
-					clip: { name: "Tank Size", value: 30 }
+					clip: { name: "Tank Size", value: 25 }
 				}
 			},
 			{
 				selected: false,
 				name: "High Pressure Ejector",
 				icon: "Icon_Upgrade_Distance",
-				type: "distance",
+				type: "Reach",
 				cost: {
 					credits: 1200,
 					bismor: 25,
@@ -65,7 +65,7 @@ export default {
 				selected: false,
 				name: "Oversized Valves",
 				icon: "Icon_Upgrade_FireRate",
-				type: "rate of fire",
+				type: "Rate of Fire",
 				cost: {
 					credits: 1200,
 					bismor: 0,
@@ -88,7 +88,7 @@ export default {
 				selected: false,
 				name: "Unfiltered Fuel",
 				icon: "Icon_Upgrade_DamageGeneral",
-				type: "damage",
+				type: "Damage",
 				cost: {
 					credits: 2000,
 					bismor: 0,
@@ -101,14 +101,14 @@ export default {
 				},
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 1 }
+					dmg: { name: "Damage", value: 5 }
 				}
 			}, // 1/1
 			{
 				selected: false,
 				name: "Triple Filtered Fuel",
 				icon: "Icon_Upgrade_Heat",
-				type: "heat",
+				type: "Heat",
 				cost: {
 					credits: 2000,
 					bismor: 0,
@@ -121,14 +121,14 @@ export default {
 				},
 				text: "Fire it up! You set things ablaze much faster. Time to watch the world burn...!",
 				stats: {
-					ex8: { name: "Intensity Bonus", value: 40, percent: true }
+					ex8: { name: "Intensity Bonus", value: 100, percent: true }
 				}
 			}, // 1/2
 			{
 				selected: false,
 				name: "Sticky flame duration",
 				icon: "Icon_Upgrade_Duration",
-				type: "duration",
+				type: "Delay",
 				cost: {
 					credits: 2000,
 					bismor: 15,
@@ -141,7 +141,7 @@ export default {
 				},
 				text: "Sticky flames duration increase.",
 				stats: {
-					ex4: { name: "Flame Duration", value: 3 }
+					ex4: { name: "Flame Duration", value: 2 }
 				}
 			}
 		],
@@ -151,7 +151,7 @@ export default {
 				selected: false,
 				name: "Sticky flame duration",
 				icon: "Icon_Upgrade_Duration",
-				type: "duration",
+				type: "Delay",
 				cost: {
 					credits: 2800,
 					bismor: 50,
@@ -164,14 +164,14 @@ export default {
 				},
 				text: "Sticky flames duration increase.",
 				stats: {
-					ex4: { name: "Flame Duration", value: 2.5 }
+					ex4: { name: "Flame Duration", value: 2 }
 				}
 			}, // 2/1
 			{
 				selected: false,
 				name: "Sticky Flame Slowdown",
 				icon: "Icon_Upgrade_Sticky",
-				type: "slowdown",
+				type: "Slowdown",
 				cost: {
 					credits: 2800,
 					bismor: 0,
@@ -184,7 +184,7 @@ export default {
 				},
 				text: "Creatures moving through sticky flames are slowed.",
 				stats: {
-					ex3: { name: "Sticky Flame Slowdown", value: 1 }
+					ex3: { name: "Sticky Flame Slowdown", value: 1, binary: true }
 				}
 			}, // 2/2
 			{
@@ -214,7 +214,7 @@ export default {
 				selected: false,
 				name: "More Fuel",
 				icon: "Icon_Upgrade_Ammo",
-				type: "total ammo",
+				type: "Total Ammo",
 				cost: {
 					credits: 4800,
 					bismor: 72,
@@ -234,7 +234,7 @@ export default {
 				selected: false,
 				name: "Sticky Flame Damage",
 				icon: "Icon_Upgrade_DamageGeneral",
-				type: "DAMAGE",
+				type: "Damage",
 				cost: {
 					credits: 4800,
 					bismor: 0,
@@ -247,14 +247,14 @@ export default {
 				},
 				text: "Creatures moving through sticky flames take more damage.",
 				stats: {
-					ex1: { name: "Sticky Flame Damage", value: 1 }
+					ex1: { name: "Sticky Flame Damage", value: 1, binary: true }
 				}
 			},
 			{
 				selected: false,
 				name: "Sticky Flame Ignition",
 				icon: "Icon_Upgrade_Heat",
-				type: "heat",
+				type: "Heat",
 				cost: {
 					credits: 4800,
 					bismor: 0,
@@ -267,7 +267,7 @@ export default {
 				},
 				text: "Creatures moving through sticky flames are quickly set on fire.",
 				stats: {
-					ex2: { name: "Sticky Flame Burn", value: 1 }
+					ex2: { name: "Sticky Flame Burn", value: 1, binary: true }
 				}
 			}
 		],
@@ -276,7 +276,7 @@ export default {
 				selected: false,
 				name: "Heat Radiance",
 				icon: "Icon_Upgrade_Heat",
-				type: "heat",
+				type: "Heat",
 				cost: {
 					credits: 5600,
 					bismor: 70,
@@ -296,7 +296,7 @@ export default {
 				selected: false,
 				name: "It Burns!",
 				icon: "Icon_Upgrade_ScareEnemies",
-				type: "fear",
+				type: "Fear",
 				cost: {
 					credits: 5600,
 					bismor: 64,
@@ -329,7 +329,7 @@ export default {
 				},
 				text: "Targets killed from direct damage have a chance to explode.",
 				stats: {
-					ex9: { name: "Killed Targets Explode %", value: 33, percent: true }
+					ex9: { name: "Killed Targets Explode %", value: 50, percent: true }
 				}
 			}
 		]

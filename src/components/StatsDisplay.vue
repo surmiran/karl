@@ -170,7 +170,7 @@ export default {
 	flex: 1;
 	height: 100%;
 	width: 100%;
-	padding: 1rem;
+	padding-right: 1rem;
 
 	display: flex;
 	flex-flow: column;
@@ -181,6 +181,7 @@ export default {
 	.statsDisplay {
 		flex: 0 0 100%;
 		order: 2;
+		padding: 0;
 	}
 }
 
@@ -197,7 +198,7 @@ export default {
 	margin-top: 0;
 }
 .statsBaseContainer {
-	width: 90%;
+	width: 100%;
 }
 .statsContainer {
 	display: flex;

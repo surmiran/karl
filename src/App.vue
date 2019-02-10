@@ -2,7 +2,7 @@
 	<div id="app" class="app">
 		<!--<div class="green" v-html="svg"></div>
 		<img alt="Vue logo" src="./assets/logo.png">-->
-		<div class="equipmentSelectContainer">
+		<div class="classSelectContainer">
 			<ClassSelect :classId="'D'" :name="'Driller'" />
 			<ClassSelect :classId="'E'" :name="'Engineer'" />
 			<ClassSelect :classId="'G'" :name="'Gunner'" />
@@ -159,6 +159,9 @@ export default {
 </script>
 
 <style>
+/*todo: only three different font sizes!*/
+/*todo: web fonts*/
+
 html {
 	height: 100%;
 }
@@ -184,12 +187,6 @@ h2 {
 	margin-top: 60px;
 	/*todo: make this width responsive with media tags*/
 	max-width: 1000px;
-}
-
-@media (max-width: 1024px) {
-	#app {
-		width: 100vw;
-	}
 }
 
 /*todo: make all backgrounds transparent!*/
@@ -267,9 +264,20 @@ h2 {
 	color: #fffbff;
 }
 
-.equipmentSelectContainer {
+.classSelectContainer {
 	display: flex;
 	flex-wrap: wrap;
+	border-top: 5px solid #fc9e00;
+	background-color: #352e1e;
+	margin-bottom: 0.5rem;
+}
+
+.equipmentSelectContainer {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 	border-top: 5px solid #fc9e00;
 	background-color: #352e1e;
 	margin-bottom: 0.5rem;
@@ -295,5 +303,48 @@ h2 {
 
 .costListItem > span {
 	padding-right: 0.6rem;
+}
+
+@media (max-width: 1024px) {
+	h2 {
+		font-size: 1.2rem;
+	}
+	#app {
+		width: 95vw;
+	}
+
+	.shareArea {
+		width: 5rem;
+	}
+}
+
+::-webkit-scrollbar-button {
+	display: none;
+	height: 12px;
+	border-radius: 0px;
+	background-color: #aaa;
+}
+::-webkit-scrollbar-button:hover {
+	background-color: #aaa;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #fc9e00;
+	border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #ffffff;
+	border-radius: 0px;
+}
+::-webkit-scrollbar-track {
+	background-color: #352e1e;
+	border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+	background-color: #352e1e;
+	border-radius: 0px;
+}
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
 }
 </style>

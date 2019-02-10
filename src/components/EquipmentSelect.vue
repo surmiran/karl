@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style scoped>
+	h4 {
+		white-space: nowrap;
+	}
+
 .weaponSelectContainer {
 	display: flex;
 	cursor: pointer;

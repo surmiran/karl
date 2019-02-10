@@ -13,7 +13,7 @@ export default {
 		ex2: { name: "Focused Shot Damage", value: 50, percent: true },
 		ex3: { name: "Increased Stability ", value: 0, binary: true },
 		ex4: { name: "Max Penetrations ", value: 0 },
-		ex5: { name: "Weakspot Damage Bonus ", value: 0, percent: true },
+		ex5: { name: "Weakpoint Damage Bonus ", value: 0, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex7: { name: "Focused Shot Stun", value: 0, percent: true },
 		ex8: { name: "Focus Shot Fear", value: 0, percent: true }
@@ -216,7 +216,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex5: { name: "Weakspot Damage Bonus ", value: 50, percent: true }
+					ex5: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
 				},
 				cost: {
 					credits: 4800,

@@ -6,7 +6,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 14 },
 		ammo: { name: "Max Ammo", value: 440 },
-		clip: { name: "Clip Size", value: 110 },
+		clip: { name: "Magazine Size", value: 110 },
 		rate: { name: "Rate of Fire", value: 1 },
 		reload: { name: "Reload Time", value: 5 },
 		ex1: { name: "Area Damage", value: 8 },
@@ -17,7 +17,7 @@ export default {
 		ex6: { name: "Stun Chance", value: 0, percent: true },
 		ex7: { name: "Damage when at maximum fire rate", value: 0, percent: true },
 		ex8: { name: "AoE Fear", value: 0 },
-		ex9: { name: "Damage resistance when at maximum fire rate", value: 0, percent: true }
+		ex9: { name: "Resistance at full rate of fire", value: 0, binary: true }
 	},
 	mods: [
 		[
@@ -45,7 +45,7 @@ export default {
 				selected: false,
 				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type: "Speed",
+				type: "Reload Speed",
 				text:
 					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
 				stats: {
@@ -66,7 +66,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-space, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 220 }
@@ -88,7 +88,7 @@ export default {
 				selected: false,
 				name: "Tighter Barrel Alignment",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Improved accuracy ",
 				stats: {
 					ex3: { name: "Reduced Spread", value: 25, percent: true }
@@ -108,7 +108,7 @@ export default {
 				selected: false,
 				name: "Improved Gas System",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -129,7 +129,7 @@ export default {
 				selected: false,
 				name: "Lighter Barrel Assembly",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text: "Reach the max rate of fire faster ",
 				stats: {
 					ex4: { name: "Lighter Barrel Assembly", value: 20, percent: true, subtract: true }
@@ -151,7 +151,7 @@ export default {
 				selected: false,
 				name: "Supercharged Feed Mechanism",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -171,8 +171,8 @@ export default {
 			{
 				selected: false,
 				name: "Loaded Rounds",
-				icon: "Icon_Upgrade_Flare_01",
-				type: "Splash",
+				icon: "Icon_Upgrade_AreaDamage",
+				type: "Area Damage",
 				text: "Increased splash damage ",
 				stats: {
 					ex1: { name: "Area Damage", value: 2 }
@@ -255,7 +255,7 @@ export default {
 				selected: false,
 				name: "Shrapnel Rounds ",
 				icon: "Icon_Upgrade_Area",
-				type: "Area",
+				type: "Area of effect",
 				text: "Greater splash damage radius ",
 				stats: {
 					ex2: { name: "Damage Radius", value: 0.5 }
@@ -320,7 +320,7 @@ export default {
 				type: "Resistance",
 				text: "Gain damage reduction when at max rate of fire ",
 				stats: {
-					ex9: { name: "Damage resistance when at maximum fire rate", value: 20, percent: true }
+					ex9: { name: "Resistance at full rate of fire", value: 1, binary: true }
 				},
 				cost: {
 					credits: 0,

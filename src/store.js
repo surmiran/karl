@@ -226,7 +226,14 @@ export default new Vuex.Store({
 		}
 	},
 	mutations: {
-		selectClass: (state, indizes) => (state.selected.class = indizes.classID),
+		selectClass: (state, indizes) => {
+			state.selected.class = indizes.classID;
+			let selectedEquipmentId = state.selected.equipment;
+
+			for (let equipment in state.tree[indizes.classID]) {
+				state.tree[indizes.classID][equipment].selected = equipment === selectedEquipmentId;
+			}
+		},
 		selectEquipment: (state, indizes) => {
 			state.selected.equipment = indizes.equipID;
 			state.tree[indizes.classID][indizes.equipID].selected = true;

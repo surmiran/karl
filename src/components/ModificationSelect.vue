@@ -3,7 +3,7 @@
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2>Tier {{ tierId + 1 }}</h2>
-			<div class="tierSubContainer" :class="[tier.length === 1 ? '' : 'tierBackgroundGradient']">
+			<div class="tierSubContainer" :class="[tier.length === 1 ? '' : tier.length === 2 ? 'tierBackgroundGradientHalf' : 'tierBackgroundGradient']">
 				<div
 					v-for="(mod, modId) in tier"
 					:key="modId"
@@ -34,6 +34,7 @@
 						</g>
 					</svg>
 				</div>
+				<div v-if="tier.length === 2" class="pseudoModDisplay"></div>
 			</div>
 		</div>
 		<div class="modTextBox" v-if="!!hoveredMod.name">
@@ -176,7 +177,7 @@ h2 {
 	flex: 1;
 	height: 100%;
 	width: 100%;
-	padding: 1rem;
+	padding-left: 1rem;
 }
 
 .modificationName {
@@ -193,7 +194,8 @@ h2 {
 
 .tierContainer {
 	display: flex;
-	padding: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	justify-content: start;
 	align-items: center;
 	color: #282117;
@@ -212,7 +214,18 @@ h2 {
 		rgba(40, 33, 23, 1) 40%,
 		rgba(40, 33, 23, 1) 60%,
 		rgba(0, 0, 0, 0) 60%
-	);
+	) no-repeat;
+	background-size: 100% 100%;
+}
+.tierBackgroundGradientHalf {
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0) 40%,
+		rgba(40, 33, 23, 1) 40%,
+		rgba(40, 33, 23, 1) 60%,
+		rgba(0, 0, 0, 0) 60%
+	) no-repeat;
+	background-size: 50% 100%;
 }
 
 .modBackground {
@@ -250,6 +263,11 @@ h2 {
 .modDisplay {
 	cursor: pointer;
 	height: 4rem;
+	width: 6rem;
+}
+.pseudoModDisplay {
+	height: 4rem;
+	width: 6rem;
 }
 
 .modDisplay:hover .modBackground {
@@ -278,6 +296,7 @@ h2 {
 	.modSelection {
 		flex: 0 0 100%;
 		order: 1;
+		padding: 0;
 	}
 
 	.tierSubContainer {
@@ -288,12 +307,18 @@ h2 {
 @media (max-width: 550px) {
 	.modDisplay {
 		height: 3rem;
+		width: 4.8rem;
+	}
+	.pseudoModDisplay {
+		height: 3rem;
+		width: 4.8rem;
 	}
 	h2 {
 		width: 20vw;
 	}
-	.tierSubContainer {
-		width: 60vw;
+
+	.modificationName {
+		font-size: 1.2rem;
 	}
 }
 </style>

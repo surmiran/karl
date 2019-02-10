@@ -5,8 +5,7 @@ export default {
 	icon: "equipment.G_P1_Lead",
 	baseStats: {
 		dmg: { name: "Damage", value: 8 },
-		ammo: { name: "Max Ammo", value: 2000 },
-		clip: { name: "Clip Size", value: 2000 },
+		ammo: { name: "Max Ammo", value: 2400 },
 		rate: { name: "Rate of Fire", value: 30 },
 		reload: { name: "Cooling Rate", value: 1.5 },
 		ex1: { name: "Spinup Time", value: 0.7 },
@@ -15,10 +14,10 @@ export default {
 		ex4: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex5: { name: "Stun Chance", value: 0, percent: true },
 		ex6: { name: "Max Penetrations", value: 0 },
-		ex7: { name: "Damage % at Max Stabilization", value: 0, percent: true },
+		ex7: { name: "Damage at Max Stabilization", value: 0, percent: true },
 		ex8: { name: "Aggressive Venting", value: 0, binary: true },
 		ex9: { name: "Heat Removed on Kill", value: 0, binary: true },
-		ex10: { name: "Hot Bullets", value: 0, binary: true }
+		ex10: { name: "Hot Bullets", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -26,7 +25,7 @@ export default {
 				selected: false,
 				name: "Magnetic Refrigeration",
 				icon: "Icon_Upgrade_TemperatureCoolDown",
-				type: "Cool Down",
+				type: "Cooling",
 				text: "Cooling Rate",
 				stats: {
 					reload: { name: "Cooling Rate", value: 1 }
@@ -46,7 +45,7 @@ export default {
 				selected: false,
 				name: "Improved Motor",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text: "Increased rate of fire and faster gyro stabilization ",
 				stats: {
 					rate: { name: "Rate of Fire", value: 4 }
@@ -66,10 +65,10 @@ export default {
 				selected: false,
 				name: "Improved Platform Stability",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Increased Accuracy",
 				stats: {
-					ex3: { name: "Increased Accuracy", value: 0, binary: true }
+					ex3: { name: "Increased Accuracy", value: 1, binary: true }
 				},
 				cost: {
 					credits: 1200,
@@ -88,11 +87,10 @@ export default {
 				selected: false,
 				name: "Oversized Drum",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "Expanded Ammo Bags ",
 				stats: {
-					ammo: { name: "Max Ammo", value: 300 },
-					clip: { name: "Clip Size", value: 300 }
+					ammo: { name: "Max Ammo", value: 600 }
 				},
 				cost: {
 					credits: 2000,
@@ -169,9 +167,9 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Blowtrough Rounds",
+				name: "Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
-				type: "Bullet Penetration",
+				type: "Blow Through",
 				text: "Shaped bullets capable of passing through a target! ",
 				stats: {
 					ex6: { name: "Max Penetrations", value: 1 }
@@ -196,7 +194,7 @@ export default {
 				type: "Damage",
 				text: "Damage increase when fully stabilized ",
 				stats: {
-					ex7: { name: "Damage % at Max Stabilization", value: 15, percent: true }
+					ex7: { name: "Damage at Max Stabilization", value: 15, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -213,7 +211,7 @@ export default {
 				selected: false,
 				name: "Lighter Barrel Assembly",
 				icon: "Icon_Upgrade_ChargeUp",
-				type: "Chargeup",
+				type: "Charge Speed",
 				text: "Spinup Time -3 seconds",
 				stats: {
 					ex1: { name: "Spinup Time", value: 0.3, subtract: true }
@@ -233,7 +231,7 @@ export default {
 				selected: false,
 				name: "Magnetic Bearings",
 				icon: "Icon_Upgrade_Shot",
-				type: "Shot",
+				type: "Special",
 				text: "Spindown Time increase ",
 				stats: {
 					ex2: { name: "Spindown Time", value: 2, subtract: true }
@@ -255,7 +253,7 @@ export default {
 				selected: false,
 				name: "Aggressive Venting ",
 				icon: "Icon_Upgrade_Explosive",
-				type: "Explosive",
+				type: "Explosion",
 				text: "Burn everything in a radius when the minigun overheats ",
 				stats: {
 					ex8: { name: "Aggressive Venting", value: 1, binary: true }
@@ -275,7 +273,7 @@ export default {
 				selected: false,
 				name: "Cold As The Grave ",
 				icon: "Icon_Upgrade_TemperatureCoolDown",
-				type: "Cool Down",
+				type: "Cooling",
 				text: "Every kill cools the gun ",
 				stats: {
 					ex9: { name: "Heat Removed on Kill", value: 1, binary: true }
@@ -298,7 +296,7 @@ export default {
 				type: "Heat",
 				text: "Rounds fired when the heat meter is red will burn the target ",
 				stats: {
-					ex10: { name: "Hot Bullets", value: 1, binary: true }
+					ex10: { name: "Hot Bullets", value: 50, percent: true }
 				},
 				cost: {
 					credits: 5600,

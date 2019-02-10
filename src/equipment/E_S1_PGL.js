@@ -10,7 +10,7 @@ export default {
 		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Damage Radius", value: 2.5 },
-		ex2: { name: "Armor Break Bonus", value: 50, percent: true, subtract: true },
+		ex2: { name: "Armor Break Bonus", value: -50, percent: true },
 		ex3: { name: "Fear Factor", value: 100, percent: true },
 		ex4: { name: "Projectile Velocity", value: 0, percent: true },
 		ex5: { name: "Converted to Fire", value: 0, percent: true },
@@ -24,7 +24,7 @@ export default {
 				selected: false,
 				name: "Fragmentary Shell",
 				icon: "Icon_Upgrade_Area",
-				type: "Area",
+				type: "Area of effect",
 				text: "Damage radius increase",
 				stats: {
 					ex1: { name: "Damage Radius", value: 1 }
@@ -44,7 +44,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags ",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "Expanded Ammo Bags ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 2 }
@@ -63,8 +63,8 @@ export default {
 			{
 				selected: false,
 				name: "HE Compound",
-				icon: "Icon_Upgrade_Flare_01",
-				type: "Damage",
+				icon: "Icon_Upgrade_AreaDamage",
+				type: "Area Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Area Damage", value: 15 }
@@ -86,7 +86,7 @@ export default {
 				selected: false,
 				name: "Extra Ammo",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "Expanded Ammo Bags ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 2 }
@@ -105,8 +105,8 @@ export default {
 			{
 				selected: false,
 				name: "Larger Payload",
-				icon: "Icon_Upgrade_Flare_01",
-				type: "Area",
+				icon: "Icon_Upgrade_AreaDamage",
+				type: "Area Damage",
 				text: "More bang for the buck! Increases the damage done within the Area of Effect! ",
 				stats: {
 					dmg: { name: "Area Damage", value: 25 }
@@ -126,11 +126,11 @@ export default {
 				selected: false,
 				name: "High Velocity Grenades ",
 				icon: "Icon_Upgrade_ProjectileSpeed",
-				type: "Speed",
+				type: "Projectile Speed",
 				text:
 					"We souped up the ejection mechanisms of your gun, so the projectiles are now fired at a much higher velocity. ",
 				stats: {
-					ex4: { name: "Projectile Velocity", value: 100, percent: true }
+					ex4: { name: "Projectile Velocity", value: 180, percent: true }
 				},
 				cost: {
 					credits: 1800,
@@ -150,7 +150,7 @@ export default {
 				name: "Incendiary Compound ",
 				icon: "Icon_Upgrade_Heat",
 				type: "Heat",
-				text: "50% damage converted to fire damage ",
+				text: "50% damage converted to heat. This will reduce direct Damage, but will set enemies on fire.",
 				stats: {
 					ex5: { name: "Converted to Fire", value: 50, percent: true }
 				},
@@ -173,7 +173,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer? ",
 				stats: {
-					ex2: { name: "Armor Break Bonus", value: 2000, percent: true }
+					ex2: { name: "Armor Break Bonus", value: 500, percent: true }
 				},
 				cost: {
 					credits: 2200,
@@ -191,8 +191,8 @@ export default {
 			{
 				selected: false,
 				name: "Homebrew Explosive",
-				icon: "Icon_Upgrade_Flare_01",
-				type: "Damage",
+				icon: "Icon_Upgrade_AreaDamage",
+				type: "Area Damage",
 				text: "More bang for the buck! Increases the damage done within the Area of Effect! ",
 				stats: {
 					dmg: { name: "Area Damage", value: 40 }
@@ -212,7 +212,7 @@ export default {
 				selected: false,
 				name: "Nails + Tape",
 				icon: "Icon_Upgrade_Area",
-				type: "Area",
+				type: "Area of effect",
 				text:
 					'Fire in the hole! The Area of Effect is increased. (We advise keeping the term "safe distance" close to your heart)',
 				stats: {

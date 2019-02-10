@@ -6,17 +6,17 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 6 },
 		ammo: { name: "Max Ammo", value: 90 },
-		clip: { name: "Clip Size", value: 6 },
+		clip: { name: "Magazine Size", value: 6 },
 		rate: { name: "Rate of Fire", value: 1.6 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Bullets (per shot)", value: 7 },
 		ex2: { name: "Stun Duration", value: 2 },
 		ex3: { name: "Stun Chance", value: 20, percent: true },
-		ex4: { name: "Reduced Recoil ", value: 0, binary: true },
-		ex5: { name: "Increased Accuracy ", value: 0, percent: true },
-		ex6: { name: "Armor Break Bonus ", value: 0, percent: true },
+		ex4: { name: "Reduced Recoil", value: 0, binary: true },
+		ex5: { name: "Increased Accuracy", value: 0, percent: true },
+		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex7: { name: "Turret Whip", value: 0, binary: true },
-		ex8: { name: "Automatic Fire ", value: 0, binary: true }
+		ex8: { name: "Automatic Fire", value: 0, binary: true }
 	},
 	mods: [
 		[
@@ -24,7 +24,7 @@ export default {
 				selected: false,
 				name: "Supercharged Feed Mechanism",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -48,7 +48,7 @@ export default {
 				type: "CLip size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
-					clip: { name: "Clip Size", value: 3 }
+					clip: { name: "Magazine Size", value: 3 }
 				},
 				cost: {
 					credits: 1200,
@@ -67,7 +67,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags ",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 40 }
@@ -87,7 +87,7 @@ export default {
 				selected: false,
 				name: "Loaded Shells",
 				icon: "Icon_Upgrade_Shotgun_Pellet",
-				type: "Pellets",
+				type: "Pellet Count",
 				text: "More pellets in each shell ",
 				stats: {
 					ex1: { name: "Bullets (per shot)", value: 2 }
@@ -107,10 +107,10 @@ export default {
 				selected: false,
 				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
-					clip: { name: "Clip Size", value: 3 }
+					clip: { name: "Magazine Size", value: 3 }
 				},
 				cost: {
 					credits: 2000,
@@ -150,10 +150,10 @@ export default {
 				selected: false,
 				name: "Choke ",
 				icon: "Icon_Upgrade_Accuracy",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Decreased shot spread ",
 				stats: {
-					ex5: { name: "Increased Accuracy ", value: 15, percent: true }
+					ex5: { name: "Increased Accuracy ", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2800,
@@ -168,11 +168,11 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Quickfire Ejector ",
+				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type:
-					'Experience, training, and a couple of under-the-table "adjustments" means your gun can be reloaded significantly faster. ',
-				text: "",
+				type: "Reload Speed",
+				text:
+					'Experience, training, and a couple of under-the-table "adjustments" means your gun can be reloaded significantly faster.',
 				stats: {
 					reload: { name: "Reload Time", value: 0.5, subtract: true }
 				},
@@ -193,11 +193,11 @@ export default {
 				selected: false,
 				name: "Tungsten Coated Buckshot ",
 				icon: "Icon_Upgrade_ArmorBreaking",
-				type: "Armor Break",
+				type: "Armor Breaking",
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer? ",
 				stats: {
-					ex6: { name: "Armor Break Bonus ", value: 200, percent: true }
+					ex6: { name: "Armor Break Bonus ", value: 400, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -218,7 +218,7 @@ export default {
 				text:
 					"Hit 'em so hard they can't recover! Every shot you fire has a higher chance to stop the target in its tracks. ",
 				stats: {
-					ex3: { name: "Stun Chance", value: 10, percent: true }
+					ex3: { name: "Stun Chance", value: 20, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -277,11 +277,11 @@ export default {
 				selected: false,
 				name: "Miner Adjustments ",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Rate",
+				type: "Rate of Fire",
 				text: "Fully automatic with an increased rate of fire ",
 				stats: {
 					rate: { name: "Rate of Fire", value: 1 },
-					ex8: { name: "Automatic Fire ", value: 1, binary: true }
+					ex8: { name: "Automatic Fire", value: 1, binary: true }
 				},
 				cost: {
 					credits: 5600,

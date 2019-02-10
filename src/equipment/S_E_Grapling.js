@@ -28,7 +28,7 @@ export default {
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 10,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -47,7 +47,7 @@ export default {
 					credits: 420,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 10,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -66,8 +66,8 @@ export default {
 					range: { name: "Max Range", value: 5 }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 780,
+					bismor: 22,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
@@ -88,10 +88,10 @@ export default {
 					wind: { name: "Wind up time", value: 0.2, subtract: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 960,
 					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
+					croppa: 12,
+					enorPearl: 16,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -108,13 +108,13 @@ export default {
 					speed: { name: "Max Speed", value: 750 }
 				},
 				cost: {
-					credits: 0,
+					credits: 960,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 16,
 					magnite: 0,
-					umanite: 0,
+					umanite: 12,
 					err: 0
 				}
 			}
@@ -130,12 +130,12 @@ export default {
 					ex1: { name: "Fall damage reduction after release", value: 1, binary: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 1100,
 					bismor: 0,
-					croppa: 0,
+					croppa: 24,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 18,
 					umanite: 0,
 					err: 0
 				}
@@ -150,9 +150,9 @@ export default {
 					ex2: { name: "Faster movement after release", value: 1, binary: true }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
-					croppa: 0,
+					credits: 1100,
+					bismor: 24,
+					croppa: 18,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
@@ -170,12 +170,12 @@ export default {
 					cool: { name: "Cooldown", value: 1, subtract: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 1100,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 18,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 24,
 					umanite: 0,
 					err: 0
 				}

@@ -6,7 +6,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 6 },
 		ammo: { name: "Max Ammo", value: 420 },
-		clip: { name: "Clip Size", value: 30 },
+		clip: { name: "Magazine Size", value: 30 },
 		rate: { name: "Rate of Fire", value: 11 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Electric Damage", value: 2 },
@@ -20,7 +20,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Increased Calibur Rounds ",
+				name: "Increased Caliber Rounds ",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
@@ -42,7 +42,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags ",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 120 }
@@ -84,10 +84,10 @@ export default {
 				selected: false,
 				name: "High Capacity Magazine ",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
-					clip: { name: "Clip Size", value: 10 }
+					clip: { name: "Magazine Size", value: 10 }
 				},
 				cost: {
 					credits: 2000,
@@ -104,7 +104,7 @@ export default {
 				selected: false,
 				name: "Floating Barrel ",
 				icon: "Icon_Upgrade_Accuracy",
-				type: "Aim",
+				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
 				stats: {
@@ -125,7 +125,7 @@ export default {
 				selected: false,
 				name: "Extra Ammo ",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "Max Ammo +60 ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 60 }
@@ -147,7 +147,7 @@ export default {
 				selected: false,
 				name: "Improved Gas System",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask. Just enjoy. Also probably don't tell Management, please.",
 				stats: {
@@ -190,7 +190,7 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Weakspot",
+				type: "Weak Spot Damage",
 				text:
 					"Hit 'em where it hurts! Literally! We've updated the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
@@ -256,7 +256,7 @@ export default {
 				type: "Electricity",
 				text: "Deal extra damage to electrocuted targets ",
 				stats: {
-					ex5: { name: "Electrocution Bonus", value: 2 }
+					ex5: { name: "Electrocution Bonus", value: 1 }
 				},
 				cost: {
 					credits: 5600,
@@ -276,7 +276,7 @@ export default {
 				type: "ClipSize",
 				text: "Greatly increased magazine capacity ",
 				stats: {
-					clip: { name: "Clip Size", value: 20 }
+					clip: { name: "Magazine Size", value: 20 }
 				},
 				cost: {
 					credits: 5600,

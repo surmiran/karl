@@ -6,7 +6,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 45 },
 		ammo: { name: "Max Ammo", value: 28 },
-		clip: { name: "Clip Size ", value: 4 },
+		clip: { name: "Magazine Size ", value: 4 },
 		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Increased Accuracy", value: 0, binary: true },
@@ -14,8 +14,9 @@ export default {
 		ex3: { name: "Max Penetrations", value: 0 },
 		ex4: { name: "Stun Chance", value: 0, percent: true },
 		ex5: { name: "Area Damage", value: 0 },
-		ex6: { name: "Weakspot Damage Bonus", value: 0, percent: true },
-		ex7: { name: "Dead-Eye", value: 0, percent: true },
+		ex9: { name: "Damage Radius", value: 0 },
+		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
+		ex7: { name: "Dead-Eye", value: 50, percent: true },
 		ex8: { name: "Damage Vs Glyphid", value: 0, percent: true }
 	},
 	mods: [
@@ -24,7 +25,7 @@ export default {
 				selected: false,
 				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type: "Speed",
+				type: "Reload Speed",
 				text:
 					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
 				stats: {
@@ -45,7 +46,7 @@ export default {
 				selected: false,
 				name: "Perfect Weight Balance",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Improved Accuracy",
 				stats: {
 					ex1: { name: "Increased Accuracy", value: 1, binary: true }
@@ -87,7 +88,7 @@ export default {
 				selected: false,
 				name: "Floating Barrel",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
 				stats: {
@@ -108,7 +109,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags ",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "Expanded Ammo Bags ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 6 }
@@ -128,9 +129,9 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Super Blowtrough Rounds",
+				name: "Super Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
-				type: "Bullet Penetration",
+				type: "Blow Through",
 				text:
 					"Shaped projectiles capable to over-penetrate targets with a mininal loss of energy. In other words: Fire straight through several enemies at once! ",
 				stats: {
@@ -171,10 +172,11 @@ export default {
 				selected: false,
 				name: "Explosive Rounds",
 				icon: "Icon_Upgrade_Explosive",
-				type: "Explosive",
+				type: "Explosion",
 				text: "Bullets detonate creating a radius of damage ",
 				stats: {
-					ex5: { name: "Area Damage", value: 26 }
+					ex5: { name: "Area Damage", value: 26 },
+					ex9: { name: "Damage Radius", value: 1 }
 				},
 				cost: {
 					credits: 2200,
@@ -193,7 +195,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 12 }
@@ -233,11 +235,11 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Weakspot",
+				type: "Weak Spot Bonus",
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome. ",
 				stats: {
-					ex6: { name: "Weakspot Damage Bonus", value: 75, percent: true }
+					ex6: { name: "Weakpoint Damage Bonus", value: 75, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -256,7 +258,7 @@ export default {
 				selected: false,
 				name: "Dead Eye",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "No aim penalty while moving ",
 				stats: {
 					ex7: { name: "Dead-Eye", value: 150, subtract: true, percent: true }

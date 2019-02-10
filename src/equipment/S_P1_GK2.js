@@ -13,7 +13,7 @@ export default {
 		ex2: { name: "Stun Chance", value: 10, percent: true },
 		ex3: { name: "Increased Accuracy ", value: 0, boolean: true },
 		ex4: { name: "Increased Stability", value: 0, boolean: true },
-		ex5: { name: "Weakspot Damage Bonus", value: 0, percent: true },
+		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex7: { name: "Battle Frenzy", value: 0, boolean: true },
 		ex8: { name: "Battle Cool", value: 0, boolean: true }
@@ -196,7 +196,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex5: { name: "Weakspot Damage Bonus", value: 20, percent: true }
+					ex5: { name: "Weakpoint Damage Bonus", value: 20, percent: true }
 				},
 				cost: {
 					credits: 4800,

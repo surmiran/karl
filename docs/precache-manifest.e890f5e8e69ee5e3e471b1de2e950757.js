@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/karl/js/chunk-vendors.34fce8ec.js"
   },
   {
-    "revision": "23d6936eb9b329eb98d2",
-    "url": "/karl/js/app.982da193.js"
+    "revision": "24b065d34ce89ccb8a97",
+    "url": "/karl/js/app.ccb7bf48.js"
   },
   {
-    "revision": "789596a76dfd1dd6635926907da9eaae",
+    "revision": "52dac633b8f21c7acacfa2460226d0aa",
     "url": "/karl/index.html"
   },
   {
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/karl/favicon-16x16.png"
   },
   {
-    "revision": "23d6936eb9b329eb98d2",
-    "url": "/karl/css/app.a8fa4da3.css"
+    "revision": "24b065d34ce89ccb8a97",
+    "url": "/karl/css/app.4c817ca1.css"
   }
 ];

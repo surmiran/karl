@@ -1,5 +1,5 @@
 <template>
-	<div class="classSelectContainer" v-on:click="selectClass()">
+	<div class="classSelectItem" v-on:click="selectClass()">
 		<div :class="[isSelected ? 'equipmentTextActive' : 'equipmentText']">
 			<h4>{{ name }}</h4>
 		</div>
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-.classSelectContainer {
+.classSelectItem {
 	display: flex;
 	cursor: pointer;
 }

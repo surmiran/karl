@@ -6,15 +6,15 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 13 },
 		ammo: { name: "Max Ammo", value: 144 },
-		clip: { name: "Clip Size", value: 18 },
+		clip: { name: "Magazine Size", value: 18 },
 		rate: { name: "Rate of Fire", value: 5 },
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Burst Size", value: 3 },
 		ex2: { name: "Burst Speed", value: 0.05 },
 		ex3: { name: "Increased Stability ", value: 0, binary: true },
 		ex4: { name: "Reduced Recoil ", value: 0, binary: true },
-		ex5: { name: "Armor Break Bonus ", value: 0, percent: true },
-		ex6: { name: "Weakspot Damage Bonus", value: 0, percent: true },
+		ex5: { name: "Armor Break Bonus ", value: -30, percent: true },
+		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
 		ex8: { name: "Burst Stun Duration", value: 0 }
 	},
@@ -44,7 +44,7 @@ export default {
 				selected: false,
 				name: "Disabled Safety",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text: "Shorter Delay between bursts ",
 				stats: {
 					rate: { name: "Rate of Fire", value: 5 }
@@ -66,7 +66,7 @@ export default {
 				selected: false,
 				name: "Floating Barrel",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
 				stats: {
@@ -108,7 +108,7 @@ export default {
 				selected: false,
 				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type: "Speed",
+				type: "Reload Speed",
 				text:
 					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
 				stats: {
@@ -131,10 +131,10 @@ export default {
 				selected: false,
 				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
-					clip: { name: "Clip Size", value: 6 }
+					clip: { name: "Magazine Size", value: 6 }
 				},
 				cost: {
 					credits: 2200,
@@ -194,7 +194,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 72 }
@@ -214,11 +214,11 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Weakspot",
+				type: "Weak Spot Bonus",
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome. ",
 				stats: {
-					ex6: { name: "Weakspot Damage Bonus", value: 50, percent: true }
+					ex6: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -277,7 +277,7 @@ export default {
 				selected: false,
 				name: "Longer Burst",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire Rate",
+				type: "Rate of Fire",
 				text: "Fire more rounds in each burst ",
 				stats: {
 					ex1: { name: "Burst Size", value: 3 }

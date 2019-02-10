@@ -6,7 +6,7 @@ export default {
 	baseStats: {
 		clip: { name: "Clip Size", value: 4 },
 		ammo: { name: "Max Ammo", value: 16 },
-		rate: { name: "Rate of Fire", value: 2 },
+		rate: { name: "Rate of Fire", value: 1 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Less fall damage", value: 0, binary: true },
 		ex2: { name: "Bug repellent", value: 0, binary: true }
@@ -25,7 +25,7 @@ export default {
 				},
 				cost: {
 					credits: 420,
-					bismor: 0,
+					bismor: 10,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
@@ -48,7 +48,7 @@ export default {
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 10,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -66,7 +66,7 @@ export default {
 				cost: {
 					credits: 420,
 					bismor: 0,
-					croppa: 0,
+					croppa: 10,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
@@ -86,10 +86,10 @@ export default {
 					ex1: { name: "Less fall damage", value: 1, binary: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 780,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 22,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -108,13 +108,13 @@ export default {
 					ammo: { name: "Max Ammo", value: 8 }
 				},
 				cost: {
-					credits: 0,
+					credits: 960,
 					bismor: 0,
-					croppa: 0,
+					croppa: 16,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 12,
 					err: 0
 				}
 			},
@@ -128,12 +128,12 @@ export default {
 					ex2: { name: "Bug repellent", value: 1, binary: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 960,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
+					jadiz: 16,
+					magnite: 12,
 					umanite: 0,
 					err: 0
 				}

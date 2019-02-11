@@ -7,7 +7,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 11 },
 		ammo: { name: "Max Ammo", value: 24 },
-		clip: { name: "Clip Size", value: 2 },
+		clip: { name: "Magazine Size", value: 2 },
 		rate: { name: "Rate of Fire", value: 1.5 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Bullets (per shot)", value: 7 },
@@ -25,7 +25,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 6 }
@@ -67,7 +67,7 @@ export default {
 				selected: false,
 				name: "Double Trigger",
 				icon: "Icon_Upgrade_FireRate",
-				type: "FireRate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -88,7 +88,7 @@ export default {
 				selected: false,
 				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type: "Speed",
+				type: "Reload Speed",
 				text:
 					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
 				stats: {
@@ -131,7 +131,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 10 }
@@ -151,7 +151,7 @@ export default {
 				selected: false,
 				name: "High Capacity Shells",
 				icon: "Icon_Upgrade_Shotgun_Pellet",
-				type: "Pellet",
+				type: "Pellet Count",
 				text:
 					"It took some creating thinking, but we finally found out how to pack more buckshot into each shell. Just... Handle with care, they're liable to take your eye out. ",
 				stats: {
@@ -174,7 +174,7 @@ export default {
 				selected: false,
 				name: "Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
-				type: "Bullet Penetration",
+				type: "Blow Through",
 				text:
 					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight through several enemies at once! ",
 				stats: {
@@ -195,7 +195,7 @@ export default {
 				selected: false,
 				name: "Tungsten Coated Buckshot",
 				icon: "Icon_Upgrade_ArmorBreaking",
-				type: "ArmorBreaking",
+				type: "Armor Breaking",
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer? ",
 				stats: {
@@ -216,7 +216,7 @@ export default {
 				selected: false,
 				name: "Blast Wave",
 				icon: "Icon_Upgrade_Shot",
-				type: "Shot",
+				type: "Special",
 				text: "Shotgun blast kills weak enemies within 4m",
 				stats: {
 					ex5: { name: "Blast Wave", value: 1, binary: true }
@@ -238,7 +238,7 @@ export default {
 				selected: false,
 				name: "Auto Reload",
 				icon: "Icon_Upgrade_Speed",
-				type: "Speed",
+				type: "Reload Speed",
 				text: "Reloads automatically when unequipped for more than 5 minutes ",
 				stats: {
 					ex6: { name: "Auto Reload ", value: 1, binary: true }
@@ -258,7 +258,7 @@ export default {
 				selected: false,
 				name: "Fear the Boomstick",
 				icon: "Icon_Upgrade_ScareEnemies",
-				type: "Scare Enemies",
+				type: "Fear",
 				text: "Chance to scare nearby creatures whenever you shoot",
 				stats: {
 					ex7: { name: "Fear the Boomstick ", value: 50, percent: true }
@@ -279,7 +279,7 @@ export default {
 				name: "White Phosphorous Shells",
 				icon: "Icon_Upgrade_Heat",
 				type: "Heat",
-				text: "Convert some of the damage to fire damage ",
+				text: "Convert some of the damage to Fire damage ",
 				stats: {
 					ex8: { name: "Damage To Fire ", value: 50, percent: true }
 				},

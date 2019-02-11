@@ -5,12 +5,12 @@ export default {
 	class: "Assault Rifle ",
 	icon: "equipment.S_P1_GK2",
 	baseStats: {
-		dmg: { name: "Damage", value: 13 },
-		ammo: { name: "Max Ammo", value: 144 },
-		clip: { name: "Clip Size", value: 18 },
-		rate: { name: "Rate of Fire", value: 5 },
-		reload: { name: "Reload Time", value: 2.2 },
-		ex1: { name: "Stun Duration", value: 1.8 },
+		dmg: { name: "Damage", value: 11 },
+		ammo: { name: "Max Ammo", value: 350 },
+		clip: { name: "Magazine Size", value: 25 },
+		rate: { name: "Rate of Fire", value: 7 },
+		reload: { name: "Reload Time", value: 1.8 },
+		ex1: { name: "Stun Duration", value: 2 },
 		ex2: { name: "Stun Chance", value: 10, percent: true },
 		ex3: { name: "Increased Accuracy ", value: 0, boolean: true },
 		ex4: { name: "Increased Stability", value: 0, boolean: true },
@@ -25,13 +25,13 @@ export default {
 				selected: false,
 				name: "Gyro Stabilisation ",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Pin-point accuracy on first shot ",
 				stats: {
 					ex3: { name: "Increased Accuracy ", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 12000,
+					credits: 1200,
 					bismor: 25,
 					croppa: 0,
 					enorPearl: 0,
@@ -45,7 +45,7 @@ export default {
 				selected: false,
 				name: "Supercharged Feed Mechanism",
 				icon: "Icon_Upgrade_FireRate",
-				type: "Fire rate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -108,7 +108,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 100 }
@@ -130,7 +130,7 @@ export default {
 				selected: false,
 				name: "Floating Barrel ",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
 				stats: {
@@ -171,10 +171,10 @@ export default {
 				selected: false,
 				name: "High Capacity Magazine ",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
-					clip: { name: "Clip Size", value: 10 }
+					clip: { name: "Magazine Size", value: 10 }
 				},
 				cost: {
 					credits: 2800,
@@ -193,7 +193,7 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets ",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Weakspot",
+				type: "Weak Spot Bonus",
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
@@ -235,7 +235,7 @@ export default {
 				selected: false,
 				name: "Improved Gas System ",
 				icon: "Icon_Upgrade_FireRate",
-				type: "FireRate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -278,10 +278,10 @@ export default {
 				selected: false,
 				name: "Battle Cool",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Killing an enemy increases accuracy",
 				stats: {
-					ex8: { name: "Battle Cool", value: 0, boolean: true }
+					ex8: { name: "Battle Cool", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

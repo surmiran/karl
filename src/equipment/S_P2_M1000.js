@@ -1,7 +1,6 @@
 export default {
 	selected: false,
 	modified: false,
-	modified: false,
 	name: "M1000 Classic",
 	class: "Semi-Automatic Rifle",
 	icon: "equipment.S_P2_M1000",
@@ -26,7 +25,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 15 }
@@ -68,7 +67,7 @@ export default {
 				selected: false,
 				name: "Improved Ergonomics",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Faster focus",
 				stats: {
 					ex1: { name: "Focus Speed", value: 1 }
@@ -88,7 +87,7 @@ export default {
 				selected: false,
 				name: "Extended Clip",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
 					clip: { name: "Clip Size", value: 2 }
@@ -108,7 +107,7 @@ export default {
 				selected: false,
 				name: "Floating Barrel",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
 				stats: {
@@ -171,7 +170,7 @@ export default {
 				selected: false,
 				name: "Oversized Clip",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
 				stats: {
 					clip: { name: "Clip Size", value: 2 }
@@ -193,7 +192,7 @@ export default {
 				selected: false,
 				name: "Blowthrough Rounds ",
 				icon: "Icon_Upgrade_BulletPenetration",
-				type: "Bullet Penetration",
+				type: "Blow Through",
 				text:
 					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight through several enemies at once! ",
 				stats: {
@@ -214,7 +213,7 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Weakspot",
+				type: "Weak Spot Bonus",
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
@@ -278,9 +277,8 @@ export default {
 				selected: false,
 				name: "Precision Terror",
 				icon: "Icon_Upgrade_ScareEnemies",
-				type:
-					"Killing your target with a focused shot to the weakspot will send nearby creatures fleeing with terror! ",
-				text: "",
+				type: "Fear",
+				text: "Killing your target with a focused shot to the weakspot will send nearby creatures fleeing with terror!",
 				stats: {
 					ex8: { name: "Focus Shot Fear", value: 200, percent: true }
 				},

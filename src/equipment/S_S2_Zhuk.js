@@ -7,7 +7,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
 		ammo: { name: "Max Ammo", value: 600 },
-		clip: { name: "Clip Size", value: 50 },
+		clip: { name: "Magazine Size", value: 50 },
 		rate: { name: "Rate of Fire", value: 30 },
 		reload: { name: "Reload Time", value: 1.8 },
 		ex1: { name: "Increased Accuracy", value: 0, binary: true },
@@ -23,7 +23,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 75 }
@@ -65,7 +65,7 @@ export default {
 				selected: false,
 				name: "Better Weight Balance",
 				icon: "Icon_Upgrade_Aim",
-				type: "Aim",
+				type: "Accuracy",
 				text: "Base Accuracy Increase",
 				stats: {
 					ex1: { name: "Increased Accuracy", value: 1, binary: true }
@@ -85,7 +85,7 @@ export default {
 				selected: false,
 				name: "Supercharged Feed Mechanism",
 				icon: "Icon_Upgrade_FireRate",
-				type: "FireRate",
+				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask. Just enjoy. Also probably don't tell Management, please. ",
 				stats: {
@@ -106,7 +106,7 @@ export default {
 				selected: false,
 				name: "Blowthrough Rounds ",
 				icon: "Icon_Upgrade_BulletPenetration",
-				type: "Bullet Penetration",
+				type: "Blow Through",
 				text:
 					"Shaped projectiles designed to over-penetrate targets with minimal loss of energy. In other words: Fire straight through several enemies at once! ",
 				stats: {
@@ -149,10 +149,10 @@ export default {
 				selected: false,
 				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
-				type: "Clip Size",
+				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks...you can always get bigger variants.",
 				stats: {
-					clip: { name: "Clip Size", value: 10 }
+					clip: { name: "Magazine Size", value: 10 }
 				},
 				cost: {
 					credits: 2200,
@@ -169,11 +169,11 @@ export default {
 				selected: false,
 				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
-				type: "Speed",
+				type: "Reload Speed",
 				text:
 					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
 				stats: {
-					reload: { name: "Reload Time", value: 1.8, subtract: true }
+					reload: { name: "Reload Time", value: 0.6, subtract: true }
 				},
 				cost: {
 					credits: 2200,
@@ -212,7 +212,7 @@ export default {
 				selected: false,
 				name: "Hollow-Point Bullets ",
 				icon: "Icon_Upgrade_Weakspot",
-				type: "Weakspot",
+				type: "Weak Spot Bonus",
 				text:
 					"Hit em' where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome.",
 				stats: {
@@ -233,7 +233,7 @@ export default {
 				selected: false,
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
-				type: "Ammo",
+				type: "Total Ammo",
 				text: "You had to give up on some sandwich-storage, but your total ammo capacity is increased! ",
 				stats: {
 					ammo: { name: "Max Ammo", value: 100 }

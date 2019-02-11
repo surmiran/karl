@@ -294,6 +294,7 @@ export default new Vuex.Store({
 
 			for (let [classId, equipments] of Object.entries(data)) {
 				for (let [equipmentId, mods] of Object.entries(equipments)) {
+					state.tree[classId][equipmentId].modified = true;
 					for (let tierId in mods) {
 						if (parseInt(mods[tierId]) >= 0) {
 							state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;

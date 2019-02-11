@@ -22,8 +22,6 @@ export default {
 	},
 	methods: {
 		selectClass() {
-			console.log(this.name);
-			console.log(this.classId);
 			store.commit("selectClass", { classID: this.classId });
 		}
 	}

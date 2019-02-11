@@ -98,13 +98,7 @@ import Icon_Upgrade_TemperatureCoolDown from "./assets/mods/Icon_Upgrade_Tempera
 import Icon_Upgrade_Weakspot from "./assets/mods/Icon_Upgrade_Weakspot.js";
 
 Vue.use(Vuex);
-// todo: update state.selected on each click/selection and find a way to load from url. Keep all selection data in url or only the current weapon?
-// todo: or only the current class? maybe have a binary url that references all classes and equipments?
-// D_P1: 23 --> tier1: mod0 mod1  mod2  tier1: mod0 mod1  mod2  tier2: mod0 mod1  mod2
-//											0    1     0            0     0     1           1     0     0
-//          -->        256  128    64          32     16    8           4     2     1
-//          --> 140
-// URL: surmiran.github.io/karl/?selection={"D":{"P1":140,"P2":0}}
+
 export default new Vuex.Store({
 	state: {
 		selected: {

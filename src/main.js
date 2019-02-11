@@ -2,10 +2,10 @@ import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
 import "./registerServiceWorker";
-import Toasted from 'vue-toasted';
+import Toasted from "vue-toasted";
 
 Vue.config.productionTip = false;
-Vue.use(Toasted)
+Vue.use(Toasted);
 
 new Vue({
 	store,

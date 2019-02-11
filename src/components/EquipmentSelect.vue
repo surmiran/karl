@@ -1,7 +1,5 @@
 <template>
 	<div class="weaponSelectContainer" v-on:click="selectEquip()">
-		<!--todo: either find a way to set the viewbox dynamically for each icon or set it on the svgs, so that all equipment icons have the same fixed viewbox..-->
-		<!-- https://www.creativebloq.com/how-to/10-golden-rules-for-responsive-svgs -->
 		<div class="flexboxWeaponSelect" :class="[getSelected ? 'equipmentActive' : 'equipment']">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -32,8 +30,6 @@ export default {
 	},
 	computed: {
 		getIconFromPath: function() {
-			console.log("get icon from path:");
-			console.log(this);
 			let aPath = this.iconPath.split(".");
 			if (aPath.length < 2) {
 				return "";
@@ -41,15 +37,11 @@ export default {
 			return store.state.icons[aPath[0]][aPath[1]];
 		},
 		getSelected: function() {
-			console.log(this.data);
 			return this.data.selected;
 		}
 	},
 	methods: {
 		selectEquip() {
-			console.log(this.classId);
-			console.log(this.equipmentId);
-			console.log(this.data);
 			store.commit("selectEquipment", {
 				classID: this.classId,
 				equipID: this.equipmentId
@@ -64,9 +56,9 @@ export default {
 </script>
 
 <style scoped>
-	h4 {
-		white-space: nowrap;
-	}
+h4 {
+	white-space: nowrap;
+}
 
 .weaponSelectContainer {
 	display: flex;

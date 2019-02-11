@@ -77,8 +77,8 @@ import Lzs from "lz-string";
 
 let toastOptions = {
 	theme: "bubble",
-	position: "top-center",
-	duration: 2500
+	position: "top-right",
+	duration: 3000
 };
 
 export default {
@@ -93,7 +93,6 @@ export default {
 		svg() {
 			return store.state.testJS;
 		},
-		// todo: fix bug when chaning class.. selected equipment id stays the same..?
 		selectedClass() {
 			return store.state.selected.class;
 		},
@@ -126,7 +125,7 @@ export default {
 				let successful = document.execCommand("copy");
 
 				if (successful) {
-					this.$toasted.show("Copied Loadout to clipboard", toastOptions);
+					this.$toasted.show("Loadout was sent to management for approval (copied to clipboard)", toastOptions);
 				} else {
 					this.$toasted.show("I can't feel my beard!", toastOptions);
 				}
@@ -185,11 +184,10 @@ h2 {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin-top: 60px;
-	/*todo: make this width responsive with media tags*/
 	max-width: 1000px;
 }
 
-/*todo: make all backgrounds transparent!*/
+/*todo: semi transparent backgrounds!*/
 
 .mainContainer {
 	display: flex;

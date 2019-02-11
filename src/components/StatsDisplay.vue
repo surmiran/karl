@@ -2,14 +2,18 @@
 	<div class="statsDisplay">
 		<h1 class="equipmentTitle allCaps">{{ equipment.name }}</h1>
 		<h2 class="equipmentSubTitle allCaps">{{ equipment.class }}</h2>
-		<!-- todo: table?-->
 		<div class="statsBaseContainer">
 			<div v-for="(stat, statId) in calcStats.stats" :key="statId" class="statsContainer">
 				<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
 				<div class="statsValueContainer">
-					<span class="statsValue fixedWidth" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.baseValue }}<span v-if="stat.percent">%</span></span>
+					<span class="statsValue fixedWidth" :class="[stat.inactive ? 'inactiveStat' : '']"
+						>{{ stat.baseValue }}<span v-if="stat.percent">%</span></span
+					>
 					<span class="statsModifier fixedWidth">{{ stat.modifier }}</span>
-					<span class="statsValue fixedWidth" :class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']">
+					<span
+						class="statsValue fixedWidth"
+						:class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']"
+					>
 						{{ stat.value }}<span v-if="stat.percent">%</span>
 					</span>
 				</div>
@@ -48,8 +52,6 @@
 		</div>
 	</div>
 </template>
-<!--todo: show three values, base value, modified value, modification-->
-<!--todo: show total cost of selected mods-->
 <!--todo: show most cost effective upgrade in tier (most change %)-->
 <script>
 import store from "../store";
@@ -78,8 +80,6 @@ export default {
 				},
 				[]
 			);
-			console.log(aSelectedUpgrades);
-			console.log(this.baseStats);
 
 			const precisionCalc = a => {
 				if (!isFinite(a)) return 0;
@@ -101,9 +101,7 @@ export default {
 				modifiedStats.baseValue = modifiedStats.value;
 				if (upgradeForKey.length > 0) {
 					visible = true;
-					/*console.log(key);
-					console.log(upgradeForKey);
-					console.log(this.baseStats[key]);*/
+
 					let modifier = {
 						value: 0
 					};

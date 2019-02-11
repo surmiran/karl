@@ -100,7 +100,6 @@
 	</div>
 </template>
 
-<!--todo: make modification togglable (deactivate active mod when clicking again-->
 <!--todo: reset button-->
 <!--todo: release on steam guide once done, in addition to reddit and forums-->
 <script>
@@ -124,9 +123,7 @@ export default {
 	},
 	methods: {
 		selectMod(classId, equipmentId, tierId, modId, selected) {
-			console.log("select mod");
 			if (selected) {
-				console.log("de select all!");
 				store.commit("deSelectAllModifications", {
 					classID: classId,
 					equipID: equipmentId,
@@ -157,7 +154,6 @@ export default {
 			});
 		},
 		getSelected: function(mod) {
-			console.log(mod);
 			return mod.selected;
 		},
 		getIconFromPath: function(iconPath) {

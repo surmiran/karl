@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Deepcore 40mm PGL",
 	class: "Heavy Weapon",
 	icon: "equipment.E_S1_PGL",

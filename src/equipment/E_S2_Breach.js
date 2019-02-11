@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Breach Cutter",
 	class: "Heavy Weapon",
 	icon: "equipment.E_S2_Breach",

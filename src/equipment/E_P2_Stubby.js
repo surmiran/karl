@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Stubby",
 	class: "Submachine Gun",
 	icon: "equipment.E_P2_Stubby",

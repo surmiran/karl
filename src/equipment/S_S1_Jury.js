@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Jury-Rigged Boomstick ",
 	class: "Shotgun",
 	icon: "equipment.S_S1_Jury",

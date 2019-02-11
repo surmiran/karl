@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Reinforced Impact Suit",
 	class: "Armor",
 	icon: "equipment.X_E_Armor",

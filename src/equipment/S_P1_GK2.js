@@ -1,5 +1,6 @@
 export default {
 	selected: true,
+	modified: false,
 	name: "Deepcore GK2 ",
 	class: "Assault Rifle ",
 	icon: "equipment.S_P1_GK2",

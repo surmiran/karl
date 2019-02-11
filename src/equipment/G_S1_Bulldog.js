@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: '"Bulldog" Heavy Revolver',
 	class: "Revolver",
 	icon: "equipment.G_S1_Bulldog",

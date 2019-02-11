@@ -1,5 +1,5 @@
 <template>
-	<div class="weaponSelectContainer" v-on:click="selectEquip()">
+	<div class="weaponSelectContainer" v-on:click="selectEquip()" :title="[getModified ? 'Equipment is modified' : '']">
 		<div class="flexboxWeaponSelect" :class="[getSelected ? 'equipmentActive' : 'equipment']">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@
 			></svg>
 		</div>
 		<div :class="[getSelected ? 'equipmentTextActive' : 'equipmentText']">
-			<h4>{{ name }}</h4>
+			<h4>{{ name }}<span v-if="getModified"> *</span></h4>
 		</div>
 	</div>
 </template>
@@ -38,6 +38,9 @@ export default {
 		},
 		getSelected: function() {
 			return this.data.selected;
+		},
+		getModified: function() {
+			return store.state.tree[this.classId][this.equipmentId].modified;
 		}
 	},
 	methods: {

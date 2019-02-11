@@ -3,7 +3,10 @@
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2>Tier {{ tierId + 1 }}</h2>
-			<div class="tierSubContainer" :class="[tier.length === 1 ? '' : tier.length === 2 ? 'tierBackgroundGradientHalf' : 'tierBackgroundGradient']">
+			<div
+				class="tierSubContainer"
+				:class="[tier.length === 1 ? '' : tier.length === 2 ? 'tierBackgroundGradientHalf' : 'tierBackgroundGradient']"
+			>
 				<div
 					v-for="(mod, modId) in tier"
 					:key="modId"
@@ -95,7 +98,9 @@
 			<div>
 				{{ hoveredMod.text }}
 			</div>
-			<!--todo: show content of hovered modification!-->
+			<div v-if="hoveredMod.increase" class="increaseOverBase">
+				Increase over base stat: {{ parseInt(hoveredMod.increase) }}%
+			</div>
 		</div>
 	</div>
 </template>
@@ -205,22 +210,24 @@ h2 {
 
 .tierBackgroundGradient {
 	background: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0) 40%,
-		rgba(40, 33, 23, 1) 40%,
-		rgba(40, 33, 23, 1) 60%,
-		rgba(0, 0, 0, 0) 60%
-	) no-repeat;
+			to bottom,
+			rgba(0, 0, 0, 0) 40%,
+			rgba(40, 33, 23, 1) 40%,
+			rgba(40, 33, 23, 1) 60%,
+			rgba(0, 0, 0, 0) 60%
+		)
+		no-repeat;
 	background-size: 100% 100%;
 }
 .tierBackgroundGradientHalf {
 	background: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0) 40%,
-		rgba(40, 33, 23, 1) 40%,
-		rgba(40, 33, 23, 1) 60%,
-		rgba(0, 0, 0, 0) 60%
-	) no-repeat;
+			to bottom,
+			rgba(0, 0, 0, 0) 40%,
+			rgba(40, 33, 23, 1) 40%,
+			rgba(40, 33, 23, 1) 60%,
+			rgba(0, 0, 0, 0) 60%
+		)
+		no-repeat;
 	background-size: 50% 100%;
 }
 
@@ -286,6 +293,11 @@ h2 {
 
 .modTextBoxTitle p {
 	margin: 0;
+}
+
+.increaseOverBase {
+	color: rgba(255, 251, 255, 0.4);
+	padding-top: 1rem;
 }
 
 @media (max-width: 1024px) {

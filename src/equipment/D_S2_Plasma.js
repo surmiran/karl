@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Experimental Plasma Charger",
 	class: "Pistol",
 	icon: "equipment.D_S2_Plasma",

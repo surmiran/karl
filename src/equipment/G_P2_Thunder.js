@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: '"Thunderhead" Heavy Autocannon',
 	class: "Heavy Weapon",
 	icon: "equipment.G_P2_Thunder",

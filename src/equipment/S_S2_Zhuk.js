@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Zhukov NUK17 ",
 	class: "ubmachine Gun ",
 	icon: "equipment.S_S2_Zhuk",

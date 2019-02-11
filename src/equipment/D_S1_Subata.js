@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Subata 120",
 	class: "Pistol",
 	icon: "equipment.D_S1_Subata",

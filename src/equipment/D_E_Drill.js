@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Reinforced power drills",
 	class: "support tool",
 	icon: "equipment.D_E_Drill",

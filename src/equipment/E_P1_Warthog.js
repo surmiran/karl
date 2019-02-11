@@ -1,5 +1,6 @@
 export default {
 	selected: true,
+	modified: false,
 	name: "Warthog",
 	class: "Shotgun",
 	icon: "equipment.E_P1_Warthog",

@@ -1,5 +1,6 @@
 export default {
 	selected: true,
+	modified: false,
 	name: "CRSPR Flamethrower",
 	class: "Heavy Weapon",
 	icon: "equipment.D_P1_CRSPR",

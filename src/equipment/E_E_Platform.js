@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Platform Gun",
 	class: "support Tool",
 	icon: "equipment.E_E_Platform",

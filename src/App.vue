@@ -77,7 +77,7 @@ import Lzs from "lz-string";
 
 let toastOptions = {
 	theme: "bubble",
-	position: "top-right",
+	position: "top-center",
 	duration: 3000
 };
 
@@ -198,6 +198,10 @@ h2 {
 .toasted.bubble {
 	background-color: #fc9e00 !important;
 	font-family: "Avenir", Helvetica, Arial, sans-serif;
+	padding-top: 0.5rem !important;
+	padding-bottom: 0.5rem !important;
+	padding-left: 1rem !important;
+	padding-right: 1rem !important;
 }
 
 .shareArea {
@@ -287,6 +291,7 @@ h2 {
 
 .costList {
 	display: flex;
+	flex-wrap: wrap;
 	color: #fffbff;
 }
 

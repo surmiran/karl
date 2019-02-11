@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Grappling Gun",
 	class: "Support Tool",
 	icon: "equipment.S_E_Grapling",

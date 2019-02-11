@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Zipline Gun",
 	class: "Support Tool",
 	icon: "equipment.G_E_Zipline",

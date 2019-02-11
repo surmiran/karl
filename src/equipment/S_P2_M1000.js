@@ -1,5 +1,7 @@
 export default {
 	selected: false,
+	modified: false,
+	modified: false,
 	name: "M1000 Classic",
 	class: "Semi-Automatic Rifle",
 	icon: "equipment.S_P2_M1000",

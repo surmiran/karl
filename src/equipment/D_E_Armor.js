@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Heavy Drill Suit",
 	class: "Armor",
 	icon: "equipment.X_E_Armor",

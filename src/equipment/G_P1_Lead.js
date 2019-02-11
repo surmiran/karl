@@ -1,5 +1,6 @@
 export default {
 	selected: true,
+	modified: false,
 	name: '"Lead Storm" Powered Minigun',
 	class: "Heavy Weapon",
 	icon: "equipment.G_P1_Lead",

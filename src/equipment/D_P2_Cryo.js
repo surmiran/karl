@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "Cryo Cannon",
 	class: "Heavy Weapon",
 	icon: "equipment.D_P2_Cryo",

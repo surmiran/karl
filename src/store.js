@@ -249,6 +249,7 @@ export default new Vuex.Store({
 			}
 			state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = indizes.modID;
 
+			state.tree[indizes.classID][indizes.equipID].modified = true;
 			// set state
 			return (state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID].selected = true);
 		},
@@ -275,6 +276,18 @@ export default new Vuex.Store({
 		},
 		addToHovered: (state, indizes) => {
 			state.hovered = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID];
+
+			let hoveredStatKey = Object.keys(state.hovered.stats)[0];
+			let hoveredStat = state.hovered.stats[hoveredStatKey];
+			let baseStat = state.tree[indizes.classID][indizes.equipID].baseStats[hoveredStatKey];
+			console.log(hoveredStatKey);
+			console.log(hoveredStat); // 75
+			console.log(baseStat); // 300
+			let increase = 0;
+			if (baseStat.value !== 0) {
+				increase = (hoveredStat.value / baseStat.value) * 100;
+			}
+			state.hovered.increase = increase;
 		},
 		loadFromLink: (state, data) => {
 			state.dataParts = data;

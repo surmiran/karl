@@ -1,5 +1,6 @@
 export default {
 	selected: false,
+	modified: false,
 	name: "BRT7 Burst Fire Gun",
 	class: "Pistol",
 	icon: "equipment.G_S2_Burst",

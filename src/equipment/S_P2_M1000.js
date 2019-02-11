@@ -12,9 +12,9 @@ export default {
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Focus Speed", value: 1 },
 		ex2: { name: "Focused Shot Damage", value: 50, percent: true },
-		ex3: { name: "Increased Stability ", value: 0, binary: true },
-		ex4: { name: "Max Penetrations ", value: 0 },
-		ex5: { name: "Weakpoint Damage Bonus ", value: 0, percent: true },
+		ex3: { name: "Increased Stability", value: 0, binary: true },
+		ex4: { name: "Max Penetrations", value: 0 },
+		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex7: { name: "Focused Shot Stun", value: 0, percent: true },
 		ex8: { name: "Focus Shot Fear", value: 0, percent: true }
@@ -26,7 +26,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 15 }
 				},
@@ -88,7 +88,7 @@ export default {
 				name: "Extended Clip",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
 					clip: { name: "Clip Size", value: 2 }
 				},
@@ -109,9 +109,9 @@ export default {
 				icon: "Icon_Upgrade_Aim",
 				type: "Accuracy",
 				text:
-					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
+					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Stability ", value: 1, binary: true }
+					ex3: { name: "Increased Stability", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2000,
@@ -151,7 +151,7 @@ export default {
 				name: "Killer Focus",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Greater focus damage bonus ",
+				text: "Greater focus damage bonus",
 				stats: {
 					ex2: { name: "Focused Shot Damage", value: 40, percent: true }
 				},
@@ -171,7 +171,7 @@ export default {
 				name: "Oversized Clip",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
 					clip: { name: "Clip Size", value: 2 }
 				},
@@ -190,13 +190,13 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Blowthrough Rounds ",
+				name: "Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
 				type: "Blow Through",
 				text:
-					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight through several enemies at once! ",
+					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight through several enemies at once!",
 				stats: {
-					ex4: { name: "Max Penetrations ", value: 10 }
+					ex4: { name: "Max Penetrations", value: 10 }
 				},
 				cost: {
 					credits: 4800,
@@ -232,11 +232,11 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Kinetic Energy Penetrator ",
+				name: "Kinetic Energy Penetrator",
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
 				text:
-					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer? ",
+					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
 					ex6: { name: "Armor Break Bonus", value: 200, percent: true }
 				},

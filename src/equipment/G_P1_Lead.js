@@ -47,7 +47,7 @@ export default {
 				name: "Improved Motor",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
-				text: "Increased rate of fire and faster gyro stabilization ",
+				text: "Increased rate of fire and faster gyro stabilization",
 				stats: {
 					rate: { name: "Rate of Fire", value: 4 }
 				},
@@ -89,7 +89,7 @@ export default {
 				name: "Oversized Drum",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Expanded Ammo Bags ",
+				text: "Expanded Ammo Bags",
 				stats: {
 					ammo: { name: "Max Ammo", value: 600 }
 				},
@@ -109,7 +109,7 @@ export default {
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 2 }
 				},
@@ -131,7 +131,7 @@ export default {
 				name: "Hardened Rounds",
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
-				text: "Improved armor breaking ",
+				text: "Improved armor breaking",
 				stats: {
 					ex4: { name: "Armor Break Bonus", value: 200, percent: true }
 				},
@@ -151,7 +151,7 @@ export default {
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks. ",
+				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
 				stats: {
 					ex5: { name: "Stun Chance", value: 50, percent: true }
 				},
@@ -171,7 +171,7 @@ export default {
 				name: "Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
 				type: "Blow Through",
-				text: "Shaped bullets capable of passing through a target! ",
+				text: "Shaped bullets capable of passing through a target!",
 				stats: {
 					ex6: { name: "Max Penetrations", value: 1 }
 				},
@@ -190,10 +190,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Variable Chamber Pressure ",
+				name: "Variable Chamber Pressure",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Damage increase when fully stabilized ",
+				text: "Damage increase when fully stabilized",
 				stats: {
 					ex7: { name: "Damage at Max Stabilization", value: 15, percent: true }
 				},
@@ -233,7 +233,7 @@ export default {
 				name: "Magnetic Bearings",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Spindown Time increase ",
+				text: "Spindown Time increase",
 				stats: {
 					ex2: { name: "Spindown Time", value: 2, subtract: true }
 				},
@@ -252,10 +252,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Aggressive Venting ",
+				name: "Aggressive Venting",
 				icon: "Icon_Upgrade_Explosive",
 				type: "Explosion",
-				text: "Burn everything in a radius when the minigun overheats ",
+				text: "Burn everything in a radius when the minigun overheats",
 				stats: {
 					ex8: { name: "Aggressive Venting", value: 1, binary: true }
 				},
@@ -272,10 +272,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Cold As The Grave ",
+				name: "Cold As The Grave",
 				icon: "Icon_Upgrade_TemperatureCoolDown",
 				type: "Cooling",
-				text: "Every kill cools the gun ",
+				text: "Every kill cools the gun",
 				stats: {
 					ex9: { name: "Heat Removed on Kill", value: 1, binary: true }
 				},
@@ -295,7 +295,7 @@ export default {
 				name: "Hot Bullets",
 				icon: "Icon_Upgrade_Heat",
 				type: "Heat",
-				text: "Rounds fired when the heat meter is red will burn the target ",
+				text: "Rounds fired when the heat meter is red will burn the target",
 				stats: {
 					ex10: { name: "Hot Bullets", value: 50, percent: true }
 				},

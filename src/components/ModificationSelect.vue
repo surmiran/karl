@@ -3,6 +3,7 @@
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2>Tier {{ tierId + 1 }}</h2>
+			<!-- todo: show level requirement  -->
 			<div
 				class="tierSubContainer"
 				:class="[tier.length === 1 ? '' : tier.length === 2 ? 'tierBackgroundGradientHalf' : 'tierBackgroundGradient']"

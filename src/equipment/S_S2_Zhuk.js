@@ -1,8 +1,8 @@
 export default {
 	selected: false,
 	modified: false,
-	name: "Zhukov NUK17 ",
-	class: "ubmachine Gun ",
+	name: "Zhukov NUK17",
+	class: "ubmachine Gun",
 	icon: "equipment.S_S2_Zhuk",
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
@@ -12,9 +12,9 @@ export default {
 		reload: { name: "Reload Time", value: 1.8 },
 		ex1: { name: "Increased Accuracy", value: 0, binary: true },
 		ex2: { name: "Max Penetrations", value: 0 },
-		ex3: { name: "Stun Chance ", value: 0, percent: true },
-		ex4: { name: "Weakpoint Damage Bonus ", value: 0, percent: true },
-		ex5: { name: "Movement for 3 seconds ", value: 0, percent: true },
+		ex3: { name: "Stun Chance", value: 0, percent: true },
+		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
+		ex5: { name: "Movement for 3 seconds", value: 0, percent: true },
 		ex6: { name: "Electric Damage", value: 0, percent: true }
 	},
 	mods: [
@@ -24,7 +24,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased ",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased",
 				stats: {
 					ammo: { name: "Max Ammo", value: 75 }
 				},
@@ -87,7 +87,7 @@ export default {
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				text:
-					"We overclocked your gun. It fires faster. Don't ask. Just enjoy. Also probably don't tell Management, please. ",
+					"We overclocked your gun. It fires faster. Don't ask. Just enjoy. Also probably don't tell Management, please.",
 				stats: {
 					rate: { name: "Rate of Fire", value: 6 }
 				},
@@ -104,11 +104,11 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Blowthrough Rounds ",
+				name: "Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
 				type: "Blow Through",
 				text:
-					"Shaped projectiles designed to over-penetrate targets with minimal loss of energy. In other words: Fire straight through several enemies at once! ",
+					"Shaped projectiles designed to over-penetrate targets with minimal loss of energy. In other words: Fire straight through several enemies at once!",
 				stats: {
 					ex2: { name: "Max Penetrations", value: 1 }
 				},
@@ -130,7 +130,7 @@ export default {
 				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
 				},
@@ -193,9 +193,9 @@ export default {
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks. ",
+				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
 				stats: {
-					ex3: { name: "Stun Chance ", value: 20, percent: true }
+					ex3: { name: "Stun Chance", value: 20, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -210,13 +210,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Hollow-Point Bullets ",
+				name: "Hollow-Point Bullets",
 				icon: "Icon_Upgrade_Weakspot",
 				type: "Weak Spot Bonus",
 				text:
 					"Hit em' where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome.",
 				stats: {
-					ex4: { name: "Weakpoint Damage Bonus ", value: 50, percent: true }
+					ex4: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -234,7 +234,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up on some sandwich-storage, but your total ammo capacity is increased! ",
+				text: "You had to give up on some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 100 }
 				},
@@ -253,10 +253,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Conductive Bullets ",
+				name: "Conductive Bullets",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "More damage to targets that are in an electric field ",
+				text: "More damage to targets that are in an electric field",
 				stats: {
 					ex6: { name: "Electric Damage", value: 25, percent: true }
 				},
@@ -276,9 +276,9 @@ export default {
 				name: "Get In, Get Out",
 				icon: "Icon_Upgrade_MovementSpeed",
 				type: "Movement Speed",
-				text: "Temporary movement speed bonus after emptying clip ",
+				text: "Temporary movement speed bonus after emptying clip",
 				stats: {
-					ex5: { name: "Movement for 3 seconds ", value: 100, percent: true }
+					ex5: { name: "Movement for 3 seconds", value: 100, percent: true }
 				},
 				cost: {
 					credits: 4400,

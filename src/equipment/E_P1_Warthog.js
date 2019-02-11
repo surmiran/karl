@@ -27,7 +27,7 @@ export default {
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				text:
-					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
+					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
 					rate: { name: "Rate of Fire", value: 0.6 }
 				},
@@ -44,10 +44,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Overstuffed Magazine ",
+				name: "Overstuffed Magazine",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "CLip size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
 					clip: { name: "Magazine Size", value: 3 }
 				},
@@ -66,10 +66,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Expanded Ammo Bags ",
+				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 40 }
 				},
@@ -89,7 +89,7 @@ export default {
 				name: "Loaded Shells",
 				icon: "Icon_Upgrade_Shotgun_Pellet",
 				type: "Pellet Count",
-				text: "More pellets in each shell ",
+				text: "More pellets in each shell",
 				stats: {
 					ex1: { name: "Bullets (per shot)", value: 2 }
 				},
@@ -109,7 +109,7 @@ export default {
 				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
 					clip: { name: "Magazine Size", value: 3 }
 				},
@@ -132,9 +132,9 @@ export default {
 				icon: "Icon_Upgrade_Recoil",
 				type: "Recoil",
 				text:
-					"Quality engineering, the best lasercut parts, the tender loving care of a dedicated R&D Department, The recoil of your gun is drastically reduced. ",
+					"Quality engineering, the best lasercut parts, the tender loving care of a dedicated R&D Department, The recoil of your gun is drastically reduced.",
 				stats: {
-					ex4: { name: "Reduced Recoil ", value: 1, binary: true }
+					ex4: { name: "Reduced Recoil", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2800,
@@ -149,12 +149,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Choke ",
+				name: "Choke",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
-				text: "Decreased shot spread ",
+				text: "Decreased shot spread",
 				stats: {
-					ex5: { name: "Increased Accuracy ", value: 1, binary: true }
+					ex5: { name: "Increased Accuracy", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2800,
@@ -192,13 +192,13 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Tungsten Coated Buckshot ",
+				name: "Tungsten Coated Buckshot",
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
 				text:
-					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer? ",
+					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex6: { name: "Armor Break Bonus ", value: 400, percent: true }
+					ex6: { name: "Armor Break Bonus", value: 400, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -213,11 +213,11 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Stun ",
+				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
 				text:
-					"Hit 'em so hard they can't recover! Every shot you fire has a higher chance to stop the target in its tracks. ",
+					"Hit 'em so hard they can't recover! Every shot you fire has a higher chance to stop the target in its tracks.",
 				stats: {
 					ex3: { name: "Stun Chance", value: 20, percent: true }
 				},
@@ -234,10 +234,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Bigger Pellets ",
+				name: "Bigger Pellets",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 2 }
 				},
@@ -256,10 +256,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Turret Whip ",
+				name: "Turret Whip",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Shoot your turrets to make them create an overcharged shot ",
+				text: "Shoot your turrets to make them create an overcharged shot",
 				stats: {
 					ex7: { name: "Turret Whip", value: 1, binary: true }
 				},
@@ -276,10 +276,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Miner Adjustments ",
+				name: "Miner Adjustments",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
-				text: "Fully automatic with an increased rate of fire ",
+				text: "Fully automatic with an increased rate of fire",
 				stats: {
 					rate: { name: "Rate of Fire", value: 1 },
 					ex8: { name: "Automatic Fire", value: 1, binary: true }

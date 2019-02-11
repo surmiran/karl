@@ -15,7 +15,7 @@ export default {
 		ex4: { name: "Charged Shot Ammo Use", value: 8 },
 		ex5: { name: "Charge Speed", value: 0.8 },
 		ex6: { name: "Heat when Charged", value: 0.8 },
-		ex7: { name: "Projectile Velocity ", value: 0, percent: true },
+		ex7: { name: "Projectile Velocity", value: 0, percent: true },
 		ex8: { name: "Heat when Charging", value: 0 },
 		ex9: { name: "Flying Nightmare", value: 0, binary: true },
 		ex10: { name: "Charged Explode on hit", value: 0, binary: true },
@@ -28,7 +28,7 @@ export default {
 				name: "Damage Normal Projectile",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Increases damage caused by normal projectiles ",
+				text: "Increases damage caused by normal projectiles",
 				stats: {
 					dmg: { name: "Damage", value: 6 }
 				},
@@ -68,7 +68,7 @@ export default {
 				name: "Charged Damage",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Increases damage caused by a charged shot direct impact ",
+				text: "Increases damage caused by a charged shot direct impact",
 				stats: {
 					ex1: { name: "Charged Damage", value: 20 }
 				},
@@ -90,7 +90,7 @@ export default {
 				name: "Charged Radius",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
-				text: "Bigger area radius for the charged projectile explosion ",
+				text: "Bigger area radius for the charged projectile explosion",
 				stats: {
 					ex3: { name: "Charged Damage Radius", value: 1.5 }
 				},
@@ -107,12 +107,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charged Projectile Speed ",
+				name: "Charged Projectile Speed",
 				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "Projectile Speed",
-				text: "Doubles the speed of the charged projectile ",
+				text: "Doubles the speed of the charged projectile",
 				stats: {
-					ex7: { name: "Projectile Velocity ", value: 200, percent: true }
+					ex7: { name: "Projectile Velocity", value: 200, percent: true }
 				},
 				cost: {
 					credits: 1800,
@@ -130,7 +130,7 @@ export default {
 				name: "Reactive Shockwave",
 				icon: "Icon_Upgrade_AreaDamage",
 				type: "Area Damage",
-				text: "More bang for the buck! Increases the damage done within the Area of Effect! ",
+				text: "More bang for the buck! Increases the damage done within the Area of Effect!",
 				stats: {
 					ex2: { name: "Charged Area Damage", value: 20 }
 				},
@@ -172,7 +172,7 @@ export default {
 				name: "Charge Speed",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
-				text: "Prepare a charged shot in half the time ",
+				text: "Prepare a charged shot in half the time",
 				stats: {
 					ex5: { name: "Charge Speed", value: 0.8 }
 				},
@@ -214,9 +214,9 @@ export default {
 				name: "Heat Buildup",
 				icon: "Icon_Upgrade_TemperatureCoolDown",
 				type: "Cooling",
-				text: "Reduces how fast the weapon overheats when holding a charged shot ",
+				text: "Reduces how fast the weapon overheats when holding a charged shot",
 				stats: {
-					ex8: { name: "Heat when Charged ", value: 0.3, subtract: true }
+					ex8: { name: "Heat when Charged", value: 0.3, subtract: true }
 				},
 				cost: {
 					credits: 3800,
@@ -256,7 +256,7 @@ export default {
 				name: "Charged Explode On Hit",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Any projectile will blow up the Charged Projectile causing a bigger explosion dealing extra damage. ",
+				text: "Any projectile will blow up the Charged Projectile causing a bigger explosion dealing extra damage.",
 				stats: {
 					ex10: { name: "Charged Explode on hit", value: 1, binary: true }
 				},

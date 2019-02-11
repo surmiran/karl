@@ -33,7 +33,7 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Shoot longer before needing to recharge ",
+				text: "Shoot longer before needing to recharge",
 				stats: {
 					ex3: {
 						name: "Pressure Drop Rate",
@@ -284,7 +284,7 @@ export default {
 				name: "Cold Radiance",
 				icon: "Icon_Upgrade_Cold",
 				type: "Cold",
-				text: "Cool things down in a 5m radius around you ",
+				text: "Cool things down in a 5m radius around you",
 				stats: {
 					ex6: { name: "Area Cold Damage", value: 1, binary: true }
 				},

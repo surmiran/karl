@@ -12,8 +12,8 @@ export default {
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Electric Damage", value: 2 },
 		ex2: { name: "Electrocution Chance", value: 10, percent: true },
-		ex3: { name: "Increased Accuracy ", value: 0, binary: true },
-		ex4: { name: "Weakpoint Damage Bonus ", value: 0, percent: true },
+		ex3: { name: "Increased Accuracy", value: 0, binary: true },
+		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Electrocution Bonus", value: 0 },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true }
 	},
@@ -21,10 +21,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Increased Caliber Rounds ",
+				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
 				},
@@ -41,10 +41,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Expanded Ammo Bags ",
+				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 120 }
 				},
@@ -61,7 +61,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Upgraded Capacitors ",
+				name: "Upgraded Capacitors",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
 				text: "Better chance to electrocute target",
@@ -83,10 +83,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "High Capacity Magazine ",
+				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
 					clip: { name: "Magazine Size", value: 10 }
 				},
@@ -103,13 +103,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Floating Barrel ",
+				name: "Floating Barrel",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text:
-					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
+					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Accuracy ", value: 1, binary: true }
+					ex3: { name: "Increased Accuracy", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2000,
@@ -124,10 +124,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Extra Ammo ",
+				name: "Extra Ammo",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Max Ammo +60 ",
+				text: "Max Ammo +60",
 				stats: {
 					ammo: { name: "Max Ammo", value: 60 }
 				},
@@ -170,7 +170,7 @@ export default {
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
 				},
@@ -195,7 +195,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've updated the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex4: { name: "Weakpoint Damage Bonus ", value: 50, percent: true }
+					ex4: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -210,10 +210,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Larger Capacitors ",
+				name: "Larger Capacitors",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "Better chance to electrocute target ",
+				text: "Better chance to electrocute target",
 				stats: {
 					ex2: { name: "Electrocution Chance", value: 10, percent: true }
 				},
@@ -233,7 +233,7 @@ export default {
 				name: "Overcharged Rounds",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "More electric damage ",
+				text: "More electric damage",
 				stats: {
 					ex1: { name: "Electric Damage", value: 2 }
 				},
@@ -252,10 +252,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Electrocution Rounds ",
+				name: "Electrocution Rounds",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "Deal extra damage to electrocuted targets ",
+				text: "Deal extra damage to electrocuted targets",
 				stats: {
 					ex5: { name: "Electrocution Bonus", value: 1 }
 				},
@@ -272,10 +272,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Magazine Capacity Tweak ",
+				name: "Magazine Capacity Tweak",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "ClipSize",
-				text: "Greatly increased magazine capacity ",
+				text: "Greatly increased magazine capacity",
 				stats: {
 					clip: { name: "Magazine Size", value: 20 }
 				},
@@ -295,7 +295,7 @@ export default {
 				name: "Electric Arc",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "Chance for electrocution to arc from one target to another ",
+				text: "Chance for electrocution to arc from one target to another",
 				stats: {
 					ex6: { name: "Electrocution AoE", value: 25, percent: true }
 				},

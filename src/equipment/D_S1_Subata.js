@@ -12,9 +12,9 @@ export default {
 		reload: { name: "Reload Time", value: 1.9 },
 		ex1: { name: "Weakpoint Damage Bonus", value: 30, percent: true },
 		ex2: { name: "Increased Accuracy", value: 0, binary: true },
-		ex3: { name: "Increased Stability ", value: 0, binary: true },
+		ex3: { name: "Increased Stability", value: 0, binary: true },
 		ex4: { name: "Damage Vs Burning", value: 0, percent: true },
-		ex5: { name: "Damage Vs Mactera ", value: 0, percent: true }
+		ex5: { name: "Damage Vs Mactera", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -65,7 +65,7 @@ export default {
 				name: "Extra Ammo",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Expanded Ammo Bags ",
+				text: "Expanded Ammo Bags",
 				stats: {
 					ammo: { name: "Max Ammo", value: 80 }
 				},
@@ -85,7 +85,7 @@ export default {
 				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 2 }
 				},
@@ -107,9 +107,9 @@ export default {
 				name: "Recoil Compensator",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
-				text: "Spread per shot reduced ",
+				text: "Spread per shot reduced",
 				stats: {
-					ex3: { name: "Increased Stability ", value: 1, binary: true }
+					ex3: { name: "Increased Stability", value: 1, binary: true }
 				},
 				cost: {
 					credits: 2200,
@@ -148,7 +148,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Expanded Ammo Bags ",
+				text: "Expanded Ammo Bags",
 				stats: {
 					ammo: { name: "Max Ammo", value: 80 }
 				},
@@ -171,7 +171,7 @@ export default {
 				icon: "Icon_Upgrade_Weakspot",
 				type: "Weak Spot Bonus",
 				text:
-					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome. ",
+					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome.",
 				stats: {
 					ex1: { name: "Weakpoint Damage Bonus", value: 40, percent: true }
 				},
@@ -191,7 +191,7 @@ export default {
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The Good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The Good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
 				},
@@ -210,10 +210,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Volatile Bullets ",
+				name: "Volatile Bullets",
 				icon: "Icon_Upgrade_Heat",
 				type: "Heat",
-				text: "Bonus fire damage to burning targets. ",
+				text: "Bonus fire damage to burning targets.",
 				stats: {
 					ex4: { name: "Damage Vs Burning", value: 50, percent: true }
 				},

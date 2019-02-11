@@ -12,9 +12,9 @@ export default {
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Burst Size", value: 3 },
 		ex2: { name: "Burst Speed", value: 0.05 },
-		ex3: { name: "Increased Stability ", value: 0, binary: true },
-		ex4: { name: "Reduced Recoil ", value: 0, binary: true },
-		ex5: { name: "Armor Break Bonus ", value: -30, percent: true },
+		ex3: { name: "Increased Stability", value: 0, binary: true },
+		ex4: { name: "Reduced Recoil", value: 0, binary: true },
+		ex5: { name: "Armor Break Bonus", value: -30, percent: true },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
 		ex8: { name: "Burst Stun Duration", value: 0 }
@@ -26,7 +26,7 @@ export default {
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 2 }
 				},
@@ -46,7 +46,7 @@ export default {
 				name: "Disabled Safety",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
-				text: "Shorter Delay between bursts ",
+				text: "Shorter Delay between bursts",
 				stats: {
 					rate: { name: "Rate of Fire", value: 5 }
 				},
@@ -69,9 +69,9 @@ export default {
 				icon: "Icon_Upgrade_Aim",
 				type: "Accuracy",
 				text:
-					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
+					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Stability ", value: 1, binary: true }
+					ex3: { name: "Increased Stability", value: 1, binary: true }
 				},
 				cost: {
 					credits: 1800,
@@ -90,9 +90,9 @@ export default {
 				icon: "Icon_Upgrade_Recoil",
 				type: "Recoil",
 				text:
-					"Quality engineering, the best laser cut parts, the tender loving care of a dedicated R&D Department. The recoil of your gun is drastically reduced. ",
+					"Quality engineering, the best laser cut parts, the tender loving care of a dedicated R&D Department. The recoil of your gun is drastically reduced.",
 				stats: {
-					ex4: { name: "Reduced Recoil ", value: 1, binary: true }
+					ex4: { name: "Reduced Recoil", value: 1, binary: true }
 				},
 				cost: {
 					credits: 1800,
@@ -133,7 +133,7 @@ export default {
 				name: "High Capacity Magazine",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants. ",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
 					clip: { name: "Magazine Size", value: 6 }
 				},
@@ -153,7 +153,7 @@ export default {
 				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 4 }
 				},
@@ -176,9 +176,9 @@ export default {
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
 				text:
-					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer? ",
+					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex5: { name: "Armor Break Bonus ", value: 200, percent: true }
+					ex5: { name: "Armor Break Bonus", value: 200, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -196,7 +196,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 72 }
 				},
@@ -217,7 +217,7 @@ export default {
 				icon: "Icon_Upgrade_Weakspot",
 				type: "Weak Spot Bonus",
 				text:
-					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome. ",
+					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
 					ex6: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
 				},
@@ -239,7 +239,7 @@ export default {
 				name: "Burst Damage",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Damage bonus on last bullet if the first two hit ",
+				text: "Damage bonus on last bullet if the first two hit",
 				stats: {
 					ex7: { name: "Burst Damage", value: 20 }
 				},
@@ -259,7 +259,7 @@ export default {
 				name: "Burst Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Stun target if all shots in a burst hit ",
+				text: "Stun target if all shots in a burst hit",
 				stats: {
 					ex8: { name: "Burst Stun Duration", value: 3 }
 				},
@@ -279,7 +279,7 @@ export default {
 				name: "Longer Burst",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
-				text: "Fire more rounds in each burst ",
+				text: "Fire more rounds in each burst",
 				stats: {
 					ex1: { name: "Burst Size", value: 3 }
 				},

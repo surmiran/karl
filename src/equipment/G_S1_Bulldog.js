@@ -7,7 +7,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 45 },
 		ammo: { name: "Max Ammo", value: 28 },
-		clip: { name: "Magazine Size ", value: 4 },
+		clip: { name: "Magazine Size", value: 4 },
 		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Increased Accuracy", value: 0, binary: true },
@@ -70,7 +70,7 @@ export default {
 				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 10 }
 				},
@@ -91,7 +91,7 @@ export default {
 				icon: "Icon_Upgrade_Aim",
 				type: "Accuracy",
 				text:
-					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun. ",
+					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
 					ex2: { name: "Increased Stability", value: 1, binary: true }
 				},
@@ -108,10 +108,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Expanded Ammo Bags ",
+				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Expanded Ammo Bags ",
+				text: "Expanded Ammo Bags",
 				stats: {
 					ammo: { name: "Max Ammo", value: 6 }
 				},
@@ -134,7 +134,7 @@ export default {
 				icon: "Icon_Upgrade_BulletPenetration",
 				type: "Blow Through",
 				text:
-					"Shaped projectiles capable to over-penetrate targets with a mininal loss of energy. In other words: Fire straight through several enemies at once! ",
+					"Shaped projectiles capable to over-penetrate targets with a mininal loss of energy. In other words: Fire straight through several enemies at once!",
 				stats: {
 					ex3: { name: "Max Penetrations", value: 10 }
 				},
@@ -154,7 +154,7 @@ export default {
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Each shot you fire has a chance to stop the target in its tracks. ",
+				text: "Hit 'em so hard they can't recover! Each shot you fire has a chance to stop the target in its tracks.",
 				stats: {
 					ex4: { name: "Stun Chance", value: 50, percent: true }
 				},
@@ -174,7 +174,7 @@ export default {
 				name: "Explosive Rounds",
 				icon: "Icon_Upgrade_Explosive",
 				type: "Explosion",
-				text: "Bullets detonate creating a radius of damage ",
+				text: "Bullets detonate creating a radius of damage",
 				stats: {
 					ex5: { name: "Area Damage", value: 26 },
 					ex9: { name: "Damage Radius", value: 1 }
@@ -197,7 +197,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased! ",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 12 }
 				},
@@ -217,7 +217,7 @@ export default {
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 20 }
 				},
@@ -238,7 +238,7 @@ export default {
 				icon: "Icon_Upgrade_Weakspot",
 				type: "Weak Spot Bonus",
 				text:
-					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome. ",
+					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
 					ex6: { name: "Weakpoint Damage Bonus", value: 75, percent: true }
 				},
@@ -260,7 +260,7 @@ export default {
 				name: "Dead Eye",
 				icon: "Icon_Upgrade_Aim",
 				type: "Accuracy",
-				text: "No aim penalty while moving ",
+				text: "No aim penalty while moving",
 				stats: {
 					ex7: { name: "Dead-Eye", value: 150, subtract: true, percent: true }
 				},
@@ -277,10 +277,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Glyphid Neurotoxin Coating ",
+				name: "Glyphid Neurotoxin Coating",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Bonus damage against Glyphids ",
+				text: "Bonus damage against Glyphids",
 				stats: {
 					ex8: { name: "Damage Vs Glyphid", value: 20, percent: true }
 				},

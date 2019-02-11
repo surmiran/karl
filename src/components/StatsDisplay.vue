@@ -18,6 +18,8 @@
 					</span>
 				</div>
 			</div>
+			<h2 v-if="!isNaN(calcStats.dps)">DPS: {{ calcStats.dps }}</h2>
+			<span v-if="!isNaN(calcStats.dps)" class="inactiveStat">Theoretical <i>direct</i> damage per second, splash damage and armor break not included. Valid for standard clip based weapons, provided you hit your target. </span>
 			<h2 v-if="calcStats.visible">Total Costs:</h2>
 			<p class="costList">
 				<span class="costListItem" v-if="calcStats.cost.credits > 0">
@@ -55,6 +57,37 @@
 <!--todo: show most cost effective upgrade in tier (most change %)-->
 <script>
 import store from "../store";
+
+const _calculateDps = stats => {
+	let damageWords = ["Damage", "Area Damage"];
+	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size"];
+	let rateOfFireWords = ["Rate of Fire"];
+	let reloadTimeWords = ["Reload Time"];
+	let pelletsWords = ["Bullets (per shot)"];
+	let directDamageWords = ["Direct Damage"];
+	let dpsStats = {};
+	for (let stat of stats) {
+		if (damageWords.includes(stat.name) && !dpsStats.damage) {
+			dpsStats.damage = parseFloat(stat.value);
+		} else if (magazineSizeWords.includes(stat.name) && !dpsStats.magazineSize) {
+			dpsStats.magazineSize = parseFloat(stat.value);
+		} else if (rateOfFireWords.includes(stat.name) && !dpsStats.rateOfFire) {
+			dpsStats.rateOfFire = parseFloat(stat.value);
+		} else if (reloadTimeWords.includes(stat.name) && !dpsStats.reloadTime) {
+			dpsStats.reloadTime = parseFloat(stat.value);
+		} else if (pelletsWords.includes(stat.name)) {
+			dpsStats.damage = dpsStats.damage * parseFloat(stat.value);
+		} else if (directDamageWords.includes(stat.name)) {
+			dpsStats.damage = dpsStats.damage + parseFloat(stat.value);
+		}
+	}
+
+	let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+	let damageTime = timeToEmpty + dpsStats.reloadTime;
+	let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
+	let damagePerSecond = magazineDamage / damageTime;
+	return parseFloat(damagePerSecond).toFixed(2);
+};
 
 export default {
 	name: "StatsDisplay",
@@ -137,6 +170,8 @@ export default {
 				return modifiedStats;
 			});
 
+			let dps = _calculateDps(stats);
+
 			let totalCost = {
 				credits: 0,
 				bismor: 0,
@@ -157,13 +192,20 @@ export default {
 				totalCost.umanite += cost.umanite;
 				totalCost.err += cost.err;
 			}
-			return { stats: stats, cost: totalCost, visible: visible };
+			return { stats: stats, cost: totalCost, visible: visible, dps: dps };
 		}
 	}
 };
 </script>
 
 <style scoped>
+h2 {
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: normal;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
+}
 .statsDisplay {
 	flex: 1;
 	height: 100%;

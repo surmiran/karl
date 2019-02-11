@@ -29,7 +29,7 @@ export default {
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 10,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -50,7 +50,7 @@ export default {
 					credits: 420,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 10,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -68,7 +68,7 @@ export default {
 				},
 				cost: {
 					credits: 420,
-					bismor: 0,
+					bismor: 10,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
@@ -89,9 +89,9 @@ export default {
 					ex2: { name: "Cooling Rate", value: 1 }
 				},
 				cost: {
-					credits: 0,
+					credits: 780,
 					bismor: 0,
-					croppa: 0,
+					croppa: 22,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
@@ -109,13 +109,13 @@ export default {
 					ex1: { name: "Overheat Duration", value: 3, subtract: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 720,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 22,
 					err: 0
 				}
 			}
@@ -133,12 +133,12 @@ export default {
 					ex4: { name: "Heat removal on Damage", value: 1 }
 				},
 				cost: {
-					credits: 0,
+					credits: 960,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
+					jadiz: 16,
+					magnite: 12,
 					umanite: 0,
 					err: 0
 				}
@@ -157,8 +157,8 @@ export default {
 				cost: {
 					credits: 1100,
 					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
+					croppa: 24,
+					enorPearl: 18,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -175,12 +175,12 @@ export default {
 					ex4: { name: "Heat removal on Damage", value: 1 }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 1100,
+					bismor: 24,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 18,
 					umanite: 0,
 					err: 0
 				}

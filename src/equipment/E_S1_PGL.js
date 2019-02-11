@@ -15,9 +15,9 @@ export default {
 		ex3: { name: "Fear Factor", value: 100, percent: true },
 		ex4: { name: "Projectile Velocity", value: 0, percent: true },
 		ex5: { name: "Converted to Fire", value: 0, percent: true },
-		ex6: { name: "Stun Chance ", value: 0, percent: true },
-		ex7: { name: "Proximity Trigger ", value: 0, binary: true },
-		ex8: { name: "Direct Damage ", value: 0 }
+		ex6: { name: "Stun Chance", value: 0, percent: true },
+		ex7: { name: "Proximity Trigger", value: 0, binary: true },
+		ex8: { name: "Direct Damage", value: 0 }
 	},
 	mods: [
 		[
@@ -43,10 +43,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Expanded Ammo Bags ",
+				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Expanded Ammo Bags ",
+				text: "Expanded Ammo Bags",
 				stats: {
 					ammo: { name: "Max Ammo", value: 2 }
 				},
@@ -88,7 +88,7 @@ export default {
 				name: "Extra Ammo",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Expanded Ammo Bags ",
+				text: "Expanded Ammo Bags",
 				stats: {
 					ammo: { name: "Max Ammo", value: 2 }
 				},
@@ -108,7 +108,7 @@ export default {
 				name: "Larger Payload",
 				icon: "Icon_Upgrade_AreaDamage",
 				type: "Area Damage",
-				text: "More bang for the buck! Increases the damage done within the Area of Effect! ",
+				text: "More bang for the buck! Increases the damage done within the Area of Effect!",
 				stats: {
 					dmg: { name: "Area Damage", value: 25 }
 				},
@@ -125,11 +125,11 @@ export default {
 			},
 			{
 				selected: false,
-				name: "High Velocity Grenades ",
+				name: "High Velocity Grenades",
 				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "Projectile Speed",
 				text:
-					"We souped up the ejection mechanisms of your gun, so the projectiles are now fired at a much higher velocity. ",
+					"We souped up the ejection mechanisms of your gun, so the projectiles are now fired at a much higher velocity.",
 				stats: {
 					ex4: { name: "Projectile Velocity", value: 180, percent: true }
 				},
@@ -148,7 +148,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Incendiary Compound ",
+				name: "Incendiary Compound",
 				icon: "Icon_Upgrade_Heat",
 				type: "Heat",
 				text: "50% damage converted to heat. This will reduce direct Damage, but will set enemies on fire.",
@@ -168,11 +168,11 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Pressure Wave ",
+				name: "Pressure Wave",
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
 				text:
-					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer? ",
+					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer?",
 				stats: {
 					ex2: { name: "Armor Break Bonus", value: 500, percent: true }
 				},
@@ -194,7 +194,7 @@ export default {
 				name: "Homebrew Explosive",
 				icon: "Icon_Upgrade_AreaDamage",
 				type: "Area Damage",
-				text: "More bang for the buck! Increases the damage done within the Area of Effect! ",
+				text: "More bang for the buck! Increases the damage done within the Area of Effect!",
 				stats: {
 					dmg: { name: "Area Damage", value: 40 }
 				},
@@ -232,12 +232,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Concussive Blast ",
+				name: "Concussive Blast",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Stuns creatures within the blast radius ",
+				text: "Stuns creatures within the blast radius",
 				stats: {
-					ex6: { name: "Stun Chance ", value: 100, percent: true }
+					ex6: { name: "Stun Chance", value: 100, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -258,9 +258,9 @@ export default {
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
 				text:
-					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100% ",
+					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100%",
 				stats: {
-					ex7: { name: "Proximity Trigger ", value: 1, binary: true }
+					ex7: { name: "Proximity Trigger", value: 1, binary: true }
 				},
 				cost: {
 					credits: 4400,
@@ -278,9 +278,9 @@ export default {
 				name: "Spiky Grenade",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Deals damage on direct impact ",
+				text: "Deals damage on direct impact",
 				stats: {
-					ex8: { name: "Direct Damage ", value: 100 }
+					ex8: { name: "Direct Damage", value: 100 }
 				},
 				cost: {
 					credits: 4400,

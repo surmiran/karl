@@ -27,7 +27,7 @@ export default {
 				name: "Increased Caliber Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
 				},
@@ -68,7 +68,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-space, but your total ammo capacity is increased! ",
+				text: "You had to give up some sandwich-space, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 220 }
 				},
@@ -90,7 +90,7 @@ export default {
 				name: "Tighter Barrel Alignment",
 				icon: "Icon_Upgrade_Aim",
 				type: "Accuracy",
-				text: "Improved accuracy ",
+				text: "Improved accuracy",
 				stats: {
 					ex3: { name: "Reduced Spread", value: 25, percent: true }
 				},
@@ -111,7 +111,7 @@ export default {
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				text:
-					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
+					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
 					rate: { name: "Rate of Fire", value: 0.15 }
 				},
@@ -131,7 +131,7 @@ export default {
 				name: "Lighter Barrel Assembly",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
-				text: "Reach the max rate of fire faster ",
+				text: "Reach the max rate of fire faster",
 				stats: {
 					ex4: { name: "Lighter Barrel Assembly", value: 20, percent: true, subtract: true }
 				},
@@ -154,7 +154,7 @@ export default {
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				text:
-					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please. ",
+					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
 					rate: { name: "Rate of Fire", value: 0.35 }
 				},
@@ -174,7 +174,7 @@ export default {
 				name: "Loaded Rounds",
 				icon: "Icon_Upgrade_AreaDamage",
 				type: "Area Damage",
-				text: "Increased splash damage ",
+				text: "Increased splash damage",
 				stats: {
 					ex1: { name: "Area Damage", value: 2 }
 				},
@@ -194,7 +194,7 @@ export default {
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased. ",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 4 }
 				},
@@ -217,7 +217,7 @@ export default {
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
 				text:
-					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer? ",
+					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer?",
 				stats: {
 					ex5: { name: "Armor Break Bonus", value: 400, percent: true }
 				},
@@ -237,7 +237,7 @@ export default {
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks. ",
+				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
 				stats: {
 					ex6: { name: "Stun Chance", value: 20, percent: true }
 				},
@@ -254,10 +254,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Shrapnel Rounds ",
+				name: "Shrapnel Rounds",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
-				text: "Greater splash damage radius ",
+				text: "Greater splash damage radius",
 				stats: {
 					ex2: { name: "Damage Radius", value: 0.5 }
 				},
@@ -279,7 +279,7 @@ export default {
 				name: "Feedback Loop",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Increased damage when at max rate of fire ",
+				text: "Increased damage when at max rate of fire",
 				stats: {
 					ex7: { name: "Damage when at maximum fire rate", value: 20, percent: true }
 				},
@@ -299,7 +299,7 @@ export default {
 				name: "Suppressive Fire",
 				icon: "Icon_Upgrade_ScareEnemies",
 				type: "Fear",
-				text: "Chance to scare enemies next to a bullet impact ",
+				text: "Chance to scare enemies next to a bullet impact",
 				stats: {
 					ex8: { name: "AoE Fear", value: 1 }
 				},
@@ -316,19 +316,19 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Resistance At Full Rate Of Fire ",
+				name: "Resistance At Full Rate Of Fire",
 				icon: "Icon_Upgrade_Resistance",
 				type: "Resistance",
-				text: "Gain damage reduction when at max rate of fire ",
+				text: "Gain damage reduction when at max rate of fire",
 				stats: {
 					ex9: { name: "Resistance at full rate of fire", value: 1, binary: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 5600,
 					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
+					croppa: 64,
+					enorPearl: 70,
+					jadiz: 140,
 					magnite: 0,
 					umanite: 0,
 					err: 0

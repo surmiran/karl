@@ -158,11 +158,10 @@ export default {
 
 						modifier.subtract = upgrade.stats[key].subtract;
 						modifier.percent = upgrade.stats[key].percent;
+						costsArray.push(upgrade.cost);
 					}
 					modifiedStats.modifier = `${modifier.subtract ? "" : "+"}${modifier.value}${modifier.percent ? "%" : ""}`;
 					modifiedStats.modified = true;
-
-					costsArray.push(upgradeForKey[0].cost);
 				}
 				if (modifiedStats.value === 0) {
 					modifiedStats.inactive = true;

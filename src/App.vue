@@ -7,8 +7,8 @@
 			<ClassSelect :classId="'E'" :name="'Engineer'" />
 			<ClassSelect :classId="'G'" :name="'Gunner'" />
 			<ClassSelect :classId="'S'" :name="'Scout'" />
-			<div class="shareArea" v-on:click="getLink()">
-				<label for="idCopyTextArea" class="shareText">Share Link</label>
+			<div class="linkArea" v-on:click="getLink()">
+				<label for="idCopyTextArea" class="linkText">Generate</label>
 				<input id="idCopyTextArea" class="copyTextArea" disabled />
 			</div>
 			<!--upload configuration for management approval-->
@@ -204,7 +204,7 @@ h2 {
 	padding-right: 1rem !important;
 }
 
-.shareArea {
+.linkArea {
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
@@ -212,7 +212,7 @@ h2 {
 	width: 10rem;
 	margin-left: auto;
 }
-.shareText {
+.linkText {
 	cursor: pointer;
 	color: #fc9e00;
 }
@@ -316,7 +316,7 @@ h2 {
 		width: 95vw;
 	}
 
-	.shareArea {
+	.linkArea {
 		width: 5rem;
 	}
 }

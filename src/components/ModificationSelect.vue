@@ -2,7 +2,7 @@
 	<div class="modSelection">
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
-			<h2>Tier {{ tierId + 1 }}</h2>
+			<h2>Tier {{ tierId + 1 }}<p v-if="tierId > 0" class="levelIndicator">Level {{tierId * 4}}</p></h2>
 			<!-- todo: show level requirement  -->
 			<div
 				class="tierSubContainer"
@@ -173,6 +173,13 @@ export default {
 <style scoped>
 h2 {
 	width: 11rem;
+}
+
+.levelIndicator {
+	margin: 0;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: normal;
 }
 
 .modSelection {

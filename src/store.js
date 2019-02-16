@@ -295,6 +295,13 @@ export default new Vuex.Store({
 					for (let tierId in mods) {
 						if (parseInt(mods[tierId]) >= 0) {
 							state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
+						} else if (mods[tierId] === "focus") {
+							state.selected.class = classId
+							state.selected.equipment = equipmentId
+							for (let equipment in state.tree[classId]) {
+								state.tree[classId][equipment].selected = equipment === equipmentId;
+							}
+							// focus
 						}
 					}
 				}

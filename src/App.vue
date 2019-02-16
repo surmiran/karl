@@ -114,7 +114,11 @@ export default {
 	},
 	methods: {
 		getLink() {
-			let parts = JSON.stringify(store.state.dataParts);
+			let dataParts = store.state.dataParts;
+			let classInFocus = store.state.selected.class;
+			let equipmentInFocus = store.state.selected.equipment;
+			dataParts[classInFocus][equipmentInFocus].push("focus");
+			let parts = JSON.stringify(dataParts);
 			let uri = `https://surmiran.github.io/karl/?=${Lzs.compressToEncodedURIComponent(parts)}`;
 			let copyTextarea = document.getElementById("idCopyTextArea");
 			copyTextarea.disabled = false;

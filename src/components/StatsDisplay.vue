@@ -234,6 +234,7 @@ h2 {
 }
 
 .equipmentTitle {
+	font-size: 1.5rem;
 	text-align: center;
 	color: #fc9e00;
 	margin-bottom: 0;

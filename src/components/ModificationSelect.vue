@@ -190,14 +190,14 @@ h2 {
 }
 
 .modificationName {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 .modSelectionTitle {
 	width: 100%;
 	/*background-color: #282117;*/
 	color: #fffbff;
-	font-size: 2rem;
+	font-size: 1.2rem;
 	text-align: center;
 }
 
@@ -286,6 +286,7 @@ h2 {
 }
 
 .modTextBox {
+	min-height: 11rem;
 	padding-top: 1rem;
 	color: #fffbff;
 }

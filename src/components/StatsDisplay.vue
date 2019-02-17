@@ -59,8 +59,10 @@
 import store from "../store";
 
 const _calculateDps = stats => {
+	console.log(stats)
 	let damageWords = ["Damage", "Area Damage"];
 	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size"];
+	let ammoWords = ["Max Ammo", "Max Fuel"];
 	let rateOfFireWords = ["Rate of Fire"];
 	let reloadTimeWords = ["Reload Time"];
 	let pelletsWords = ["Bullets (per shot)"];
@@ -79,7 +81,14 @@ const _calculateDps = stats => {
 			dpsStats.damage = dpsStats.damage * parseFloat(stat.value);
 		} else if (directDamageWords.includes(stat.name)) {
 			dpsStats.damage = dpsStats.damage + parseFloat(stat.value);
+		} else if (ammoWords.includes(stat.name)) {
+			dpsStats.maxAmmo = parseFloat(stat.value);
 		}
+	}
+	if ((dpsStats.maxAmmo && !dpsStats.magazineSize) || (dpsStats.magazineSize && !dpsStats.maxAmmo)) {
+		// special case for minigun
+		let damagePerSecond = dpsStats.damage * dpsStats.rateOfFire;
+		return parseFloat(damagePerSecond).toFixed(2);
 	}
 
 	let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;

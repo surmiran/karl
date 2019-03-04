@@ -8,7 +8,7 @@ export default {
 		dmg: { name: "Damage", value: 14 },
 		ammo: { name: "Max Ammo", value: 440 },
 		clip: { name: "Magazine Size", value: 110 },
-		rate: { name: "Rate of Fire", value: 1 },
+		rate: { name: "Rate of Fire", value: 3 },
 		reload: { name: "Reload Time", value: 5 },
 		ex1: { name: "Area Damage", value: 8 },
 		ex2: { name: "Damage Radius", value: 1 },
@@ -113,7 +113,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 0.15 }
+					rate: { name: "Rate of Fire", value: 0.45 }
 				},
 				cost: {
 					credits: 2000,
@@ -156,7 +156,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 0.35 }
+					rate: { name: "Rate of Fire", value: 1.05 }
 				},
 				cost: {
 					credits: 2800,

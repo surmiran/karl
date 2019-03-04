@@ -19,11 +19,15 @@
 				</div>
 			</div>
 			<h2 v-if="!isNaN(calcStats.dps)">DPS: {{ calcStats.dps }}</h2>
-			<span v-if="!isNaN(calcStats.dps)" class="inactiveStat"><i>Theoretical</i> damage per second, ignoring armor break and weakspot bonuses.</span>
+			<span v-if="!isNaN(calcStats.dps)" class="inactiveStat"
+				><i>Theoretical</i> damage per second, ignoring armor break and weakspot bonuses.</span
+			>
 			<h2 v-if="!isNaN(calcStats.dpm)">Magazine Damage: {{ calcStats.dpm }}</h2>
 			<span v-if="!isNaN(calcStats.dpm)" class="inactiveStat"><i>Theoretical</i> damage per magazine.</span>
 			<h2 v-if="!isNaN(calcStats.dpa)">Total damage: {{ calcStats.dpa }}</h2>
-			<span v-if="!isNaN(calcStats.dpa)" class="inactiveStat"><i>Theoretical</i> total damage available with initial ammunition.</span>
+			<span v-if="!isNaN(calcStats.dpa)" class="inactiveStat"
+				><i>Theoretical</i> total damage available with initial ammunition.</span
+			>
 			<!--todo: add numbers for weakspot damage to all stats-->
 			<h2 v-if="calcStats.visible">Total Costs:</h2>
 			<p class="costList">
@@ -64,8 +68,7 @@
 import store from "../store";
 
 const _calculateDamage = stats => {
-	console.log(stats)
-	let damageWords = ["Damage", "Area Damage"];
+	let damageWords = ["Damage", "Area Damage", "Electric Damage"];
 	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size"];
 	let ammoWords = ["Max Ammo", "Max Fuel"];
 	let rateOfFireWords = ["Rate of Fire"];
@@ -74,8 +77,13 @@ const _calculateDamage = stats => {
 	let directDamageWords = ["Direct Damage"];
 	let dpsStats = {};
 	for (let stat of stats) {
-		if (damageWords.includes(stat.name) && !dpsStats.damage) {
-			dpsStats.damage = parseFloat(stat.value);
+		if (damageWords.includes(stat.name)) {
+			if (dpsStats.damage) {
+				// there is a damage stat already, add the second one to it (probably area damage)
+				dpsStats.damage += parseFloat(stat.value);
+			} else {
+				dpsStats.damage = parseFloat(stat.value);
+			}
 		} else if (magazineSizeWords.includes(stat.name) && !dpsStats.magazineSize) {
 			dpsStats.magazineSize = parseFloat(stat.value);
 		} else if (rateOfFireWords.includes(stat.name) && !dpsStats.rateOfFire) {
@@ -112,6 +120,11 @@ const _calculateDamage = stats => {
 		dpmw: magazineDamage * 1,
 		dpa: dpsStats.damage * dpsStats.maxAmmo,
 		dpaw: dpsStats.damage * dpsStats.maxAmmo * 1
+	};
+};
+
+const _calculateSpecialDamage = stats => {
+	return {
 	};
 };
 
@@ -195,7 +208,13 @@ export default {
 				return modifiedStats;
 			});
 
-			let damage = _calculateDamage(stats);
+			let damage = null;
+			let specialEquipment = ["Cryo Cannon", "Experimental Plasma Charger", "Breach Cutter", "BRT7 Burst Fire Gun"];
+			if (specialEquipment.includes(store.state.tree[this.selectedClassId][this.selectedEquipmentId].name)) {
+				damage = _calculateSpecialDamage(stats);
+			} else {
+				damage = _calculateDamage(stats);
+			}
 
 			let totalCost = {
 				credits: 0,

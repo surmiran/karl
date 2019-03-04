@@ -191,7 +191,7 @@ export default {
 				type: "Resistance",
 				text: "Temporary invulnerability after being revived.",
 				stats: {
-					revive: { name: "Revive Invulnerability", value: 5 }
+					revive: { name: "Revive Invulnerability", value: 3 }
 				},
 				cost: {
 					credits: 2150,

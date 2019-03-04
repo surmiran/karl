@@ -231,7 +231,7 @@ export default {
 			{
 				selected: false,
 				name: "Explosive Goodbye",
-				icon: "Icon_Upgrade_Explosive",
+				icon: "Icon_Upgrade_Explosion",
 				type: "Explosion",
 				text: "The projectile explodes at the end of its lifecycle",
 				stats: {
@@ -251,7 +251,7 @@ export default {
 			{
 				selected: false,
 				name: "There Can Be Only One",
-				icon: "Icon_Upgrade_Explosive",
+				icon: "Icon_Upgrade_Explosion",
 				type: "Explosion",
 				text: "Explodes last projectile when a new one is fired",
 				stats: {

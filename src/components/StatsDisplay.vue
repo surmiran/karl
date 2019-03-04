@@ -19,7 +19,12 @@
 				</div>
 			</div>
 			<h2 v-if="!isNaN(calcStats.dps)">DPS: {{ calcStats.dps }}</h2>
-			<span v-if="!isNaN(calcStats.dps)" class="inactiveStat">Theoretical <i>direct</i> damage per second, splash damage and armor break not included. Valid for standard clip based weapons, provided you hit your target. </span>
+			<span v-if="!isNaN(calcStats.dps)" class="inactiveStat"><i>Theoretical</i> damage per second, ignoring armor break and weakspot bonuses.</span>
+			<h2 v-if="!isNaN(calcStats.dpm)">Magazine Damage: {{ calcStats.dpm }}</h2>
+			<span v-if="!isNaN(calcStats.dpm)" class="inactiveStat"><i>Theoretical</i> damage per magazine.</span>
+			<h2 v-if="!isNaN(calcStats.dpa)">Total damage: {{ calcStats.dpa }}</h2>
+			<span v-if="!isNaN(calcStats.dpa)" class="inactiveStat"><i>Theoretical</i> total damage available with initial ammunition.</span>
+			<!--todo: add numbers for weakspot damage to all stats-->
 			<h2 v-if="calcStats.visible">Total Costs:</h2>
 			<p class="costList">
 				<span class="costListItem" v-if="calcStats.cost.credits > 0">
@@ -58,7 +63,7 @@
 <script>
 import store from "../store";
 
-const _calculateDps = stats => {
+const _calculateDamage = stats => {
 	console.log(stats)
 	let damageWords = ["Damage", "Area Damage"];
 	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size"];
@@ -88,14 +93,26 @@ const _calculateDps = stats => {
 	if ((dpsStats.maxAmmo && !dpsStats.magazineSize) || (dpsStats.magazineSize && !dpsStats.maxAmmo)) {
 		// special case for minigun
 		let damagePerSecond = dpsStats.damage * dpsStats.rateOfFire;
-		return parseFloat(damagePerSecond).toFixed(2);
+		return {
+			dps: parseFloat(damagePerSecond).toFixed(2),
+			dpsw: parseFloat(damagePerSecond * 1).toFixed(2),
+			dpa: dpsStats.damage * dpsStats.maxAmmo,
+			dpaw: dpsStats.damage * dpsStats.maxAmmo * 1
+		};
 	}
 
 	let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
 	let damageTime = timeToEmpty + dpsStats.reloadTime;
 	let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
 	let damagePerSecond = magazineDamage / damageTime;
-	return parseFloat(damagePerSecond).toFixed(2);
+	return {
+		dps: parseFloat(damagePerSecond).toFixed(2),
+		dpsw: parseFloat(damagePerSecond * 1).toFixed(2),
+		dpm: magazineDamage,
+		dpmw: magazineDamage * 1,
+		dpa: dpsStats.damage * dpsStats.maxAmmo,
+		dpaw: dpsStats.damage * dpsStats.maxAmmo * 1
+	};
 };
 
 export default {
@@ -178,7 +195,7 @@ export default {
 				return modifiedStats;
 			});
 
-			let dps = _calculateDps(stats);
+			let damage = _calculateDamage(stats);
 
 			let totalCost = {
 				credits: 0,
@@ -200,7 +217,17 @@ export default {
 				totalCost.umanite += cost.umanite;
 				totalCost.err += cost.err;
 			}
-			return { stats: stats, cost: totalCost, visible: visible, dps: dps };
+			return {
+				stats: stats,
+				cost: totalCost,
+				visible: visible,
+				dps: damage.dps,
+				dpsw: damage.dpsw,
+				dpm: damage.dpm,
+				dpmw: damage.dpmw,
+				dpa: damage.dpa,
+				dpaw: damage.dpaw
+			};
 		}
 	}
 };

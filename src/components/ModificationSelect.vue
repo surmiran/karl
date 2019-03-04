@@ -99,9 +99,10 @@
 			<div>
 				{{ hoveredMod.text }}
 			</div>
-			<div v-if="hoveredMod.increase" class="increaseOverBase">
+			<!--todo: calculate correctly for all stats-->
+			<!--<div v-if="hoveredMod.increase" class="increaseOverBase">
 				Increase over base stat: {{ parseInt(hoveredMod.increase) }}%
-			</div>
+			</div>-->
 		</div>
 	</div>
 </template>
@@ -180,6 +181,7 @@ h2 {
 	font-size: 1rem;
 	font-style: normal;
 	font-weight: normal;
+	color: rgba(255, 251, 255, 0.2);
 }
 
 .modSelection {

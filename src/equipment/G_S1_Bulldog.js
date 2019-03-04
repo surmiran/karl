@@ -46,7 +46,7 @@ export default {
 			{
 				selected: false,
 				name: "Perfect Weight Balance",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Improved Accuracy",
 				stats: {
@@ -88,7 +88,7 @@ export default {
 			{
 				selected: false,
 				name: "Floating Barrel",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
@@ -172,7 +172,7 @@ export default {
 			{
 				selected: false,
 				name: "Explosive Rounds",
-				icon: "Icon_Upgrade_Explosive",
+				icon: "Icon_Upgrade_Explosion",
 				type: "Explosion",
 				text: "Bullets detonate creating a radius of damage",
 				stats: {
@@ -258,7 +258,7 @@ export default {
 			{
 				selected: false,
 				name: "Dead Eye",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "No aim penalty while moving",
 				stats: {

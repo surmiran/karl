@@ -24,7 +24,7 @@ export default {
 			{
 				selected: false,
 				name: "Gyro Stabilisation",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Pin-point accuracy on first shot",
 				stats: {
@@ -129,7 +129,7 @@ export default {
 			{
 				selected: false,
 				name: "Floating Barrel",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
@@ -277,7 +277,7 @@ export default {
 			{
 				selected: false,
 				name: "Battle Cool",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Killing an enemy increases accuracy",
 				stats: {

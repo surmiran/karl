@@ -1,7 +1,5 @@
 <template>
 	<div id="app" class="app">
-		<!--<div class="green" v-html="svg"></div>
-		<img alt="Vue logo" src="./assets/logo.png">-->
 		<div class="classSelectContainer">
 			<ClassSelect :classId="'D'" :name="'Driller'" />
 			<ClassSelect :classId="'E'" :name="'Engineer'" />
@@ -64,6 +62,7 @@
 			<StatsDisplay />
 			<ModificationSelect />
 		</div>
+		<p class="versionNumber">KARL v1.1.0 Based on DRG v0.22.24593.0</p>
 	</div>
 </template>
 
@@ -192,6 +191,11 @@ h2 {
 }
 
 /*todo: semi transparent backgrounds!*/
+
+.versionNumber {
+	font-size: 0.7rem;
+	color: rgba(255, 251, 255, 0.2);
+}
 
 .mainContainer {
 	display: flex;

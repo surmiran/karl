@@ -115,7 +115,7 @@ export default {
 			{
 				selected: false,
 				name: "Bypassed Integrity Check",
-				icon: "Icon_Upgrade_Weakspot",
+				icon: "Icon_Upgrade_TemperatureCoolDown",
 				type: "Overheat",
 				cost: {
 					credits: 2000,

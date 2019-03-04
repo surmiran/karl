@@ -65,7 +65,7 @@ export default {
 			{
 				selected: false,
 				name: "Improved Platform Stability",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Increased Accuracy",
 				stats: {
@@ -253,7 +253,7 @@ export default {
 			{
 				selected: false,
 				name: "Aggressive Venting",
-				icon: "Icon_Upgrade_Explosive",
+				icon: "Icon_Upgrade_Explosion",
 				type: "Explosion",
 				text: "Burn everything in a radius when the minigun overheats",
 				stats: {

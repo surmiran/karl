@@ -2,7 +2,7 @@ export default {
 	selected: false,
 	modified: false,
 	name: "Zhukov NUK17",
-	class: "ubmachine Gun",
+	class: "Submachine Gun",
 	icon: "equipment.S_S2_Zhuk",
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
@@ -64,7 +64,7 @@ export default {
 			{
 				selected: false,
 				name: "Better Weight Balance",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Base Accuracy Increase",
 				stats: {

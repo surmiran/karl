@@ -88,7 +88,7 @@ export default {
 			{
 				selected: false,
 				name: "Tighter Barrel Alignment",
-				icon: "Icon_Upgrade_Aim",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Improved accuracy",
 				stats: {

@@ -68,13 +68,12 @@
 import store from "../store";
 
 const _calculateDamage = stats => {
-	let damageWords = ["Damage", "Area Damage", "Electric Damage"];
+	let damageWords = ["Damage", "Area Damage", "Electric Damage", "Direct Damage"];
 	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size"];
 	let ammoWords = ["Max Ammo", "Max Fuel"];
 	let rateOfFireWords = ["Rate of Fire"];
 	let reloadTimeWords = ["Reload Time"];
 	let pelletsWords = ["Bullets (per shot)"];
-	let directDamageWords = ["Direct Damage"];
 	let dpsStats = {};
 	for (let stat of stats) {
 		if (damageWords.includes(stat.name)) {
@@ -92,8 +91,6 @@ const _calculateDamage = stats => {
 			dpsStats.reloadTime = parseFloat(stat.value);
 		} else if (pelletsWords.includes(stat.name)) {
 			dpsStats.damage = dpsStats.damage * parseFloat(stat.value);
-		} else if (directDamageWords.includes(stat.name)) {
-			dpsStats.damage = dpsStats.damage + parseFloat(stat.value);
 		} else if (ammoWords.includes(stat.name)) {
 			dpsStats.maxAmmo = parseFloat(stat.value);
 		}
@@ -123,9 +120,56 @@ const _calculateDamage = stats => {
 	};
 };
 
-const _calculateSpecialDamage = stats => {
-	return {
-	};
+const _calculateSpecialDamage = (stats, name) => {
+	// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
+	// todo: brt base dps should include the burst -> burst (bullet count) over burst speed -> this is one shot that gets calculated with rate of fire (like all others)
+	console.log(stats);
+	console.log(name);
+	let dpsStats = {};
+
+	switch (name) {
+		case "BRT7 Burst Fire Gun": {
+			for (let stat of stats) {
+				if (stat.name === "Damage") {
+					dpsStats.damage = parseFloat(stat.value);
+				} else if (stat.name === "Burst Size") {
+					dpsStats.burstSize = parseFloat(stat.value);
+				} else if (stat.name === "Burst Speed") {
+					dpsStats.burstSpeed = parseFloat(stat.value);
+				} else if (stat.name === "Burst Damage") {
+					dpsStats.burstBonus = parseFloat(stat.value);
+				} else if (stat.name === "Max Ammo") {
+					dpsStats.maxAmmo = parseFloat(stat.value);
+				} else if (stat.name === "Magazine Size") {
+					dpsStats.magazineSize = parseFloat(stat.value);
+				} else if (stat.name === "Rate of Fire") {
+					dpsStats.rateOfFire = parseFloat(stat.value);
+				} else if (stat.name === "Reload Time") {
+					dpsStats.reloadTime = parseFloat(stat.value);
+				}
+			}
+			// damage over one burst (3 or 6 bullets used)
+			let burstDamage = dpsStats.damage * dpsStats.burstSize;
+			if (dpsStats.burstBonus) {
+				burstDamage += dpsStats.burstBonus;
+			}
+			let burstMagazine = dpsStats.magazineSize / dpsStats.burstSize;
+			// rate of fire is rate of bursts per second (burst speed ignored)
+			let timeToEmpty = burstMagazine / dpsStats.rateOfFire;
+			let damageTime = timeToEmpty + dpsStats.reloadTime;
+			let magazineDamage = burstDamage * burstMagazine;
+			let damagePerSecond = magazineDamage / damageTime;
+			console.log(dpsStats);
+			return {
+				dps: parseFloat(damagePerSecond).toFixed(2),
+				dpm: magazineDamage,
+				dpa: burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)
+			};
+		}
+		default: {
+			return {};
+		}
+	}
 };
 
 export default {
@@ -180,7 +224,9 @@ export default {
 					for (let upgrade of upgradeForKey) {
 						let upgradePrecision = precisionCalc(upgrade.stats[key].value);
 						let statsPrecision = precisionCalc(modifier.value);
-						let precision = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
+						let basePrecision = precisionCalc(modifiedStats.baseValue);
+						let precisionTemp = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
+						let precision = basePrecision > precisionTemp ? basePrecision : precisionTemp;
 
 						// todo: binary values as (+) or ( ) instead of 1 and 0
 						if (upgrade.stats[key].subtract) {
@@ -194,6 +240,9 @@ export default {
 								precision
 							);
 						}
+						console.log(precision)
+						console.log(statsPrecision)
+						console.log(upgradePrecision)
 
 						modifier.subtract = upgrade.stats[key].subtract;
 						modifier.percent = upgrade.stats[key].percent;
@@ -211,7 +260,7 @@ export default {
 			let damage = null;
 			let specialEquipment = ["Cryo Cannon", "Experimental Plasma Charger", "Breach Cutter", "BRT7 Burst Fire Gun"];
 			if (specialEquipment.includes(store.state.tree[this.selectedClassId][this.selectedEquipmentId].name)) {
-				damage = _calculateSpecialDamage(stats);
+				damage = _calculateSpecialDamage(stats, store.state.tree[this.selectedClassId][this.selectedEquipmentId].name);
 			} else {
 				damage = _calculateDamage(stats);
 			}

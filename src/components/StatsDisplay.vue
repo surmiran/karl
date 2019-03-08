@@ -182,6 +182,16 @@ export default {
 			return store.state.selected.equipment;
 		},
 		equipment: function() {
+		    console.log("selected equipment id")
+		    console.log(store.state.tree[this.selectedClassId][this.selectedEquipmentId])
+		    console.log("selected class id")
+		    console.log(store.state.tree[this.selectedClassId])
+		    console.log("tree")
+		    console.log(store.state.tree)
+            console.log("this.selectedClassId")
+            console.log(this.selectedClassId)
+            console.log("this.selectedEquipmentId")
+            console.log(this.selectedEquipmentId)
 			return store.state.tree[this.selectedClassId][this.selectedEquipmentId];
 		},
 		baseStats: function() {
@@ -257,6 +267,10 @@ export default {
 				return modifiedStats;
 			});
 
+			console.log(store.state.tree)
+			console.log(this.selectedClassId)
+			console.log(this.selectedClass)
+			console.log(this.selectedEquipmentId)
 			let damage = null;
 			let specialEquipment = ["Cryo Cannon", "Experimental Plasma Charger", "Breach Cutter", "BRT7 Burst Fire Gun"];
 			if (specialEquipment.includes(store.state.tree[this.selectedClassId][this.selectedEquipmentId].name)) {

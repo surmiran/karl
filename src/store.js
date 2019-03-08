@@ -48,6 +48,9 @@ import S_S1_Jury from "./equipment/S_S1_Jury.js";
 import S_S1_Jury_SVG from "./assets/S_S1_Jury.js";
 import S_S2_Zhuk from "./equipment/S_S2_Zhuk.js";
 import S_S2_Zhuk_SVG from "./assets/S_S2_Zhuk.js";
+// imports for robot equipment
+import R_E_Bosco from "./equipment/R_E_Bosco.js";
+import R_E_Bosco_SVG from "./assets/R_E_Bosco.js";
 // imports for shared equipment
 import X_E_Armor_SVG from "./assets/X_E_Armor.js";
 
@@ -96,6 +99,9 @@ import Icon_Upgrade_Sticky from "./assets/mods/Icon_Upgrade_Sticky.js";
 import Icon_Upgrade_Stun from "./assets/mods/Icon_Upgrade_Stun.js";
 import Icon_Upgrade_TemperatureCoolDown from "./assets/mods/Icon_Upgrade_TemperatureCoolDown.js";
 import Icon_Upgrade_Weakspot from "./assets/mods/Icon_Upgrade_Weakspot.js";
+import Icon_Upgrade_Bosco_Rocket_Upgrade from "./assets/mods/Icon_Upgrade_Bosco_Rocket_Upgrade.js";
+import Icon_Upgrade_Light from "./assets/mods/Icon_Upgrade_Light.js";
+import Icon_Upgrade_PlusOne from "./assets/mods/Icon_Upgrade_PlusOne.js";
 
 Vue.use(Vuex);
 
@@ -135,7 +141,8 @@ export default new Vuex.Store({
 				S_P1_GK2: S_P1_GK2_SVG,
 				S_P2_M1000: S_P2_M1000_SVG,
 				S_S1_Jury: S_S1_Jury_SVG,
-				S_S2_Zhuk: S_S2_Zhuk_SVG
+				S_S2_Zhuk: S_S2_Zhuk_SVG,
+                R_E_Bosco: R_E_Bosco_SVG
 			},
 			mods: {
 				Icon_Upgrade_Distance: Icon_Upgrade_Distance,
@@ -181,7 +188,10 @@ export default new Vuex.Store({
 				Icon_Upgrade_Sticky: Icon_Upgrade_Sticky,
 				Icon_Upgrade_Stun: Icon_Upgrade_Stun,
 				Icon_Upgrade_TemperatureCoolDown: Icon_Upgrade_TemperatureCoolDown,
-				Icon_Upgrade_Weakspot: Icon_Upgrade_Weakspot
+				Icon_Upgrade_Weakspot: Icon_Upgrade_Weakspot,
+                Icon_Upgrade_Bosco_Rocket_Upgrade: Icon_Upgrade_Bosco_Rocket_Upgrade,
+                Icon_Upgrade_Light: Icon_Upgrade_Light,
+                Icon_Upgrade_PlusOne: Icon_Upgrade_PlusOne,
 			}
 		},
 		tree: {
@@ -216,6 +226,9 @@ export default new Vuex.Store({
 				S2: S_S2_Zhuk,
 				E1: S_E_Grapling,
 				E2: S_E_Armor
+			},
+			R: {
+				P1: R_E_Bosco
 			}
 		}
 	},

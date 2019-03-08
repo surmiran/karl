@@ -5,6 +5,7 @@
 			<ClassSelect :classId="'E'" :name="'Engineer'" />
 			<ClassSelect :classId="'G'" :name="'Gunner'" />
 			<ClassSelect :classId="'S'" :name="'Scout'" />
+			<ClassSelect :classId="'R'" :name="'Robots'" />
 			<div class="linkArea" v-on:click="getLink()">
 				<label for="idCopyTextArea" class="linkText">Generate</label>
 				<input id="idCopyTextArea" class="copyTextArea" disabled />
@@ -57,12 +58,23 @@
 					:data="equipment"
 				/>
 			</div>
+			<div v-if="selectedClass === 'R'" class="equipmentSelectContainer">
+				<EquipmentSelect
+						v-for="(equipment, equipmentId) in robotEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'S'"
+						:equipmentId="equipmentId"
+						:data="equipment"
+				/>
+			</div>
 		</div>
 		<div class="mainContainer">
 			<StatsDisplay />
 			<ModificationSelect />
 		</div>
-		<p class="versionNumber">KARL v1.2.1 Based on DRG v0.22.24593.0</p>
+		<p class="versionNumber">KARL v1.2.2 Based on DRG v0.22.24593.0</p>
 	</div>
 </template>
 
@@ -107,6 +119,9 @@ export default {
 		scoutEquipment() {
 			return store.state.tree.S;
 		},
+        robotEquipment() {
+            return store.state.tree.R;
+        },
 		classes() {
 			return store.state.tree;
 		}
@@ -187,7 +202,7 @@ h2 {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin-top: 60px;
-	max-width: 1000px;
+	width: 1000px;
 }
 
 /*todo: semi transparent backgrounds!*/

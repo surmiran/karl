@@ -49,8 +49,8 @@ import S_S1_Jury_SVG from "./assets/S_S1_Jury.js";
 import S_S2_Zhuk from "./equipment/S_S2_Zhuk.js";
 import S_S2_Zhuk_SVG from "./assets/S_S2_Zhuk.js";
 // imports for robot equipment
-import R_E_Bosco from "./equipment/R_E_Bosco.js";
-import R_E_Bosco_SVG from "./assets/R_E_Bosco.js";
+import R_P1_Bosco from "./equipment/R_P1_Bosco.js";
+import R_P1_Bosco_SVG from "./assets/R_P1_Bosco.js";
 // imports for shared equipment
 import X_E_Armor_SVG from "./assets/X_E_Armor.js";
 
@@ -142,7 +142,7 @@ export default new Vuex.Store({
 				S_P2_M1000: S_P2_M1000_SVG,
 				S_S1_Jury: S_S1_Jury_SVG,
 				S_S2_Zhuk: S_S2_Zhuk_SVG,
-                R_E_Bosco: R_E_Bosco_SVG
+                R_P1_Bosco: R_P1_Bosco_SVG
 			},
 			mods: {
 				Icon_Upgrade_Distance: Icon_Upgrade_Distance,
@@ -228,7 +228,7 @@ export default new Vuex.Store({
 				E2: S_E_Armor
 			},
 			R: {
-				P1: R_E_Bosco
+				P1: R_P1_Bosco
 			}
 		}
 	},

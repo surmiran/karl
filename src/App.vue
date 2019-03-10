@@ -64,7 +64,7 @@
 						:key="equipmentId"
 						:iconPath="equipment.icon"
 						:name="equipment.name"
-						:classId="'S'"
+						:classId="'R'"
 						:equipmentId="equipmentId"
 						:data="equipment"
 				/>
@@ -74,7 +74,7 @@
 			<StatsDisplay />
 			<ModificationSelect />
 		</div>
-		<p class="versionNumber">KARL v1.3.0 Based on DRG v0.22.24593.0</p>
+		<p class="versionNumber">KARL v1.3.1 Based on DRG v0.22.24593.0</p>
 	</div>
 </template>
 

@@ -3,7 +3,7 @@ export default {
     modified: false,
     name: "APD-B317",
     class: "All-Purpose Drone",
-    icon: "equipment.R_E_Bosco",
+    icon: "equipment.R_P1_Bosco",
     baseStats: {
         dmg: { name: "Damage", value: 4 },
         light: { name: "Light Radius", value: 10 },

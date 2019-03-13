@@ -125,7 +125,7 @@ export default {
 			{
 				selected: false,
 				name: "Hazmat System",
-				icon: "Icon_Upgrade_PoisonResistance",
+				icon: "Icon_Upgrade_Poison_Resistance",
 				type: "Poison Resistance",
 				text: "Reduces the damage taken from poison.",
 				stats: {

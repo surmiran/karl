@@ -122,9 +122,6 @@ const _calculateDamage = stats => {
 
 const _calculateSpecialDamage = (stats, name) => {
 	// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
-	// todo: brt base dps should include the burst -> burst (bullet count) over burst speed -> this is one shot that gets calculated with rate of fire (like all others)
-	console.log(stats);
-	console.log(name);
 	let dpsStats = {};
 
 	switch (name) {

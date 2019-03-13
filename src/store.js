@@ -85,6 +85,7 @@ import Icon_Upgrade_Flare_01 from "./assets/mods/Icon_Upgrade_Flare_01.js";
 import Icon_Upgrade_Heat from "./assets/mods/Icon_Upgrade_Heat.js";
 import Icon_Upgrade_MovementSpeed from "./assets/mods/Icon_Upgrade_MovementSpeed.js";
 import Icon_Upgrade_PoisonResistance from "./assets/mods/Icon_Upgrade_PoisonResistance.js";
+import Icon_Upgrade_Poison_Resistance from "./assets/mods/Icon_Upgrade_Poison_Resistance.js";
 import Icon_Upgrade_ProjectileSpeed from "./assets/mods/Icon_Upgrade_ProjectileSpeed.js";
 import Icon_Upgrade_Recoil from "./assets/mods/Icon_Upgrade_Recoil.js";
 import Icon_Upgrade_Resistance from "./assets/mods/Icon_Upgrade_Resistance.js";
@@ -142,7 +143,7 @@ export default new Vuex.Store({
 				S_P2_M1000: S_P2_M1000_SVG,
 				S_S1_Jury: S_S1_Jury_SVG,
 				S_S2_Zhuk: S_S2_Zhuk_SVG,
-                R_P1_Bosco: R_P1_Bosco_SVG
+				R_P1_Bosco: R_P1_Bosco_SVG
 			},
 			mods: {
 				Icon_Upgrade_Distance: Icon_Upgrade_Distance,
@@ -175,6 +176,7 @@ export default new Vuex.Store({
 				Icon_Upgrade_Heat: Icon_Upgrade_Heat,
 				Icon_Upgrade_MovementSpeed: Icon_Upgrade_MovementSpeed,
 				Icon_Upgrade_PoisonResistance: Icon_Upgrade_PoisonResistance,
+				Icon_Upgrade_Poison_Resistance: Icon_Upgrade_Poison_Resistance,
 				Icon_Upgrade_ProjectileSpeed: Icon_Upgrade_ProjectileSpeed,
 				Icon_Upgrade_Recoil: Icon_Upgrade_Recoil,
 				Icon_Upgrade_Resistance: Icon_Upgrade_Resistance,
@@ -189,9 +191,9 @@ export default new Vuex.Store({
 				Icon_Upgrade_Stun: Icon_Upgrade_Stun,
 				Icon_Upgrade_TemperatureCoolDown: Icon_Upgrade_TemperatureCoolDown,
 				Icon_Upgrade_Weakspot: Icon_Upgrade_Weakspot,
-                Icon_Upgrade_Bosco_Rocket_Upgrade: Icon_Upgrade_Bosco_Rocket_Upgrade,
-                Icon_Upgrade_Light: Icon_Upgrade_Light,
-                Icon_Upgrade_PlusOne: Icon_Upgrade_PlusOne,
+				Icon_Upgrade_Bosco_Rocket_Upgrade: Icon_Upgrade_Bosco_Rocket_Upgrade,
+				Icon_Upgrade_Light: Icon_Upgrade_Light,
+				Icon_Upgrade_PlusOne: Icon_Upgrade_PlusOne
 			}
 		},
 		tree: {
@@ -236,6 +238,12 @@ export default new Vuex.Store({
 		selectClass: (state, indizes) => {
 			state.selected.class = indizes.classID;
 			let selectedEquipmentId = state.selected.equipment;
+			if (indizes.classID === "R") {
+				// select bosco
+				state.selected.equipment = "P1";
+				state.tree[indizes.classID]["P1"].selected = true;
+				return;
+			}
 
 			for (let equipment in state.tree[indizes.classID]) {
 				state.tree[indizes.classID][equipment].selected = equipment === selectedEquipmentId;
@@ -309,8 +317,8 @@ export default new Vuex.Store({
 						if (parseInt(mods[tierId]) >= 0) {
 							state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
 						} else if (mods[tierId] === "focus") {
-							state.selected.class = classId
-							state.selected.equipment = equipmentId
+							state.selected.class = classId;
+							state.selected.equipment = equipmentId;
 							for (let equipment in state.tree[classId]) {
 								state.tree[classId][equipment].selected = equipment === equipmentId;
 							}

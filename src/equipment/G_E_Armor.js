@@ -125,7 +125,7 @@ export default {
 			{
 				selected: false,
 				name: "Reactive Armor",
-				icon: "Icon_Upgrade_Explosion",
+				icon: "Icon_Upgrade_Explosive_Resistance",
 				type: "Explosion Damage Resistance",
 				text: "Fire in the hole! Fancy Reactive Armor plating takes half the sting out of any explosions.",
 				stats: {

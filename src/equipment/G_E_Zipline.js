@@ -121,9 +121,9 @@ export default {
 			{
 				selected: false,
 				name: "Increased Motor Traction",
-				icon: "Icon_Upgrade_ProjectileSpeed",
-				type: "",
-				text: "",
+				icon: "Icon_Upgrade_MovementSpeed",
+				type: "Movement Speed",
+				text: "Can reach a higher top speed on the zipline",
 				stats: {
 					speed: { name: "Movement Speed", value: 75 }
 				},

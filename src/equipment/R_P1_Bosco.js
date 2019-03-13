@@ -45,8 +45,7 @@ export default {
 				name: "Extra Revive",
 				icon: "Icon_Upgrade_PlusOne",
 				type: "Revive",
-				text:
-					"One extra revive kit to bring back to action an incapacitated dwarf.",
+				text: "One extra revive kit to bring back to action an incapacitated dwarf.",
 				stats: {
 					revive: { name: "Revive", value: 1 }
 				},
@@ -88,7 +87,8 @@ export default {
 				name: "Rockets",
 				icon: "Icon_Upgrade_Bosco_Rocket_Upgrade",
 				type: "Rockets",
-				text: "A secondary weapon that can shoot explosive rockets. Bosco's AI is not ready to handle this kind of weaponary, use the Laser Pointer for manual activation.",
+				text:
+					"A secondary weapon that can shoot explosive rockets. Bosco's AI is not ready to handle this kind of weaponary, use the Laser Pointer for manual activation.",
 				stats: {
 					ex2: { name: "Rocket Attacks", value: 2 },
 					ex3: { name: "Rocket Area Damage", value: 120 },
@@ -113,8 +113,7 @@ export default {
 				name: "Let There Be Light",
 				icon: "Icon_Upgrade_Light",
 				type: "Light",
-				text:
-					"A significant lumens increase that can make the difference in some of the darkest caves.",
+				text: "A significant lumens increase that can make the difference in some of the darkest caves.",
 				stats: {
 					light: { name: "Light Radius", value: 20 }
 				},
@@ -176,8 +175,7 @@ export default {
 				name: "Fear The Rocket",
 				icon: "Icon_Upgrade_ScareEnemies",
 				type: "Fear",
-				text:
-					"There is a chance to scare enemies away from the explosion of the rockets.",
+				text: "There is a chance to scare enemies away from the explosion of the rockets.",
 				stats: {
 					ex6: { name: "Rocket Fear Factor", value: 50, percent: true }
 				},
@@ -197,8 +195,7 @@ export default {
 				name: "High Frequency Explosion",
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
-				text:
-					"Higher chance for the rocket to shatter armor.",
+				text: "Higher chance for the rocket to shatter armor.",
 				stats: {
 					ex7: { name: "Rocket Armor Break Bonus", value: 600, percent: true }
 				},

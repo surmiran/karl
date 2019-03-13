@@ -60,13 +60,13 @@
 			</div>
 			<div v-if="selectedClass === 'R'" class="equipmentSelectContainer">
 				<EquipmentSelect
-						v-for="(equipment, equipmentId) in robotEquipment"
-						:key="equipmentId"
-						:iconPath="equipment.icon"
-						:name="equipment.name"
-						:classId="'R'"
-						:equipmentId="equipmentId"
-						:data="equipment"
+					v-for="(equipment, equipmentId) in robotEquipment"
+					:key="equipmentId"
+					:iconPath="equipment.icon"
+					:name="equipment.name"
+					:classId="'R'"
+					:equipmentId="equipmentId"
+					:data="equipment"
 				/>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 			<StatsDisplay />
 			<ModificationSelect />
 		</div>
-		<p class="versionNumber">KARL v1.3.1 Based on DRG v0.22.24593.0</p>
+		<p class="versionNumber">KARL v1.3.2 Based on DRG v0.22.24593.0</p>
 	</div>
 </template>
 
@@ -119,9 +119,9 @@ export default {
 		scoutEquipment() {
 			return store.state.tree.S;
 		},
-        robotEquipment() {
-            return store.state.tree.R;
-        },
+		robotEquipment() {
+			return store.state.tree.R;
+		},
 		classes() {
 			return store.state.tree;
 		}
@@ -182,6 +182,7 @@ export default {
 html {
 	height: 100%;
 }
+
 body {
 	display: flex;
 	justify-content: center;
@@ -191,12 +192,14 @@ body {
 	background: -moz-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* FF3.6-15 */
 	background: -webkit-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(135deg, #322c20 0%, #5f5137 100%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#322c20', endColorstr='#5f5137',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#322c20', endColorstr='#5f5137', GradientType=1); /* IE6-9 fallback on horizontal gradient */
 	height: 100%;
 }
+
 h2 {
 	color: #fffbff;
 }
+
 #app {
 	font-family: "Avenir", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -235,14 +238,17 @@ h2 {
 	width: 10rem;
 	margin-left: auto;
 }
+
 .linkText {
 	cursor: pointer;
 	color: #fc9e00;
 }
+
 .copyTextArea {
 	cursor: pointer;
 	width: 80%;
 }
+
 .allCaps {
 	text-transform: uppercase;
 }
@@ -335,6 +341,7 @@ h2 {
 	h2 {
 		font-size: 1.2rem;
 	}
+
 	#app {
 		width: 95vw;
 	}
@@ -350,25 +357,31 @@ h2 {
 	border-radius: 0px;
 	background-color: #aaa;
 }
+
 ::-webkit-scrollbar-button:hover {
 	background-color: #aaa;
 }
+
 ::-webkit-scrollbar-thumb {
 	background-color: #fc9e00;
 	border-radius: 0px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #ffffff;
 	border-radius: 0px;
 }
+
 ::-webkit-scrollbar-track {
 	background-color: #352e1e;
 	border-radius: 0px;
 }
+
 ::-webkit-scrollbar-track:hover {
 	background-color: #352e1e;
 	border-radius: 0px;
 }
+
 ::-webkit-scrollbar {
 	width: 12px;
 	height: 12px;

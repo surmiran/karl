@@ -12,7 +12,7 @@ export default {
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Focus Speed", value: 1 },
 		ex2: { name: "Focused Shot Damage", value: 50, percent: true },
-		ex3: { name: "Increased Stability", value: 0, binary: true },
+		ex3: { name: "Increased Stability", value: 0, boolean: true },
 		ex4: { name: "Max Penetrations", value: 0 },
 		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
@@ -111,7 +111,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Stability", value: 1, binary: true }
+					ex3: { name: "Increased Stability", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2000,

@@ -225,7 +225,7 @@ export default {
 						let precisionTemp = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
 						let precision = basePrecision > precisionTemp ? basePrecision : precisionTemp;
 
-						// todo: binary values as (+) or ( ) instead of 1 and 0
+						// todo: boolean values as (+) or ( ) instead of 1 and 0
 						if (upgrade.stats[key].subtract) {
 							modifier.value = modifier.value - upgrade.stats[key].value;
 							modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(

@@ -18,7 +18,7 @@ export default {
 		ex6: { name: "Stun Chance", value: 0, percent: true },
 		ex7: { name: "Damage when at maximum fire rate", value: 0, percent: true },
 		ex8: { name: "AoE Fear", value: 0 },
-		ex9: { name: "Resistance at full rate of fire", value: 0, binary: true }
+		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -321,7 +321,7 @@ export default {
 				type: "Resistance",
 				text: "Gain damage reduction when at max rate of fire",
 				stats: {
-					ex9: { name: "Resistance at full rate of fire", value: 1, binary: true }
+					ex9: { name: "Resistance at full rate of fire", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

@@ -9,7 +9,7 @@ export default {
 		clip: { name: "Magazine Size", value: 3 },
 		ammo: { name: "Max Ammo", value: 12 },
 		reload: { name: "Reload Time", value: 24 },
-		ex1: { name: "Auto Reload", value: 0, binary: true }
+		ex1: { name: "Auto Reload", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -104,7 +104,7 @@ export default {
 				type: "Reload Speed",
 				text: "Reloads automatically when unequipped for more than 5 seconds",
 				stats: {
-					ex1: { name: "Auto Reload", value: 1, binary: true }
+					ex1: { name: "Auto Reload", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 0,

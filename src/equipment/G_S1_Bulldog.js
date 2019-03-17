@@ -10,8 +10,8 @@ export default {
 		clip: { name: "Magazine Size", value: 4 },
 		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Increased Accuracy", value: 0, binary: true },
-		ex2: { name: "Increased Stability", value: 0, binary: true },
+		ex1: { name: "Increased Accuracy", value: 0, boolean: true },
+		ex2: { name: "Increased Stability", value: 0, boolean: true },
 		ex3: { name: "Max Penetrations", value: 0 },
 		ex4: { name: "Stun Chance", value: 0, percent: true },
 		ex5: { name: "Area Damage", value: 0 },
@@ -50,7 +50,7 @@ export default {
 				type: "Accuracy",
 				text: "Improved Accuracy",
 				stats: {
-					ex1: { name: "Increased Accuracy", value: 1, binary: true }
+					ex1: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1000,
@@ -93,7 +93,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex2: { name: "Increased Stability", value: 1, binary: true }
+					ex2: { name: "Increased Stability", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1800,

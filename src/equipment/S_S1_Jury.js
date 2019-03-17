@@ -14,8 +14,8 @@ export default {
 		ex2: { name: "Stun Chance", value: 0, percent: true },
 		ex3: { name: "Max Penetrations", value: 0 },
 		ex4: { name: "Armor Break Bonus", value: 0, percent: true },
-		ex5: { name: "Blast Wave", value: 0, binary: true },
-		ex6: { name: "Auto Reload", value: 0, binary: true },
+		ex5: { name: "Blast Wave", value: 0, boolean: true },
+		ex6: { name: "Auto Reload", value: 0, boolean: true },
 		ex7: { name: "Fear the Boomstick", value: 0, percent: true },
 		ex8: { name: "Damage To Fire", value: 0, percent: true }
 	},
@@ -219,7 +219,7 @@ export default {
 				type: "Special",
 				text: "Shotgun blast kills weak enemies within 4m",
 				stats: {
-					ex5: { name: "Blast Wave", value: 1, binary: true }
+					ex5: { name: "Blast Wave", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 3800,
@@ -241,7 +241,7 @@ export default {
 				type: "Reload Speed",
 				text: "Reloads automatically when unequipped for more than 5 seconds",
 				stats: {
-					ex6: { name: "Auto Reload", value: 1, binary: true }
+					ex6: { name: "Auto Reload", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

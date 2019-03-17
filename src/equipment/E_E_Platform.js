@@ -9,8 +9,8 @@ export default {
 		ammo: { name: "Max Ammo", value: 16 },
 		rate: { name: "Rate of Fire", value: 1 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Less fall damage", value: 0, binary: true },
-		ex2: { name: "Bug repellent", value: 0, binary: true }
+		ex1: { name: "Less fall damage", value: 0, boolean: true },
+		ex2: { name: "Bug repellent", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -84,7 +84,7 @@ export default {
 				type: "Fall Damage Resistance",
 				text: "Shock-absorbing compound reduces fall damage",
 				stats: {
-					ex1: { name: "Less fall damage", value: 1, binary: true }
+					ex1: { name: "Less fall damage", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 780,
@@ -126,7 +126,7 @@ export default {
 				type: "Special",
 				text: "Enemies will avoid waling on the Plastcrete Foam whenever possible.",
 				stats: {
-					ex2: { name: "Bug repellent", value: 1, binary: true }
+					ex2: { name: "Bug repellent", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 960,

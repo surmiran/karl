@@ -12,8 +12,8 @@ export default {
 		rate: { name: "Regeneration Rate", value: 100, percent: true },
 		revive: { name: "Revive Invulnerability", value: 3 },
 		carry: { name: "Carry Capacity", value: 40 },
-		ex1: { name: "AoE Damage On Shield Break", value: 0, binary: true },
-		ex2: { name: "AoE Stun On Shield Break", value: 0, binary: true }
+		ex1: { name: "AoE Damage On Shield Break", value: 0, boolean: true },
+		ex2: { name: "AoE Stun On Shield Break", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -151,7 +151,7 @@ export default {
 				type: "Area Damage",
 				text: "Your shield breaks violently, damaging all enemies around you in the process.",
 				stats: {
-					ex1: { name: "AoE Damage On Shield Break", value: 1, binary: true }
+					ex1: { name: "AoE Damage On Shield Break", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2150,
@@ -171,7 +171,7 @@ export default {
 				type: "Electricity",
 				text: "Whenever your shield breaks it releases a static discharge that has a chance to stun nearby enemies.",
 				stats: {
-					ex2: { name: "AoE Stun On Shield Break", value: 1, binary: true }
+					ex2: { name: "AoE Stun On Shield Break", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2150,

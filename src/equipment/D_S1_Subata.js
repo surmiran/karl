@@ -11,8 +11,8 @@ export default {
 		rate: { name: "Rate of Fire", value: 8.0 },
 		reload: { name: "Reload Time", value: 1.9 },
 		ex1: { name: "Weakpoint Damage Bonus", value: 30, percent: true },
-		ex2: { name: "Increased Accuracy", value: 0, binary: true },
-		ex3: { name: "Increased Stability", value: 0, binary: true },
+		ex2: { name: "Increased Accuracy", value: 0, boolean: true },
+		ex3: { name: "Increased Stability", value: 0, boolean: true },
 		ex4: { name: "Damage Vs Burning", value: 0, percent: true },
 		ex5: { name: "Damage Vs Mactera", value: 0, percent: true }
 	},
@@ -25,7 +25,7 @@ export default {
 				type: "Accuracy",
 				text: "Pin-point accuracy on first shot",
 				stats: {
-					ex2: { name: "Increased Accuracy", value: 1, binary: true }
+					ex2: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1000,
@@ -109,7 +109,7 @@ export default {
 				type: "Accuracy",
 				text: "Spread per shot reduced",
 				stats: {
-					ex3: { name: "Increased Stability", value: 1, binary: true }
+					ex3: { name: "Increased Stability", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2200,

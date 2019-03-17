@@ -10,7 +10,7 @@ export default {
 		duration: { name: "Duration", value: 6 },
 		rate: { name: "Shield Regen per second", value: 10 },
 		reload: { name: "Recharge Time", value: 12.5 },
-		ex1: { name: "Protection Time After Leaving", value: 0, binary: true }
+		ex1: { name: "Protection Time After Leaving", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -125,7 +125,7 @@ export default {
 				type: "Resistance",
 				text: "The shield's protective properties linger for a few seconds after you leave the shield.",
 				stats: {
-					ex1: { name: "Protection Time After Leaving", value: 1, binary: true }
+					ex1: { name: "Protection Time After Leaving", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 920,

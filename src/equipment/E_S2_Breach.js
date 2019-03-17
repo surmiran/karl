@@ -14,9 +14,9 @@ export default {
 		ex2: { name: "Plasma Beam Width", value: 1.5 },
 		ex3: { name: "Plasma Expansion Duration", value: 0.3 },
 		ex4: { name: "Armor Break Bonus", value: -50, percent: true },
-		ex5: { name: "Explosive Goodbye", value: 0, binary: true },
-		ex6: { name: "There can be only one", value: 0, binary: true },
-		ex7: { name: "Increased area of effect", value: 0, binary: true }
+		ex5: { name: "Explosive Goodbye", value: 0, boolean: true },
+		ex6: { name: "There can be only one", value: 0, boolean: true },
+		ex7: { name: "Increased area of effect", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -235,7 +235,7 @@ export default {
 				type: "Explosion",
 				text: "The projectile explodes at the end of its lifecycle",
 				stats: {
-					ex5: { name: "Explosive Goodbye", value: 1, binary: true }
+					ex5: { name: "Explosive Goodbye", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -255,7 +255,7 @@ export default {
 				type: "Explosion",
 				text: "Explodes last projectile when a new one is fired",
 				stats: {
-					ex6: { name: "There can be only one", value: 0, binary: true }
+					ex6: { name: "There can be only one", value: 0, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -275,7 +275,7 @@ export default {
 				type: "Area of effect",
 				text: "Creates a double line",
 				stats: {
-					ex7: { name: "Increased area of effect", value: 1, binary: true }
+					ex7: { name: "Increased area of effect", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

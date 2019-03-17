@@ -12,7 +12,7 @@ export default {
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Electric Damage", value: 2 },
 		ex2: { name: "Electrocution Chance", value: 10, percent: true },
-		ex3: { name: "Increased Accuracy", value: 0, binary: true },
+		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Electrocution Bonus", value: 0 },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true }
@@ -109,7 +109,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Accuracy", value: 1, binary: true }
+					ex3: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2000,

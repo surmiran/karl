@@ -13,8 +13,8 @@ export default {
 		ex2: { name: "Freezing Power", value: 5 },
 		ex3: { name: "Pressure Drop Rate", value: -30, percent: true },
 		ex4: { name: "Pressure Gain Rate", value: 0, percent: true },
-		ex5: { name: "Frozen Targets can Shatter", value: 0, binary: true },
-		ex6: { name: "Area Cold Damage", value: 0, binary: true }
+		ex5: { name: "Frozen Targets can Shatter", value: 0, boolean: true },
+		ex6: { name: "Area Cold Damage", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -266,7 +266,7 @@ export default {
 				type: "Special",
 				text: "Frozen targets can spontaniously shatter",
 				stats: {
-					ex5: { name: "Frozen Targets can Shatter", value: 1, binary: true }
+					ex5: { name: "Frozen Targets can Shatter", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,
@@ -286,7 +286,7 @@ export default {
 				type: "Cold",
 				text: "Cool things down in a 5m radius around you",
 				stats: {
-					ex6: { name: "Area Cold Damage", value: 1, binary: true }
+					ex6: { name: "Area Cold Damage", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

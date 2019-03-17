@@ -10,8 +10,8 @@ export default {
 		speed: { name: "Max Speed", value: 1500 },
 		wind: { name: "Wind up time", value: 0.4 },
 		risk: { name: "Risk of Accidental Death", value: "HIGH" },
-		ex1: { name: "Fall damage reduction after release", value: 0, binary: true },
-		ex2: { name: "Faster movement after release", value: 0, binary: true }
+		ex1: { name: "Fall damage reduction after release", value: 0, boolean: true },
+		ex2: { name: "Faster movement after release", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -128,7 +128,7 @@ export default {
 				type: "Resistance",
 				text: "Temporary fall damage reduction bonus after releasing the Grapling Gun",
 				stats: {
-					ex1: { name: "Fall damage reduction after release", value: 1, binary: true }
+					ex1: { name: "Fall damage reduction after release", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1100,
@@ -148,7 +148,7 @@ export default {
 				type: "Movement Speed",
 				text: "Temporary movement speed bonus after releasing the Grapling Gun.",
 				stats: {
-					ex2: { name: "Faster movement after release", value: 1, binary: true }
+					ex2: { name: "Faster movement after release", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1100,

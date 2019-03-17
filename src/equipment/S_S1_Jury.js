@@ -239,7 +239,7 @@ export default {
 				name: "Auto Reload",
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
-				text: "Reloads automatically when unequipped for more than 5 minutes",
+				text: "Reloads automatically when unequipped for more than 5 seconds",
 				stats: {
 					ex6: { name: "Auto Reload", value: 1, binary: true }
 				},

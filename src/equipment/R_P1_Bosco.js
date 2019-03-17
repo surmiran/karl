@@ -111,7 +111,7 @@ export default {
 			{
 				selected: false,
 				name: "Let There Be Light",
-				icon: "Icon_Upgrade_Light",
+				icon: "Icon_Upgrade_Light_Intensity",
 				type: "Light",
 				text: "A significant lumens increase that can make the difference in some of the darkest caves.",
 				stats: {

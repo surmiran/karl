@@ -10,6 +10,8 @@ export default {
 		clip: { name: "Sentry Ammo Capacity", value: 90 },
 		reload: { name: "Reload Ammo Per Second", value: 45 },
 		dmg: { name: "Damage", value: 4.5 },
+		dmg2: { name: "Damage Bonus", value: 0, percent: true },
+		range: { name: "Max Targeting Range", value: 15 },
 		amount: { name: "Number of Sentries", value: 1 },
 		ex1: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex2: { name: "Stun Chance", value: 0, percent: true },
@@ -23,7 +25,7 @@ export default {
 				name: "Gemini System",
 				icon: "Icon_Upgrade_TwoTurrets",
 				type: "Special",
-				text: "Can deploy two separate sentries at once",
+				text: "Can deploy two separate sentries at once.",
 				stats: {
 					amount: { name: "Number of Sentries", value: 1 }
 				},
@@ -40,12 +42,14 @@ export default {
 			},
 			{
 				selected: false,
-				name: "High Velocity Rounds",
-				icon: "Icon_Upgrade_DamageGeneral",
-				type: "Damage",
-				text: "An upgraded model with more of a punch.",
+				name: "LMG MKII",
+				icon: "Icon_Upgrade_StrongerTurret",
+				type: "Special",
+				text: "An upgraded model with more punch, longer range and greater ammo capacity.",
 				stats: {
-					dmg: { name: "Damage", value: 2.5 }
+					clip: { name: "Sentry Ammo Capacity", value: 15 },
+					dmg: { name: "Damage", value: 2.5 },
+					range: { name: "Max Targeting Range", value: 10 }
 				},
 				cost: {
 					credits: 360,
@@ -70,11 +74,11 @@ export default {
 					ammo: { name: "Carried Amount", value: 90 }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 26,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -90,9 +94,9 @@ export default {
 					rate: { name: "Construction Time", value: 2, subtract: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
-					croppa: 0,
+					croppa: 26,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
@@ -110,10 +114,10 @@ export default {
 					reload: { name: "Reload Ammo Per Second", value: 45 }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 26,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -133,13 +137,13 @@ export default {
 					ex1: { name: "Armor Break Bonus", value: 300, percent: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 920,
 					bismor: 0,
-					croppa: 0,
+					croppa: 20,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 14,
 					err: 0
 				}
 			},
@@ -153,19 +157,19 @@ export default {
 					ex2: { name: "Stun Chance", value: 20, percent: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 920,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
+					jadiz: 20,
+					magnite: 14,
 					umanite: 0,
 					err: 0
 				}
 			},
 			{
 				selected: false,
-				name: "High Capacity Magazine",
+				name: "Expanded Ammo Capacity",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
 				text: "The sentry can fire more shots before refilling.",
@@ -173,10 +177,10 @@ export default {
 					clip: { name: "Sentry Ammo Capacity", value: 30 }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 920,
+					bismor: 20,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 14,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -188,41 +192,41 @@ export default {
 			{
 				selected: false,
 				name: "Defender System",
-				icon: "Icon_Upgrade_Special",
+				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Special",
-				text: "A design variation with greatly increased shot power and a focused scan angle",
+				text: "A design variation with greatly increased shot power and a focused scan angle.",
 				stats: {
-					dmg: { name: "Damage", value: 5.5 },
+					dmg2: { name: "Damage Bonus", value: 200, percent: true },
 					ex3: { name: "Defender System", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 1000,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					magnite: 20,
+					umanite: 32,
 					err: 0
 				}
 			},
 			{
 				selected: false,
 				name: "Defender System",
-				icon: "Icon_Upgrade_StrongerTurret",
+				icon: "Icon_Upgrade_Accuracy",
 				type: "Special",
 				text: "Paint a target with your laser pointer and the LMG will take care of the rest.",
 				stats: {
 					ex4: { name: "Manual Targeting", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 1000,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 32,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 20,
 					err: 0
 				}
 			}

@@ -21,7 +21,7 @@ export default {
 				name: "Fragmentary Shell",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of Effect",
-				text: "Larger damage radius",
+				text: "Larger damage radius.",
 				stats: {
 					radius: { name: "Damage Radius", value: 3 }
 				},
@@ -41,7 +41,7 @@ export default {
 				name: "Extra Satchel Charge",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Can carry one more explosive pack",
+				text: "Can carry one more explosive pack.",
 				stats: {
 					ammo: { name: "Carried Amount", value: 1 }
 				},
@@ -61,7 +61,7 @@ export default {
 				name: "Bigger Charge",
 				icon: "Icon_Upgrade_AreaDamage",
 				type: "Area Damage",
-				text: "More Damage",
+				text: "More Damage.",
 				stats: {
 					dmg: { name: "Area Damage", value: 250 }
 				},
@@ -83,15 +83,15 @@ export default {
 				name: "Kill Switch",
 				icon: "Icon_Upgrade_Special",
 				type: "Special",
-				text: "Disarm and pick up an unused charge",
+				text: "Disarm and pick up an unused charge.",
 				stats: {
 					ex3: { name: "Can be picked up", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 26,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -105,18 +105,18 @@ export default {
 				name: "Extra Satchel Charge",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "Can carry one more explosive pack",
+				text: "Can carry one more explosive pack.",
 				stats: {
 					ammo: { name: "Carried Amount", value: 1 }
 				},
 				cost: {
-					credits: 0,
+					credits: 920,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					magnite: 14,
+					umanite: 20,
 					err: 0
 				}
 			},
@@ -131,10 +131,10 @@ export default {
 					ex4: { name: "Unstable explosives", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 920,
+					bismor: 20,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 14,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -148,17 +148,17 @@ export default {
 				name: "Big Bang",
 				icon: "Icon_Upgrade_ScareEnemies",
 				type: "Fear",
-				text: "Chance to scare enemies far from the blast",
+				text: "Chance to scare enemies far from the blast.",
 				stats: {
 					ex1: { name: "Extra Fear Radius", value: 10 }
 				},
 				cost: {
-					credits: 0,
+					credits: 1000,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 20,
 					jadiz: 0,
-					magnite: 0,
+					magnite: 32,
 					umanite: 0,
 					err: 0
 				}
@@ -168,16 +168,16 @@ export default {
 				name: "Concussive Blast",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Staggers creatures far from the blast",
+				text: "Staggers creatures far from the blast.",
 				stats: {
 					ex2: { name: "Extra Stagger Radius", value: 10 }
 				},
 				cost: {
-					credits: 0,
+					credits: 1000,
 					bismor: 0,
-					croppa: 0,
+					croppa: 32,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 20,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -188,18 +188,18 @@ export default {
 				name: "Rock Mover",
 				icon: "Icon_Upgrade_Digging",
 				type: "Digging",
-				text: "Blast carves a much larger area",
+				text: "Blast carves a much larger area.",
 				stats: {
 					diameter: { name: "Carve Diameter", value: 9 }
 				},
 				cost: {
-					credits: 0,
+					credits: 1000,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					magnite: 32,
+					umanite: 20,
 					err: 0
 				}
 			}

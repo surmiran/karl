@@ -8,7 +8,8 @@ export default {
 		duration: { name: "Duration", value: 75 },
 		clip: { name: "Magazine Size", value: 3 },
 		ammo: { name: "Max Ammo", value: 12 },
-		reload: { name: "Reload Time", value: 24 },
+		reload: { name: "Reload Time", value: 2.4 },
+		rate: { name: "Rate of Fire", value: 1.0 },
 		ex1: { name: "Auto Reload", value: 0, boolean: true }
 	},
 	mods: [
@@ -38,7 +39,7 @@ export default {
 				name: "Thicker Core",
 				icon: "Icon_Upgrade_Duration",
 				type: "Delay",
-				text: "More core material for a longer burn",
+				text: "More core material for a longer burn.",
 				stats: {
 					duration: { name: "Duration", value: 15 }
 				},
@@ -60,15 +61,16 @@ export default {
 				name: "Supercharged Feed Mechanism",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
-				text: "We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
+				text:
+					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					// tbd
+					rate: { name: "Rate of Fire", value: 3 }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 26,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -85,11 +87,11 @@ export default {
 					clip: { name: "Magazine Size", value: 1 }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 26,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -102,18 +104,18 @@ export default {
 				name: "Auto Reload",
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
-				text: "Reloads automatically when unequipped for more than 5 seconds",
+				text: "Reloads automatically when unequipped for more than 5 seconds.",
 				stats: {
 					ex1: { name: "Auto Reload", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 920,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					magnite: 14,
+					umanite: 20,
 					err: 0
 				}
 			},
@@ -127,9 +129,9 @@ export default {
 					ammo: { name: "Max Ammo", value: 3 }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
-					croppa: 0,
+					credits: 920,
+					bismor: 20,
+					croppa: 14,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
@@ -142,18 +144,18 @@ export default {
 				name: "Magnesium Core",
 				icon: "Icon_Upgrade_Duration",
 				type: "Delay",
-				text: "A solid magnesium core is added to the flare, increasing how long it can burn",
+				text: "A solid magnesium core is added to the flare, increasing how long it can burn.",
 				stats: {
 					duration: { name: "Duration", value: 15 }
 				},
 				cost: {
-					credits: 0,
+					credits: 920,
 					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
-					jadiz: 0,
+					jadiz: 14,
 					magnite: 0,
-					umanite: 0,
+					umanite: 20,
 					err: 0
 				}
 			}

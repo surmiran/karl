@@ -19,7 +19,7 @@ export default {
 				name: "Streamlined Integrity Check",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
-				text: "Shield recharges faster",
+				text: "Shield recharges faster.",
 				stats: {
 					reload: { name: "Recharge Time", value: 1, subtract: true }
 				},
@@ -61,15 +61,15 @@ export default {
 				name: "Fast Charging Capacitors",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
-				text: "Shield recharges faster.",
+				text: "Generator recharges faster.",
 				stats: {
 					reload: { name: "Recharge Time", value: 2, subtract: true }
 				},
 				cost: {
-					credits: 0,
+					credits: 700,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
+					enorPearl: 26,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -81,13 +81,13 @@ export default {
 				name: "Larger Capacitors",
 				icon: "Icon_Upgrade_Duration",
 				type: "Delay",
-				text: "Shield lasts longer",
+				text: "Shield lasts longer.",
 				stats: {
 					duration: { name: "Duration", value: 1.5 }
 				},
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 700,
+					bismor: 26,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
@@ -103,7 +103,7 @@ export default {
 				name: "Supercharged Coils",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
-				text: "Shield protects a larger area",
+				text: "Shield protects a larger area.",
 				stats: {
 					radius: { name: "Shield Radius", value: 0.8 }
 				},

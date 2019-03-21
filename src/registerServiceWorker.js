@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import { register } from "register-service-worker";
-// todo: service worker message - 'new version available'!
+
 if (process.env.NODE_ENV === "production") {
 	register(`${process.env.BASE_URL}service-worker.js`, {
 		ready() {
@@ -20,6 +20,16 @@ if (process.env.NODE_ENV === "production") {
 		},
 		updated() {
 			console.log("New content is available; please refresh.");
+			let toastOptions = {
+				theme: "bubble",
+				position: "top-center",
+				duration: 3000
+			};
+			try {
+				this.$toasted.show("New version available! Please refresh KARL.", toastOptions);
+			} catch (e) {
+				console.log(e);
+			}
 		},
 		offline() {
 			console.log("No internet connection found. App is running in offline mode.");

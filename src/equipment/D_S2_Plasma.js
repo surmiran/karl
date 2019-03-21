@@ -17,9 +17,9 @@ export default {
 		ex6: { name: "Heat when Charged", value: 0.8 },
 		ex7: { name: "Projectile Velocity", value: 0, percent: true },
 		ex8: { name: "Heat when Charging", value: 0 },
-		ex9: { name: "Flying Nightmare", value: 0, binary: true },
-		ex10: { name: "Charged Explode on hit", value: 0, binary: true },
-		ex11: { name: "Projectile Bounces", value: 0, binary: true }
+		ex9: { name: "Flying Nightmare", value: 0, boolean: true },
+		ex10: { name: "Charged Explode on hit", value: 0, boolean: true },
+		ex11: { name: "Projectile Bounces", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -238,7 +238,7 @@ export default {
 				type: "Special",
 				text: "Charged Projectile deals damage to nearby enemies while it flies",
 				stats: {
-					ex9: { name: "Flying Nightmare", value: 1, binary: true }
+					ex9: { name: "Flying Nightmare", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -258,7 +258,7 @@ export default {
 				type: "Special",
 				text: "Any projectile will blow up the Charged Projectile causing a bigger explosion dealing extra damage.",
 				stats: {
-					ex10: { name: "Charged Explode on hit", value: 1, binary: true }
+					ex10: { name: "Charged Explode on hit", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -278,7 +278,7 @@ export default {
 				type: "Ricochet",
 				text: "Normal shots bounce on all surfaces until they disappear.",
 				stats: {
-					ex11: { name: "Projectile Bounces", value: 1, binary: true }
+					ex11: { name: "Projectile Bounces", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

@@ -11,13 +11,13 @@ export default {
 		reload: { name: "Cooling Rate", value: 1.5 },
 		ex1: { name: "Spinup Time", value: 0.7 },
 		ex2: { name: "Spindown Time", value: 3 },
-		ex3: { name: "Increased Accuracy", value: 0, binary: true },
+		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex4: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex5: { name: "Stun Chance", value: 0, percent: true },
 		ex6: { name: "Max Penetrations", value: 0 },
 		ex7: { name: "Damage at Max Stabilization", value: 0, percent: true },
-		ex8: { name: "Aggressive Venting", value: 0, binary: true },
-		ex9: { name: "Heat Removed on Kill", value: 0, binary: true },
+		ex8: { name: "Aggressive Venting", value: 0, boolean: true },
+		ex9: { name: "Heat Removed on Kill", value: 0, boolean: true },
 		ex10: { name: "Hot Bullets", value: 0, percent: true }
 	},
 	mods: [
@@ -69,7 +69,7 @@ export default {
 				type: "Accuracy",
 				text: "Increased Accuracy",
 				stats: {
-					ex3: { name: "Increased Accuracy", value: 1, binary: true }
+					ex3: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1200,
@@ -257,7 +257,7 @@ export default {
 				type: "Explosion",
 				text: "Burn everything in a radius when the minigun overheats",
 				stats: {
-					ex8: { name: "Aggressive Venting", value: 1, binary: true }
+					ex8: { name: "Aggressive Venting", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,
@@ -277,7 +277,7 @@ export default {
 				type: "Cooling",
 				text: "Every kill cools the gun",
 				stats: {
-					ex9: { name: "Heat Removed on Kill", value: 1, binary: true }
+					ex9: { name: "Heat Removed on Kill", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

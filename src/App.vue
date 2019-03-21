@@ -14,6 +14,7 @@
 			<!--todo: use https://sharingbuttons.io/ ?-->
 		</div>
 		<div>
+			<!-- todo: autoscroll on equipment -->
 			<div v-if="selectedClass === 'D'" class="equipmentSelectContainer">
 				<EquipmentSelect
 					v-for="(equipment, equipmentId) in drillerEquipment"

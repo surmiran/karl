@@ -12,8 +12,8 @@ export default {
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Burst Size", value: 3 },
 		ex2: { name: "Burst Speed", value: 0.05 },
-		ex3: { name: "Increased Stability", value: 0, binary: true },
-		ex4: { name: "Reduced Recoil", value: 0, binary: true },
+		ex3: { name: "Increased Stability", value: 0, boolean: true },
+		ex4: { name: "Reduced Recoil", value: 0, boolean: true },
 		ex5: { name: "Armor Break Bonus", value: -30, percent: true },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
@@ -71,7 +71,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Stability", value: 1, binary: true }
+					ex3: { name: "Increased Stability", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1800,
@@ -92,7 +92,7 @@ export default {
 				text:
 					"Quality engineering, the best laser cut parts, the tender loving care of a dedicated R&D Department. The recoil of your gun is drastically reduced.",
 				stats: {
-					ex4: { name: "Reduced Recoil", value: 1, binary: true }
+					ex4: { name: "Reduced Recoil", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1800,

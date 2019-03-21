@@ -13,11 +13,11 @@ export default {
 		ex1: { name: "Bullets (per shot)", value: 7 },
 		ex2: { name: "Stun Duration", value: 2 },
 		ex3: { name: "Stun Chance", value: 20, percent: true },
-		ex4: { name: "Reduced Recoil", value: 0, binary: true },
+		ex4: { name: "Reduced Recoil", value: 0, boolean: true },
 		ex5: { name: "Increased Accuracy", value: 0, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
-		ex7: { name: "Turret Whip", value: 0, binary: true },
-		ex8: { name: "Automatic Fire", value: 0, binary: true }
+		ex7: { name: "Turret Whip", value: 0, boolean: true },
+		ex8: { name: "Automatic Fire", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -134,7 +134,7 @@ export default {
 				text:
 					"Quality engineering, the best lasercut parts, the tender loving care of a dedicated R&D Department, The recoil of your gun is drastically reduced.",
 				stats: {
-					ex4: { name: "Reduced Recoil", value: 1, binary: true }
+					ex4: { name: "Reduced Recoil", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2800,
@@ -154,7 +154,7 @@ export default {
 				type: "Accuracy",
 				text: "Decreased shot spread",
 				stats: {
-					ex5: { name: "Increased Accuracy", value: 1, binary: true }
+					ex5: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2800,
@@ -261,7 +261,7 @@ export default {
 				type: "Special",
 				text: "Shoot your turrets to make them create an overcharged shot",
 				stats: {
-					ex7: { name: "Turret Whip", value: 1, binary: true }
+					ex7: { name: "Turret Whip", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,
@@ -282,7 +282,7 @@ export default {
 				text: "Fully automatic with an increased rate of fire",
 				stats: {
 					rate: { name: "Rate of Fire", value: 1 },
-					ex8: { name: "Automatic Fire", value: 1, binary: true }
+					ex8: { name: "Automatic Fire", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

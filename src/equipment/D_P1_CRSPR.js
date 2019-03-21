@@ -185,7 +185,7 @@ export default {
 				},
 				text: "Creatures moving through sticky flames are slowed.",
 				stats: {
-					ex3: { name: "Sticky Flame Slowdown", value: 1, binary: true }
+					ex3: { name: "Sticky Flame Slowdown", value: 1, boolean: true }
 				}
 			}, // 2/2
 			{
@@ -248,7 +248,7 @@ export default {
 				},
 				text: "Creatures moving through sticky flames take more damage.",
 				stats: {
-					ex1: { name: "Sticky Flame Damage", value: 1, binary: true }
+					ex1: { name: "Sticky Flame Damage", value: 1, boolean: true }
 				}
 			},
 			{
@@ -268,7 +268,7 @@ export default {
 				},
 				text: "Creatures moving through sticky flames are quickly set on fire.",
 				stats: {
-					ex2: { name: "Sticky Flame Burn", value: 1, binary: true }
+					ex2: { name: "Sticky Flame Burn", value: 1, boolean: true }
 				}
 			}
 		],

@@ -10,7 +10,7 @@ export default {
 		reload: { name: "Reload Time", value: 1.5 },
 		angle: { name: "Max Angle", value: 30 },
 		speed: { name: "Movement Speed", value: 250 },
-		ex1: { name: "Fall Damage Reduction", value: 0, binary: true }
+		ex1: { name: "Fall Damage Reduction", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -105,7 +105,7 @@ export default {
 				type: "Fall Damage Resistance",
 				text: "Take less damage if you fall off the zipline",
 				stats: {
-					ex1: { name: "Fall Damage Reduction", value: 1, binary: true }
+					ex1: { name: "Fall Damage Reduction", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 960,

@@ -10,7 +10,7 @@ export default {
 		clip: { name: "Magazine Size", value: 50 },
 		rate: { name: "Rate of Fire", value: 30 },
 		reload: { name: "Reload Time", value: 1.8 },
-		ex1: { name: "Increased Accuracy", value: 0, binary: true },
+		ex1: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex2: { name: "Max Penetrations", value: 0 },
 		ex3: { name: "Stun Chance", value: 0, percent: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
@@ -68,7 +68,7 @@ export default {
 				type: "Accuracy",
 				text: "Base Accuracy Increase",
 				stats: {
-					ex1: { name: "Increased Accuracy", value: 1, binary: true }
+					ex1: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1800,

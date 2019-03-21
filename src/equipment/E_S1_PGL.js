@@ -16,7 +16,7 @@ export default {
 		ex4: { name: "Projectile Velocity", value: 0, percent: true },
 		ex5: { name: "Converted to Fire", value: 0, percent: true },
 		ex6: { name: "Stun Chance", value: 0, percent: true },
-		ex7: { name: "Proximity Trigger", value: 0, binary: true },
+		ex7: { name: "Proximity Trigger", value: 0, boolean: true },
 		ex8: { name: "Direct Damage", value: 0 }
 	},
 	mods: [
@@ -260,7 +260,7 @@ export default {
 				text:
 					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100%",
 				stats: {
-					ex7: { name: "Proximity Trigger", value: 1, binary: true }
+					ex7: { name: "Proximity Trigger", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

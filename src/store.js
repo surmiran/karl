@@ -2,6 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 // imports for driller equipment
 import D_E_Armor from "./equipment/D_E_Armor.js";
+import D_E_Satchel from "./equipment/D_E_Satchel.js";
+import D_E_Satchel_SVG from "./assets/D_E_Satchel.js";
 import D_E_Drill from "./equipment/D_E_Drill.js";
 import D_E_Drill_SVG from "./assets/D_E_Drill.js";
 import D_P1_CRSPR from "./equipment/D_P1_CRSPR.js";
@@ -14,6 +16,8 @@ import D_S2_Plasma from "./equipment/D_S2_Plasma.js";
 import D_S2_Plasma_SVG from "./assets/D_S2_Plasma.js";
 // imports for engineer equipment
 import E_E_Armor from "./equipment/E_E_Armor.js";
+import E_E_Sentry from "./equipment/E_E_Sentry.js";
+import E_E_Sentry_SVG from "./assets/E_E_Sentry.js";
 import E_E_Platform from "./equipment/E_E_Platform.js";
 import E_E_Platform_SVG from "./assets/E_E_Platform.js";
 import E_P1_Warthog from "./equipment/E_P1_Warthog.js";
@@ -26,6 +30,8 @@ import E_S2_Breach from "./equipment/E_S2_Breach.js";
 import E_S2_Breach_SVG from "./assets/E_S2_Breach.js";
 // imports for gunner equipment
 import G_E_Armor from "./equipment/G_E_Armor.js";
+import G_E_Shield from "./equipment/G_E_Shield.js";
+import G_E_Shield_SVG from "./assets/G_E_Shield.js";
 import G_E_Zipline from "./equipment/G_E_Zipline.js";
 import G_E_Zipline_SVG from "./assets/G_E_Zipline.js";
 import G_P1_Lead from "./equipment/G_P1_Lead.js";
@@ -38,6 +44,8 @@ import G_S2_Burst from "./equipment/G_S2_Burst.js";
 import G_S2_Burst_SVG from "./assets/G_S2_Burst.js";
 // imports for scout equipment
 import S_E_Armor from "./equipment/S_E_Armor.js";
+import S_E_Flare from "./equipment/S_E_Flare.js";
+import S_E_Flare_SVG from "./assets/S_E_Flare.js";
 import S_E_Grapling from "./equipment/S_E_Grapling.js";
 import S_E_Grapling_SVG from "./assets/S_E_Grapling.js";
 import S_P1_GK2 from "./equipment/S_P1_GK2.js";
@@ -101,8 +109,12 @@ import Icon_Upgrade_Stun from "./assets/mods/Icon_Upgrade_Stun.js";
 import Icon_Upgrade_TemperatureCoolDown from "./assets/mods/Icon_Upgrade_TemperatureCoolDown.js";
 import Icon_Upgrade_Weakspot from "./assets/mods/Icon_Upgrade_Weakspot.js";
 import Icon_Upgrade_Bosco_Rocket_Upgrade from "./assets/mods/Icon_Upgrade_Bosco_Rocket_Upgrade.js";
-import Icon_Upgrade_Light from "./assets/mods/Icon_Upgrade_Light.js";
 import Icon_Upgrade_PlusOne from "./assets/mods/Icon_Upgrade_PlusOne.js";
+import Icon_Upgrade_Light_ExtraLife from "./assets/mods/Icon_Upgrade_Light_ExtraLife.js";
+import Icon_Upgrade_Light_Intensity from "./assets/mods/Icon_Upgrade_Light_Intensity.js";
+import Icon_Upgrade_Special from "./assets/mods/Icon_Upgrade_Special.js";
+import Icon_Upgrade_StrongerTurret from "./assets/mods/Icon_Upgrade_StrongerTurret.js";
+import Icon_Upgrade_TwoTurrets from "./assets/mods/Icon_Upgrade_TwoTurrets.js";
 
 Vue.use(Vuex);
 
@@ -123,21 +135,25 @@ export default new Vuex.Store({
 		icons: {
 			equipment: {
 				X_E_Armor: X_E_Armor_SVG,
+				D_E_Satchel: D_E_Satchel_SVG,
 				D_E_Drill: D_E_Drill_SVG,
 				D_P1_CRSPR: D_P1_CRSPR_SVG,
 				D_P2_Cryo: D_P2_Cryo_SVG,
 				D_S1_Subata: D_S1_Subata_SVG,
 				D_S2_Plasma: D_S2_Plasma_SVG,
+				E_E_Sentry: E_E_Sentry_SVG,
 				E_E_Platform: E_E_Platform_SVG,
 				E_P1_Warthog: E_P1_Warthog_SVG,
 				E_P2_Stubby: E_P2_Stubby_SVG,
 				E_S1_PGL: E_S1_PGL_SVG,
 				E_S2_Breach: E_S2_Breach_SVG,
+				G_E_Shield: G_E_Shield_SVG,
 				G_E_Zipline: G_E_Zipline_SVG,
 				G_P1_Lead: G_P1_Lead_SVG,
 				G_P2_Thunder: G_P2_Thunder_SVG,
 				G_S1_Bulldog: G_S1_Bulldog_SVG,
 				G_S2_Burst: G_S2_Burst_SVG,
+				S_E_Flare: S_E_Flare_SVG,
 				S_E_Grapling: S_E_Grapling_SVG,
 				S_P1_GK2: S_P1_GK2_SVG,
 				S_P2_M1000: S_P2_M1000_SVG,
@@ -192,8 +208,12 @@ export default new Vuex.Store({
 				Icon_Upgrade_TemperatureCoolDown: Icon_Upgrade_TemperatureCoolDown,
 				Icon_Upgrade_Weakspot: Icon_Upgrade_Weakspot,
 				Icon_Upgrade_Bosco_Rocket_Upgrade: Icon_Upgrade_Bosco_Rocket_Upgrade,
-				Icon_Upgrade_Light: Icon_Upgrade_Light,
-				Icon_Upgrade_PlusOne: Icon_Upgrade_PlusOne
+				Icon_Upgrade_PlusOne: Icon_Upgrade_PlusOne,
+				Icon_Upgrade_Light_ExtraLife: Icon_Upgrade_Light_ExtraLife,
+				Icon_Upgrade_Light_Intensity: Icon_Upgrade_Light_Intensity,
+				Icon_Upgrade_Special: Icon_Upgrade_Special,
+				Icon_Upgrade_StrongerTurret: Icon_Upgrade_StrongerTurret,
+				Icon_Upgrade_TwoTurrets: Icon_Upgrade_TwoTurrets
 			}
 		},
 		tree: {
@@ -202,32 +222,36 @@ export default new Vuex.Store({
 				P2: D_P2_Cryo,
 				S1: D_S1_Subata,
 				S2: D_S2_Plasma,
-				E1: D_E_Drill,
-				E2: D_E_Armor
+				E1: D_E_Satchel,
+				E2: D_E_Drill,
+				E3: D_E_Armor
 			},
 			E: {
 				P1: E_P1_Warthog,
 				P2: E_P2_Stubby,
 				S1: E_S1_PGL,
 				S2: E_S2_Breach,
-				E1: E_E_Platform,
-				E2: E_E_Armor
+				E1: E_E_Sentry,
+				E2: E_E_Platform,
+				E3: E_E_Armor
 			},
 			G: {
 				P1: G_P1_Lead,
 				P2: G_P2_Thunder,
 				S1: G_S1_Bulldog,
 				S2: G_S2_Burst,
-				E1: G_E_Zipline,
-				E2: G_E_Armor
+				E1: G_E_Shield,
+				E2: G_E_Zipline,
+				E3: G_E_Armor
 			},
 			S: {
 				P1: S_P1_GK2,
 				P2: S_P2_M1000,
 				S1: S_S1_Jury,
 				S2: S_S2_Zhuk,
-				E1: S_E_Grapling,
-				E2: S_E_Armor
+				E1: S_E_Flare,
+				E2: S_E_Grapling,
+				E3: S_E_Armor
 			},
 			R: {
 				P1: R_P1_Bosco

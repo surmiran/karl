@@ -14,7 +14,7 @@ export default {
 		ex2: { name: "Electrocution Chance", value: 10, percent: true },
 		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex5: { name: "Electrocution Bonus", value: 0 },
+		ex5: { name: "Damage vs Electrocuted", value: 100, percent: true },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true }
 	},
 	mods: [
@@ -257,7 +257,7 @@ export default {
 				type: "Electricity",
 				text: "Deal extra damage to electrocuted targets",
 				stats: {
-					ex5: { name: "Electrocution Bonus", value: 1 }
+					ex5: { name: "Damage vs Electrocuted", value: 20, percent: true }
 				},
 				cost: {
 					credits: 5600,

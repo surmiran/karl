@@ -28,6 +28,10 @@
 			<span v-if="!isNaN(calcStats.dpa)" class="inactiveStat"
 				><i>Theoretical</i> total damage available with initial ammunition.</span
 			>
+			<h2 v-if="!isNaN(calcStats.ex1)">Total lighting time: {{ calcStats.ex1 }} minutes</h2>
+			<span v-if="!isNaN(calcStats.ex1)" class="inactiveStat"
+				><i>Theoretical</i> total lighting time available with initial ammunition.</span
+			>
 			<!--todo: add numbers for weakspot damage to all stats-->
 			<h2 v-if="calcStats.visible">Total Costs:</h2>
 			<p class="costList">
@@ -163,6 +167,22 @@ const _calculateSpecialDamage = (stats, name) => {
 				dpa: burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)
 			};
 		}
+		case "Flare Gun": {
+			for (let stat of stats) {
+				if (stat.name === "Duration") {
+					dpsStats.duration = parseFloat(stat.value);
+				} else if (stat.name === "Magazine Size") {
+					dpsStats.magazineSize = parseFloat(stat.value);
+				} else if (stat.name === "Max Ammo") {
+					dpsStats.maxAmmo = parseFloat(stat.value);
+				}
+			}
+			let lightingSeconds = (dpsStats.magazineSize + dpsStats.maxAmmo) * dpsStats.duration;
+			let lightingMinutes = lightingSeconds / 60;
+			return {
+				ex1: lightingMinutes
+			};
+		}
 		default: {
 			return {};
 		}
@@ -252,7 +272,13 @@ export default {
 			});
 
 			let damage = null;
-			let specialEquipment = ["Cryo Cannon", "Experimental Plasma Charger", "Breach Cutter", "BRT7 Burst Fire Gun"];
+			let specialEquipment = [
+				"Cryo Cannon",
+				"Experimental Plasma Charger",
+				"Breach Cutter",
+				"BRT7 Burst Fire Gun",
+				"Flare Gun"
+			];
 			if (specialEquipment.includes(store.state.tree[this.selectedClassId][this.selectedEquipmentId].name)) {
 				damage = _calculateSpecialDamage(stats, store.state.tree[this.selectedClassId][this.selectedEquipmentId].name);
 			} else {
@@ -288,7 +314,8 @@ export default {
 				dpm: damage.dpm,
 				dpmw: damage.dpmw,
 				dpa: damage.dpa,
-				dpaw: damage.dpaw
+				dpaw: damage.dpaw,
+				ex1: damage.ex1
 			};
 		}
 	}

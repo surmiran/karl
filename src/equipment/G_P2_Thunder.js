@@ -15,7 +15,7 @@ export default {
 		ex3: { name: "Reduced Spread", value: 0, percent: true },
 		ex4: { name: "Lighter Barrel Assembly", value: 0, percent: true },
 		ex5: { name: "Armor Break Bonus", value: 0, percent: true },
-		ex6: { name: "Stun Chance", value: 0, percent: true },
+		/*ex6: { name: "Stun Chance", value: 0, percent: true },*/
 		ex7: { name: "Damage when at maximum fire rate", value: 0, percent: true },
 		ex8: { name: "AoE Fear", value: 0 },
 		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true }
@@ -134,6 +134,7 @@ export default {
 				text: "Reach the max rate of fire faster",
 				stats: {
 					ex4: { name: "Lighter Barrel Assembly", value: 20, percent: true, subtract: true }
+					/* todo: dps calculation is off since update 24.. rate of fire increase was tweaked / fixed */
 				},
 				cost: {
 					credits: 2000,
@@ -232,7 +233,7 @@ export default {
 					err: 0
 				}
 			},
-			{
+			/*{
 				selected: false,
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
@@ -251,7 +252,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			},*/
 			{
 				selected: false,
 				name: "Shrapnel Rounds",
@@ -323,6 +324,7 @@ export default {
 				stats: {
 					ex9: { name: "Resistance at full rate of fire", value: 1, boolean: true }
 				},
+				/* todo: make percentage based (+20%)*/
 				cost: {
 					credits: 5600,
 					bismor: 0,

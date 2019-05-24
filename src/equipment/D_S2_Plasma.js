@@ -253,7 +253,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charged Explode On Hit",
+				name: "Unstable Containment Field",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
 				text: "Any projectile will blow up the Charged Projectile causing a bigger explosion dealing extra damage.",
@@ -273,7 +273,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Normal Shots Bounce",
+				name: "Bouncy Plasma",
 				icon: "Icon_Upgrade_Ricoshet",
 				type: "Ricochet",
 				text: "Normal shots bounce on all surfaces until they disappear.",

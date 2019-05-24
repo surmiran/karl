@@ -114,7 +114,7 @@ export default {
 				type: "Stun",
 				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in it's tracks",
 				stats: {
-					ex2: { name: "Stun Chance", value: 10, percent: true }
+					ex2: { name: "Stun Chance", value: 20, percent: true }
 				},
 				cost: {
 					credits: 2200,
@@ -172,13 +172,13 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Blowthrough Rounds",
+				name: "Super Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
 				type: "Blow Through",
 				text:
 					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight through several enemies at once!",
 				stats: {
-					ex3: { name: "Max Penetrations", value: 1 }
+					ex3: { name: "Max Penetrations", value: 3 }
 				},
 				cost: {
 					credits: 3800,
@@ -199,7 +199,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex4: { name: "Armor Break Bonus", value: 200, percent: true }
+					ex4: { name: "Armor Break Bonus", value: 300, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -217,7 +217,7 @@ export default {
 				name: "Blast Wave",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Shotgun blast kills weak enemies within 4m",
+				text: "Shockwave from the blast deals extra damage to any enemies unlucky enough to be in the area extending 4m in front of you.",
 				stats: {
 					ex5: { name: "Blast Wave", value: 1, boolean: true }
 				},

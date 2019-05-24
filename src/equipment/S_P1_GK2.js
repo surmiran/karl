@@ -10,8 +10,8 @@ export default {
 		clip: { name: "Magazine Size", value: 25 },
 		rate: { name: "Rate of Fire", value: 7 },
 		reload: { name: "Reload Time", value: 1.8 },
-		ex1: { name: "Stun Duration", value: 2 },
-		ex2: { name: "Stun Chance", value: 10, percent: true },
+		ex1: { name: "Weakpoint Stun Duration", value: 2 },
+		ex2: { name: "Weakpoint Stun Chance", value: 10, percent: true },
 		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex4: { name: "Increased Stability", value: 0, boolean: true },
 		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
@@ -301,7 +301,7 @@ export default {
 				type: "Stun",
 				text: "Increased chance to stun the target",
 				stats: {
-					ex2: { name: "Stun Chance", value: 30, percent: true }
+					ex2: { name: "Weakpoint Stun Chance", value: 30, percent: true }
 				},
 				cost: {
 					credits: 5600,

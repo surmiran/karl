@@ -16,7 +16,7 @@ export default {
 		ex5: { name: "Stun Chance", value: 0, percent: true },
 		ex6: { name: "Max Penetrations", value: 0 },
 		ex7: { name: "Damage at Max Stabilization", value: 0, percent: true },
-		ex8: { name: "Aggressive Venting", value: 0, boolean: true },
+		ex8: { name: "Critical Overheat", value: 0, boolean: true },
 		ex9: { name: "Heat Removed on Kill", value: 0, boolean: true },
 		ex10: { name: "Hot Bullets", value: 0, percent: true }
 	},
@@ -153,7 +153,7 @@ export default {
 				type: "Stun",
 				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
 				stats: {
-					ex5: { name: "Stun Chance", value: 50, percent: true }
+					ex5: { name: "Stun Chance", value: 25, percent: true }
 				},
 				cost: {
 					credits: 2800,
@@ -257,7 +257,7 @@ export default {
 				type: "Explosion",
 				text: "Burn everything in a radius when the minigun overheats",
 				stats: {
-					ex8: { name: "Aggressive Venting", value: 1, boolean: true }
+					ex8: { name: "Critical Overheat", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

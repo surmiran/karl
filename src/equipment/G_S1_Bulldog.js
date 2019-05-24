@@ -13,12 +13,13 @@ export default {
 		ex1: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex2: { name: "Increased Stability", value: 0, boolean: true },
 		ex3: { name: "Max Penetrations", value: 0 },
-		ex4: { name: "Stun Chance", value: 0, percent: true },
+		ex4: { name: "Stun Chance", value: 50, percent: true },
 		ex5: { name: "Area Damage", value: 0 },
 		ex9: { name: "Damage Radius", value: 0 },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Dead-Eye", value: 50, percent: true },
 		ex8: { name: "Damage Vs Glyphid", value: 0, percent: true }
+		/*todo: add stun duration*/
 	},
 	mods: [
 		[
@@ -149,7 +150,7 @@ export default {
 					err: 0
 				}
 			},
-			{
+			/*{
 				selected: false,
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
@@ -168,7 +169,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			},*/
 			{
 				selected: false,
 				name: "Explosive Rounds",

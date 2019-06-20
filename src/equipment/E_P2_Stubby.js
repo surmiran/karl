@@ -1,7 +1,7 @@
 export default {
 	selected: false,
 	modified: false,
-	name: "Stubby",
+	name: '"Stubby" Voltaic SMG',
 	class: "Submachine Gun",
 	icon: "equipment.E_P2_Stubby",
 	baseStats: {
@@ -14,7 +14,7 @@ export default {
 		ex2: { name: "Electrocution Chance", value: 10, percent: true },
 		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex5: { name: "Damage vs Electrocuted", value: 100, percent: true },
+		ex5: { name: "Damage vs Electrically Affected", value: 100, percent: true },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true }
 	},
 	mods: [
@@ -26,7 +26,27 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 3 }
+					dmg: { name: "Damage", value: 2 }
+				},
+				cost: {
+					credits: 1200,
+					bismor: 25,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Upgraded Capacitors",
+				icon: "Icon_Upgrade_Electricity",
+				type: "Electricity",
+				text: "Better chance to electrocute target",
+				stats: {
+					ex2: { name: "Electrocution Chance", value: 10, percent: true }
 				},
 				cost: {
 					credits: 1200,
@@ -52,26 +72,6 @@ export default {
 					credits: 1200,
 					bismor: 0,
 					croppa: 25,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			},
-			{
-				selected: false,
-				name: "Upgraded Capacitors",
-				icon: "Icon_Upgrade_Electricity",
-				type: "Electricity",
-				text: "Better chance to electrocute target",
-				stats: {
-					ex2: { name: "Electrocution Chance", value: 10, percent: true }
-				},
-				cost: {
-					credits: 1200,
-					bismor: 25,
-					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
@@ -124,35 +124,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Extra Ammo",
-				icon: "Icon_Upgrade_Ammo",
-				type: "Total Ammo",
-				text: "Max Ammo +60",
-				stats: {
-					ammo: { name: "Max Ammo", value: 60 }
-				},
-				cost: {
-					credits: 2000,
-					bismor: 0,
-					croppa: 24,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 15,
-					umanite: 0,
-					err: 0
-				}
-			}
-		],
-		[
-			{
-				selected: false,
 				name: "Improved Gas System",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				text:
 					"We overclocked your gun. It fires faster. Don't ask. Just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 2 }
+					rate: { name: "Rate of Fire", value: 3 }
 				},
 				cost: {
 					credits: 2800,
@@ -164,7 +142,9 @@ export default {
 					umanite: 50,
 					err: 0
 				}
-			},
+			}
+		],
+		[
 			{
 				selected: false,
 				name: "High Velocity Rounds",
@@ -172,7 +152,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 3 }
+					dmg: { name: "Damage", value: 2 }
 				},
 				cost: {
 					credits: 2800,
@@ -181,6 +161,26 @@ export default {
 					enorPearl: 35,
 					jadiz: 50,
 					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Expanded Ammo Bags",
+				icon: "Icon_Upgrade_Ammo",
+				type: "Total Ammo",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
+				stats: {
+					ammo: { name: "Max Ammo", value: 120 }
+				},
+				cost: {
+					credits: 2000,
+					bismor: 0,
+					croppa: 24,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 15,
 					umanite: 0,
 					err: 0
 				}
@@ -252,12 +252,12 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Electrocution Rounds",
+				name: "Conductive Bullets",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "Deal extra damage to electrocuted targets",
+				text: "More damage to targets that are in an electric field",
 				stats: {
-					ex5: { name: "Damage vs Electrocuted", value: 20, percent: true }
+					ex5: { name: "Damage vs Electrically Affected", value: 30, percent: true }
 				},
 				cost: {
 					credits: 5600,
@@ -295,7 +295,7 @@ export default {
 				name: "Electric Arc",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
-				text: "Chance for electrocution to arc from one target to another",
+				text: "Chance for electrocution to arc from one target to others",
 				stats: {
 					ex6: { name: "Electrocution AoE", value: 25, percent: true }
 				},

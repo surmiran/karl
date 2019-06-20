@@ -5,20 +5,21 @@ export default {
 	class: "Heavy Weapon",
 	icon: "equipment.G_P1_Lead",
 	baseStats: {
-		dmg: { name: "Damage", value: 8 },
+		dmg: { name: "Damage", value: 10 },
 		ammo: { name: "Max Ammo", value: 2400 },
 		rate: { name: "Rate of Fire", value: 30 },
 		reload: { name: "Cooling Rate", value: 1.5 },
 		ex1: { name: "Spinup Time", value: 0.7 },
 		ex2: { name: "Spindown Time", value: 3 },
 		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
-		ex4: { name: "Armor Break Bonus", value: 0, percent: true },
-		ex5: { name: "Stun Chance", value: 0, percent: true },
+		ex4: { name: "Armor Breaking", value: 0, percent: true },
+		// ex5: { name: "Stun Chance", value: 0, percent: true },
 		ex6: { name: "Max Penetrations", value: 0 },
-		ex7: { name: "Damage at Max Stabilization", value: 0, percent: true },
+		ex7: { name: "Max Stabilization Damage Bonus", value: 0, percent: true },
 		ex8: { name: "Critical Overheat", value: 0, boolean: true },
 		ex9: { name: "Heat Removed on Kill", value: 0, boolean: true },
-		ex10: { name: "Hot Bullets", value: 0, percent: true }
+		ex10: { name: "Hot Bullets", value: 0, percent: true },
+		ex11: { name: "Stun Duration", value: 0 }
 	},
 	mods: [
 		[
@@ -29,7 +30,7 @@ export default {
 				type: "Cooling",
 				text: "Cooling Rate",
 				stats: {
-					reload: { name: "Cooling Rate", value: 1 }
+					reload: { name: "Cooling Rate", value: 1.5 }
 				},
 				cost: {
 					credits: 1200,
@@ -133,7 +134,7 @@ export default {
 				type: "Armor Breaking",
 				text: "Improved armor breaking",
 				stats: {
-					ex4: { name: "Armor Break Bonus", value: 200, percent: true }
+					ex4: { name: "Armor Breaking", value: 200, percent: true }
 				},
 				cost: {
 					credits: 2800,
@@ -148,12 +149,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Stun",
+				name: "Stun Duration",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
+				text: "Stunned enemies are incapacitated for a longer period of time",
 				stats: {
-					ex5: { name: "Stun Chance", value: 25, percent: true }
+					ex11: { name: "Stun Duration", value: 0 }
 				},
 				cost: {
 					credits: 2800,
@@ -195,7 +196,7 @@ export default {
 				type: "Damage",
 				text: "Damage increase when fully stabilized",
 				stats: {
-					ex7: { name: "Damage at Max Stabilization", value: 15, percent: true }
+					ex7: { name: "Max Stabilization Damage Bonus", value: 15, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -213,9 +214,9 @@ export default {
 				name: "Lighter Barrel Assembly",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
-				text: "Spinup Time -3 seconds",
+				text: "Start killing things sooner with a shorter spinup time",
 				stats: {
-					ex1: { name: "Spinup Time", value: 0.3, subtract: true }
+					ex1: { name: "Spinup Time", value: 0.4, subtract: true }
 				},
 				cost: {
 					credits: 4800,
@@ -231,11 +232,11 @@ export default {
 			{
 				selected: false,
 				name: "Magnetic Bearings",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
-				text: "Spindown Time increase",
+				text: "Barrels keep spinning for a longer time after firing, keeping the gun stable for longer.",
 				stats: {
-					ex2: { name: "Spindown Time", value: 2, subtract: true }
+					ex2: { name: "Spindown Time", value: 3, subtract: true }
 				},
 				cost: {
 					credits: 4800,
@@ -255,7 +256,7 @@ export default {
 				name: "Aggressive Venting",
 				icon: "Icon_Upgrade_Explosion",
 				type: "Explosion",
-				text: "Burn everything in a radius when the minigun overheats",
+				text: "Burn everything around you and send enemies running when the minigun overheats.",
 				stats: {
 					ex8: { name: "Critical Overheat", value: 1, boolean: true }
 				},

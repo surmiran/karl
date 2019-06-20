@@ -196,7 +196,7 @@ export default {
 				type: "Special",
 				text: "A design variation with greatly increased shot power and a focused scan angle.",
 				stats: {
-					dmg2: { name: "Damage Bonus", value: 200, percent: true },
+					dmg2: { name: "Damage Bonus", value: 100, percent: true },
 					ex3: { name: "Defender System", value: 1, boolean: true }
 				},
 				cost: {

@@ -1,7 +1,7 @@
 export default {
 	selected: true,
 	modified: false,
-	name: "Warthog",
+	name: '"Warthog" Auto 210',
 	class: "Shotgun",
 	icon: "equipment.E_P1_Warthog",
 	baseStats: {
@@ -10,9 +10,9 @@ export default {
 		clip: { name: "Magazine Size", value: 6 },
 		rate: { name: "Rate of Fire", value: 1.6 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Bullets (per shot)", value: 7 },
-		ex2: { name: "Stun Duration", value: 2 },
-		ex3: { name: "Stun Chance", value: 20, percent: true },
+		ex1: { name: "Bullets (per shot)", value: 8 },
+		ex2: { name: "Stun Duration", value: 0.5 },
+		ex3: { name: "Weakpoint Stun Chance", value: 20, percent: true },
 		ex4: { name: "Reduced Recoil", value: 0, boolean: true },
 		ex5: { name: "Increased Accuracy", value: 0, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
@@ -49,7 +49,7 @@ export default {
 				type: "CLip size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					clip: { name: "Magazine Size", value: 3 }
+					clip: { name: "Magazine Size", value: 2 }
 				},
 				cost: {
 					credits: 1200,
@@ -106,21 +106,21 @@ export default {
 			},
 			{
 				selected: false,
-				name: "High Capacity Magazine",
-				icon: "Icon_Upgrade_ClipSize",
-				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
+				name: "Choke",
+				icon: "Icon_Upgrade_Accuracy",
+				type: "Accuracy",
+				text: "Decreased shot spread",
 				stats: {
-					clip: { name: "Magazine Size", value: 3 }
+					ex5: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
-					credits: 2000,
-					bismor: 24,
+					credits: 2800,
+					bismor: 0,
 					croppa: 0,
-					enorPearl: 15,
+					enorPearl: 0,
 					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
+					magnite: 50,
+					umanite: 35,
 					err: 0
 				}
 			}
@@ -149,26 +149,6 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Choke",
-				icon: "Icon_Upgrade_Accuracy",
-				type: "Accuracy",
-				text: "Decreased shot spread",
-				stats: {
-					ex5: { name: "Increased Accuracy", value: 1, boolean: true }
-				},
-				cost: {
-					credits: 2800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 50,
-					umanite: 35,
-					err: 0
-				}
-			},
-			{
-				selected: false,
 				name: "Quickfire Ejector",
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
@@ -184,6 +164,26 @@ export default {
 					enorPearl: 50,
 					jadiz: 0,
 					magnite: 35,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "High Capacity Magazine",
+				icon: "Icon_Upgrade_ClipSize",
+				type: "Magazine Size",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
+				stats: {
+					clip: { name: "Magazine Size", value: 3 }
+				},
+				cost: {
+					credits: 2000,
+					bismor: 24,
+					croppa: 0,
+					enorPearl: 15,
+					jadiz: 0,
+					magnite: 0,
 					umanite: 0,
 					err: 0
 				}
@@ -213,13 +213,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Stun",
+				name: "Stun Duration",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text:
-					"Hit 'em so hard they can't recover! Every shot you fire has a higher chance to stop the target in its tracks.",
+				text: "Stunned enemies are incapacitated for a longer period of time.",
 				stats: {
-					ex3: { name: "Stun Chance", value: 20, percent: true }
+					ex2: { name: "Stun Duration", value: 1 }
 				},
 				cost: {
 					credits: 4800,
@@ -257,7 +256,7 @@ export default {
 			{
 				selected: false,
 				name: "Turret Whip",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text: "Shoot your turrets to make them create an overcharged shot",
 				stats: {

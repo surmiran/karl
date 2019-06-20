@@ -11,13 +11,13 @@ export default {
 		rate: { name: "Rate of Fire", value: 5.5 },
 		reload: { name: "Reload Time", value: 5 },
 		ex1: { name: "Area Damage", value: 8 },
-		ex2: { name: "Damage Radius", value: 1 },
-		ex3: { name: "Reduced Spread", value: 0, percent: true },
-		ex4: { name: "Lighter Barrel Assembly", value: 0, percent: true },
+		ex2: { name: "Effect Radius", value: 1.2 },
+		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
+		ex4: { name: "Rate of Fire increase Speed", value: 0, percent: true },
 		ex5: { name: "Armor Break Bonus", value: 0, percent: true },
 		/*ex6: { name: "Stun Chance", value: 0, percent: true },*/
-		ex7: { name: "Damage when at maximum fire rate", value: 0, percent: true },
-		ex8: { name: "AoE Fear", value: 0 },
+		ex7: { name: "Full RoF Damage Bonus", value: 0, percent: true },
+		ex8: { name: "Impact Fear AoE", value: 0 },
 		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true }
 	},
 	mods: [
@@ -92,7 +92,7 @@ export default {
 				type: "Accuracy",
 				text: "Improved accuracy",
 				stats: {
-					ex3: { name: "Reduced Spread", value: 25, percent: true }
+					ex3: { name: "Increased Accuracy", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 2000,
@@ -133,7 +133,7 @@ export default {
 				type: "Rate of Fire",
 				text: "Reach the max rate of fire faster",
 				stats: {
-					ex4: { name: "Lighter Barrel Assembly", value: 20, percent: true, subtract: true }
+					ex4: { name: "Rate of Fire increase Speed", value: 100, percent: true, subtract: true }
 					/* todo: dps calculation is off since update 24.. rate of fire increase was tweaked / fixed */
 				},
 				cost: {
@@ -233,6 +233,7 @@ export default {
 					err: 0
 				}
 			},
+
 			/*{
 				selected: false,
 				name: "Stun",
@@ -260,7 +261,7 @@ export default {
 				type: "Area of effect",
 				text: "Greater splash damage radius",
 				stats: {
-					ex2: { name: "Damage Radius", value: 0.5 }
+					ex2: { name: "Effect Radius", value: 0.5 }
 				},
 				cost: {
 					credits: 4800,
@@ -282,7 +283,7 @@ export default {
 				type: "Damage",
 				text: "Increased damage when at max rate of fire",
 				stats: {
-					ex7: { name: "Damage when at maximum fire rate", value: 20, percent: true }
+					ex7: { name: "Full RoF Damage Bonus", value: 20, percent: true }
 				},
 				cost: {
 					credits: 5600,
@@ -300,9 +301,9 @@ export default {
 				name: "Suppressive Fire",
 				icon: "Icon_Upgrade_ScareEnemies",
 				type: "Fear",
-				text: "Chance to scare enemies next to a bullet impact",
+				text: "Chance to scare creatures next to a bullet impact",
 				stats: {
-					ex8: { name: "AoE Fear", value: 1 }
+					ex8: { name: "Impact Fear AoE", value: 1 }
 				},
 				cost: {
 					credits: 5600,

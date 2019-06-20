@@ -5,19 +5,20 @@ export default {
 	class: "Shotgun",
 	icon: "equipment.S_S1_Jury",
 	baseStats: {
-		dmg: { name: "Damage", value: 11 },
+		dmg: { name: "Damage", value: 12 },
 		ammo: { name: "Max Ammo", value: 24 },
 		clip: { name: "Magazine Size", value: 2 },
 		rate: { name: "Rate of Fire", value: 1.5 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Bullets (per shot)", value: 7 },
-		ex2: { name: "Stun Chance", value: 0, percent: true },
+		ex2: { name: "Stun Chance", value: 10, percent: true },
 		ex3: { name: "Max Penetrations", value: 0 },
 		ex4: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex5: { name: "Blast Wave", value: 0, boolean: true },
 		ex6: { name: "Auto Reload", value: 0, boolean: true },
-		ex7: { name: "Fear the Boomstick", value: 0, percent: true },
-		ex8: { name: "Damage To Fire", value: 0, percent: true }
+		ex7: { name: "Proximity Fear Chance", value: 0, percent: true },
+		ex8: { name: "Damage % as Fire", value: 0, percent: true },
+		ex9: { name: "Stun Duration", value: 2 }
 	},
 	mods: [
 		[
@@ -48,7 +49,7 @@ export default {
 				type: "Damage",
 				text: "Bigger and heavier handcrafted specialist dwarf buckshot. Accept no substitute.",
 				stats: {
-					dmg: { name: "Damage", value: 4 }
+					dmg: { name: "Damage", value: 3 }
 				},
 				cost: {
 					credits: 1000,
@@ -69,9 +70,9 @@ export default {
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				text:
-					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
+					"Tweaked trigger mechanism allows you to unload both barrels in quick succession dealing massive damage to anything in front of you.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 3.5 }
+					rate: { name: "Rate of Fire", value: 7.5 }
 				},
 				cost: {
 					credits: 1800,
@@ -114,7 +115,7 @@ export default {
 				type: "Stun",
 				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in it's tracks",
 				stats: {
-					ex2: { name: "Stun Chance", value: 20, percent: true }
+					ex2: { name: "Stun Chance", value: 40, percent: true }
 				},
 				cost: {
 					credits: 2200,
@@ -134,7 +135,7 @@ export default {
 				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					ammo: { name: "Max Ammo", value: 10 }
+					ammo: { name: "Max Ammo", value: 12 }
 				},
 				cost: {
 					credits: 2200,
@@ -215,9 +216,10 @@ export default {
 			{
 				selected: false,
 				name: "Blast Wave",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
-				text: "Shockwave from the blast deals extra damage to any enemies unlucky enough to be in the area extending 4m in front of you.",
+				text:
+					"Shockwave from the blast deals extra damage to any enemies unlucky enough to be in the area extending 4m in front of you.",
 				stats: {
 					ex5: { name: "Blast Wave", value: 1, boolean: true }
 				},
@@ -261,7 +263,7 @@ export default {
 				type: "Fear",
 				text: "Chance to scare nearby creatures whenever you shoot",
 				stats: {
-					ex7: { name: "Fear the Boomstick", value: 50, percent: true }
+					ex7: { name: "Proximity Fear Chance", value: 50, percent: true }
 				},
 				cost: {
 					credits: 4400,
@@ -281,7 +283,7 @@ export default {
 				type: "Heat",
 				text: "Convert some of the damage to Fire damage",
 				stats: {
-					ex8: { name: "Damage To Fire", value: 50, percent: true }
+					ex8: { name: "Damage % as Fire", value: 50, percent: true }
 				},
 				cost: {
 					credits: 4400,

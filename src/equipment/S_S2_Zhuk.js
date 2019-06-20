@@ -24,7 +24,7 @@ export default {
 				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased",
+				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
 					ammo: { name: "Max Ammo", value: 75 }
 				},

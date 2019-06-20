@@ -26,7 +26,10 @@ if (process.env.NODE_ENV === "production") {
 				duration: 3000
 			};
 			try {
-				this.$toasted.show("New version available! Please refresh KARL.", toastOptions);
+				let that = this;
+				setTimeout(() => {
+					that.$toasted.show("New version available! Please refresh KARL.", toastOptions);
+				}, 500);
 			} catch (e) {
 				console.log(e);
 			}

@@ -236,7 +236,7 @@ export default {
 				type: "Special",
 				text: "Barrels keep spinning for a longer time after firing, keeping the gun stable for longer.",
 				stats: {
-					ex2: { name: "Spindown Time", value: 3, subtract: true }
+					ex2: { name: "Spindown Time", value: 3 }
 				},
 				cost: {
 					credits: 4800,

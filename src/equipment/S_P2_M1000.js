@@ -8,16 +8,16 @@ export default {
 		dmg: { name: "Damage", value: 55 },
 		ammo: { name: "Max Ammo", value: 50 },
 		clip: { name: "Clip Size", value: 5 },
-		rate: { name: "Rate of Fire", value: 5 },
+		rate: { name: "Rate of Fire", value: 5.5 },
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Focus Speed", value: 1 },
-		ex2: { name: "Focused Shot Damage", value: 50, percent: true },
-		ex3: { name: "Increased Stability", value: 0, boolean: true },
+		ex2: { name: "Focused Shot Damage Bonus", value: 50, percent: true },
+		ex3: { name: "Spread Per Shot", value: 100, percent: true },
 		ex4: { name: "Max Penetrations", value: 0 },
 		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
-		ex7: { name: "Focused Shot Stun", value: 0, percent: true },
-		ex8: { name: "Focus Shot Fear", value: 0, percent: true }
+		ex6: { name: "Armor Breaking", value: 100, percent: true },
+		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
+		ex8: { name: "Focus Shot Fear", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -68,7 +68,7 @@ export default {
 				name: "Improved Ergonomics",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
-				text: "Faster focus",
+				text: "Focus faster when holding down the trigger.",
 				stats: {
 					ex1: { name: "Focus Speed", value: 1 }
 				},
@@ -111,7 +111,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Stability", value: 1, boolean: true }
+					ex3: { name: "Spread Per Shot", value: 56, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2000,
@@ -153,7 +153,7 @@ export default {
 				type: "Damage",
 				text: "Greater focus damage bonus",
 				stats: {
-					ex2: { name: "Focused Shot Damage", value: 40, percent: true }
+					ex2: { name: "Focused Shot Damage Bonus", value: 40, percent: true }
 				},
 				cost: {
 					credits: 2800,
@@ -196,7 +196,7 @@ export default {
 				text:
 					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight through several enemies at once!",
 				stats: {
-					ex4: { name: "Max Penetrations", value: 10 }
+					ex4: { name: "Max Penetrations", value: 3 }
 				},
 				cost: {
 					credits: 4800,
@@ -238,7 +238,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex6: { name: "Armor Break Bonus", value: 200, percent: true }
+					ex6: { name: "Armor Breaking", value: 200, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -258,9 +258,9 @@ export default {
 				name: "Hitting Where it Hurts",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Focused shots stun the target",
+				text: "Focused shots stagger the target",
 				stats: {
-					ex7: { name: "Focused Shot Stun", value: 100, percent: true }
+					ex7: { name: "Focused Shot Stun Chance", value: 100, percent: true }
 				},
 				cost: {
 					credits: 5600,
@@ -280,7 +280,7 @@ export default {
 				type: "Fear",
 				text: "Killing your target with a focused shot to the weakspot will send nearby creatures fleeing with terror!",
 				stats: {
-					ex8: { name: "Focus Shot Fear", value: 200, percent: true }
+					ex8: { name: "Focus Shot Kill AoE Fear", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

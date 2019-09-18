@@ -10,14 +10,15 @@ export default {
 		clip: { name: "Magazine Size", value: 2 },
 		rate: { name: "Rate of Fire", value: 3 },
 		reload: { name: "Reload Time", value: 3 },
-		ex1: { name: "Projectile Lifetime", value: 0.8 },
+		ex1: { name: "Projectile Lifetime", value: 0.9 },
 		ex2: { name: "Plasma Beam Width", value: 1.5 },
-		ex3: { name: "Plasma Expansion Duration", value: 0.3 },
-		ex4: { name: "Armor Break Bonus", value: -50, percent: true },
+		ex3: { name: "Plasma Expansion Duration", value: 0.5 },
+		ex4: { name: "Armor Breaking", value: 50, percent: true },
 		ex5: { name: "Explosive Goodbye", value: 0, boolean: true },
 		ex6: { name: "There can be only one", value: 0, boolean: true },
-		ex7: { name: "Increased area of effect", value: 0, boolean: true }
+		ex7: { name: "Double Split Line", value: 0, boolean: true }
 	},
+	/* todo, check if plasma expansion duration is correct */
 	mods: [
 		[
 			{
@@ -111,7 +112,7 @@ export default {
 				type: "Armor Breaking",
 				text: "Increases armor breaking capabilities of the plasma line",
 				stats: {
-					ex4: { name: "Armor Break Bonus", value: 400, percent: true }
+					ex4: { name: "Armor Breaking", value: 400, percent: true }
 				},
 				cost: {
 					credits: 2200,
@@ -120,26 +121,6 @@ export default {
 					enorPearl: 0,
 					jadiz: 30,
 					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			},
-			{
-				selected: false,
-				name: "Quick Deploy",
-				icon: "Icon_Upgrade_ChargeUp",
-				type: "Charge Speed",
-				text: "The line projectile opens almost immediately becoming more useful at closer range",
-				stats: {
-					ex3: { name: "Plasma Expansion Duration", value: 0.3, subtract: true }
-				},
-				cost: {
-					credits: 2200,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 20,
-					jadiz: 0,
-					magnite: 30,
 					umanite: 0,
 					err: 0
 				}
@@ -163,9 +144,7 @@ export default {
 					umanite: 20,
 					err: 0
 				}
-			}
-		],
-		[
+			},
 			{
 				selected: false,
 				name: "Refined Plasma Flow",
@@ -185,10 +164,12 @@ export default {
 					umanite: 36,
 					err: 0
 				}
-			},
+			}
+		],
+		[
 			{
 				selected: false,
-				name: "Clip Size",
+				name: "Expanded Magazine",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... you can always get bigger variants.",
@@ -225,6 +206,26 @@ export default {
 					umanite: 15,
 					err: 0
 				}
+			},
+			{
+				selected: false,
+				name: "Quick Deploy",
+				icon: "Icon_Upgrade_ChargeUp",
+				type: "Charge Speed",
+				text: "The line projectile opens almost immediately becoming more useful at closer range",
+				stats: {
+					ex3: { name: "Plasma Expansion Duration", value: 0.3, subtract: true }
+				},
+				cost: {
+					credits: 2200,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 20,
+					jadiz: 0,
+					magnite: 30,
+					umanite: 0,
+					err: 0
+				}
 			}
 		],
 		[
@@ -255,7 +256,7 @@ export default {
 				type: "Explosion",
 				text: "Explodes last projectile when a new one is fired",
 				stats: {
-					ex6: { name: "There can be only one", value: 0, boolean: true }
+					ex6: { name: "There can be only one", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -273,9 +274,9 @@ export default {
 				name: "Double Line",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
-				text: "Creates a double line",
+				text: "The plasma covers a taller area making it easier to hit targets at various heights.",
 				stats: {
-					ex7: { name: "Increased area of effect", value: 1, boolean: true }
+					ex7: { name: "Double Split Line", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

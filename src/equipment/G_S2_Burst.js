@@ -5,16 +5,16 @@ export default {
 	class: "Pistol",
 	icon: "equipment.G_S2_Burst",
 	baseStats: {
-		dmg: { name: "Damage", value: 13 },
+		dmg: { name: "Damage", value: 14 },
 		ammo: { name: "Max Ammo", value: 144 },
 		clip: { name: "Magazine Size", value: 18 },
-		rate: { name: "Rate of Fire", value: 5 },
+		rate: { name: "Rate of Fire", value: 2.5 },
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Burst Size", value: 3 },
 		ex2: { name: "Burst Speed", value: 0.05 },
-		ex3: { name: "Increased Stability", value: 0, boolean: true },
-		ex4: { name: "Reduced Recoil", value: 0, boolean: true },
-		ex5: { name: "Armor Break Bonus", value: -30, percent: true },
+		ex3: { name: "Spread Per Shot", value: 100, percent: true },
+		ex4: { name: "Recoil", value: 100, percent: true },
+		ex5: { name: "Armor Breaking", value: 70, percent: true },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
 		ex8: { name: "Burst Stun Duration", value: 0 }
@@ -48,7 +48,7 @@ export default {
 				type: "Rate of Fire",
 				text: "Shorter Delay between bursts",
 				stats: {
-					rate: { name: "Rate of Fire", value: 5 }
+					rate: { name: "Rate of Fire", value: 3 }
 				},
 				cost: {
 					credits: 1000,
@@ -71,7 +71,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Stability", value: 1, boolean: true }
+					ex3: { name: "Spread Per Shot", value: 42, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1800,
@@ -92,7 +92,7 @@ export default {
 				text:
 					"Quality engineering, the best laser cut parts, the tender loving care of a dedicated R&D Department. The recoil of your gun is drastically reduced.",
 				stats: {
-					ex4: { name: "Reduced Recoil", value: 1, boolean: true }
+					ex4: { name: "Recoil", value: 50, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1800,
@@ -135,7 +135,7 @@ export default {
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					clip: { name: "Magazine Size", value: 6 }
+					clip: { name: "Magazine Size", value: 12 }
 				},
 				cost: {
 					credits: 2200,
@@ -155,7 +155,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 4 }
+					dmg: { name: "Damage", value: 3 }
 				},
 				cost: {
 					credits: 2200,
@@ -178,7 +178,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex5: { name: "Armor Break Bonus", value: 200, percent: true }
+					ex5: { name: "Armor Breaking", value: 200, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -219,7 +219,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex6: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
+					ex6: { name: "Weakpoint Damage Bonus", value: 40, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -241,7 +241,7 @@ export default {
 				type: "Damage",
 				text: "Damage bonus on last bullet if the first two hit",
 				stats: {
-					ex7: { name: "Burst Damage", value: 20 }
+					ex7: { name: "Burst Damage", value: 10 }
 				},
 				cost: {
 					credits: 4400,

@@ -10,10 +10,10 @@ export default {
 		clip: { name: "Magazine Size", value: 2 },
 		rate: { name: "Rate of Fire", value: 1.5 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Bullets (per shot)", value: 7 },
+		ex1: { name: "Pellets", value: 8 },
 		ex2: { name: "Stun Chance", value: 10, percent: true },
 		ex3: { name: "Max Penetrations", value: 0 },
-		ex4: { name: "Armor Break Bonus", value: 0, percent: true },
+		ex4: { name: "Armor Breaking", value: 100, percent: true },
 		ex5: { name: "Blast Wave", value: 0, boolean: true },
 		ex6: { name: "Auto Reload", value: 0, boolean: true },
 		ex7: { name: "Proximity Fear Chance", value: 0, percent: true },
@@ -29,7 +29,7 @@ export default {
 				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					ammo: { name: "Max Ammo", value: 6 }
+					ammo: { name: "Max Ammo", value: 8 }
 				},
 				cost: {
 					credits: 1000,
@@ -156,7 +156,7 @@ export default {
 				text:
 					"It took some creating thinking, but we finally found out how to pack more buckshot into each shell. Just... Handle with care, they're liable to take your eye out.",
 				stats: {
-					ex1: { name: "Bullets (per shot)", value: 4 }
+					ex1: { name: "Pellets", value: 3 }
 				},
 				cost: {
 					credits: 2200,
@@ -200,7 +200,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex4: { name: "Armor Break Bonus", value: 300, percent: true }
+					ex4: { name: "Armor Breaking", value: 300, percent: true }
 				},
 				cost: {
 					credits: 3800,

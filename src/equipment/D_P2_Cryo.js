@@ -6,15 +6,16 @@ export default {
 	icon: "equipment.D_P2_Cryo",
 	baseStats: {
 		dmg: { name: "Damage", value: 7 },
-		clip: { name: "Tank Size", value: 400 },
-		rate: { name: "Chargeup Time", value: 0.6 },
-		reload: { name: "Re-Pressurization Time", value: 1.5 },
+		clip: { name: "Tank Capacity", value: 400 },
+		rate: { name: "Chargeup Time", value: 0.8 },
+		reload: { name: "Repressurization Delay", value: 1.7 },
 		ex1: { name: "Cold Stream Reach", value: 6 },
 		ex2: { name: "Freezing Power", value: 5 },
-		ex3: { name: "Pressure Drop Rate", value: -30, percent: true },
-		ex4: { name: "Pressure Gain Rate", value: 0, percent: true },
+		ex3: { name: "Pressure Drop Rate", value: 100, percent: true },
+		ex4: { name: "Pressure Gain Rate", value: 100, percent: true },
 		ex5: { name: "Frozen Targets can Shatter", value: 0, boolean: true },
-		ex6: { name: "Area Cold Damage", value: 0, boolean: true }
+		ex6: { name: "Area Cold Damage", value: 0, boolean: true },
+		ex7: { name: "Flow Rate", value: 100, percent: true }
 	},
 	mods: [
 		[
@@ -37,7 +38,7 @@ export default {
 				stats: {
 					ex3: {
 						name: "Pressure Drop Rate",
-						value: 30,
+						value: 38,
 						subtract: true,
 						percent: true
 					}
@@ -62,7 +63,7 @@ export default {
 				stats: {
 					rate: {
 						name: "Chargeup Time",
-						value: 0.4,
+						value: 0.5,
 						subtract: true
 					}
 				}
@@ -86,7 +87,7 @@ export default {
 				stats: {
 					ex2: {
 						name: "Freezing Power",
-						value: 2
+						value: 1
 					}
 				}
 			}
@@ -109,32 +110,9 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					clip: { name: "Tank Size", value: 50 }
+					clip: { name: "Tank Capacity", value: 50 }
 				}
 			},
-			{
-				selected: false,
-				name: "Bypassed Integrity Check",
-				icon: "Icon_Upgrade_TemperatureCoolDown",
-				type: "Overheat",
-				cost: {
-					credits: 2000,
-					bismor: 15,
-					croppa: 24,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				},
-				text:
-					"Shorter repressurisation delay. After reaching minimum pressure, the weapon will start the recovery faster.",
-				stats: {
-					reload: { name: "Re-Pressurization Time", value: 1, subtract: true }
-				}
-			}
-		],
-		[
 			{
 				selected: false,
 				name: "Overclocked Ejection Turbine",
@@ -157,6 +135,29 @@ export default {
 			},
 			{
 				selected: false,
+				name: "Bypassed Integrity Check",
+				icon: "Icon_Upgrade_TemperatureCoolDown",
+				type: "Overheat",
+				cost: {
+					credits: 2000,
+					bismor: 15,
+					croppa: 24,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				},
+				text:
+					"Shorter repressurisation delay. After reaching minimum pressure, the weapon will start the recovery faster.",
+				stats: {
+					reload: { name: "Repressurization Delay", value: 1.1, subtract: true }
+				}
+			}
+		],
+		[
+			{
+				selected: false,
 				name: "Faster 1st Stage Pump",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
@@ -170,9 +171,9 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "It recovers pressure faster when you are not shooting",
+				text: "Faster pressure recovery when not firing.",
 				stats: {
-					ex4: { name: "Pressure Gain Rate", value: 50, percent: true }
+					ex4: { name: "Pressure Gain Rate", value: 67, percent: true }
 				}
 			},
 			{
@@ -192,7 +193,28 @@ export default {
 				},
 				text: "Shoot longer before needing to recharge",
 				stats: {
-					ex3: { name: "Pressure Drop Rate", value: 30, percent: true, subtract: true }
+					ex3: { name: "Pressure Drop Rate", value: 38, percent: true, subtract: true }
+				}
+			},
+			/* todo: cost for this upgrade */
+			{
+				selected: false,
+				name: "Increased Flow Volume",
+				icon: "Icon_Upgrade_FireRate",
+				type: "Rate of Fire",
+				cost: {
+					credits: 0,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				},
+				text: "We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
+				stats: {
+					ex7: { name: "Flow Rate", value: 20, percent: true }
 				}
 			}
 		],
@@ -214,7 +236,7 @@ export default {
 				},
 				text: "More ice formation in stream causing more damage",
 				stats: {
-					dmg: { name: "Damage", value: 2 }
+					dmg: { name: "Damage", value: 3 }
 				}
 			},
 			{
@@ -254,7 +276,7 @@ export default {
 				},
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					clip: { name: "Tank Size", value: 150 }
+					clip: { name: "Tank Capacity", value: 150 }
 				}
 			}
 		],

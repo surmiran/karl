@@ -10,16 +10,16 @@ export default {
 		clip: { name: "Magazine Size", value: 4 },
 		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Increased Accuracy", value: 0, boolean: true },
-		ex2: { name: "Increased Stability", value: 0, boolean: true },
+		ex1: { name: "Base Spread", value: 100, percent: true },
+		ex2: { name: "Spread Per Shot", value: 100, percent: true },
 		ex3: { name: "Max Penetrations", value: 0 },
 		ex4: { name: "Stun Chance", value: 50, percent: true },
+		ex10: { name: "Stun Duration", value: 1.5 },
 		ex5: { name: "Area Damage", value: 0 },
-		ex9: { name: "Damage Radius", value: 0 },
+		ex9: { name: "Effect Radius", value: 0 },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex7: { name: "Dead-Eye", value: 50, percent: true },
-		ex8: { name: "Damage Vs Glyphid", value: 0, percent: true }
-		/*todo: add stun duration*/
+		ex7: { name: "Dead-Eye", value: 0, boolean: true },
+		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -51,7 +51,7 @@ export default {
 				type: "Accuracy",
 				text: "Improved Accuracy",
 				stats: {
-					ex1: { name: "Increased Accuracy", value: 1, boolean: true }
+					ex1: { name: "Base Spread", value: 70, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1000,
@@ -94,7 +94,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex2: { name: "Increased Stability", value: 1, boolean: true }
+					ex2: { name: "Spread Per Shot", value: 80, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1800,
@@ -114,7 +114,7 @@ export default {
 				type: "Total Ammo",
 				text: "Expanded Ammo Bags",
 				stats: {
-					ammo: { name: "Max Ammo", value: 6 }
+					ammo: { name: "Max Ammo", value: 8 }
 				},
 				cost: {
 					credits: 1800,
@@ -137,7 +137,7 @@ export default {
 				text:
 					"Shaped projectiles capable to over-penetrate targets with a mininal loss of energy. In other words: Fire straight through several enemies at once!",
 				stats: {
-					ex3: { name: "Max Penetrations", value: 10 }
+					ex3: { name: "Max Penetrations", value: 3 }
 				},
 				cost: {
 					credits: 2200,
@@ -177,8 +177,8 @@ export default {
 				type: "Explosion",
 				text: "Bullets detonate creating a radius of damage",
 				stats: {
-					ex5: { name: "Area Damage", value: 26 },
-					ex9: { name: "Damage Radius", value: 1 }
+					ex5: { name: "Area Damage", value: 30 },
+					ex9: { name: "Effect Radius", value: 1.5 }
 				},
 				cost: {
 					credits: 2200,
@@ -188,6 +188,27 @@ export default {
 					jadiz: 30,
 					magnite: 0,
 					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Hollow-Point Bullets",
+				icon: "Icon_Upgrade_Weakspot",
+				type: "Weak Spot Bonus",
+				text:
+					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
+				stats: {
+					ex6: { name: "Weakpoint Damage Bonus", value: 75, percent: true }
+				},
+				cost: {
+					credits: 3800,
+					bismor: 0,
+					croppa: 25,
+					enorPearl: 0,
+					jadiz: 15,
+					magnite: 0,
+					umanite: 36,
 					err: 0
 				}
 			}
@@ -232,27 +253,6 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
-			{
-				selected: false,
-				name: "Hollow-Point Bullets",
-				icon: "Icon_Upgrade_Weakspot",
-				type: "Weak Spot Bonus",
-				text:
-					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
-				stats: {
-					ex6: { name: "Weakpoint Damage Bonus", value: 75, percent: true }
-				},
-				cost: {
-					credits: 3800,
-					bismor: 0,
-					croppa: 25,
-					enorPearl: 0,
-					jadiz: 15,
-					magnite: 0,
-					umanite: 36,
-					err: 0
-				}
 			}
 		],
 		[
@@ -263,7 +263,7 @@ export default {
 				type: "Accuracy",
 				text: "No aim penalty while moving",
 				stats: {
-					ex7: { name: "Dead-Eye", value: 150, subtract: true, percent: true }
+					ex7: { name: "Dead-Eye", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -276,14 +276,15 @@ export default {
 					err: 0
 				}
 			},
+			/* todo: neurotoxin icon */
 			{
 				selected: false,
-				name: "Glyphid Neurotoxin Coating",
+				name: "Neurotoxin Coating",
 				icon: "Icon_Upgrade_Shot",
-				type: "Special",
-				text: "Bonus damage against Glyphids",
+				type: "Neurotoxin",
+				text: "Chance to poison your target. Affected creatures move slower and take damage over time.",
 				stats: {
-					ex8: { name: "Damage Vs Glyphid", value: 20, percent: true }
+					ex8: { name: "Neurotoxin Coating", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

@@ -20,15 +20,9 @@ if (process.env.NODE_ENV === "production") {
 		},
 		updated() {
 			console.log("New content is available; please refresh.");
-			let toastOptions = {
-				theme: "bubble",
-				position: "top-center",
-				duration: 3000
-			};
 			try {
-				let that = this;
 				setTimeout(() => {
-					that.$toasted.show("New version available! Please refresh KARL.", toastOptions);
+					window.alert("New version available! Please restart browser to update KARL.");
 				}, 500);
 			} catch (e) {
 				console.log(e);

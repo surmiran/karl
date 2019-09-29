@@ -6,31 +6,32 @@ export default {
 	icon: "equipment.D_S2_Plasma",
 	baseStats: {
 		dmg: { name: "Damage", value: 20 },
-		clip: { name: "Battery Capacity", value: 130 },
+		clip: { name: "Battery Capacity", value: 120 },
 		rate: { name: "Rate of Fire", value: 8.0 },
-		reload: { name: "Cooling Rate", value: 0.5 },
+		reload: { name: "Cooling Rate", value: 100, percent: true },
 		ex1: { name: "Charged Damage", value: 60 },
-		ex2: { name: "Charged Area Damage", value: 80 },
-		ex3: { name: "Charged Damage Radius", value: 2 },
+		ex2: { name: "Charged Area Damage", value: 60 },
+		ex3: { name: "Charged Effect Radius", value: 2 },
 		ex4: { name: "Charged Shot Ammo Use", value: 8 },
-		ex5: { name: "Charge Speed", value: 0.8 },
-		ex6: { name: "Heat when Charged", value: 0.8 },
-		ex7: { name: "Projectile Velocity", value: 0, percent: true },
-		ex8: { name: "Heat when Charging", value: 0 },
+		ex5: { name: "Charge Speed", value: 100, percent: true },
+		ex6: { name: "Heat Buildup When Charged", value: 100, percent: true },
+		ex7: { name: "Projectile Velocity", value: 100, percent: true },
+		/*ex8: { name: "Heat when Charging", value: 0 },*/
 		ex9: { name: "Flying Nightmare", value: 0, boolean: true },
-		ex10: { name: "Charged Explode on hit", value: 0, boolean: true },
+		ex10: { name: "No Charged Shot Insta-Overheat", value: 0, boolean: true },
+		ex12: { name: "Thin Containment Field", value: 0, boolean: true },
 		ex11: { name: "Projectile Bounces", value: 0, boolean: true }
 	},
 	mods: [
 		[
 			{
 				selected: false,
-				name: "Damage Normal Projectile",
+				name: "Increased Particle Density",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Increases damage caused by normal projectiles",
+				text: "Improves the damage caused by the normal shots.",
 				stats: {
-					dmg: { name: "Damage", value: 6 }
+					dmg: { name: "Damage", value: 5 }
 				},
 				cost: {
 					credits: 1000,
@@ -48,9 +49,9 @@ export default {
 				name: "Larger Battery",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
-				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					clip: { name: "Battery Capacity", value: 30 }
+					clip: { name: "Battery Capacity", value: 24 }
 				},
 				cost: {
 					credits: 1000,
@@ -65,10 +66,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charged Damage",
+				name: "Higher Charged Plasma Energy",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "Increases damage caused by a charged shot direct impact",
+				text: "Increases the direct damage for the charged projectile.",
 				stats: {
 					ex1: { name: "Charged Damage", value: 20 }
 				},
@@ -87,12 +88,12 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Charged Radius",
+				name: "Expanded Plasma Splash",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
-				text: "Bigger area radius for the charged projectile explosion",
+				text: "Greater damage radius for the charged projectile explosion",
 				stats: {
-					ex3: { name: "Charged Damage Radius", value: 1.5 }
+					ex3: { name: "Charged Effect Radius", value: 1.5 }
 				},
 				cost: {
 					credits: 1800,
@@ -107,12 +108,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charged Projectile Speed",
+				name: "Charged Plasma Accelerator",
 				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "Projectile Speed",
-				text: "Doubles the speed of the charged projectile",
+				text: "Significantly increases the movement speed of both of the EPCs projectiles.",
 				stats: {
-					ex7: { name: "Projectile Velocity", value: 200, percent: true }
+					ex7: { name: "Projectile Velocity", value: 400, percent: true }
 				},
 				cost: {
 					credits: 1800,
@@ -149,12 +150,12 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Charge Cost",
+				name: "Improved Charge Efficiency",
 				icon: "Icon_Upgrade_Fuel",
 				type: "Energy Consumption",
 				text: "A charged shot uses less energy",
 				stats: {
-					ex4: { name: "Charged Shot Ammo Use", value: 3, subtract: true }
+					ex4: { name: "Charged Shot Ammo Use", value: 2, subtract: true }
 				},
 				cost: {
 					credits: 2200,
@@ -169,12 +170,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charge Speed",
+				name: "Crystal Capacitors",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
-				text: "Prepare a charged shot in half the time",
+				text: "Prepare a charged shot much faster.",
 				stats: {
-					ex5: { name: "Charge Speed", value: 0.8 }
+					ex5: { name: "Charge Speed", value: 200, percent: true }
 				},
 				cost: {
 					credits: 2200,
@@ -186,17 +187,16 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			}
-		],
-		[
+			},
 			{
 				selected: false,
-				name: "Cooling Rate",
+				name: "Tweaked Radiator",
 				icon: "Icon_Upgrade_TemperatureCoolDown",
 				type: "Cooling",
-				text: "Cools down faster",
+				text:
+					"Increases the rate at which the weapon sheds heat, letting you shoot more rounds before overheating and also recovering faster from an overheat.",
 				stats: {
-					reload: { name: "Cooling Rate", value: 0.25 }
+					reload: { name: "Cooling Rate", value: 50, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -208,15 +208,38 @@ export default {
 					umanite: 36,
 					err: 0
 				}
-			},
+			}
+		],
+		[
 			{
 				selected: false,
-				name: "Heat Buildup",
+				name: "Heat Shield",
 				icon: "Icon_Upgrade_TemperatureCoolDown",
 				type: "Cooling",
-				text: "Reduces how fast the weapon overheats when holding a charged shot",
+				text: "Reduces how fast the weapon overheats when holding a charged shot.",
 				stats: {
-					ex8: { name: "Heat when Charged", value: 0.3, subtract: true }
+					ex6: { name: "Heat Buildup When Charged", value: 60, subtract: true }
+				},
+				cost: {
+					credits: 3800,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 36,
+					jadiz: 25,
+					magnite: 0,
+					umanite: 15,
+					err: 0
+				}
+			},
+			/* todo: check price */
+			{
+				selected: false,
+				name: "High Density Battery",
+				icon: "Icon_Upgrade_Ammo",
+				type: "Total Ammo",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
+				stats: {
+					clip: { name: "Battery Capacity", value: 24 }
 				},
 				cost: {
 					credits: 3800,
@@ -236,9 +259,10 @@ export default {
 				name: "Flying Nightmare",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Charged Projectile deals damage to nearby enemies while it flies",
+				text: "The charged projectile deals damage to nearby enemies while it flies but takes longer to charge up.",
 				stats: {
-					ex9: { name: "Flying Nightmare", value: 1, boolean: true }
+					ex9: { name: "Flying Nightmare", value: 1, boolean: true },
+					ex5: { name: "Charge Speed", value: 30, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 4400,
@@ -253,12 +277,14 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Unstable Containment Field",
+				name: "Thin Containment Field",
 				icon: "Icon_Upgrade_Shot",
 				type: "Special",
-				text: "Any projectile will blow up the Charged Projectile causing a bigger explosion dealing extra damage.",
+				text:
+					"A weaker containment field takes less energy to create thus producing less heat for Charged Shots. Be aware that any high-energy impact will destabilize the Charged Projectile causing a large area implosion.",
 				stats: {
-					ex10: { name: "Charged Explode on hit", value: 1, boolean: true }
+					ex10: { name: "No Charged Shot Insta-Overheat", value: 1, boolean: true },
+					ex12: { name: "Thin Containment Field", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -276,7 +302,8 @@ export default {
 				name: "Bouncy Plasma",
 				icon: "Icon_Upgrade_Ricoshet",
 				type: "Ricochet",
-				text: "Normal shots bounce on all surfaces until they disappear.",
+				text:
+					"Regular shots now ricochet, please try not to hit yourself or your teammates while pulling off trick shots.",
 				stats: {
 					ex11: { name: "Projectile Bounces", value: 1, boolean: true }
 				},

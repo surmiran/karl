@@ -11,8 +11,8 @@ export default {
 		rate: { name: "Rate of Fire", value: 11 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Electric Damage", value: 2 },
-		ex2: { name: "Electrocution Chance", value: 10, percent: true },
-		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
+		ex2: { name: "Electrocution %", value: 10, percent: true },
+		ex3: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Damage vs Electrically Affected", value: 100, percent: true },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true }
@@ -46,7 +46,7 @@ export default {
 				type: "Electricity",
 				text: "Better chance to electrocute target",
 				stats: {
-					ex2: { name: "Electrocution Chance", value: 10, percent: true }
+					ex2: { name: "Electrocution %", value: 10, percent: true }
 				},
 				cost: {
 					credits: 1200,
@@ -109,7 +109,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Increased Accuracy", value: 1, boolean: true }
+					ex3: { name: "Base Spread", value: 60, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2000,
@@ -195,7 +195,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've updated the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex4: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
+					ex4: { name: "Weakpoint Damage Bonus", value: 30, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -215,7 +215,7 @@ export default {
 				type: "Electricity",
 				text: "Better chance to electrocute target",
 				stats: {
-					ex2: { name: "Electrocution Chance", value: 10, percent: true }
+					ex2: { name: "Electrocution %", value: 10, percent: true }
 				},
 				cost: {
 					credits: 4800,

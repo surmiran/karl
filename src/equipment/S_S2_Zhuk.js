@@ -5,17 +5,17 @@ export default {
 	class: "Submachine Gun",
 	icon: "equipment.S_S2_Zhuk",
 	baseStats: {
-		dmg: { name: "Damage", value: 10 },
+		dmg: { name: "Damage", value: 11 },
 		ammo: { name: "Max Ammo", value: 600 },
-		clip: { name: "Magazine Size", value: 50 },
-		rate: { name: "Rate of Fire", value: 30 },
+		clip: { name: "Combined Clip Size", value: 50 },
+		rate: { name: "Combined Rate of Fire", value: 30 },
 		reload: { name: "Reload Time", value: 1.8 },
-		ex1: { name: "Increased Accuracy", value: 0, boolean: true },
+		ex1: { name: "Base Spread", value: 100, percent: true },
 		ex2: { name: "Max Penetrations", value: 0 },
 		/*ex3: { name: "Stun Chance", value: 0, percent: true },*/
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex5: { name: "Movement for 3 seconds", value: 0, percent: true },
-		ex6: { name: "Electric Damage", value: 0, percent: true }
+		ex5: { name: "Get in, get out", value: 0, boolean: true },
+		ex6: { name: "Damage vs Electrically Affected", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -41,10 +41,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Disabled Safety",
+				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "High Velocity Rounds",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 1 }
 				},
@@ -68,7 +68,7 @@ export default {
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks...you can always get bigger variants.",
 				stats: {
-					clip: { name: "Magazine Size", value: 10 }
+					clip: { name: "Combined Clip Size", value: 10 }
 				},
 				cost: {
 					credits: 2200,
@@ -89,7 +89,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask. Just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 6 }
+					rate: { name: "Combined Rate of Fire", value: 8 }
 				},
 				cost: {
 					credits: 1800,
@@ -132,7 +132,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 3 }
+					dmg: { name: "Damage", value: 2 }
 				},
 				cost: {
 					credits: 2200,
@@ -152,7 +152,7 @@ export default {
 				type: "Accuracy",
 				text: "Base Accuracy Increase",
 				stats: {
-					ex1: { name: "Increased Accuracy", value: 1, boolean: true }
+					ex1: { name: "Base Spread", value: 50, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1800,
@@ -167,26 +167,6 @@ export default {
 			}
 		],
 		[
-			/*{
-				selected: false,
-				name: "Stun",
-				icon: "Icon_Upgrade_Stun",
-				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
-				stats: {
-					ex3: { name: "Stun Chance", value: 20, percent: true }
-				},
-				cost: {
-					credits: 3800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 36,
-					jadiz: 25,
-					magnite: 15,
-					umanite: 0,
-					err: 0
-				}
-			},*/
 			{
 				selected: false,
 				name: "Blowthrough Rounds",
@@ -216,7 +196,7 @@ export default {
 				text:
 					"Hit em' where it hurts! Literally! We've upped the damage you'll be able to do to any creature's fleshy bits. You're welcome.",
 				stats: {
-					ex4: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
+					ex4: { name: "Weakpoint Damage Bonus", value: 30, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -258,7 +238,7 @@ export default {
 				type: "Electricity",
 				text: "More damage to targets that are in an electric field",
 				stats: {
-					ex6: { name: "Electric Damage", value: 25, percent: true }
+					ex6: { name: "Damage vs Electrically Affected", value: 30, percent: true }
 				},
 				cost: {
 					credits: 4400,
@@ -278,7 +258,7 @@ export default {
 				type: "Movement Speed",
 				text: "Temporary movement speed bonus after emptying clip",
 				stats: {
-					ex5: { name: "Movement for 3 seconds", value: 100, percent: true }
+					ex5: { name: "Get in, get out", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,

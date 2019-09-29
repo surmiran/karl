@@ -10,11 +10,11 @@ export default {
 		clip: { name: "Magazine Size", value: 6 },
 		rate: { name: "Rate of Fire", value: 1.6 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Bullets (per shot)", value: 8 },
-		ex2: { name: "Stun Duration", value: 0.5 },
-		ex3: { name: "Weakpoint Stun Chance", value: 20, percent: true },
-		ex4: { name: "Reduced Recoil", value: 0, boolean: true },
-		ex5: { name: "Increased Accuracy", value: 0, percent: true },
+		ex1: { name: "Pellets", value: 8 },
+		ex2: { name: "Stun Duration", value: 2.0 },
+		ex3: { name: "Weakpoint Stun Chance", value: 10, percent: true },
+		ex4: { name: "Recoil", value: 100, percent: true },
+		ex5: { name: "Base Spread", value: 100, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex7: { name: "Turret Whip", value: 0, boolean: true },
 		ex8: { name: "Automatic Fire", value: 0, boolean: true }
@@ -29,7 +29,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 0.6 }
+					rate: { name: "Rate of Fire", value: 0.8 }
 				},
 				cost: {
 					credits: 1200,
@@ -91,7 +91,7 @@ export default {
 				type: "Pellet Count",
 				text: "More pellets in each shell",
 				stats: {
-					ex1: { name: "Bullets (per shot)", value: 2 }
+					ex1: { name: "Pellets", value: 2 }
 				},
 				cost: {
 					credits: 2000,
@@ -111,7 +111,7 @@ export default {
 				type: "Accuracy",
 				text: "Decreased shot spread",
 				stats: {
-					ex5: { name: "Increased Accuracy", value: 1, boolean: true }
+					ex5: { name: "Base Spread", value: 50, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2800,
@@ -134,7 +134,7 @@ export default {
 				text:
 					"Quality engineering, the best lasercut parts, the tender loving care of a dedicated R&D Department, The recoil of your gun is drastically reduced.",
 				stats: {
-					ex4: { name: "Reduced Recoil", value: 1, boolean: true }
+					ex4: { name: "Recoil", value: 60, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2800,
@@ -213,12 +213,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Stun Duration",
+				name: "Improved Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Stunned enemies are incapacitated for a longer period of time.",
+				text: "Stun enemies more often and for a longer time!",
 				stats: {
-					ex2: { name: "Stun Duration", value: 1 }
+					ex2: { name: "Stun Duration", value: 1 },
+					ex3: { name: "Weakpoint Stun Chance", value: 20, percent: true }
 				},
 				cost: {
 					credits: 4800,

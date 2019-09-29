@@ -12,10 +12,10 @@ export default {
 		reload: { name: "Reload Time", value: 5 },
 		ex1: { name: "Area Damage", value: 8 },
 		ex2: { name: "Effect Radius", value: 1.2 },
-		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
+		ex3: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Rate of Fire increase Speed", value: 0, percent: true },
-		ex5: { name: "Armor Break Bonus", value: 0, percent: true },
-		/*ex6: { name: "Stun Chance", value: 0, percent: true },*/
+		ex5: { name: "Armor Break Bonus", value: 100, percent: true },
+		ex6: { name: "Movement Speed While Using", value: 50, percent: true },
 		ex7: { name: "Full RoF Damage Bonus", value: 0, percent: true },
 		ex8: { name: "Impact Fear AoE", value: 0 },
 		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true }
@@ -92,7 +92,7 @@ export default {
 				type: "Accuracy",
 				text: "Improved accuracy",
 				stats: {
-					ex3: { name: "Increased Accuracy", value: 1, boolean: true }
+					ex3: { name: "Base Spread", value: 30, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2000,
@@ -133,7 +133,7 @@ export default {
 				type: "Rate of Fire",
 				text: "Reach the max rate of fire faster",
 				stats: {
-					ex4: { name: "Rate of Fire increase Speed", value: 100, percent: true, subtract: true }
+					ex4: { name: "Rate of Fire increase Speed", value: 100, percent: true }
 					/* todo: dps calculation is off since update 24.. rate of fire increase was tweaked / fixed */
 				},
 				cost: {
@@ -233,27 +233,6 @@ export default {
 					err: 0
 				}
 			},
-
-			/*{
-				selected: false,
-				name: "Stun",
-				icon: "Icon_Upgrade_Stun",
-				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
-				stats: {
-					ex6: { name: "Stun Chance", value: 20, percent: true }
-				},
-				cost: {
-					credits: 4800,
-					bismor: 72,
-					croppa: 48,
-					enorPearl: 50,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			},*/
 			{
 				selected: false,
 				name: "Shrapnel Rounds",
@@ -318,12 +297,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Resistance At Full Rate Of Fire",
+				name: "Damage Resistance At Full RoF",
 				icon: "Icon_Upgrade_Resistance",
 				type: "Resistance",
-				text: "Gain damage reduction when at max rate of fire",
+				text: "Take less damage when at max rate of fire",
 				stats: {
-					ex9: { name: "Resistance at full rate of fire", value: 1, boolean: true }
+					ex9: { name: "Damage Resistance at Full RoF", value: 1, boolean: true }
 				},
 				/* todo: make percentage based (+20%)*/
 				cost: {

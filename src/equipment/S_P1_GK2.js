@@ -12,7 +12,7 @@ export default {
 		reload: { name: "Reload Time", value: 1.8 },
 		ex1: { name: "Weakpoint Stun Duration", value: 1.5 },
 		ex2: { name: "Weakpoint Stun Chance", value: 10, percent: true },
-		ex3: { name: "Base Spread", value: 0, percent: true },
+		ex3: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Spread Per Shot", value: 100, percent: true },
 		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
@@ -296,7 +296,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Stunning Hit",
+				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
 				text: "Increased chance to stun the target",

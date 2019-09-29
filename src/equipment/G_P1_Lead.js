@@ -11,15 +11,16 @@ export default {
 		reload: { name: "Cooling Rate", value: 1.5 },
 		ex1: { name: "Spinup Time", value: 0.7 },
 		ex2: { name: "Spindown Time", value: 3 },
-		ex3: { name: "Increased Accuracy", value: 0, boolean: true },
-		ex4: { name: "Armor Breaking", value: 0, percent: true },
-		// ex5: { name: "Stun Chance", value: 0, percent: true },
+		ex3: { name: "Base Spread", value: 100, percent: true },
+		ex4: { name: "Armor Breaking", value: 100, percent: true },
+		ex5: { name: "Stun Chance", value: 30, percent: true },
+		ex11: { name: "Stun Duration", value: 1 },
 		ex6: { name: "Max Penetrations", value: 0 },
 		ex7: { name: "Max Stabilization Damage Bonus", value: 0, percent: true },
 		ex8: { name: "Critical Overheat", value: 0, boolean: true },
 		ex9: { name: "Heat Removed on Kill", value: 0, boolean: true },
 		ex10: { name: "Hot Bullets", value: 0, percent: true },
-		ex11: { name: "Stun Duration", value: 0 }
+		ex12: { name: "Movement Speed While Using", value: 50, percent: true }
 	},
 	mods: [
 		[
@@ -70,7 +71,7 @@ export default {
 				type: "Accuracy",
 				text: "Increased Accuracy",
 				stats: {
-					ex3: { name: "Increased Accuracy", value: 1, boolean: true }
+					ex3: { name: "Base Spread", value: 80, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1200,
@@ -154,7 +155,7 @@ export default {
 				type: "Stun",
 				text: "Stunned enemies are incapacitated for a longer period of time",
 				stats: {
-					ex11: { name: "Stun Duration", value: 0 }
+					ex11: { name: "Stun Duration", value: 1 }
 				},
 				cost: {
 					credits: 2800,

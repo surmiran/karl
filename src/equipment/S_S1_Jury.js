@@ -11,14 +11,14 @@ export default {
 		rate: { name: "Rate of Fire", value: 1.5 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Pellets", value: 8 },
-		ex2: { name: "Stun Chance", value: 10, percent: true },
+		ex5: { name: "Front AoE shock wave Damage", value: 20 },
+		ex2: { name: "Stun Chance", value: 30, percent: true },
+		ex9: { name: "Stun Duration", value: 2.5 },
 		ex3: { name: "Max Penetrations", value: 0 },
 		ex4: { name: "Armor Breaking", value: 100, percent: true },
-		ex5: { name: "Blast Wave", value: 0, boolean: true },
 		ex6: { name: "Auto Reload", value: 0, boolean: true },
 		ex7: { name: "Proximity Fear Chance", value: 0, percent: true },
-		ex8: { name: "Damage % as Fire", value: 0, percent: true },
-		ex9: { name: "Stun Duration", value: 2 }
+		ex8: { name: "Damage % as Fire", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -113,9 +113,9 @@ export default {
 				name: "Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in it's tracks",
+				text: "Stunned enemies are incapacitated for a longer period of time.",
 				stats: {
-					ex2: { name: "Stun Chance", value: 40, percent: true }
+					ex9: { name: "Stun Duration", value: 2.5 }
 				},
 				cost: {
 					credits: 2200,
@@ -215,13 +215,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Blast Wave",
+				name: "Improved Blast Wave",
 				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
-					"Shockwave from the blast deals extra damage to any enemies unlucky enough to be in the area extending 4m in front of you.",
+					"The Shockwave from the blast deals extra damage to any enemies unlucky enough to be in the area extending 4m in front of you.",
 				stats: {
-					ex5: { name: "Blast Wave", value: 1, boolean: true }
+					ex5: { name: "Front AoE shock wave Damage", value: 20 }
 				},
 				cost: {
 					credits: 3800,

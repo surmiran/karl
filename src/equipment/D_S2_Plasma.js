@@ -26,7 +26,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Damage Normal Projectile",
+				name: "Increased Particle Density",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
 				text: "Improves the damage caused by the normal shots.",
@@ -66,7 +66,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charged Damage",
+				name: "Higher Charged Plasma Energy",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
 				text: "Increases the direct damage for the charged projectile.",
@@ -88,10 +88,10 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Charged Radius",
+				name: "Expanded Plasma Splash",
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
-				text: "Bigger area radius for the charged projectile explosion",
+				text: "Greater damage radius for the charged projectile explosion",
 				stats: {
 					ex3: { name: "Charged Effect Radius", value: 1.5 }
 				},
@@ -108,10 +108,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charged Projectile Speed",
+				name: "Charged Plasma Accelerator",
 				icon: "Icon_Upgrade_ProjectileSpeed",
 				type: "Projectile Speed",
-				text: "Doubles the speed of the charged projectile",
+				text: "Significantly increases the movement speed of both of the EPCs projectiles.",
 				stats: {
 					ex7: { name: "Projectile Velocity", value: 400, percent: true }
 				},
@@ -170,7 +170,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Charge Speed",
+				name: "Crystal Capacitors",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
 				text: "Prepare a charged shot much faster.",
@@ -242,13 +242,13 @@ export default {
 					clip: { name: "Battery Capacity", value: 24 }
 				},
 				cost: {
-					credits: 0,
+					credits: 3800,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
+					enorPearl: 36,
+					jadiz: 25,
 					magnite: 0,
-					umanite: 0,
+					umanite: 15,
 					err: 0
 				}
 			}

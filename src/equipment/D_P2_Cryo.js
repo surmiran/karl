@@ -34,11 +34,11 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Shoot longer before needing to recharge",
+				text: "Shoot longer before needing to repressurize.",
 				stats: {
 					ex3: {
 						name: "Pressure Drop Rate",
-						value: 38,
+						value: 40,
 						subtract: true,
 						percent: true
 					}
@@ -173,7 +173,7 @@ export default {
 				},
 				text: "Faster pressure recovery when not firing.",
 				stats: {
-					ex4: { name: "Pressure Gain Rate", value: 67, percent: true }
+					ex4: { name: "Pressure Gain Rate", value: 70, percent: true }
 				}
 			},
 			{
@@ -193,26 +193,26 @@ export default {
 				},
 				text: "Shoot longer before needing to recharge",
 				stats: {
-					ex3: { name: "Pressure Drop Rate", value: 38, percent: true, subtract: true }
+					ex3: { name: "Pressure Drop Rate", value: 40, percent: true, subtract: true }
 				}
 			},
-			/* todo: cost for this upgrade */
 			{
 				selected: false,
 				name: "Increased Flow Volume",
 				icon: "Icon_Upgrade_FireRate",
 				type: "Rate of Fire",
 				cost: {
-					credits: 0,
-					bismor: 0,
+					credits: 2800,
+					bismor: 50,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 35,
 					err: 0
 				},
-				text: "We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
+				text:
+					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
 					ex7: { name: "Flow Rate", value: 20, percent: true }
 				}

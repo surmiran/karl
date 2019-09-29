@@ -41,10 +41,10 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Disabled Safety",
+				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
-				text: "High Velocity Rounds",
+				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
 					dmg: { name: "Damage", value: 1 }
 				},
@@ -167,26 +167,6 @@ export default {
 			}
 		],
 		[
-			/*{
-				selected: false,
-				name: "Stun",
-				icon: "Icon_Upgrade_Stun",
-				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Every shot you fire has a chance to stop the target in its tracks.",
-				stats: {
-					ex3: { name: "Stun Chance", value: 20, percent: true }
-				},
-				cost: {
-					credits: 3800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 36,
-					jadiz: 25,
-					magnite: 15,
-					umanite: 0,
-					err: 0
-				}
-			},*/
 			{
 				selected: false,
 				name: "Blowthrough Rounds",

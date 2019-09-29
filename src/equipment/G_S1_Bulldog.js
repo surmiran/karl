@@ -150,33 +150,14 @@ export default {
 					err: 0
 				}
 			},
-			/*{
-				selected: false,
-				name: "Stun",
-				icon: "Icon_Upgrade_Stun",
-				type: "Stun",
-				text: "Hit 'em so hard they can't recover! Each shot you fire has a chance to stop the target in its tracks.",
-				stats: {
-					ex4: { name: "Stun Chance", value: 50, percent: true }
-				},
-				cost: {
-					credits: 2200,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 20,
-					jadiz: 0,
-					magnite: 30,
-					umanite: 0,
-					err: 0
-				}
-			},*/
 			{
 				selected: false,
 				name: "Explosive Rounds",
 				icon: "Icon_Upgrade_Explosion",
 				type: "Explosion",
-				text: "Bullets detonate creating a radius of damage",
+				text: "Bullets detonate creating a radius of damage but deals less direct damage",
 				stats: {
+					dmg: { name: "Damage", value: 22.5, subtract: true },
 					ex5: { name: "Area Damage", value: 30 },
 					ex9: { name: "Effect Radius", value: 1.5 }
 				},

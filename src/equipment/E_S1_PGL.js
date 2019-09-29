@@ -44,7 +44,7 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Expanded Ammo Bags",
+				name: "Extra Ammo",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
 				text: "Expanded Ammo Bags",
@@ -86,7 +86,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Extra Ammo",
+				name: "Expanded Ammo Bags",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
 				text: "Expanded Ammo Bags",

@@ -8,7 +8,7 @@ export default {
 		dmg: { name: "Damage", value: 10 },
 		ammo: { name: "Max Fuel", value: 300 },
 		clip: { name: "Tank Size", value: 50 },
-		rate: { name: "Rate of Fire", value: 6.0 },
+		rate: { name: "Fuel Flow Rate", value: 100, percent: true },
 		reload: { name: "Reload Time", value: 3.0 },
 		ex1: { name: "Sticky Flame Damage", value: 0 },
 		ex2: { name: "Sticky Flame Burn", value: 0 },
@@ -17,7 +17,7 @@ export default {
 		ex5: { name: "Fear Factor", value: 0, percent: true },
 		ex6: { name: "Flame Reach", value: 10 },
 		ex7: { name: "Area Heat", value: 0 },
-		ex8: { name: "Intensity Bonus", value: 0, percent: true },
+		ex8: { name: "Heat Bonus", value: 0, percent: true },
 		ex9: { name: "Killed Targets Explode %", value: 0, percent: true }
 	},
 	mods: [
@@ -79,7 +79,7 @@ export default {
 				},
 				text: "Increased fuel consumption rate for more damage.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 2 }
+					rate: { name: "Fuel Flow Rate", value: 30, percent: true }
 				}
 			}
 		],
@@ -122,7 +122,7 @@ export default {
 				},
 				text: "Fire it up! You set things ablaze much faster. Time to watch the world burn...!",
 				stats: {
-					ex8: { name: "Intensity Bonus", value: 100, percent: true }
+					ex8: { name: "Heat Bonus", value: 100, percent: true }
 				}
 			}, // 1/2
 			{
@@ -142,7 +142,7 @@ export default {
 				},
 				text: "Sticky flames duration increase.",
 				stats: {
-					ex4: { name: "Flame Duration", value: 2 }
+					ex4: { name: "Sticky Flame Duration", value: 2 }
 				}
 			}
 		],
@@ -165,7 +165,7 @@ export default {
 				},
 				text: "Sticky flames duration increase.",
 				stats: {
-					ex4: { name: "Flame Duration", value: 2 }
+					ex4: { name: "Sticky Flame Duration", value: 2 }
 				}
 			}, // 2/1
 			{

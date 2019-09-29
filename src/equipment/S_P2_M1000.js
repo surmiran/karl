@@ -10,14 +10,15 @@ export default {
 		clip: { name: "Clip Size", value: 5 },
 		rate: { name: "Rate of Fire", value: 5.5 },
 		reload: { name: "Reload Time", value: 2.2 },
-		ex1: { name: "Focus Speed", value: 1 },
+		ex1: { name: "Focus Speed", value: 100, percent: true },
 		ex2: { name: "Focused Shot Damage Bonus", value: 50, percent: true },
 		ex3: { name: "Spread Per Shot", value: 100, percent: true },
 		ex4: { name: "Max Penetrations", value: 0 },
 		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
-		ex8: { name: "Focus Shot Fear", value: 0, boolean: true }
+		ex9: { name: "Focus Shot Fear", value: 0, boolean: true },
+		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true }
 	},
 	mods: [
 		[
@@ -65,12 +66,12 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Improved Ergonomics",
+				name: "Fast-Charging Coils",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
 				text: "Focus faster when holding down the trigger.",
 				stats: {
-					ex1: { name: "Focus Speed", value: 1 }
+					ex1: { name: "Focus Speed", value: 60, percent: true }
 				},
 				cost: {
 					credits: 2000,
@@ -190,7 +191,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Blowthrough Rounds",
+				name: "Super Blowthrough Rounds",
 				icon: "Icon_Upgrade_BulletPenetration",
 				type: "Blow Through",
 				text:

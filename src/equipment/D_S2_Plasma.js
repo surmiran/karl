@@ -7,7 +7,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 20 },
 		clip: { name: "Battery Capacity", value: 120 },
-		rate: { name: "Rate of Fire", value: 8.0 },
+		rate: { name: "Rate of Fire", value: 7.0 },
 		reload: { name: "Cooling Rate", value: 100, percent: true },
 		ex1: { name: "Charged Damage", value: 60 },
 		ex2: { name: "Charged Area Damage", value: 60 },
@@ -15,7 +15,7 @@ export default {
 		ex4: { name: "Charged Shot Ammo Use", value: 8 },
 		ex5: { name: "Charge Speed", value: 100, percent: true },
 		ex6: { name: "Heat Buildup When Charged", value: 100, percent: true },
-		ex7: { name: "Projectile Velocity", value: 100, percent: true },
+		ex7: { name: "Normal Projectile Velocity", value: 100, percent: true },
 		/*ex8: { name: "Heat when Charging", value: 0 },*/
 		ex9: { name: "Flying Nightmare", value: 0, boolean: true },
 		ex10: { name: "No Charged Shot Insta-Overheat", value: 0, boolean: true },
@@ -71,7 +71,7 @@ export default {
 				type: "Damage",
 				text: "Increases the direct damage for the charged projectile.",
 				stats: {
-					ex1: { name: "Charged Damage", value: 20 }
+					ex1: { name: "Charged Damage", value: 30 }
 				},
 				cost: {
 					credits: 1000,
@@ -113,7 +113,7 @@ export default {
 				type: "Projectile Speed",
 				text: "Significantly increases the movement speed of both of the EPCs projectiles.",
 				stats: {
-					ex7: { name: "Projectile Velocity", value: 400, percent: true }
+					ex7: { name: "Normal Projectile Velocity", value: 25, percent: true }
 				},
 				cost: {
 					credits: 1800,

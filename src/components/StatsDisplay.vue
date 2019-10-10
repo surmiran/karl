@@ -73,11 +73,11 @@ import store from "../store";
 
 const _calculateDamage = stats => {
 	let damageWords = ["Damage", "Area Damage", "Electric Damage", "Direct Damage"];
-	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size"];
+	let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size", "Combined Clip Size"];
 	let ammoWords = ["Max Ammo", "Max Fuel"];
-	let rateOfFireWords = ["Rate of Fire"];
+	let rateOfFireWords = ["Rate of Fire", "Combined Rate of Fire"];
 	let reloadTimeWords = ["Reload Time"];
-	let pelletsWords = ["Bullets (per shot)"];
+	let pelletsWords = ["Pellets"];
 	let dpsStats = {};
 	for (let stat of stats) {
 		if (damageWords.includes(stat.name)) {
@@ -109,6 +109,7 @@ const _calculateDamage = stats => {
 			dpaw: dpsStats.damage * dpsStats.maxAmmo * 1
 		};
 	}
+
 
 	let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
 	let damageTime = timeToEmpty + dpsStats.reloadTime;
@@ -284,6 +285,18 @@ export default {
 			} else {
 				damage = _calculateDamage(stats);
 			}
+
+			/* todo: temporary */
+			if (store.state.tree[this.selectedClassId][this.selectedEquipmentId].name === "Zhukov NUK17" ||
+			    store.state.tree[this.selectedClassId][this.selectedEquipmentId].name === '"Lead Storm" Powered Minigun') {
+				damage.dps = damage.dps / 2;
+				damage.dpsw = damage.dpsw / 2;
+				damage.dpm = damage.dpm / 2;
+				damage.dpmw = damage.dpmw / 2;
+				damage.dpa = damage.dpa / 2;
+				damage.dpaw = damage.dpaw / 2;
+			}
+			/* todo: end temporary */
 
 			let totalCost = {
 				credits: 0,

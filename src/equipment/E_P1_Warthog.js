@@ -281,7 +281,7 @@ export default {
 				type: "Rate of Fire",
 				text: "Fully automatic with an increased rate of fire",
 				stats: {
-					rate: { name: "Rate of Fire", value: 1 },
+					rate: { name: "Rate of Fire", value: 1.2 },
 					ex8: { name: "Automatic Fire", value: 1, boolean: true }
 				},
 				cost: {

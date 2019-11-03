@@ -150,7 +150,7 @@ export default {
 				type: "Accuracy",
 				text: "This little tweak reduces weapon recoil and spread per shot helping you hit consecutive shots.",
 				stats: {
-					ex3: { name: "Spread Per Shot", value: 50, percent: true, subtract: true},
+					ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true},
 				},
 				cost: {
 					credits: 2200,

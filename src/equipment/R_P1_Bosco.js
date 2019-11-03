@@ -281,7 +281,7 @@ export default {
 				type: "Electrocution",
 				text: "Bullets coming out of the primary weapon have a chance to electrocute.",
 				stats: {
-					ex2: { name: "Stun Chance", value: 30, percent: true }
+					ex9: { name: "Electrocution Chance", value: 30, percent: true }
 				},
 				cost: {
 					credits: 5600,

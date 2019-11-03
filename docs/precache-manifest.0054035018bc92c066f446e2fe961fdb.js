@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/karl/robots.txt"
   },
   {
-    "revision": "dc078fea7be2b85ca8aa",
-    "url": "/karl/js/chunk-vendors.8cbf5c6e.js"
+    "revision": "d18b9cb8b8667cb356ca",
+    "url": "/karl/js/chunk-vendors.5aeab337.js"
   },
   {
-    "revision": "4f92462c4a6002eeb2a9",
-    "url": "/karl/js/app.7ed64ac8.js"
+    "revision": "174b1bfff2afd46334f5",
+    "url": "/karl/js/app.4b43fa2d.js"
   },
   {
-    "revision": "f584becf6f7bf081e12fbb0ffc4343e5",
+    "revision": "81289f64a21337b1c1b03cb0df6ffa50",
     "url": "/karl/index.html"
   },
   {
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/karl/favicon-16x16.png"
   },
   {
-    "revision": "4f92462c4a6002eeb2a9",
+    "revision": "174b1bfff2afd46334f5",
     "url": "/karl/css/app.3779ce68.css"
   }
 ];

@@ -14,7 +14,7 @@ export default {
 		ex2: { name: "Weakpoint Stun Chance", value: 10, percent: true },
 		ex3: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Spread Per Shot", value: 100, percent: true },
-		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
+		ex5: { name: "Weakpoint Damage Bonus", value: 10, percent: true },
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Battle Frenzy", value: 0, boolean: true },
 		ex8: { name: "Battle Cool", value: 0, boolean: true }
@@ -134,7 +134,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex4: { name: "Spread Per Shot", value: 48, percent: true, subtract: true }
+					ex4: { name: "Spread Per Shot", value: 50, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2800,
@@ -197,7 +197,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex5: { name: "Weakpoint Damage Bonus", value: 25, percent: true }
+					ex5: { name: "Weakpoint Damage Bonus", value: 20, percent: true }
 				},
 				cost: {
 					credits: 4800,

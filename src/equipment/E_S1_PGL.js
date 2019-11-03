@@ -198,6 +198,8 @@ export default {
 				type: "Randomized Damage",
 				text: "More damage on average but it's a bit inconsistent with a spread from 80% to 140%",
 				stats: {
+					/* todo - sunday: in dps calc, if this is enabled, calc dps * 1.1 */
+					/* Homebrew explosive doesn't increase DPS but should -> dps *1.1 */
 					ex9: { name: "Randomized Damage", value: 1, boolean: true }
 				},
 				cost: {

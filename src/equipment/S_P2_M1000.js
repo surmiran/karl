@@ -18,7 +18,8 @@ export default {
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
 		ex9: { name: "Focus Shot Fear", value: 0, boolean: true },
-		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true }
+		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true },
+		ex10: { name: "Focus Shot Kill AoE Fear", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -281,7 +282,7 @@ export default {
 				type: "Fear",
 				text: "Killing your target with a focused shot to the weakspot will send nearby creatures fleeing with terror!",
 				stats: {
-					ex8: { name: "Focus Shot Kill AoE Fear", value: 1, boolean: true }
+					ex10: { name: "Focus Shot Kill AoE Fear", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,

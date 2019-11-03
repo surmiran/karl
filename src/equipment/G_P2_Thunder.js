@@ -113,7 +113,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 0.8 }
+					rate: { name: "Rate of Fire", value: 0.825 }
 				},
 				cost: {
 					credits: 2000,
@@ -157,7 +157,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 2 }
+					rate: { name: "Rate of Fire", value: 1.925 }
 				},
 				cost: {
 					credits: 2800,

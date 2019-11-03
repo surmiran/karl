@@ -7,30 +7,30 @@
 </template>
 
 <script>
-import store from "../store";
+	import store from "../store";
 
-export default {
-	name: "ClassSelect",
-	props: {
-		name: String,
-		classId: String
-	},
-	computed: {
-		isSelected: function() {
-			return store.state.selected.class === this.classId;
+	export default {
+		name: "ClassSelect",
+		props: {
+			name: String,
+			classId: String
+		},
+		computed: {
+			isSelected: function() {
+				return store.state.selected.class === this.classId;
+			}
+		},
+		methods: {
+			selectClass() {
+				store.commit("selectClass", { classID: this.classId });
+			}
 		}
-	},
-	methods: {
-		selectClass() {
-			store.commit("selectClass", { classID: this.classId });
-		}
-	}
-};
+	};
 </script>
 
 <style scoped>
-.classSelectItem {
-	display: flex;
-	cursor: pointer;
-}
+	.classSelectItem {
+		display: flex;
+		cursor: pointer;
+	}
 </style>

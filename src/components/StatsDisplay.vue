@@ -22,7 +22,8 @@
 			<span v-if="!isNaN(calcStats.dps)" class="inactiveStat"
 				><i>Theoretical</i> damage per second, ignoring armor break and weakspot bonuses.</span
 			>
-			<h2 v-if="!isNaN(calcStats.dpm)">Magazine Damage: {{ calcStats.dpm }}</h2>
+			<h2 v-if="!isNaN(calcStats.dpb)">Damage per shot: {{ calcStats.dpb }}</h2> <!-- damage per bullet -->
+			<h2 v-if="!isNaN(calcStats.dpm)">Magazine damage: {{ calcStats.dpm }}</h2>
 			<span v-if="!isNaN(calcStats.dpm)" class="inactiveStat"><i>Theoretical</i> damage per magazine.</span>
 			<h2 v-if="!isNaN(calcStats.dpa)">Total damage: {{ calcStats.dpa }}</h2>
 			<span v-if="!isNaN(calcStats.dpa)" class="inactiveStat"
@@ -105,6 +106,7 @@ const _calculateDamage = stats => {
 		return {
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpsw: parseFloat(damagePerSecond * 1).toFixed(2),
+		    dpb: dpsStats.damage,
 			dpa: dpsStats.damage * dpsStats.maxAmmo,
 			dpaw: dpsStats.damage * dpsStats.maxAmmo * 1
 		};
@@ -118,6 +120,7 @@ const _calculateDamage = stats => {
 	return {
 		dps: parseFloat(damagePerSecond).toFixed(2),
 		dpsw: parseFloat(damagePerSecond * 1).toFixed(2),
+		dpb: dpsStats.damage,
 		dpm: magazineDamage,
 		dpmw: magazineDamage * 1,
 		dpa: dpsStats.damage * dpsStats.maxAmmo,
@@ -164,6 +167,7 @@ const _calculateSpecialDamage = (stats, name) => {
 			console.log(dpsStats);
 			return {
 				dps: parseFloat(damagePerSecond).toFixed(2),
+				dpb: burstDamage,
 				dpm: magazineDamage,
 				dpa: burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)
 			};
@@ -324,6 +328,7 @@ export default {
 				visible: visible,
 				dps: damage.dps,
 				dpsw: damage.dpsw,
+				dpb: damage.dpb,
 				dpm: damage.dpm,
 				dpmw: damage.dpmw,
 				dpa: damage.dpa,

@@ -1,6 +1,7 @@
 <template>
 	<div class="modSelection">
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
+		<!-- todo: see feat/overclocks -->
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2 v-if="selectedClassId !== 'R'">Tier {{ tierId + 1 }}<p v-if="tierId > 0" class="levelIndicator">Level {{tierId * 4}}</p></h2>
 			<h2 v-if="selectedClassId === 'R'">Tier {{ tierId + 1 }}<p v-if="tierId > 0" class="levelIndicator">Rank {{tierId + 1}}</p></h2>

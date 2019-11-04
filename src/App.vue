@@ -75,7 +75,7 @@
 			<StatsDisplay />
 			<ModificationSelect />
 		</div>
-		<p class="versionNumber">KARL v1.4.5 Based on DRG v0.25.31827.0</p><!-- todo: check ingame version -->
+		<p class="versionNumber">KARL v1.4.6 Based on DRG v0.25.31827.0</p><!-- todo: check ingame version -->
 	</div>
 </template>
 

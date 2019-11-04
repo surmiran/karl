@@ -7,60 +7,79 @@
 				{{tierId * 4}}</p></h2>
 			<h2 v-if="selectedClassId === 'R'">Tier {{ tierId + 1 }}<p v-if="tierId > 0" class="levelIndicator">Rank
 				{{tierId + 1}}</p></h2>
-			<div
-					class="tierSubContainer"
-					:class="[tier.length === 1 ? '' : tier.length === 2 ? 'tierBackgroundGradientHalf' : 'tierBackgroundGradient']"
-			>
-				<div
-						v-for="(mod, modId) in tier"
-						:key="modId"
-						v-on:click="selectMod(selectedClassId, selectedEquipmentId, tierId, modId, mod.selected)"
-						v-on:mouseover="hoverMod(selectedClassId, selectedEquipmentId, tierId, modId)"
-						class="tooltip-target modDisplay"
-						:class="[mod.selected ? 'selectedTemp' : '']"
-				>
-					<svg
-							viewBox="0 0 80 50"
-							height="100%"
-							class="mod"
-							:class="[mod.selected ? 'modBackgroundActive' : 'modBackground']"
-					>
-						<path
-								d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"
-						/>
+			<div class="tierSubContainer"
+			     :class="[tier.length === 1 ? '' : tier.length === 2 ? 'tierBackgroundGradientHalf' : 'tierBackgroundGradient']">
+				<div v-for="(mod, modId) in tier"
+				     :key="modId"
+				     v-on:click="selectMod(selectedClassId, selectedEquipmentId, tierId, modId, mod.selected)"
+				     v-on:mouseover="hoverMod(selectedClassId, selectedEquipmentId, tierId, modId)"
+				     class="tooltip-target modDisplay"
+				     :class="[mod.selected ? 'selectedTemp' : '']">
+					<svg viewBox="0 0 80 50"
+					     height="100%"
+					     class="mod"
+					     :class="[mod.selected ? 'modBackgroundActive' : 'modBackground']">
+						<path d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
 						<g>
-							<svg
-									xmlns="http://www.w3.org/2000/svg"
-									y="10%"
-									viewBox="0 0 80 50"
-									:class="[mod.selected ? 'modIconActive' : 'modIcon']"
-									height="80%"
-									preserveAspectRatio="xMidYMid meet"
-									v-html="getIconFromPath(mod.icon)"
-							></svg>
+							<svg xmlns="http://www.w3.org/2000/svg"
+							     y="10%"
+							     viewBox="0 0 80 50"
+							     :class="[mod.selected ? 'modIconActive' : 'modIcon']"
+							     height="80%"
+							     preserveAspectRatio="xMidYMid meet"
+							     v-html="getIconFromPath(mod.icon)"></svg>
 						</g>
 					</svg>
 				</div>
 				<div v-if="tier.length === 2" class="pseudoModDisplay"></div>
 			</div>
 		</div>
+		<!-- todo: put overclocks in separate popover -->
+		<div class="overclockContainer">
+			<h2>Overclock</h2>
+			<button v-popover:foo.top>
+				select
+			</button>
+			<popover name="foo">
+				Hello 🎉
+			</popover>
+			<!--<div v-for="(overclock, overclockId) in availableOverclocks"
+			     :key="overclockId"
+			     v-on:click="selectOverclock(selectedClassId, selectedEquipmentId, overclockId, overclock.selected)"
+			     v-on:mouseover="hoverOverclock(selectedClassId, selectedEquipmentId, overclockId)"
+			     class="tooltip-target modDisplay"
+			     :class="[overclock.selected ? 'selectedTemp' : '']">
+				<svg viewBox="0 0 80 50"
+				     height="100%"
+				     class="mod"
+				     :class="[overclock.selected ? 'modBackgroundActive' : 'modBackground']">
+					<path d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
+					<g>
+						<svg xmlns="http://www.w3.org/2000/svg"
+						     y="10%"
+						     viewBox="0 0 80 50"
+						     :class="[overclock.selected ? 'modIconActive' : 'modIcon']"
+						     height="80%"
+						     preserveAspectRatio="xMidYMid meet"
+						     v-html="getIconFromPath(overclock.icon)"></svg>
+					</g>
+				</svg>
+			</div>-->
+		</div>
+		<!-- todo: put overclocks in separate popover -->
 		<div class="modTextBox" v-if="!!hoveredMod.name">
 			<div class="modTextBoxHeader">
 				<div class="modTextBoxIcon">
 					<svg viewBox="0 0 80 50" height="100%" class="modPadding modBackgroundActiveNoStroke">
-						<path
-								d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"
-						/>
+						<path d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
 						<g>
-							<svg
-									xmlns="http://www.w3.org/2000/svg"
-									y="10%"
-									viewBox="0 0 80 50"
-									class="modIconActive"
-									height="80%"
-									preserveAspectRatio="xMidYMid meet"
-									v-html="getIconFromPath(hoveredMod.icon)"
-							></svg>
+							<svg xmlns="http://www.w3.org/2000/svg"
+							     y="10%"
+							     viewBox="0 0 80 50"
+							     class="modIconActive"
+							     height="80%"
+							     preserveAspectRatio="xMidYMid meet"
+							     v-html="getIconFromPath(hoveredMod.icon)"></svg>
 						</g>
 					</svg>
 				</div>
@@ -125,6 +144,9 @@
 			},
 			availableMods: function() {
 				return store.state.tree[this.selectedClassId][this.selectedEquipmentId].mods;
+			},
+			availableOverclocks: function() {
+				return store.state.tree[this.selectedClassId][this.selectedEquipmentId].overclocks;
 			},
 			hoveredMod: function() {
 				return store.state.hovered;
@@ -206,6 +228,15 @@
 	}
 
 	.tierContainer {
+		display: flex;
+		/*padding-top: 0.5rem;
+		padding-bottom: 0.5rem;*/
+		justify-content: start;
+		align-items: center;
+		color: #282117;
+	}
+
+	.overclockContainer {
 		display: flex;
 		/*padding-top: 0.5rem;
 		padding-bottom: 0.5rem;*/

@@ -18,7 +18,8 @@ export default {
 		ex6: { name: "Flame Reach", value: 10 },
 		ex7: { name: "Area Heat", value: 0 },
 		ex8: { name: "Heat Bonus", value: 0, percent: true },
-		ex9: { name: "Killed Targets Explode %", value: 0, percent: true }
+		ex9: { name: "Killed Targets Explode %", value: 0, percent: true },
+		ex10: { name: "Movement Speed While Using", value: 100, percent: true },
 	},
 	mods: [
 		[
@@ -334,5 +335,135 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Lighter Tanks",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 7500,
+				bismor: 125,
+				croppa: 75,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 90,
+				err: 0
+			},
+			text: "Lighter weight gear means more fuel and sandwiches.",
+			stats: {
+				ammo: { name: "Max Fuel", value: 75 }
+			}
+		},
+		{
+			selected: false,
+			name: "Sticky Additive",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Special additive compound extends the Sticky Flame duration.",
+			stats: {
+				dmg: { name: "Damage", value: 1 },
+				ex4: { name: "Sticky Flame Duration", value: 1 }
+			}
+		},
+		{
+			selected: false,
+			name: "Compact Feed Valves",
+			icon: "Icon_Upgrade_Ammo",
+			type: "balanced",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "The smaller mechanism leaves room to increase tank capacity at the cost of operational range.",
+			stats: {
+				clip: { name: "Tank Size", value: 25 },
+				ex6: { name: "Flame Reach", value: 2, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Fuel Stream Diffuser",
+			icon: "Icon_Upgrade_Ammo",
+			type: "balanced",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Increases operation range at the cost of direct damage and heat.",
+			stats: {
+				ex6: { name: "Flame Reach", value: 5 },
+				dmg: { name: "Damage", value: 2, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Face Melter",
+			icon: "Icon_Upgrade_Ammo",
+			type: "unstable",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "This crazy bit of tweaking will give a boost in damage but at the cost of both mobility and fuel.",
+			stats: {
+				dmg: { name: "Damage", value: 2 },
+				rate: { name: "Fuel Flow Rate", value: 20, percent: true },
+				ammo: { name: "Max Fuel", value: 75, subtract: true },
+				ex10: { name: "Movement Speed While Using", value: 100, percent: true, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Sticky Fuel",
+			icon: "Icon_Upgrade_Ammo",
+			type: "unstable",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Special fuel mixture extends the duration of Sticky Flames but at the cost of tank capacity and operational range.",
+			stats: {
+				ex4: { name: "Sticky Flame Duration", value: 6 },
+				clip: { name: "Tank Size", value: 25, subtract: true },
+				ex6: { name: "Flame Reach", value: 2, subtract: true }
+			}
+		}
 	]
 };

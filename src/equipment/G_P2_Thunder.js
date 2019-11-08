@@ -14,7 +14,7 @@ export default {
 		ex2: { name: "Effect Radius", value: 1.2 },
 		ex3: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Rate of Fire increase Speed", value: 0, percent: true },
-		ex5: { name: "Armor Break Bonus", value: 100, percent: true },
+		ex5: { name: "Armor Break", value: 100, percent: true },
 		ex6: { name: "Movement Speed While Using", value: 50, percent: true },
 		ex7: { name: "Full RoF Damage Bonus", value: 0, percent: true },
 		ex8: { name: "Impact Fear AoE", value: 0 },
@@ -220,7 +220,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer?",
 				stats: {
-					ex5: { name: "Armor Break Bonus", value: 400, percent: true }
+					ex5: { name: "Armor Break", value: 400, percent: true }
 				},
 				cost: {
 					credits: 4800,

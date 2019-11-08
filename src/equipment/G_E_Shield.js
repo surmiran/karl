@@ -6,7 +6,7 @@ export default {
 	icon: "equipment.G_E_Shield",
 	baseStats: {
 		ammo: { name: "Carried Amount", value: 4 },
-		radius: { name: "Shield Radius", value: 2.8 },
+		radius: { name: "Shield Radius", value: 2.7 },
 		duration: { name: "Duration", value: 6 },
 		rate: { name: "Shield Regen per second", value: 10 },
 		reload: { name: "Recharge Time", value: 12.5 },

@@ -297,6 +297,7 @@ export default new Vuex.Store({
 			state.tree[indizes.classID][indizes.equipID].modified = true;
 			// set state
 			if (indizes.tierID === "overclock") {
+				state.dataParts[indizes.classID][indizes.equipID][5] = indizes.modID;
 				return (state.tree[indizes.classID][indizes.equipID].overclocks[indizes.modID].selected = true);
 			} else {
 				return (state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID].selected = true);
@@ -365,6 +366,7 @@ export default new Vuex.Store({
 		},
 		/* todo: save and load selected overclock! */
 		loadFromLink: (state, data) => {
+			console.log("data from link", data)
 			state.dataParts = data;
 
 			for (let [classId, equipments] of Object.entries(data)) {
@@ -372,7 +374,15 @@ export default new Vuex.Store({
 					state.tree[classId][equipmentId].modified = true;
 					for (let tierId in mods) {
 						if (parseInt(mods[tierId]) >= 0) {
-							state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
+							console.log("tierId",tierId)
+							console.log("mods[tierId]",mods[tierId])
+							if (state.tree[classId][equipmentId].mods[tierId]) {
+								state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
+							} else {
+								console.log("overclock selected")
+								/* todo: selected overclock does not show.. */
+								state.tree[classId][equipmentId].overclocks[mods[tierId]].selected = true;
+							}
 						} else if (mods[tierId] === "focus") {
 							state.selected.class = classId;
 							state.selected.equipment = equipmentId;
@@ -382,6 +392,8 @@ export default new Vuex.Store({
 							// focus
 						}
 					}
+					console.log("mods", mods)
+					console.log("equipmentId", equipmentId)
 				}
 			}
 		}

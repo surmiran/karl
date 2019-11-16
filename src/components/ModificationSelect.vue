@@ -37,34 +37,51 @@
 		<!-- todo: put overclocks in separate popover -->
 		<div class="overclockContainer">
 			<h2>Overclock</h2>
-			<button v-popover:foo.top>
-				select
-			</button>
-			<popover name="foo">
-				Hello 🎉
-			</popover>
-			<!--<div v-for="(overclock, overclockId) in availableOverclocks"
-			     :key="overclockId"
-			     v-on:click="selectOverclock(selectedClassId, selectedEquipmentId, overclockId, overclock.selected)"
-			     v-on:mouseover="hoverOverclock(selectedClassId, selectedEquipmentId, overclockId)"
-			     class="tooltip-target modDisplay"
-			     :class="[overclock.selected ? 'selectedTemp' : '']">
-				<svg viewBox="0 0 80 50"
+			<div class="modDisplay hundredPercent">
+				<svg v-popover:overclocks.top viewBox="0 0 80 50"
 				     height="100%"
-				     class="mod"
-				     :class="[overclock.selected ? 'modBackgroundActive' : 'modBackground']">
+				     class="mod modBackground hundredPercent">
+					<!-- todo: svgs for clean, balanced and unstable overclocks -->
 					<path d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
 					<g>
+						<!-- todo: show selected overclock (icon? name?) -->
 						<svg xmlns="http://www.w3.org/2000/svg"
 						     y="10%"
 						     viewBox="0 0 80 50"
-						     :class="[overclock.selected ? 'modIconActive' : 'modIcon']"
+						     class="modIcon"
 						     height="80%"
 						     preserveAspectRatio="xMidYMid meet"
-						     v-html="getIconFromPath(overclock.icon)"></svg>
+						     v-html="getSelectedOverclockIcon(computedState)"></svg>
 					</g>
 				</svg>
-			</div>-->
+			</div>
+			<!--<button v-popover:overclocks.top>
+				select
+			</button>-->
+			<popover name="overclocks" class="overclockGrid">
+				<div v-for="(overclock, overclockId) in availableOverclocks"
+				     :key="overclockId"
+				     v-on:click="selectOverclock(selectedClassId, selectedEquipmentId, overclockId, overclock.selected)"
+				     v-on:mouseover="hoverOverclock(selectedClassId, selectedEquipmentId, overclockId)"
+				     class="tooltip-target modDisplay"
+				     :class="[overclock.selected ? 'selectedTemp' : '']">
+					<svg viewBox="0 0 80 50"
+					     height="100%"
+					     class="mod"
+					     :class="[overclock.selected ? 'modBackgroundActive' : 'modBackground']">
+						<path d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
+						<g>
+							<svg xmlns="http://www.w3.org/2000/svg"
+							     y="10%"
+							     viewBox="0 0 80 50"
+							     :class="[overclock.selected ? 'modIconActive' : 'modIcon']"
+							     height="80%"
+							     preserveAspectRatio="xMidYMid meet"
+							     v-html="getIconFromPath(overclock.icon)"></svg>
+						</g>
+					</svg>
+				</div>
+			</popover>
 		</div>
 		<!-- todo: put overclocks in separate popover -->
 		<div class="modTextBox" v-if="!!hoveredMod.name">
@@ -150,6 +167,9 @@
 			},
 			hoveredMod: function() {
 				return store.state.hovered;
+			},
+			computedState: function() {
+				return store.state;
 			}
 		},
 		methods: {
@@ -184,12 +204,61 @@
 					modID: modId
 				});
 			},
+			selectOverclock(classId, equipmentId, overclockId, selected) {
+				let tierId = "overclock";
+				if (selected) {
+					store.commit("deSelectAllModifications", {
+						classID: classId,
+						equipID: equipmentId,
+						tierID: tierId,
+						modID: overclockId
+					});
+				} else {
+					store.commit("selectModification", {
+						classID: classId,
+						equipID: equipmentId,
+						tierID: tierId,
+						modID: overclockId
+					});
+					store.commit("deSelectOtherModifications", {
+						classID: classId,
+						equipID: equipmentId,
+						tierID: tierId,
+						modID: overclockId
+					});
+				}
+			},
+			hoverOverclock(classId, equipmentId, overclockId) {
+				let tierId = "overclock";
+				store.commit("addToHovered", {
+					classID: classId,
+					equipID: equipmentId,
+					tierID: tierId,
+					modID: overclockId
+				});
+			},
 			getSelected: function(mod) {
 				return mod.selected;
 			},
 			getIconFromPath: function(iconPath) {
 				// combine icon from path with icon border!
 				return store.state.icons.mods[iconPath];
+			},
+			getSelectedOverclockIcon: function(state) {
+				console.log(state);
+				let overclocks = state.tree[state.selected.class][state.selected.equipment].overclocks;
+				console.log(overclocks);
+				let dataParts = state.dataParts[state.selected.class];
+				if (!state || !dataParts) {
+					return "";
+				}
+				let dataPartsEquipment = dataParts[state.selected.equipment];
+				if (!dataPartsEquipment) {
+					return "";
+				}
+				let selectedOverclock = overclocks[dataPartsEquipment["overclock"]];
+				console.log(selectedOverclock);
+				return state.icons.mods[selectedOverclock.icon];
 			}
 		}
 	};
@@ -243,6 +312,19 @@
 		justify-content: start;
 		align-items: center;
 		color: #282117;
+	}
+
+	.overclockGrid {
+		width: 15rem !important;
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto auto;
+		justify-items: center;
+		background-color: rgba(91, 64, 45, 0.75);
+		border-color: rgb(255, 255, 255);
+		border-style: solid;
+		padding: 10px 5px 10px 5px;
 	}
 
 	.tierSubContainer {
@@ -309,6 +391,10 @@
 		cursor: pointer;
 		height: 4rem;
 		width: 6rem;
+	}
+
+	.hundredPercent {
+		width: 100%;
 	}
 
 	.pseudoModDisplay {

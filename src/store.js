@@ -296,31 +296,63 @@ export default new Vuex.Store({
 
 			state.tree[indizes.classID][indizes.equipID].modified = true;
 			// set state
-			return (state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID].selected = true);
+			if (indizes.tierID === "overclock") {
+				return (state.tree[indizes.classID][indizes.equipID].overclocks[indizes.modID].selected = true);
+			} else {
+				return (state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID].selected = true);
+			}
 		},
 		deSelectOtherModifications: (state, indizes) => {
-			let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
-			let modIdClicked = parseInt(indizes.modID);
-			for (let mod in tierOfModification) {
-				let modIdInLoop = parseInt(mod);
-				if (modIdInLoop !== modIdClicked) {
-					state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+			if (indizes.tierID === "overclock") {
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].overclocks;
+				let modIdClicked = parseInt(indizes.modID);
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					if (modIdInLoop !== modIdClicked) {
+						state.tree[indizes.classID][indizes.equipID].overclocks[modIdInLoop].selected = false;
+					}
+				}
+			} else {
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
+				let modIdClicked = parseInt(indizes.modID);
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					if (modIdInLoop !== modIdClicked) {
+						state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+					}
 				}
 			}
 		},
 		deSelectAllModifications: (state, indizes) => {
-			// keep track in url
-			state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = undefined;
+			if (indizes.tierID === "overclock") {
+				// keep track in url
+				state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = undefined;
 
-			// set state
-			let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
-			for (let mod in tierOfModification) {
-				let modIdInLoop = parseInt(mod);
-				state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+				// set state
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].overclocks;
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					state.tree[indizes.classID][indizes.equipID].overclocks[modIdInLoop].selected = false;
+				}
+			} else {
+				// keep track in url
+				state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = undefined;
+
+				// set state
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+				}
 			}
+
 		},
 		addToHovered: (state, indizes) => {
-			state.hovered = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID];
+			if (indizes.tierID === "overclock") {
+				state.hovered = state.tree[indizes.classID][indizes.equipID].overclocks[indizes.modID];
+			} else {
+				state.hovered = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID];
+			}
 
 			let hoveredStatKey = Object.keys(state.hovered.stats)[0];
 			let hoveredStat = state.hovered.stats[hoveredStatKey];
@@ -331,6 +363,7 @@ export default new Vuex.Store({
 			}
 			state.hovered.increase = increase;
 		},
+		/* todo: save and load selected overclock! */
 		loadFromLink: (state, data) => {
 			state.dataParts = data;
 

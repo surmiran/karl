@@ -218,6 +218,14 @@
 					},
 					[]
 				);
+				let overclocks = store.state.tree[this.selectedClassId][this.selectedEquipmentId].overclocks;
+				if (overclocks) {
+					for (let overclock of store.state.tree[this.selectedClassId][this.selectedEquipmentId].overclocks) {
+						if (overclock.selected) {
+							aSelectedUpgrades.push(overclock);
+						}
+					}
+				}
 
 				const precisionCalc = a => {
 					if (!isFinite(a)) return 0;

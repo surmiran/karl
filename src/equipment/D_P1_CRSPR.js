@@ -19,7 +19,7 @@ export default {
 		ex7: { name: "Area Heat", value: 0 },
 		ex8: { name: "Heat Bonus", value: 0, percent: true },
 		ex9: { name: "Killed Targets Explode %", value: 0, percent: true },
-		ex10: { name: "Movement Speed While Using", value: 100, percent: true },
+		ex10: { name: "Movement Speed While Using", value: 100, percent: true }
 	},
 	mods: [
 		[
@@ -360,7 +360,7 @@ export default {
 		{
 			selected: false,
 			name: "Sticky Additive",
-			icon: "Icon_Upgrade_Ammo",
+			icon: "Icon_Upgrade_Duration",
 			type: "clean",
 			cost: {
 				credits: 0,
@@ -381,7 +381,7 @@ export default {
 		{
 			selected: false,
 			name: "Compact Feed Valves",
-			icon: "Icon_Upgrade_Ammo",
+			icon: "Icon_Upgrade_ClipSize",
 			type: "balanced",
 			cost: {
 				credits: 0,
@@ -402,7 +402,7 @@ export default {
 		{
 			selected: false,
 			name: "Fuel Stream Diffuser",
-			icon: "Icon_Upgrade_Ammo",
+			icon: "Icon_Upgrade_Distance",
 			type: "balanced",
 			cost: {
 				credits: 0,
@@ -423,7 +423,7 @@ export default {
 		{
 			selected: false,
 			name: "Face Melter",
-			icon: "Icon_Upgrade_Ammo",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "unstable",
 			cost: {
 				credits: 0,
@@ -446,7 +446,7 @@ export default {
 		{
 			selected: false,
 			name: "Sticky Fuel",
-			icon: "Icon_Upgrade_Ammo",
+			icon: "Icon_Upgrade_Duration",
 			type: "unstable",
 			cost: {
 				credits: 0,

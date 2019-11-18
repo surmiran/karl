@@ -68,7 +68,7 @@ export default {
 			{
 				selected: false,
 				name: "Fast-Charging Coils",
-				icon: "Icon_Upgrade_Accuracy",
+				icon: "Icon_Upgrade_ChargeUp",
 				type: "Accuracy",
 				text: "Focus faster when holding down the trigger.",
 				stats: {

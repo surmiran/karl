@@ -122,7 +122,7 @@ export default {
 			{
 				selected: false,
 				name: "Repellant Additive",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text: "Enemies will avoid waling on the Plastcrete Foam whenever possible.",
 				stats: {

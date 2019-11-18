@@ -284,7 +284,7 @@ export default {
 			{
 				selected: false,
 				name: "Fragile",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Explosion",
 				type: "Special",
 				text: "Frozen targets can spontaniously shatter",
 				stats: {

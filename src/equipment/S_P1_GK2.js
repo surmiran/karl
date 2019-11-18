@@ -129,7 +129,7 @@ export default {
 			{
 				selected: false,
 				name: "Floating Barrel",
-				icon: "Icon_Upgrade_Accuracy",
+				icon: "Icon_Upgrade_Recoil",
 				type: "Accuracy",
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",

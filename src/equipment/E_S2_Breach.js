@@ -210,7 +210,7 @@ export default {
 			{
 				selected: false,
 				name: "Quick Deploy",
-				icon: "Icon_Upgrade_ChargeUp",
+				icon: "Icon_Upgrade_Duration",
 				type: "Charge Speed",
 				text: "The line projectile opens almost immediately and can hit multiple targets at very close range.",
 				stats: {

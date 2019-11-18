@@ -251,7 +251,7 @@ export default {
 			{
 				selected: false,
 				name: "Mactera Toxin-Coating",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text: "Bonus damage against Mactera aliens",
 				stats: {

@@ -257,7 +257,7 @@ export default {
 			{
 				selected: false,
 				name: "Flying Nightmare",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text: "The charged projectile deals damage to nearby enemies while it flies but takes longer to charge up.",
 				stats: {
@@ -278,7 +278,7 @@ export default {
 			{
 				selected: false,
 				name: "Thin Containment Field",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
 					"A weaker containment field takes less energy to create thus producing less heat for Charged Shots. Be aware that any high-energy impact will destabilize the Charged Projectile causing a large area implosion.",

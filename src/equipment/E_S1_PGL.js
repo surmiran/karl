@@ -190,11 +190,10 @@ export default {
 			}
 		],
 		[
-			/* todo: random icon */
 			{
 				selected: false,
 				name: "Homebrew Explosive",
-				icon: "Icon_Upgrade_AreaDamage",
+				icon: "Icon_Overclock_ChangeOfHigherDamage",
 				type: "Randomized Damage",
 				text: "More damage on average but it's a bit inconsistent with a spread from 80% to 140%",
 				stats: {
@@ -259,7 +258,7 @@ export default {
 			{
 				selected: false,
 				name: "Proximity Trigger",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
 					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100%",

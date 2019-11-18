@@ -257,11 +257,10 @@ export default {
 					err: 0
 				}
 			},
-			/* todo: neurotoxin icon */
 			{
 				selected: false,
 				name: "Neurotoxin Coating",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Neurotoxin",
 				text: "Chance to poison your target. Affected creatures move slower and take damage over time.",
 				stats: {

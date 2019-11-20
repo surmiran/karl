@@ -91,7 +91,6 @@
 					</g>
 				</svg>
 			</div>
-			<!-- todo: display proper border svgs -->
 			<popover name="overclocks" class="overclockGrid">
 				<div v-for="(overclock, overclockId) in availableOverclocks"
 				     :key="overclockId"
@@ -102,8 +101,8 @@
 					<svg viewBox="0 0 80 80"
 					     height="6rem"
 					     class="mod"
-					     :class="[overclock.selected ? 'modBackgroundActive' : 'modBackground']">
-						<g :display="getCleanDisplayById(overclockId)">
+					     :class="[overclock.selected ? 'overclockBackgroundActive' : 'overclockBackground']">
+						<g :display="getCleanDisplayByOverclock(overclock)">
 							<g> <!-- background layer -->
 								<path style="fill:#379c5d;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
 								      d="M 16.645549,6.8857899 63.523153,6.92059 79.999998,30.39618 52.538582,73.114198 26.69254,73.0896 2.5e-7,30.232339 Z"
@@ -115,7 +114,7 @@
 								      id="path838"/>
 							</g>
 						</g>
-						<g :display="getBalancedDisplayById(overclockId)">
+						<g :display="getBalancedDisplayByOverclock(overclock)">
 							<g>
 								<path style="fill:#e9ca37;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
 								      d="M 0.676502,26.11698 5.2900339,23.37613 V 19.90961 L 39.830893,0 74.387947,19.8847 v 3.47593 l 4.935551,2.80812 V 53.989009 L 74.419528,56.68047 74.223427,60.412899 40.283264,79.999998 5.4545499,60.39224 5.125512,56.603608 0.84802198,54.13516 Z"
@@ -127,7 +126,7 @@
 								/>
 							</g>
 						</g>
-						<g :display="getUnstableDisplayById(overclockId)">
+						<g :display="getUnstableDisplayByOverclock(overclock)">
 							<g>
 								<path style="fill:#d13500;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
 								      d="M 8.4999998e-5,40.126319 8.4302848,33.505759 V 13.11006 l 4.6897602,-4.6584702 20.295218,-0.006 6.685852,-8.4074599 6.696559,8.41266 h 20.13055 l 4.689771,4.6584701 v 20.151169 l 8.381918,7.054062 -8.37692,6.661528 -0.006,20.327659 -4.368421,4.334931 H 46.596244 L 39.857415,79.961869 33.539996,71.9618 H 13.120045 L 8.4302848,67.303329 v -20.47685 z"
@@ -352,14 +351,14 @@
 			getUnstableDisplay: function(state) {
 				return this.getSelectedOverclockClass(state) === "unstable" ? "inherit" : "none";
 			},
-			getCleanDisplayById: function(id) {
-				return id === 0 || id === 1 ? "inherit" : "none";
+			getCleanDisplayByOverclock: function(overclock) {
+				return overclock.type === "clean" ? "inherit" : "none";
 			},
-			getBalancedDisplayById: function(id) {
-				return id === 2 || id === 3 ? "inherit" : "none";
+			getBalancedDisplayByOverclock: function(overclock) {
+				return overclock.type === "balanced" ? "inherit" : "none";
 			},
-			getUnstableDisplayById: function(id) {
-				return id === 4 || id === 5 ? "inherit" : "none";
+			getUnstableDisplayByOverclock: function(overclock) {
+				return overclock.type === "unstable" ? "inherit" : "none";
 			}
 		}
 	};
@@ -473,6 +472,18 @@
 		stroke-width: 2px;
 	}
 
+	.overclockBackground {
+		fill: #000000;
+		stroke: none;
+		stroke-width: 2px;
+	}
+
+	.overclockBackgroundActive {
+		fill: #fc9e00;
+		stroke: #fffbff;
+		stroke-width: 2px;
+	}
+
 	.modBackgroundActiveNoStroke {
 		fill: #fc9e00;
 		stroke-width: 0px;
@@ -520,6 +531,10 @@
 	}
 
 	.modDisplay:hover .modBackground {
+		stroke: #fffbff;
+	}
+
+	.modDisplay:hover .overclockBackground {
 		stroke: #fffbff;
 	}
 

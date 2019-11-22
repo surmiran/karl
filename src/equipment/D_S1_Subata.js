@@ -275,6 +275,7 @@ export default {
 			}
 		]
 	],
+	/* todo: automatic fire overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,

@@ -15,7 +15,10 @@ export default {
 		/*ex3: { name: "Stun Chance", value: 0, percent: true },*/
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Get in, get out", value: 0, boolean: true },
-		ex6: { name: "Damage vs Electrically Affected", value: 0, percent: true }
+		ex6: { name: "Damage vs Electrically Affected", value: 0, percent: true },
+		ex7: { name: "Cryo Minelets", value: 0, boolean: true },
+		ex8: { name: "Embedded Detonators", value: 0, boolean: true },
+		ex9: { name: "Movement Speed While Using", value: 100, percent: true },
 	},
 	mods: [
 		[
@@ -272,5 +275,138 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Minimal Magazines",
+			icon: "Icon_Upgrade_Speed",
+			type: "clean",
+			cost: {
+				credits: 8450,
+				bismor: 130,
+				croppa: 100,
+				enorPearl: 0,
+				jadiz: 70,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "By filling away unnecessary material from the magazines you've made them lighter, and that means they pop out faster when reloading. Also the rounds can move more freely increasing the max rate of fire slightly.",
+			stats: {
+				rate: { name: "Combined Rate of Fire", value: 2 },
+				reload: { name: "Reload Time", value: 0.4, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Custom Casings",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "balanced",
+			cost: {
+				credits: 7700,
+				bismor: 95,
+				croppa: 75,
+				enorPearl: 140,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Fit more of these custom rounds in each magazine but at small loss in raw damage.",
+			stats: {
+				clip: { name: "Combined Clip Size", value: 30 },
+				dmg: { name: "Damage", value: 1, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Cryo Minelets",
+			icon: "Icon_Upgrade_Cold",
+			type: "unstable",
+			cost: {
+				credits: 7300,
+				bismor: 0,
+				croppa: 65,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 135,
+				umanite: 95,
+				err: 0
+			},
+			text: "After impacting terrain, these high-tech bullets convert into cryo-minelets that will super-cool anything that comes close. However they don't last forever and the rounds themselves take more space in the clip and deal less direct damage.",
+			stats: {
+				ex7: { name: "Cryo Minelets", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 1, subtract: true },
+				clip: { name: "Combined Clip Size", value: 10, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Embedded Detonators",
+			icon: "Icon_Overclock_Special_Magazine",
+			type: "unstable",
+			cost: {
+				credits: 7550,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 135,
+				magnite: 65,
+				umanite: 90,
+				err: 0
+			},
+			text: "Special bullets contain micro-explosives that detonate when you reload the weapon at the cost of total ammo and direct damage.",
+			stats: {
+				ex8: { name: "Embedded Detonators", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+				ammo: { name: "Max Ammo", value: 75, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Gas Recycling",
+			icon: "Icon_Overclock_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 7800,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 70,
+				jadiz: 105,
+				magnite: 125,
+				umanite: 0,
+				err: 0
+			},
+			text: "Special hardened bullets combined with rerouting escaping gasses back into the chamber greatly increases the raw damage of the weapon but makes it more difficult to control and removes any bonus to weakpoint hits.",
+			stats: {
+				dmg: { name: "Damage", value: 11 },
+				/* todo: calc x0 */
+				ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
+				/* todo: calc x1.5 */
+				ex1: { name: "Base Spread", value: 50, percent: true },
+				ex9: { name: "Movement Speed While Using", value: 50, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Micro",
+			icon: "Icon_Overclock_SmallBullets",
+			type: "clean",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "",
+			stats: {
+				ammo: { name: "Max Ammo", value: 144 },
+			}
+		},
 	]
 };

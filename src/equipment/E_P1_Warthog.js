@@ -297,4 +297,5 @@ export default {
 			}
 		]
 	]
+	/* todo: magnetic pellet alignment overclock changed with update 26 */
 };

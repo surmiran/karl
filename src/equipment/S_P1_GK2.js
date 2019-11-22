@@ -17,7 +17,10 @@ export default {
 		ex5: { name: "Weakpoint Damage Bonus", value: 10, percent: true },
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Battle Frenzy", value: 0, boolean: true },
-		ex8: { name: "Battle Cool", value: 0, boolean: true }
+		ex8: { name: "Battle Cool", value: 0, boolean: true },
+		ex9: { name: "Bonus Damage to Afflicted Targets", value: 0, percent: true },
+		ex10: { name: "Spread Recovery Speed", value: 100, percent: true },
+		ex11: { name: "Electric Reload (100% chance)", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -315,5 +318,162 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Compact Ammo",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "clean",
+			cost: {
+				credits: 7250,
+				bismor: 125,
+				croppa: 0,
+				enorPearl: 80,
+				jadiz: 105,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Stuff a few more of these compact rounds into each magazine and they have a bit less recoil as well.",
+			stats: {
+				clip: { name: "Magazine Size", value: 5 },
+				/* todo: calc x0.7 */
+				/* todo: replace "spread per shot" with "recoil" on all weapons */
+				ex4: { name: "Spread Per Shot", value: 30, percent: true, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Gas Rerouting",
+			icon: "Icon_Upgrade_FireRate",
+			type: "clean",
+			cost: {
+				credits: 7800,
+				bismor: 0,
+				croppa: 60,
+				enorPearl: 0,
+				jadiz: 125,
+				magnite: 105,
+				umanite: 0,
+				err: 0
+			},
+			text: "Increases the weapon's rate of fire without affecting performance and helps with magazine ejection as well.",
+			stats: {
+				rate: { name: "Rate of Fire", value: 1 },
+				reload: { name: "Reload Time", value: 0.3, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Homebrew Powder",
+			icon: "Icon_Overclock_ChangeOfHigherDamage",
+			type: "clean",
+			cost: {
+				credits: 8100,
+				bismor: 95,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 140,
+				magnite: 0,
+				umanite: 65,
+				err: 0
+			},
+			text: "More damage on average but it's a bit inconsistent.",
+			stats: {
+				/* todo: calc x1.1 */
+				dmg: { name: "Damage", value: 2 },
+			}
+		},
+		{
+			selected: false,
+			name: "Overclocked Firing Mechanism",
+			icon: "Icon_Upgrade_FireRate",
+			type: "balanced",
+			cost: {
+				credits: 7950,
+				bismor: 95,
+				croppa: 0,
+				enorPearl: 120,
+				jadiz: 0,
+				magnite: 65,
+				umanite: 0,
+				err: 0
+			},
+			text: "Fires more bullets faster and it kicks like a mule.",
+			stats: {
+				rate: { name: "Rate of Fire", value: 3 },
+				/* todo: calc x2.5 */
+				ex4: { name: "Spread Per Shot", value: 150, percent: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Bullets of Mercy",
+			icon: "Icon_Overclock_DamageGeneral",
+			type: "balanced",
+			cost: {
+				credits: 8100,
+				bismor: 90,
+				croppa: 80,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 125,
+				umanite: 0,
+				err: 0
+			},
+			text: "Put suffering bugs out of their missery with a damage bonus against afflicted enemies.",
+			stats: {
+				ex9: { name: "Bonus Damage to Afflicted Targets", value: 33, percent: true },
+				clip: { name: "Magazine Size", value: 5, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "AI Stability Engine",
+			icon: "Icon_Upgrade_Aim",
+			type: "unstable",
+			cost: {
+				credits: 8250,
+				bismor: 0,
+				croppa: 60,
+				enorPearl: 125,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 100,
+				err: 0
+			},
+			text: "It's like it knows what you are going to do before you do it, compensating for all recoil and bullet spread but the system requires a lower rate of fire and the modified firing chamber reduces overall damage.",
+			stats: {
+				/* todo: calc x0 */
+				ex4: { name: "Spread Per Shot", value: 100, percent: true },
+				/* todo: calc x9 */
+				ex10: { name: "Spread Recovery Speed", value: 800, percent: true },
+				dmg: { name: "Damage", value: 1, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Electrifying Reload",
+			icon: "Icon_Overclock_Special_Magazine",
+			type: "unstable",
+			cost: {
+				credits: 7750,
+				bismor: 105,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 65,
+				umanite: 135,
+				err: 0
+			},
+			text: "Embedded capacitors have a chance to electrocute targets from the inside when you reload. Probability of electrocution increases with the number of hits. However all that tech reduces raw damage of the bullets and takes up some space in the magazines.",
+			stats: {
+				ex11: { name: "Electric Reload (100% chance)", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+				clip: { name: "Magazine Size", value: 5, subtract: true },
+			}
+		},
 	]
 };

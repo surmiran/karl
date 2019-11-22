@@ -21,6 +21,7 @@ export default {
 		ex9: { name: "Killed Targets Explode %", value: 0, percent: true },
 		ex10: { name: "Movement Speed While Using", value: 100, percent: true }
 	},
+	/* todo: base stats and mods changed with update 26 */
 	mods: [
 		[
 			{
@@ -336,6 +337,7 @@ export default {
 			}
 		]
 	],
+	/* todo: fuel stream diffuser and sticky fuel overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,

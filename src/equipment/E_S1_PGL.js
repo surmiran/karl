@@ -298,4 +298,5 @@ export default {
 			}
 		]
 	]
+	/* todo: hyper propellant overclock changed with update 26 */
 };

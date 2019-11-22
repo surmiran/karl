@@ -324,6 +324,7 @@ export default {
 			}
 		]
 	],
+	/* todo: heavy hitter overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,

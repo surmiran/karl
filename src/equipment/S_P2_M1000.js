@@ -19,8 +19,11 @@ export default {
 		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
 		ex9: { name: "Focus Shot Fear", value: 0, boolean: true },
 		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true },
-		ex10: { name: "Focus Shot Kill AoE Fear", value: 0, boolean: true }
+		ex10: { name: "Focus Shot Kill AoE Fear", value: 0, boolean: true },
+		ex11: { name: "Focus Shot Hover", value: 0, boolean: true },
+		ex12: { name: "Electrocuting Focus Shots", value: 0, boolean: true },
 	},
+	/* todo: base stats and mods changed with update 26 */
 	mods: [
 		[
 			{
@@ -296,5 +299,141 @@ export default {
 				}
 			}
 		]
+	],
+	/* todo: electrocuting focus shot overclock changed with update 26 */
+	overclocks: [
+		{
+			selected: false,
+			name: "Hoverclock",
+			icon: "Icon_Overclock_Slowdown",
+			type: "clean",
+			cost: {
+				credits: 7350,
+				bismor: 105,
+				croppa: 135,
+				enorPearl: 0,
+				jadiz: 65,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Your movement slows down for a few seconds while using focus mode in the air.",
+			stats: {
+				ex11: { name: "Focus Shot Hover", value: 1, boolean: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Minimal Clips",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 8200,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 95,
+				jadiz: 130,
+				magnite: 75,
+				umanite: 0,
+				err: 0
+			},
+			text: "Make space for more ammo and speed up reloads by getting rid of dead weight on the clips.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 16 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Active Stability System",
+			icon: "Icon_Upgrade_MovementSpeed",
+			type: "balanced",
+			cost: {
+				credits: 8150,
+				bismor: 90,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 70,
+				umanite: 135,
+				err: 0
+			},
+			text: "Focus without slowing down but the power drain from the coils lowers the power of the focused shots.",
+			stats: {
+				ex8: { name: "Focus Mode Movement Speed", value: 70, percent: true },
+				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Hipster",
+			icon: "Icon_Upgrade_Aim",
+			type: "balanced",
+			cost: {
+				credits: 8900,
+				bismor: 0,
+				croppa: 125,
+				enorPearl: 105,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 80,
+				err: 0
+			},
+			text: "A rebalancing of weight distribution, enlarged vents and a reshaped grip result in a rifle that is more controllable when hip-firing in quick succession but at the cost of pure damage output.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 72 },
+				rate: { name: "Rate of Fire", value: 3 },
+				/* todo: calc x0.5 */
+				ex3: { name: "Spread Per Shot", value: 50, percent: true, subtract: true },
+				dmg: { name: "Damage", value: 20, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Electrocuting Focus Shots",
+			icon: "Icon_Upgrade_Electricity",
+			type: "unstable",
+			cost: {
+				credits: 8850,
+				bismor: 120,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 75,
+				err: 0
+			},
+			text: "Embedded capacitors in a copper core carry the electric charge from the EM coils used for focus shots and will electrocute the target at the cost of a reduced focus shot damage bonus.",
+			stats: {
+				ex12: { name: "Electrocuting Focus Shots", value: 1, boolean: true },
+				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Supercooling Chamber",
+			icon: "Icon_Overclock_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 8500,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 90,
+				jadiz: 130,
+				magnite: 70,
+				umanite: 0,
+				err: 0
+			},
+			text: "Take the M1000'S focus mode to the extreme by supercooling the rounds before firing to improve their acceleration through the coils, but the extra coolant in the clips limits how much ammo you can bring.",
+			stats: {
+				ex2: { name: "Focused Shot Damage Bonus", value: 125, percent: true },
+				/* todo: calc x0.635 */
+				ammo: { name: "Max Ammo", value: 18, subtract: true },
+				/* todo: calc x0.5 */
+				ex1: { name: "Focus Speed", value: 50, percent: true, subtract: true },
+				/* todo: calc x0 */
+				ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true, subtract: true },
+			}
+		},
 	]
 };

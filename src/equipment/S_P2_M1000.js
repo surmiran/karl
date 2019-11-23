@@ -383,8 +383,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 72 },
 				rate: { name: "Rate of Fire", value: 3 },
-				/* todo: calc x0.5 */
-				ex3: { name: "Spread Per Shot", value: 50, percent: true, subtract: true },
+				ex3: { name: "Spread Per Shot", value: 0.5, percent: true, multiply: true },
 				dmg: { name: "Damage", value: 20, subtract: true },
 			}
 		},
@@ -427,12 +426,9 @@ export default {
 			text: "Take the M1000'S focus mode to the extreme by supercooling the rounds before firing to improve their acceleration through the coils, but the extra coolant in the clips limits how much ammo you can bring.",
 			stats: {
 				ex2: { name: "Focused Shot Damage Bonus", value: 125, percent: true },
-				/* todo: calc x0.635 */
-				ammo: { name: "Max Ammo", value: 18, subtract: true },
-				/* todo: calc x0.5 */
-				ex1: { name: "Focus Speed", value: 50, percent: true, subtract: true },
-				/* todo: calc x0 */
-				ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true, subtract: true },
+				ammo: { name: "Max Ammo", value: 0.635, multiply: true },
+				ex1: { name: "Focus Speed", value: 0.5, percent: true, multiply: true },
+				ex8: { name: "Focus Mode Movement Speed", value: 0, percent: true, multiply: true },
 			}
 		},
 	]

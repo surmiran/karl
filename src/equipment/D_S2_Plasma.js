@@ -265,7 +265,7 @@ export default {
 				text: "The charged projectile deals damage to nearby enemies while it flies but takes longer to charge up.",
 				stats: {
 					ex9: { name: "Flying Nightmare", value: 1, boolean: true },
-					ex5: { name: "Charge Speed", value: 0.24, subtract: true }
+					ex5: { name: "Charge Speed", value: 0.8, multiply: true }
 					/* todo: charge speed calculation, multiply by X0.8 or whatever */
 				},
 				cost: {

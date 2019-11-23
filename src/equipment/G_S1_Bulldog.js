@@ -299,8 +299,7 @@ export default {
 			},
 			text: "More damage on average but it's a bit inconsistent. ",
 			stats: {
-				/* todo: damage calc */
-				dmg: { name: "Damage", value: 2 }
+				dmg: { name: "Damage", value: 1.1, multiply: true }
 			}
 		},
 		{
@@ -383,8 +382,7 @@ export default {
 			},
 			text: "Heavy tweaking has made it possible to use modified autocannon rounds in the revolver! The damage is crazy but so is the recoil and you can't carry very many rounds. ",
 			stats: {
-				/* todo: multiply damage by 2x */
-				dmg: { name: "Damage", value: 45 },
+				dmg: { name: "Damage", value: 2, multiply: true },
 				ammo: { name: "Max Ammo", value: 12, subtract: true },
 				ex1: { name: "Base Spread", value: 150, percent: true },
 				ex2: { name: "Spread Per Shot", value: 100, percent: true }

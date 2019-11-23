@@ -357,8 +357,7 @@ export default {
 			},
 			text: "More damage on average but it's a bit inconsistent.",
 			stats: {
-				/* todo: x1.1 damage */
-				dmg: { name: "Damage", value: 2 }
+				dmg: { name: "Damage", value: 1.1, multiply: true }
 			}
 		},
 		{
@@ -446,11 +445,9 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 144 },
 				clip: { name: "Magazine Size", value: 24 },
-				/* todo: calc x0.5 */
-				ex4: { name: "Recoil", value: 50, percent: true },
+				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true },
-				/* todo: calc x0.5 */
-				dmg: { name: "Damage", value: 7, subtract: true },
+				dmg: { name: "Damage", value: 0.5, multiply: true },
 			}
 		},
 	]

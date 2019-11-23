@@ -18,7 +18,6 @@ export default {
 		ex6: { name: "Stun Chance", value: 0, percent: true },
 		ex7: { name: "Proximity Trigger", value: 0, boolean: true },
 		ex8: { name: "Direct Damage", value: 0 },
-		ex9: { name: "Randomized Damage", value: 0, boolean: true },
 		ex10: { name: "RJ250 Compound", value: 0, boolean: true },
 	},
 	mods: [
@@ -198,9 +197,7 @@ export default {
 				type: "Randomized Damage",
 				text: "More damage on average but it's a bit inconsistent with a spread from 80% to 140%",
 				stats: {
-					/* todo - sunday: in dps calc, if this is enabled, calc dps * 1.1 */
-					/* Homebrew explosive doesn't increase DPS but should -> dps *1.1 */
-					ex9: { name: "Randomized Damage", value: 1, boolean: true }
+					dmg: { name: "Area Damage", value: 1.1, multiply: true },
 				},
 				cost: {
 					credits: 3800,
@@ -404,10 +401,8 @@ export default {
 			stats: {
 				dmg: { name: "Area Damage", value: 330 },
 				ex1: { name: "Effect Radius", value: 1 },
-				/* todo: calc x0.3 */
-				ammo: { name: "Max Ammo", value: 5, subtract: true },
-				/* todo: calc x0.7 */
-				ex4: { name: "Projectile Velocity", value: 30, percent: true, subtract: true },
+				ammo: { name: "Max Ammo", value: 0.3, multiply: true },
+				ex4: { name: "Projectile Velocity", value: 0.7, percent: true, multiply: true },
 			}
 		},
 		{
@@ -429,8 +424,7 @@ export default {
 			stats: {
 				ex8: { name: "Direct Damage", value: 250 },
 				ex4: { name: "Projectile Velocity", value: 350, percent: true },
-				/* todo: calc x0.3 */
-				ex1: { name: "Effect Radius", value: 1.75, subtract: true },
+				ex1: { name: "Effect Radius", value: 0.3, multiply: true },
 			}
 		},
 	]

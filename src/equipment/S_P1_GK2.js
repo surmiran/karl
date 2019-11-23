@@ -338,9 +338,8 @@ export default {
 			text: "Stuff a few more of these compact rounds into each magazine and they have a bit less recoil as well.",
 			stats: {
 				clip: { name: "Magazine Size", value: 5 },
-				/* todo: calc x0.7 */
 				/* todo: replace "spread per shot" with "recoil" on all weapons */
-				ex4: { name: "Spread Per Shot", value: 30, percent: true, subtract: true }
+				ex4: { name: "Spread Per Shot", value: 0.7, percent: true, multiply: true }
 			}
 		},
 		{
@@ -381,8 +380,7 @@ export default {
 			},
 			text: "More damage on average but it's a bit inconsistent.",
 			stats: {
-				/* todo: calc x1.1 */
-				dmg: { name: "Damage", value: 2 },
+				dmg: { name: "Damage", value: 1.1, multiply: true },
 			}
 		},
 		{
@@ -403,8 +401,7 @@ export default {
 			text: "Fires more bullets faster and it kicks like a mule.",
 			stats: {
 				rate: { name: "Rate of Fire", value: 3 },
-				/* todo: calc x2.5 */
-				ex4: { name: "Spread Per Shot", value: 150, percent: true },
+				ex4: { name: "Spread Per Shot", value: 2.5, percent: true, multiply: true },
 			}
 		},
 		{
@@ -445,10 +442,8 @@ export default {
 			},
 			text: "It's like it knows what you are going to do before you do it, compensating for all recoil and bullet spread but the system requires a lower rate of fire and the modified firing chamber reduces overall damage.",
 			stats: {
-				/* todo: calc x0 */
-				ex4: { name: "Spread Per Shot", value: 100, percent: true },
-				/* todo: calc x9 */
-				ex10: { name: "Spread Recovery Speed", value: 800, percent: true },
+				ex4: { name: "Spread Per Shot", value: 0, percent: true, multiply: true },
+				ex10: { name: "Spread Recovery Speed", value: 9, percent: true, multiply: true },
 				dmg: { name: "Damage", value: 1, subtract: true },
 				rate: { name: "Rate of Fire", value: 2, subtract: true },
 			}

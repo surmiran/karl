@@ -194,6 +194,85 @@
 		}
 	};
 
+	const precisionCalc = a => {
+		if (!isFinite(a)) return 0;
+		var e = 1,
+				p = 0;
+		while (Math.round(a * e) / e !== a) {
+			e *= 10;
+			p++;
+		}
+		return p;
+	};
+
+	const calculateUpgradesForStat = (stat, upgradesForStat) => {
+		// loop trough upgradesForStat and calculate
+		// if multiply is true, put in temp array and loop trough all multiplications in the end, after normal calc is done
+		let upgradesToMultiply = [];
+		for (let upgrade of upgradesForStat) {
+			if (upgrade.multiply) {
+				upgradesToMultiply.push(upgrade)
+			} else {
+				// calculation here
+			}
+		}
+		if (upgradesToMultiply.length > 0) {
+			for (let upgrade of upgradesToMultiply) {
+				// calculation here
+			}
+		}
+		return stat
+	};
+
+	const getModifiedStats = (baseStats, selectedUpgrades) => {
+		console.log("baseStats", baseStats)
+		console.log("selectedUpgrades", selectedUpgrades)
+
+		// loop trough all selected upgrades
+		let upgradesForEachStat = new Map();
+		for (let upgrade of selectedUpgrades) {
+			// loop trough stats of upgrade
+			console.log("upgrade", upgrade)
+			for (let statKey in upgrade.stats) {
+				let statContent = upgrade.stats[statKey];
+				let tempContent = [];
+				if (upgradesForEachStat.has(statKey)) {
+					tempContent = upgradesForEachStat.get(statKey)
+				}
+				tempContent.push(statContent)
+				upgradesForEachStat.set()
+				console.log("statKey", statKey)
+				console.log("statContent", statContent)
+				upgradesForEachStat.set(statKey, tempContent)
+			}
+			console.log("upgradesForEachStat", upgradesForEachStat)
+		}
+		// group all upgrades by stat
+		// loop trough groups and calculate new value for each stat
+		// return stats
+		for (let stat in baseStats) {
+			if (upgradesForEachStat.has(stat)) {
+				let upgradesForStat = upgradesForEachStat.get(stat)
+				console.log("update this stat", stat)
+				console.log("with upgrades", upgradesForStat)
+				let upgradedStats = calculateUpgradesForStat(stat, upgradesForStat)
+			}
+		}
+
+		// stats is array of objects:
+		/*
+		baseValue: 120
+		modified: true
+		modifier: "+24"
+		name: "Battery Capacity"
+		value: "144"
+		...also
+		*/
+
+		let stats = {};
+		return stats
+	};
+
 	export default {
 		name: "StatsDisplay",
 		computed: {
@@ -227,17 +306,11 @@
 					}
 				}
 
-				const precisionCalc = a => {
-					if (!isFinite(a)) return 0;
-					var e = 1,
-						p = 0;
-					while (Math.round(a * e) / e !== a) {
-						e *= 10;
-						p++;
-					}
-					return p;
-				};
+				getModifiedStats(this.baseStats, aSelectedUpgrades);
 
+				/* todo: cleanup? dont mindlessly iterate over upgrades but iterate over stats and look for anything that would change them*/
+				/* todo: for each stat, iterate trough selected upgrades and look for upgrades to this stat, then walk trough these, adding/subtracting first, then multiplying
+				* in the end, calculate change value */
 				let costsArray = [];
 				let stats = Object.keys(this.baseStats).map(key => {
 					let upgradeForKey = aSelectedUpgrades.filter(element => {
@@ -264,6 +337,13 @@
 								modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(
 									precision
 								);
+							} else if (upgrade.stats[key].multiply) {
+								modifier.value = modifier.value * upgrade.stats[key].value;
+								modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(
+										precision
+								);
+								console.log("multiply", modifier.value, upgrade.stats[key].value)
+								console.log("modified stats", modifiedStats)
 							} else {
 								modifier.value = modifier.value + upgrade.stats[key].value;
 								modifiedStats.value = (parseFloat(modifiedStats.value) + parseFloat(upgrade.stats[key].value)).toFixed(
@@ -283,6 +363,7 @@
 					}
 					return modifiedStats;
 				});
+				console.log("stats modified", stats)
 
 				let damage = null;
 				let specialEquipment = [

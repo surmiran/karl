@@ -445,8 +445,7 @@ export default {
 				ex12: { name: "Inferno", value: 1, boolean: true },
 				ammo: { name: "Max Ammo", value: 4, subtract: true },
 				rate: { name: "Rate of Fire", value: 2, subtract: true },
-				/* todo: calc x0.5 */
-				ex4: { name: "Armor Breaking", value: 25, percent: true, subtract: true },
+				ex4: { name: "Armor Breaking", value: 0.5, percent: true, multiply: true },
 			}
 		},
 	]

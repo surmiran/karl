@@ -333,8 +333,7 @@ export default {
 			text: "Same power but in a smaller package giving slightly better accuracay and letting you fit a few more rounds in each mag.",
 			stats: {
 				clip: { name: "Magazine Size", value: 5 },
-				/* todo: calc x0.8 */
-				ex3: { name: "Base Spread", value: 20, percent: true, subtract: true },
+				ex3: { name: "Base Spread", value: 0.8, percent: true, multiply: true },
 			}
 		},
 		{
@@ -377,8 +376,7 @@ export default {
 			stats: {
 				ex1: { name: "Electric Damage", value: 2 },
 				rate: { name: "Rate of Fire", value: 4 },
-				/* todo: calc x1.5 */
-				ex3: { name: "Base Spread", value: 50, percent: true },
+				ex3: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
 			}
 		},
 		{

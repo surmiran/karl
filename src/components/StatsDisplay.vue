@@ -209,18 +209,39 @@
 		// loop trough upgradesForStat and calculate
 		// if multiply is true, put in temp array and loop trough all multiplications in the end, after normal calc is done
 		let upgradesToMultiply = [];
+
+		let modifiedValue = stat.value;
+		let originalValue = stat.value;
+		let statsPrecision = precisionCalc(modifiedValue);
+		let basePrecision = precisionCalc(originalValue);
+		let precision;
+
 		for (let upgrade of upgradesForStat) {
+			let upgradePrecision = precisionCalc(upgrade.value);
+			let precisionTemp = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
+			precision = basePrecision > precisionTemp ? basePrecision : precisionTemp;
+
 			if (upgrade.multiply) {
 				upgradesToMultiply.push(upgrade)
 			} else {
 				// calculation here
+				if (upgrade.subtract) {
+					modifiedValue = (parseFloat(modifiedValue) - parseFloat(upgradesForStat.value)).toFixed(precision);
+				} else {
+					modifiedValue = (parseFloat(modifiedValue) + parseFloat(upgradesForStat.value)).toFixed(precision);
+				}
 			}
 		}
 		if (upgradesToMultiply.length > 0) {
 			for (let upgrade of upgradesToMultiply) {
 				// calculation here
+				modifiedValue = modifiedValue * upgrade.value
 			}
 		}
+		modifiedValue = (parseFloat(modifiedValue)).toFixed(precision);
+		let difference = modifiedValue - originalValue;
+		stat.modifier = `${difference < 0 ? "" : "+"}${difference}${stat.percent ? "%" : ""}`;
+		stat.modified = true;
 		return stat
 	};
 
@@ -255,7 +276,7 @@
 				let upgradesForStat = upgradesForEachStat.get(stat)
 				console.log("update this stat", stat)
 				console.log("with upgrades", upgradesForStat)
-				let upgradedStats = calculateUpgradesForStat(stat, upgradesForStat)
+				let upgradedStats = calculateUpgradesForStat(baseStats[stat], upgradesForStat)
 			}
 		}
 

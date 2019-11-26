@@ -1,7 +1,7 @@
 export default {
 	selected: true,
 	modified: false,
-	name: '"Lead Storm" Powered Minigun',
+	name: "\"Lead Storm\" Powered Minigun",
 	class: "Heavy Weapon",
 	icon: "equipment.G_P1_Lead",
 	baseStats: {
@@ -20,7 +20,10 @@ export default {
 		ex8: { name: "Critical Overheat", value: 0, boolean: true },
 		ex9: { name: "Heat Removed on Kill", value: 0, boolean: true },
 		ex10: { name: "Hot Bullets", value: 0, percent: true },
-		ex12: { name: "Movement Speed While Using", value: 50, percent: true }
+		ex12: { name: "Movement Speed While Using", value: 50, percent: true },
+		ex13: { name: "Burning Hell", value: 0, boolean: true },
+		ex14: { name: "Heat Generation", value: 100, percent: true },
+		ex15: { name: "Ricochet chance on bullets", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -313,5 +316,156 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "A Little More Oomph!",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "clean",
+			cost: {
+				credits: 8700,
+				bismor: 120,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 95,
+				umanite: 75,
+				err: 0
+			},
+			text: "Get the most out of each shot without compromising any of the gun's systems. ",
+			stats: {
+				dmg: { name: "Damage", value: 1 },
+				ex1: { name: "Spinup Time", value: 0.2, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Thinned Drum Walls ",
+			icon: "Icon_Upgrade_TemperatureCoolDown",
+			type: "clean",
+			cost: {
+				credits: 7650,
+				bismor: 0,
+				croppa: 75,
+				enorPearl: 125,
+				jadiz: 95,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Stuff more bullets into the ammo drum by thinning the material in non-critical areas. ",
+			stats: {
+				ammo: { name: "Max Ammo", value: 300 },
+				reload: { name: "Cooling Rate", value: 0.5 }
+			}
+		},
+		{
+			selected: false,
+			name: "Burning Hell",
+			icon: "Icon_Upgrade_Heat",
+			type: "balanced",
+			cost: {
+				credits: 8700,
+				bismor: 0,
+				croppa: 110,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 140,
+				umanite: 65,
+				err: 0
+			},
+			text: "Turn the area just infront of the minigun into an even worse place by venting all the combustion gasses forward. However, it does overheat rather quickly. ",
+			stats: {
+				ex13: { name: "Burning Hell", value: 1, boolean: true },
+				ex14: { name: "Heat Generation", value: 150, percent: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Compact Feed Mechanism",
+			icon: "Icon_Upgrade_Ammo",
+			type: "balanced",
+			cost: {
+				credits: 7450,
+				bismor: 70,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 130,
+				umanite: 0,
+				err: 0
+			},
+			text: "More space left for ammo at the cost of a reduced rate of fire.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 800 },
+				rate: { name: "Rate of Fire", value: 4, subtract: true }
+			}
+		},
+		/* todo: cost */
+		{
+			selected: false,
+			name: "Exhaust Vectoring",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "balanced",
+			cost: {
+				credits: 0,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Increases damage at a cost to accuracy.",
+			stats: {
+				dmg: { name: "Damage", value: 2 },
+				ex3: { name: "Base Spread", value: 2.5, percent: true, multiply: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Bullet Hell",
+			icon: "Icon_Upgrade_Ricoshet",
+			type: "unstable",
+			cost: {
+				credits: 7600,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 105,
+				jadiz: 0,
+				magnite: 140,
+				umanite: 75,
+				err: 0
+			},
+			text: "Special bullets that ricochet off all surfaces and even enemies going on to hit nearby targets. However they deal less damage and are less accurate overall.",
+			stats: {
+				dmg: { name: "Damage", value: 3, subtract: true },
+				ex3: { name: "Base Spread", value: 6, percent: true, multiply: true },
+				ex15: { name: "Ricochet chance on bullets", value: 50, percent: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Lead Storm ",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 8800,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 130,
+				jadiz: 100,
+				magnite: 65,
+				umanite: 0,
+				err: 0
+			},
+			text: "Special bullets that ricochet off all surfaces and even enemies going on to hit nearby targets. However they deal less damage and are less accurate overall.",
+			stats: {
+				dmg: { name: "Damage", value: 5 },
+				ex12: { name: "Movement Speed While Using", value: 0, percent: true, multiply: true }
+			}
+		}
 	]
 };

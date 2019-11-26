@@ -18,7 +18,7 @@ export default {
 		ex6: { name: "Stun Chance", value: 0, percent: true },
 		ex7: { name: "Proximity Trigger", value: 0, boolean: true },
 		ex8: { name: "Direct Damage", value: 0 },
-		ex9: { name: "Randomized Damage", value: 0, boolean: true }
+		ex10: { name: "RJ250 Compound", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -190,17 +190,14 @@ export default {
 			}
 		],
 		[
-			/* todo: random icon */
 			{
 				selected: false,
 				name: "Homebrew Explosive",
-				icon: "Icon_Upgrade_AreaDamage",
+				icon: "Icon_Overclock_ChangeOfHigherDamage",
 				type: "Randomized Damage",
 				text: "More damage on average but it's a bit inconsistent with a spread from 80% to 140%",
 				stats: {
-					/* todo - sunday: in dps calc, if this is enabled, calc dps * 1.1 */
-					/* Homebrew explosive doesn't increase DPS but should -> dps *1.1 */
-					ex9: { name: "Randomized Damage", value: 1, boolean: true }
+					dmg: { name: "Area Damage", value: 1.1, multiply: true },
 				},
 				cost: {
 					credits: 3800,
@@ -259,7 +256,7 @@ export default {
 			{
 				selected: false,
 				name: "Proximity Trigger",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
 					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100%",
@@ -298,5 +295,137 @@ export default {
 				}
 			}
 		]
+	],
+	/* todo: hyper propellant overclock changed with update 26 */
+	overclocks: [
+		{
+			selected: false,
+			name: "Clean Sweep",
+			icon: "Icon_Upgrade_Area",
+			type: "clean",
+			cost: {
+				credits: 8100,
+				bismor: 105,
+				croppa: 0,
+				enorPearl: 70,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 135,
+				err: 0
+			},
+			text: "Increases the explosion radius and damage without any unwanted effects.",
+			stats: {
+				dmg: { name: "Area Damage", value: 10 },
+				ex1: { name: "Effect Radius", value: 0.5 },
+			}
+		},
+		{
+			selected: false,
+			name: "Pack Rat",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 7950,
+				bismor: 80,
+				croppa: 0,
+				enorPearl: 105,
+				jadiz: 0,
+				magnite: 120,
+				umanite: 0,
+				err: 0
+			},
+			text: "You found a way to pack away two more rounds somewhere",
+			stats: {
+				ammo: { name: "Max Ammo", value: 2 },
+			}
+		},
+		{
+			selected: false,
+			name: "Compact Rounds",
+			icon: "Icon_Upgrade_Ammo",
+			type: "balanced",
+			cost: {
+				credits: 7900,
+				bismor: 120,
+				croppa: 0,
+				enorPearl: 100,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 70,
+				err: 0
+			},
+			text: "Smaller and lighter rounds means more rounds in the pocket at the cost of the explosion's effective radius and damage",
+			stats: {
+				ammo: { name: "Max Ammo", value: 4 },
+				dmg: { name: "Area Damage", value: 10, subtract: true },
+				ex1: { name: "Effect Radius", value: 0.5, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "RJ250 Compound",
+			icon: "Icon_Overclock_ExplosionJump",
+			type: "balanced",
+			cost: {
+				credits: 8800,
+				bismor: 65,
+				croppa: 0,
+				enorPearl: 110,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 120,
+				err: 0
+			},
+			text: "Trade raw damage for the ability to use explosions to move yourself and your teammates.",
+			stats: {
+				ex10: { name: "RJ250 Compound", value: 1, boolean: true },
+				dmg: { name: "Area Damage", value: 25, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Fat Boy",
+			icon: "Icon_Upgrade_AreaDamage",
+			type: "unstable",
+			cost: {
+				credits: 8300,
+				bismor: 120,
+				croppa: 0,
+				enorPearl: 70,
+				jadiz: 0,
+				magnite: 105,
+				umanite: 0,
+				err: 0
+			},
+			text: "Big and deadly and dirty. Too bad plutonium is so heavy that you can only take a few rounds with you. And remember to take care with the fallout.",
+			stats: {
+				dmg: { name: "Area Damage", value: 330 },
+				ex1: { name: "Effect Radius", value: 1 },
+				ammo: { name: "Max Ammo", value: 0.3, multiply: true },
+				ex4: { name: "Projectile Velocity", value: 0.7, percent: true, multiply: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Hyper Propellant",
+			icon: "Icon_Upgrade_ProjectileSpeed",
+			type: "unstable",
+			cost: {
+				credits: 8950,
+				bismor: 0,
+				croppa: 90,
+				enorPearl: 0,
+				jadiz: 70,
+				magnite: 130,
+				umanite: 0,
+				err: 0
+			},
+			text: "New super-high velocity projectiles trade explosive range for raw damage in a tight area. The larger rounds also limit the total amount you can carry.",
+			stats: {
+				ex8: { name: "Direct Damage", value: 250 },
+				ex4: { name: "Projectile Velocity", value: 350, percent: true },
+				ex1: { name: "Effect Radius", value: 0.3, multiply: true },
+			}
+		},
 	]
 };

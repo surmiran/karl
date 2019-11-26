@@ -1,7 +1,7 @@
 export default {
 	selected: false,
 	modified: false,
-	name: '"Thunderhead" Heavy Autocannon',
+	name: "\"Thunderhead\" Heavy Autocannon",
 	class: "Heavy Weapon",
 	icon: "equipment.G_P2_Thunder",
 	baseStats: {
@@ -18,7 +18,8 @@ export default {
 		ex6: { name: "Movement Speed While Using", value: 50, percent: true },
 		ex7: { name: "Full RoF Damage Bonus", value: 0, percent: true },
 		ex8: { name: "Impact Fear AoE", value: 0 },
-		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true }
+		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true },
+		ex10: { name: "Neurotoxin Payload (20% chance)", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -48,7 +49,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
 					reload: { name: "Reload Time", value: 1, subtract: true }
 				},
@@ -317,5 +318,137 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Composite Drums",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 7850,
+				bismor: 0,
+				croppa: 135,
+				enorPearl: 70,
+				jadiz: 0,
+				magnite: 105,
+				umanite: 0,
+				err: 0
+			},
+			text: "Lighter weight materials means you can carry even more ammo!",
+			stats: {
+				ammo: { name: "Max Ammo", value: 110 },
+				reload: { name: "Reload Time", value: 0.5, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Splintering Shells",
+			icon: "Icon_Upgrade_Area",
+			type: "clean",
+			cost: {
+				credits: 7300,
+				bismor: 0,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 125,
+				magnite: 65,
+				umanite: 0,
+				err: 0
+			},
+			text: "Specially designed shells splinter into smaller pieces increasing the splash damage range. ",
+			stats: {
+				ex1: { name: "Area Damage", value: 1 },
+				ex2: { name: "Effect Radius", value: 0.3 }
+			}
+		},
+		{
+			selected: false,
+			name: "Carpet Bomber",
+			icon: "Icon_Upgrade_AreaDamage",
+			type: "balanced",
+			cost: {
+				credits: 7350,
+				bismor: 0,
+				croppa: 120,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 105,
+				umanite: 70,
+				err: 0
+			},
+			text: "A few tweaks here and there and the autocannon can now shoot HE rounds! Direct damage is lower but the increased splash damage and range lets you saturate and area like no other weapon can. ",
+			stats: {
+				ex1: { name: "Area Damage", value: 6 },
+				ex2: { name: "Effect Radius", value: 1 },
+				dmg: { name: "Damage", value: 6, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Combat Mobility ",
+			icon: "Icon_Upgrade_MovementSpeed",
+			type: "balanced",
+			cost: {
+				credits: 7650,
+				bismor: 0,
+				croppa: 70,
+				enorPearl: 0,
+				jadiz: 120,
+				magnite: 95,
+				umanite: 0,
+				err: 0
+			},
+			text: "A slight reduction in the power of the rounds permits using a smaller chamber and a light-weight backplate with in turn allows extensive weight redistribution. The end result is a weapon that still packs a punch but is easier to handle on the move. ",
+			stats: {
+				ex6: { name: "Movement Speed While Using", value: 15, percent: true },
+				dmg: { name: "Damage", value: 2, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Big Bertha",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 8400,
+				bismor: 125,
+				croppa: 105,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 80,
+				err: 0
+			},
+			text: "Extensive tweaks give a huge bump in raw damage at the cost of ammo capacity and fire rate. ",
+			stats: {
+				dmg: { name: "Damage", value: 12 },
+				clip: { name: "Magazine Size", value: 55, subtract: true },
+				ammo: { name: "Max Ammo", value: 110, subtract: true },
+				rate: { name: "Rate of Fire", value: 1.375, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Neurotoxin Payload",
+			icon: "Icon_Overclock_Neuro",
+			type: "unstable",
+			cost: {
+				credits: 8100,
+				bismor: 0,
+				croppa: 100,
+				enorPearl: 0,
+				jadiz: 75,
+				magnite: 135,
+				umanite: 0,
+				err: 0
+			},
+			text: "Channel your inner war criminal by mixing some neurotoxin into the explosive compound. The rounds deal less direct damage and splash damage, but affected bugs move slower and take lots of damage over time.",
+			stats: {
+				ex10: { name: "Neurotoxin Payload (20% chance)", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 6, subtract: true },
+				ex1: { name: "Area Damage", value: 6, subtract: true }
+			}
+		}
 	]
 };

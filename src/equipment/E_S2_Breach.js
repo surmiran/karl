@@ -16,7 +16,12 @@ export default {
 		ex4: { name: "Armor Breaking", value: 50, percent: true },
 		ex5: { name: "Explosive Goodbye", value: 0, boolean: true },
 		ex6: { name: "There can be only one", value: 0, boolean: true },
-		ex7: { name: "Double Split Line", value: 0, boolean: true }
+		ex7: { name: "Double Split Line", value: 0, boolean: true },
+		ex8: { name: "Roll Control", value: 0, boolean: true },
+		ex9: { name: "Return to Sender", value: 0, boolean: true },
+		ex10: { name: "Yaw Man", value: 0, boolean: true },
+		ex11: { name: "High Voltage Crossover", value: 0, boolean: true },
+		ex12: { name: "Inferno", value: 0, boolean: true },
 	},
 	/* todo, check if plasma expansion duration is correct */
 	mods: [
@@ -210,7 +215,7 @@ export default {
 			{
 				selected: false,
 				name: "Quick Deploy",
-				icon: "Icon_Upgrade_ChargeUp",
+				icon: "Icon_Upgrade_Duration",
 				type: "Charge Speed",
 				text: "The line projectile opens almost immediately and can hit multiple targets at very close range.",
 				stats: {
@@ -291,5 +296,157 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Light-Weight Cases",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 8700,
+				bismor: 130,
+				croppa: 100,
+				enorPearl: 0,
+				jadiz: 80,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Bring more ammo with you and slam those cases in faster!",
+			stats: {
+				ammo: { name: "Max Ammo", value: 4 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Roll Control",
+			icon: "Icon_Overclock_Spinning_Linecutter",
+			type: "clean",
+			cost: {
+				credits: 8150,
+				bismor: 0,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 80,
+				umanite: 135,
+				err: 0
+			},
+			text: "A few tweaks to the launcher cause it to add roll to the projectile as it is ejected. Holding down the trigger after the line leaves the gun activates a remote connection with on the release of the trigger causes the line to stop rolling.",
+			stats: {
+				ex8: { name: "Roll Control", value: 1, boolean: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Stronger Plasma Current",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "clean",
+			cost: {
+				credits: 8650,
+				bismor: 0,
+				croppa: 100,
+				enorPearl: 0,
+				jadiz: 140,
+				magnite: 75,
+				umanite: 0,
+				err: 0
+			},
+			text: "By improving the node's efficiency you can up the raw damage without too much fuss and it lasts a bit longer too!",
+			stats: {
+				dmg: { name: "Damage", value: 1 },
+				ex1: { name: "Projectile Lifetime", value: 0.5 },
+			}
+		},
+		{
+			selected: false,
+			name: "Return to Sender",
+			icon: "Icon_Overclock_ForthAndBack_Linecutter",
+			type: "balanced",
+			cost: {
+				credits: 7950,
+				bismor: 140,
+				croppa: 0,
+				enorPearl: 100,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 80,
+				err: 0
+			},
+			text: "Holding down the trigger after line leaves the gun activates a remote connection with on the release of the trigger causes the line to change direction and move back towards the gun.",
+			stats: {
+				ex9: { name: "Return to Sender", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+				ammo: { name: "Max Ammo", value: 4, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Yaw Man",
+			icon: "Icon_Upgrade_Special",
+			type: "balanced",
+			cost: {
+				credits: 7300,
+				bismor: 75,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 120,
+				err: 0
+			},
+			text: "Through a bias of the release energy the line is released with a yaw spin. Due to repeat intersections, the spinning line will on average cause more damage than a static beam, especially to larger targets. However the tweaks have a negative impact on the weapons rate of fire.",
+			stats: {
+				ex10: { name: "Yaw Man", value: 0, boolean: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "High Voltage Crossover",
+			icon: "Icon_Upgrade_Electricity",
+			type: "unstable",
+			cost: {
+				credits: 8250,
+				bismor: 120,
+				croppa: 0,
+				enorPearl: 80,
+				jadiz: 0,
+				magnite: 100,
+				umanite: 0,
+				err: 0
+			},
+			text: "By passing an electric current through the plasma, the beam electrocutes anything it touches but at the cost of raw damage and the bulky hardware limits magazine capacity.",
+			stats: {
+				ex11: { name: "High Voltage Crossover", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+				clip: { name: "Magazine Size", value: 1, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Inferno",
+			icon: "Icon_Upgrade_Heat",
+			type: "unstable",
+			cost: {
+				credits: 7550,
+				bismor: 0,
+				croppa: 70,
+				enorPearl: 0,
+				jadiz: 90,
+				magnite: 135,
+				umanite: 0,
+				err: 0
+			},
+			text: "",
+			stats: {
+				ex12: { name: "Inferno", value: 1, boolean: true },
+				ammo: { name: "Max Ammo", value: 4, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true },
+				ex4: { name: "Armor Breaking", value: 0.5, percent: true, multiply: true },
+			}
+		},
 	]
 };

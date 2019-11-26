@@ -18,7 +18,10 @@ export default {
 		ex4: { name: "Armor Breaking", value: 100, percent: true },
 		ex6: { name: "Auto Reload", value: 0, boolean: true },
 		ex7: { name: "Proximity Fear Chance", value: 0, percent: true },
-		ex8: { name: "Damage % as Fire", value: 0, percent: true }
+		ex8: { name: "Damage % as Fire", value: 0, percent: true },
+		ex10: { name: "Double Barrel", value: 0, boolean: true },
+		ex11: { name: "Shotgun Jump", value: 0, boolean: true },
+		ex12: { name: "Base Spread", value: 100, percent: true },
 	},
 	mods: [
 		[
@@ -297,5 +300,133 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Compact Shells",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 8550,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 100,
+				magnite: 65,
+				umanite: 120,
+				err: 0
+			},
+			text: "You can carry a few more of these compact shells in your pockets and they are a bit faster to reload with.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 6 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Double Barrel",
+			icon: "Icon_Upgrade_FireRate",
+			type: "clean",
+			cost: {
+				credits: 7950,
+				bismor: 0,
+				croppa: 100,
+				enorPearl: 75,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 125,
+				err: 0
+			},
+			text: "Unload both barrels at once, no regrets.",
+			stats: {
+				ex10: { name: "Double Barrel", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 1 },
+			}
+		},
+		{
+			selected: false,
+			name: "Special Powder",
+			icon: "Icon_Overclock_ShotgunJump",
+			type: "clean",
+			cost: {
+				credits: 7050,
+				bismor: 95,
+				croppa: 125,
+				enorPearl: 65,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Less like gunpowder and more like rocketfuel, this mixture gives a hell of a kick that you can use to get places.",
+			stats: {
+				ex11: { name: "Shotgun Jump", value: 1, boolean: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Stuffed Shells",
+			icon: "Icon_Upgrade_Shotgun_Pellet",
+			type: "clean",
+			cost: {
+				credits: 7850,
+				bismor: 100,
+				croppa: 0,
+				enorPearl: 135,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 80,
+				err: 0
+			},
+			text: "With a bit of patience and some luck you can get one more pellet and a few more grains of powder into each shell without affecting the gun's performance or losing an eye in the process.",
+			stats: {
+				dmg: { name: "Damage", value: 1 },
+				ex1: { name: "Pellets", value: 1 },
+			}
+		},
+		{
+			selected: false,
+			name: "Shaped Shells",
+			icon: "Icon_Upgrade_Aim",
+			type: "balanced",
+			cost: {
+				credits: 7700,
+				bismor: 95,
+				croppa: 0,
+				enorPearl: 70,
+				jadiz: 135,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Specially shaped shells result in a tighter shot but the number of pellets is reduced.",
+			stats: {
+				ex12: { name: "Base Spread", value: 35, percent: true, subtract: true },
+				ex1: { name: "Pellets", value: 2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Jumbo Shells",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 8800,
+				bismor: 65,
+				croppa: 0,
+				enorPearl: 105,
+				jadiz: 125,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "These large shells pack a lot more charge for a big increase in damage but they also take up more space so total ammo is limited.",
+			stats: {
+				dmg: { name: "Damage", value: 8 },
+				ammo: { name: "Max Ammo", value: 10, subtract: true },
+				reload: { name: "Reload Time", value: 0.5 },
+			}
+		},
 	]
 };

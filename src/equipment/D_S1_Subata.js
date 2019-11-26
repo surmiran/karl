@@ -14,7 +14,12 @@ export default {
 		ex2: { name: "Base Spread", value: 100, percent: true },
 		ex3: { name: "Spread Per Shot", value: 100, percent: true },
 		ex4: { name: "Bonus Fire Damage to Burning Targets", value: 0, percent: true },
-		ex5: { name: "Damage Vs Mactera", value: 0, percent: true }
+		ex5: { name: "Damage Vs Mactera", value: 0, percent: true },
+		ex6: { name: "Weakpoint Chain Hit Chance", value: 0, percent: true },
+		ex7: { name: "Randomized Damage", value: 0, boolean: true },
+		ex8: { name: "Full Auto", value: 0, boolean: true },
+		ex9: { name: "Explosive Reload", value: 0, boolean: true },
+		ex10: { name: "Stun Chance", value: 0, percent: true },
 	},
 	mods: [
 		[
@@ -251,7 +256,7 @@ export default {
 			{
 				selected: false,
 				name: "Mactera Toxin-Coating",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text: "Bonus damage against Mactera aliens",
 				stats: {
@@ -269,5 +274,136 @@ export default {
 				}
 			}
 		]
+	],
+	/* todo: automatic fire overclock changed with update 26 */
+	overclocks: [
+		{
+			selected: false,
+			name: "Chain Hit",
+			icon: "Icon_Upgrade_Ricoshet",
+			type: "clean",
+			cost: {
+				credits: 7600,
+				bismor: 65,
+				croppa: 120,
+				enorPearl: 0,
+				jadiz: 100,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Any shot that hits a weakspot has a chance to ricochet into a nearby enemy.",
+			stats: {
+				ex6: { name: "Weakpoint Chain Hit Chance", value: 50, percent: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Homebrew Powder",
+			icon: "Icon_Overclock_ChangeOfHigherDamage",
+			type: "clean",
+			cost: {
+				credits: 7150,
+				bismor: 135,
+				croppa: 100,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 70,
+				umanite: 0,
+				err: 0
+			},
+			text: "More damage on average but it's a bit inconsistent.",
+			stats: {
+				ex7: { name: "Randomized Damage", value: 1, boolean: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Oversized Magazine",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "balanced",
+			cost: {
+				credits: 9000,
+				bismor: 70,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 110,
+				magnite: 0,
+				umanite: 130,
+				err: 0
+			},
+			text: "Custom magazine that can fit a lot more ammo but it's a bit unwieldy and takes longer to reload.",
+			stats: {
+				clip: { name: "Magazine Size", value: 10 },
+				reload: { name: "Reload Time", value: 0.5 },
+			}
+		},
+		{
+			selected: false,
+			name: "Automatic Fire",
+			icon: "Icon_Upgrade_FireRate",
+			type: "unstable",
+			cost: {
+				credits: 7400,
+				bismor: 95,
+				croppa: 65,
+				enorPearl: 120,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Fully automatic action, watch out for the recoil.",
+			stats: {
+				ex8: { name: "Full Auto", value: 1, boolean: true },
+				rate: { name: "Rate of Fire", value: 1.0 },
+				ex2: { name: "Base Spread", value: 100, percent: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Explosive Reload",
+			icon: "Icon_Overclock_Special_Magazine",
+			type: "unstable",
+			cost: {
+				credits: 8100,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 95,
+				jadiz: 0,
+				magnite: 65,
+				umanite: 125,
+				err: 0
+			},
+			text: "Micro-explosives that explode inside hit targets when you reload. However these fancy bullets come at the cost of raw damage, total ammo, and magazine capacity.",
+			stats: {
+				ex9: { name: "Explosive Reload", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+				ammo: { name: "Max Ammo", value: 40, subtract: true },
+				clip: { name: "Magazine Size", value: 3, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Tranquilizer Rounds",
+			icon: "Icon_Upgrade_Stun",
+			type: "unstable",
+			cost: {
+				credits: 7150,
+				bismor: 0,
+				croppa: 75,
+				enorPearl: 0,
+				jadiz: 135,
+				magnite: 0,
+				umanite: 75,
+				err: 0
+			},
+			text: "Part bullet, part syringe these rounds are very effective at stunning most enemies.",
+			stats: {
+				ex10: { name: "Stun Chance", value: 50, percent: true },
+				clip: { name: "Magazine Size", value: 4, subtract: true },
+				rate: { name: "Rate of Fire", value: 4.0, subtract: true },
+			}
+		},
 	]
 };

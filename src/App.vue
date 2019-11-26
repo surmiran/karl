@@ -1,14 +1,14 @@
 <template>
 	<div id="app" class="app">
 		<div class="classSelectContainer">
-			<ClassSelect :classId="'D'" :name="'Driller'" />
-			<ClassSelect :classId="'E'" :name="'Engineer'" />
-			<ClassSelect :classId="'G'" :name="'Gunner'" />
-			<ClassSelect :classId="'S'" :name="'Scout'" />
-			<ClassSelect :classId="'R'" :name="'Robots'" />
+			<ClassSelect :classId="'D'" :name="'Driller'"/>
+			<ClassSelect :classId="'E'" :name="'Engineer'"/>
+			<ClassSelect :classId="'G'" :name="'Gunner'"/>
+			<ClassSelect :classId="'S'" :name="'Scout'"/>
+			<ClassSelect :classId="'R'" :name="'Robots'"/>
 			<div class="linkArea" v-on:click="getLink()">
 				<label for="idCopyTextArea" class="linkText">Generate</label>
-				<input id="idCopyTextArea" class="copyTextArea" disabled />
+				<input id="idCopyTextArea" class="copyTextArea" disabled/>
 			</div>
 			<!--upload configuration for management approval-->
 			<!--todo: use https://sharingbuttons.io/ ?-->
@@ -17,374 +17,374 @@
 			<!-- todo: autoscroll on equipment -->
 			<div v-if="selectedClass === 'D'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in drillerEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'D'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in drillerEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'D'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'E'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in engineerEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'E'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in engineerEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'E'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'G'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in gunnerEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'G'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in gunnerEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'G'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'S'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in scoutEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'S'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in scoutEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'S'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'R'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in robotEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'R'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in robotEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'R'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 		</div>
 		<div class="mainContainer">
-			<StatsDisplay />
-			<ModificationSelect />
+			<StatsDisplay/>
+			<ModificationSelect/>
 		</div>
 		<p class="versionNumber">KARL v1.4.6 Based on DRG v0.25.31827.0</p><!-- todo: check ingame version -->
 	</div>
 </template>
 
 <script>
-import ClassSelect from "./components/ClassSelect.vue";
-import EquipmentSelect from "./components/EquipmentSelect.vue";
-import ModificationSelect from "./components/ModificationSelect.vue";
-import StatsDisplay from "./components/StatsDisplay.vue";
-import store from "./store";
-import Lzs from "lz-string";
+	import ClassSelect from "./components/ClassSelect.vue";
+	import EquipmentSelect from "./components/EquipmentSelect.vue";
+	import ModificationSelect from "./components/ModificationSelect.vue";
+	import StatsDisplay from "./components/StatsDisplay.vue";
+	import store from "./store";
+	import Lzs from "lz-string";
 
-let toastOptions = {
-	theme: "bubble",
-	position: "top-center",
-	duration: 3000
-};
+	let toastOptions = {
+		theme: "bubble",
+		position: "top-center",
+		duration: 3000
+	};
 
-export default {
-	name: "app",
-	components: {
-		ClassSelect,
-		EquipmentSelect,
-		ModificationSelect,
-		StatsDisplay
-	},
-	computed: {
-		svg() {
-			return store.state.testJS;
+	export default {
+		name: "app",
+		components: {
+			ClassSelect,
+			EquipmentSelect,
+			ModificationSelect,
+			StatsDisplay
 		},
-		selectedClass() {
-			return store.state.selected.class;
+		computed: {
+			svg() {
+				return store.state.testJS;
+			},
+			selectedClass() {
+				return store.state.selected.class;
+			},
+			drillerEquipment() {
+				return store.state.tree.D;
+			},
+			engineerEquipment() {
+				return store.state.tree.E;
+			},
+			gunnerEquipment() {
+				return store.state.tree.G;
+			},
+			scoutEquipment() {
+				return store.state.tree.S;
+			},
+			robotEquipment() {
+				return store.state.tree.R;
+			},
+			classes() {
+				return store.state.tree;
+			}
 		},
-		drillerEquipment() {
-			return store.state.tree.D;
-		},
-		engineerEquipment() {
-			return store.state.tree.E;
-		},
-		gunnerEquipment() {
-			return store.state.tree.G;
-		},
-		scoutEquipment() {
-			return store.state.tree.S;
-		},
-		robotEquipment() {
-			return store.state.tree.R;
-		},
-		classes() {
-			return store.state.tree;
-		}
-	},
-	methods: {
-		getLink() {
-			let dataParts = store.state.dataParts;
-			let classInFocus = store.state.selected.class;
-			let equipmentInFocus = store.state.selected.equipment;
-			dataParts[classInFocus][equipmentInFocus].push("focus");
-			let parts = JSON.stringify(dataParts);
-			let uri = `https://surmiran.github.io/karl/?=${Lzs.compressToEncodedURIComponent(parts)}`;
-			let copyTextarea = document.getElementById("idCopyTextArea");
-			copyTextarea.disabled = false;
-			copyTextarea.value = uri;
-			copyTextarea.focus();
-			copyTextarea.select();
-			try {
-				let successful = document.execCommand("copy");
+		methods: {
+			getLink() {
+				let dataParts = store.state.dataParts;
+				let classInFocus = store.state.selected.class;
+				let equipmentInFocus = store.state.selected.equipment;
+				dataParts[classInFocus][equipmentInFocus].push("focus");
+				let parts = JSON.stringify(dataParts);
+				let uri = `https://surmiran.github.io/karl/?=${Lzs.compressToEncodedURIComponent(parts)}`;
+				let copyTextarea = document.getElementById("idCopyTextArea");
+				copyTextarea.disabled = false;
+				copyTextarea.value = uri;
+				copyTextarea.focus();
+				copyTextarea.select();
+				try {
+					let successful = document.execCommand("copy");
 
-				if (successful) {
-					this.$toasted.show("Loadout was sent to management for approval (copied to clipboard)", toastOptions);
-				} else {
-					this.$toasted.show("I can't feel my beard!", toastOptions);
+					if (successful) {
+						this.$toasted.show("Loadout was sent to management for approval (copied to clipboard)", toastOptions);
+					} else {
+						this.$toasted.show("I can't feel my beard!", toastOptions);
+					}
+				} catch (err) {
+					this.$toasted.show("By the beard! Copying to clipboard was not successful", toastOptions);
 				}
-			} catch (err) {
-				this.$toasted.show("By the beard! Copying to clipboard was not successful", toastOptions);
+				copyTextarea.disabled = true;
 			}
-			copyTextarea.disabled = true;
-		}
-	},
-	mounted: function() {
-		let dataString = window.location.search.substr(2);
+		},
+		mounted: function() {
+			let dataString = window.location.search.substr(2);
 
-		if (dataString) {
-			try {
-				let parts = JSON.parse(Lzs.decompressFromEncodedURIComponent(dataString));
-				this.$toasted.show("For Karl!", toastOptions);
-				store.commit("loadFromLink", parts);
-			} catch (err) {
-				this.$toasted.show("Management is unhappy about the shared link.", toastOptions);
-				console.log(err);
+			if (dataString) {
+				try {
+					let parts = JSON.parse(Lzs.decompressFromEncodedURIComponent(dataString));
+					this.$toasted.show("For Karl!", toastOptions);
+					store.commit("loadFromLink", parts);
+				} catch (err) {
+					this.$toasted.show("Management is unhappy about the shared link.", toastOptions);
+					console.log(err);
+				}
 			}
-		}
 
-		this.$nextTick(function() {
-			// Code that will run only after the
-			// entire view has been rendered
-		});
-	}
-};
+			this.$nextTick(function() {
+				// Code that will run only after the
+				// entire view has been rendered
+			});
+		}
+	};
 </script>
 
 <style>
-/*todo: only three different font sizes!*/
-/*todo: web fonts*/
+	/*todo: only three different font sizes!*/
+	/*todo: web fonts*/
 
-html {
-	height: 100%;
-}
+	html {
+		height: 100%;
+	}
 
-body {
-	display: flex;
-	justify-content: center;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#322c20+0,5f5137+100 */
-	background: #322c20; /* Old browsers */
-	background-repeat: no-repeat;
-	background: -moz-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, #322c20 0%, #5f5137 100%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#322c20', endColorstr='#5f5137', GradientType=1); /* IE6-9 fallback on horizontal gradient */
-	height: 100%;
-}
+	body {
+		display: flex;
+		justify-content: center;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#322c20+0,5f5137+100 */
+		background: #322c20; /* Old browsers */
+		background-repeat: no-repeat;
+		background: -moz-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg, #322c20 0%, #5f5137 100%) fixed; /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, #322c20 0%, #5f5137 100%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#322c20', endColorstr='#5f5137', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+		height: 100%;
+	}
 
-h2 {
-	color: #fffbff;
-}
-
-#app {
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	margin-top: 60px;
-	width: 1000px;
-}
-
-/*todo: semi transparent backgrounds!*/
-
-.versionNumber {
-	font-size: 0.7rem;
-	color: rgba(255, 251, 255, 0.2);
-}
-
-.mainContainer {
-	display: flex;
-	flex-wrap: wrap;
-	/*height: 5rem;*/
-}
-
-.toasted.bubble {
-	background-color: #fc9e00 !important;
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
-	padding-top: 0.5rem !important;
-	padding-bottom: 0.5rem !important;
-	padding-left: 1rem !important;
-	padding-right: 1rem !important;
-}
-
-.linkArea {
-	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 10rem;
-	margin-left: auto;
-}
-
-.linkText {
-	cursor: pointer;
-	color: #fc9e00;
-}
-
-.copyTextArea {
-	cursor: pointer;
-	width: 80%;
-}
-
-.allCaps {
-	text-transform: uppercase;
-}
-
-.defaultBackground {
-	background-color: rgba(0, 0, 0, 0.2);
-}
-
-.equipment {
-	background-color: #5b402d;
-	color: #352e1e;
-}
-
-.equipmentActive {
-	background-color: #fc9e00;
-	color: #352e1e;
-}
-
-.equipmentIcon {
-	fill: #ada195;
-}
-
-.equipmentIconActive {
-	fill: #fffbff;
-}
-
-.equipmentText {
-	padding-left: 0.5rem;
-	padding-right: 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: #352e1e;
-	color: #ada195;
-}
-
-.equipmentTextActive {
-	padding-left: 0.5rem;
-	padding-right: 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: #010103;
-	color: #fffbff;
-}
-
-.classSelectContainer {
-	display: flex;
-	flex-wrap: wrap;
-	border-top: 5px solid #fc9e00;
-	background-color: #352e1e;
-	margin-bottom: 0.5rem;
-}
-
-.equipmentSelectContainer {
-	display: flex;
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
-	border-top: 5px solid #fc9e00;
-	background-color: #352e1e;
-	margin-bottom: 0.5rem;
-}
-
-.equipmentText:hover {
-	color: #fffbff;
-}
-
-.costList {
-	display: flex;
-	flex-wrap: wrap;
-	color: #fffbff;
-}
-
-.costListItem {
-	display: flex;
-	align-items: center;
-}
-
-.costListItem > img {
-	padding-right: 0.2rem;
-}
-
-.costListItem > span {
-	padding-right: 0.6rem;
-}
-
-@media (max-width: 1024px) {
 	h2 {
-		font-size: 1.2rem;
+		color: #fffbff;
 	}
 
 	#app {
-		width: 95vw;
+		font-family: "Avenir", Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		margin-top: 60px;
+		width: 1000px;
+	}
+
+	/*todo: semi transparent backgrounds!*/
+
+	.versionNumber {
+		font-size: 0.7rem;
+		color: rgba(255, 251, 255, 0.2);
+	}
+
+	.mainContainer {
+		display: flex;
+		flex-wrap: wrap;
+		/*height: 5rem;*/
+	}
+
+	.toasted.bubble {
+		background-color: #fc9e00 !important;
+		font-family: "Avenir", Helvetica, Arial, sans-serif;
+		padding-top: 0.5rem !important;
+		padding-bottom: 0.5rem !important;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
 	}
 
 	.linkArea {
-		width: 5rem;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 10rem;
+		margin-left: auto;
 	}
-}
 
-::-webkit-scrollbar-button {
-	display: none;
-	height: 12px;
-	border-radius: 0px;
-	background-color: #aaa;
-}
+	.linkText {
+		cursor: pointer;
+		color: #fc9e00;
+	}
 
-::-webkit-scrollbar-button:hover {
-	background-color: #aaa;
-}
+	.copyTextArea {
+		cursor: pointer;
+		width: 80%;
+	}
 
-::-webkit-scrollbar-thumb {
-	background-color: #fc9e00;
-	border-radius: 0px;
-}
+	.allCaps {
+		text-transform: uppercase;
+	}
 
-::-webkit-scrollbar-thumb:hover {
-	background-color: #ffffff;
-	border-radius: 0px;
-}
+	.defaultBackground {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
 
-::-webkit-scrollbar-track {
-	background-color: #352e1e;
-	border-radius: 0px;
-}
+	.equipment {
+		background-color: #5b402d;
+		color: #352e1e;
+	}
 
-::-webkit-scrollbar-track:hover {
-	background-color: #352e1e;
-	border-radius: 0px;
-}
+	.equipmentActive {
+		background-color: #fc9e00;
+		color: #352e1e;
+	}
 
-::-webkit-scrollbar {
-	width: 12px;
-	height: 12px;
-}
+	.equipmentIcon {
+		fill: #ada195;
+	}
+
+	.equipmentIconActive {
+		fill: #fffbff;
+	}
+
+	.equipmentText {
+		padding-left: 0.5rem;
+		padding-right: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #352e1e;
+		color: #ada195;
+	}
+
+	.equipmentTextActive {
+		padding-left: 0.5rem;
+		padding-right: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #010103;
+		color: #fffbff;
+	}
+
+	.classSelectContainer {
+		display: flex;
+		flex-wrap: wrap;
+		border-top: 5px solid #fc9e00;
+		background-color: #352e1e;
+		margin-bottom: 0.5rem;
+	}
+
+	.equipmentSelectContainer {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border-top: 5px solid #fc9e00;
+		background-color: #352e1e;
+		margin-bottom: 0.5rem;
+	}
+
+	.equipmentText:hover {
+		color: #fffbff;
+	}
+
+	.costList {
+		display: flex;
+		flex-wrap: wrap;
+		color: #fffbff;
+	}
+
+	.costListItem {
+		display: flex;
+		align-items: center;
+	}
+
+	.costListItem > img {
+		padding-right: 0.2rem;
+	}
+
+	.costListItem > span {
+		padding-right: 0.6rem;
+	}
+
+	@media (max-width: 1024px) {
+		h2 {
+			font-size: 1.2rem;
+		}
+
+		#app {
+			width: 95vw;
+		}
+
+		.linkArea {
+			width: 5rem;
+		}
+	}
+
+	::-webkit-scrollbar-button {
+		display: none;
+		height: 12px;
+		border-radius: 0px;
+		background-color: #aaa;
+	}
+
+	::-webkit-scrollbar-button:hover {
+		background-color: #aaa;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #fc9e00;
+		border-radius: 0px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: #ffffff;
+		border-radius: 0px;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: #352e1e;
+		border-radius: 0px;
+	}
+
+	::-webkit-scrollbar-track:hover {
+		background-color: #352e1e;
+		border-radius: 0px;
+	}
+
+	::-webkit-scrollbar {
+		width: 12px;
+		height: 12px;
+	}
 </style>

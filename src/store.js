@@ -115,6 +115,15 @@ import Icon_Upgrade_Light_Intensity from "./assets/mods/Icon_Upgrade_Light_Inten
 import Icon_Upgrade_Special from "./assets/mods/Icon_Upgrade_Special.js";
 import Icon_Upgrade_StrongerTurret from "./assets/mods/Icon_Upgrade_StrongerTurret.js";
 import Icon_Upgrade_TwoTurrets from "./assets/mods/Icon_Upgrade_TwoTurrets.js";
+import Icon_Overclock_ChangeOfHigherDamage from "./assets/mods/Icon_Overclock_ChangeOfHigherDamage.js";
+import Icon_Overclock_ExplosionJump from "./assets/mods/Icon_Overclock_ExplosionJump.js";
+import Icon_Overclock_ForthAndBack_Linecutter from "./assets/mods/Icon_Overclock_ForthAndBack_Linecutter.js";
+import Icon_Overclock_Neuro from "./assets/mods/Icon_Overclock_Neuro.js";
+import Icon_Overclock_ShotgunJump from "./assets/mods/Icon_Overclock_ShotgunJump.js";
+import Icon_Overclock_Slowdown from "./assets/mods/Icon_Overclock_Slowdown.js";
+import Icon_Overclock_SmallBullets from "./assets/mods/Icon_Overclock_SmallBullets.js";
+import Icon_Overclock_Special_Magazine from "./assets/mods/Icon_Overclock_Special_Magazine.js";
+import Icon_Overclock_Spinning_Linecutter from "./assets/mods/Icon_Overclock_Spinning_Linecutter.js";
 
 Vue.use(Vuex);
 
@@ -213,7 +222,16 @@ export default new Vuex.Store({
 				Icon_Upgrade_Light_Intensity: Icon_Upgrade_Light_Intensity,
 				Icon_Upgrade_Special: Icon_Upgrade_Special,
 				Icon_Upgrade_StrongerTurret: Icon_Upgrade_StrongerTurret,
-				Icon_Upgrade_TwoTurrets: Icon_Upgrade_TwoTurrets
+				Icon_Upgrade_TwoTurrets: Icon_Upgrade_TwoTurrets,
+				Icon_Overclock_ChangeOfHigherDamage: Icon_Overclock_ChangeOfHigherDamage,
+				Icon_Overclock_ExplosionJump: Icon_Overclock_ExplosionJump,
+				Icon_Overclock_ForthAndBack_Linecutter: Icon_Overclock_ForthAndBack_Linecutter,
+				Icon_Overclock_Neuro: Icon_Overclock_Neuro,
+				Icon_Overclock_ShotgunJump: Icon_Overclock_ShotgunJump,
+				Icon_Overclock_Slowdown: Icon_Overclock_Slowdown,
+				Icon_Overclock_SmallBullets: Icon_Overclock_SmallBullets,
+				Icon_Overclock_Special_Magazine: Icon_Overclock_Special_Magazine,
+				Icon_Overclock_Spinning_Linecutter: Icon_Overclock_Spinning_Linecutter,
 			}
 		},
 		tree: {
@@ -296,31 +314,64 @@ export default new Vuex.Store({
 
 			state.tree[indizes.classID][indizes.equipID].modified = true;
 			// set state
-			return (state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID].selected = true);
+			if (indizes.tierID === "overclock") {
+				state.dataParts[indizes.classID][indizes.equipID][5] = indizes.modID;
+				return (state.tree[indizes.classID][indizes.equipID].overclocks[indizes.modID].selected = true);
+			} else {
+				return (state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID].selected = true);
+			}
 		},
 		deSelectOtherModifications: (state, indizes) => {
-			let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
-			let modIdClicked = parseInt(indizes.modID);
-			for (let mod in tierOfModification) {
-				let modIdInLoop = parseInt(mod);
-				if (modIdInLoop !== modIdClicked) {
-					state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+			if (indizes.tierID === "overclock") {
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].overclocks;
+				let modIdClicked = parseInt(indizes.modID);
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					if (modIdInLoop !== modIdClicked) {
+						state.tree[indizes.classID][indizes.equipID].overclocks[modIdInLoop].selected = false;
+					}
+				}
+			} else {
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
+				let modIdClicked = parseInt(indizes.modID);
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					if (modIdInLoop !== modIdClicked) {
+						state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+					}
 				}
 			}
 		},
 		deSelectAllModifications: (state, indizes) => {
-			// keep track in url
-			state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = undefined;
+			if (indizes.tierID === "overclock") {
+				// keep track in url
+				state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = undefined;
 
-			// set state
-			let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
-			for (let mod in tierOfModification) {
-				let modIdInLoop = parseInt(mod);
-				state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+				// set state
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].overclocks;
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					state.tree[indizes.classID][indizes.equipID].overclocks[modIdInLoop].selected = false;
+				}
+			} else {
+				// keep track in url
+				state.dataParts[indizes.classID][indizes.equipID][indizes.tierID] = undefined;
+
+				// set state
+				let tierOfModification = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID];
+				for (let mod in tierOfModification) {
+					let modIdInLoop = parseInt(mod);
+					state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][modIdInLoop].selected = false;
+				}
 			}
+
 		},
 		addToHovered: (state, indizes) => {
-			state.hovered = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID];
+			if (indizes.tierID === "overclock") {
+				state.hovered = state.tree[indizes.classID][indizes.equipID].overclocks[indizes.modID];
+			} else {
+				state.hovered = state.tree[indizes.classID][indizes.equipID].mods[indizes.tierID][indizes.modID];
+			}
 
 			let hoveredStatKey = Object.keys(state.hovered.stats)[0];
 			let hoveredStat = state.hovered.stats[hoveredStatKey];
@@ -331,7 +382,9 @@ export default new Vuex.Store({
 			}
 			state.hovered.increase = increase;
 		},
+		/* todo: save and load selected overclock! */
 		loadFromLink: (state, data) => {
+			console.log("data from link", data)
 			state.dataParts = data;
 
 			for (let [classId, equipments] of Object.entries(data)) {
@@ -339,7 +392,15 @@ export default new Vuex.Store({
 					state.tree[classId][equipmentId].modified = true;
 					for (let tierId in mods) {
 						if (parseInt(mods[tierId]) >= 0) {
-							state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
+							console.log("tierId",tierId)
+							console.log("mods[tierId]",mods[tierId])
+							if (state.tree[classId][equipmentId].mods[tierId]) {
+								state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
+							} else {
+								console.log("overclock selected")
+								/* todo: selected overclock does not show.. */
+								state.tree[classId][equipmentId].overclocks[mods[tierId]].selected = true;
+							}
 						} else if (mods[tierId] === "focus") {
 							state.selected.class = classId;
 							state.selected.equipment = equipmentId;
@@ -349,6 +410,8 @@ export default new Vuex.Store({
 							// focus
 						}
 					}
+					console.log("mods", mods)
+					console.log("equipmentId", equipmentId)
 				}
 			}
 		}

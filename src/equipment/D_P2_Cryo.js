@@ -15,7 +15,9 @@ export default {
 		ex4: { name: "Pressure Gain Rate", value: 100, percent: true },
 		ex5: { name: "Frozen Targets can Shatter", value: 0, boolean: true },
 		ex6: { name: "Area Cold Damage", value: 0, boolean: true },
-		ex7: { name: "Flow Rate", value: 100, percent: true }
+		ex7: { name: "Flow Rate", value: 100, percent: true },
+		ex8: { name: "Ice Spear", value: 0, boolean: true },
+		ex9: { name: "Snowball (50 ammo max)", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -284,7 +286,7 @@ export default {
 			{
 				selected: false,
 				name: "Fragile",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Explosion",
 				type: "Special",
 				text: "Frozen targets can spontaniously shatter",
 				stats: {
@@ -322,5 +324,136 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Improved Thermal Efficiency",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "clean",
+			cost: {
+				credits: 8350,
+				bismor: 0,
+				croppa: 125,
+				enorPearl: 70,
+				jadiz: 0,
+				magnite: 110,
+				umanite: 0,
+				err: 0
+			},
+			text: "Get all you can from your fuel and lose pressure slower from the main chamber.",
+			stats: {
+				clip: { name: "Tank Capacity", value: 25 },
+				ex3: { name: "Pressure Drop Rate", value: 25, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Perfectly Tuned Cooler",
+			icon: "Icon_Upgrade_Cold",
+			type: "clean",
+			cost: {
+				credits: 8750,
+				bismor: 110,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 65,
+				umanite: 130,
+				err: 0
+			},
+			text: "Freeze things faster, no strings attached.",
+			stats: {
+				ex2: { name: "Freezing Power", value: 1 },
+				ex7: { name: "Flow Rate", value: 10, percent: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Flow Rate Expansion",
+			icon: "Icon_Upgrade_Duration",
+			type: "balanced",
+			cost: {
+				credits: 8900,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 70,
+				jadiz: 100 ,
+				magnite: 125,
+				umanite: 0,
+				err: 0
+			},
+			text: "A low volume high pressure chamber paired with a high power pump improve the overall function rate of the weapon but lower the max duration of sustained flow.",
+			stats: {
+				ex3: { name: "Pressure Drop Rate", value: 125, percent: true },
+				ex4: { name: "Pressure Gain Rate", value: 170, percent: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Ice Spear",
+			icon: "Icon_Upgrade_ProjectileSpeed",
+			type: "balanced",
+			cost: {
+				credits: 8950,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 60,
+				jadiz: 130,
+				magnite: 0,
+				umanite: 110,
+				err: 0
+			},
+			text: "Pressing the reload button dumps all the fluid in the chamber directly into the turbine, flash freezing it and launching an ice projectile. Side effects include an increased recharge delay and of course the large amount of fuel used.",
+			stats: {
+				reload: { name: "Repressurization Delay", value: 1 },
+				ex8: { name: "Ice Spear", value: 1, boolean: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Ice Storm",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 7200,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 130,
+				jadiz: 0,
+				magnite: 105,
+				umanite: 75,
+				err: 0
+			},
+			text: "A change in the fuel mixture along with some heavy cooler unit tweaks means that you'll be doing less freezing and more killing with razor-sharp ice shards. However, the capacity of the pressure chamber suffers.",
+			stats: {
+				dmg: { name: "Damage", value: 8 },
+				ex7: { name: "Flow Rate", value: 10, percent: true },
+				ex2: { name: "Freezing Power", value: 3, subtract: true },
+				ex3: { name: "Pressure Drop Rate", value: 100, percent: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Snowball",
+			icon: "Icon_Upgrade_Area",
+			type: "unstable",
+			cost: {
+				credits: 8400,
+				bismor: 0,
+				croppa: 70,
+				enorPearl: 0,
+				jadiz: 90,
+				magnite: 0,
+				umanite: 130,
+				err: 0
+			},
+			text: "Pressing the reload button shoots all the cryofuel in the chamber at once as an AoE cryo-projectile. Besides the very large amount of fuel consumed the operation overloads the whole system resulting in a much longer delay before regaining pressure and the modifications restrict the total amount of fuel you can carry.",
+			stats: {
+				clip: { name: "Tank Capacity", value: 50, subtract: true },
+				reload: { name: "Repressurization Delay", value: 2 },
+				ex9: { name: "Snowball (50 ammo max)", value: 1, boolean: true },
+			}
+		},
 	]
 };

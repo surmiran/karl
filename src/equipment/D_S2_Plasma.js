@@ -1,4 +1,5 @@
 export default {
+	/* todo: function for stat and dps calc directly in this object */
 	selected: false,
 	modified: false,
 	name: "Experimental Plasma Charger",
@@ -13,14 +14,16 @@ export default {
 		ex2: { name: "Charged Area Damage", value: 60 },
 		ex3: { name: "Charged Effect Radius", value: 2 },
 		ex4: { name: "Charged Shot Ammo Use", value: 8 },
-		ex5: { name: "Charge Speed", value: 100, percent: true },
+		ex5: { name: "Charge Speed", value: 0.8 },
 		ex6: { name: "Heat Buildup When Charged", value: 100, percent: true },
 		ex7: { name: "Normal Projectile Velocity", value: 100, percent: true },
 		/*ex8: { name: "Heat when Charging", value: 0 },*/
+		ex8: { name: "Thin Containment Field", value: 0, boolean: true },
 		ex9: { name: "Flying Nightmare", value: 0, boolean: true },
 		ex10: { name: "No Charged Shot Insta-Overheat", value: 0, boolean: true },
-		ex12: { name: "Thin Containment Field", value: 0, boolean: true },
-		ex11: { name: "Projectile Bounces", value: 0, boolean: true }
+		ex11: { name: "Projectile Bounces", value: 0, boolean: true },
+		ex12: { name: "Normal Shot Heat", value: 100, percent: true },
+		ex13: { name: "Persistent Plasma", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -175,7 +178,7 @@ export default {
 				type: "Charge Speed",
 				text: "Prepare a charged shot much faster.",
 				stats: {
-					ex5: { name: "Charge Speed", value: 200, percent: true }
+					ex5: { name: "Charge Speed", value: 1.6 }
 				},
 				cost: {
 					credits: 2200,
@@ -257,12 +260,13 @@ export default {
 			{
 				selected: false,
 				name: "Flying Nightmare",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text: "The charged projectile deals damage to nearby enemies while it flies but takes longer to charge up.",
 				stats: {
 					ex9: { name: "Flying Nightmare", value: 1, boolean: true },
-					ex5: { name: "Charge Speed", value: 30, percent: true, subtract: true }
+					ex5: { name: "Charge Speed", value: 0.8, multiply: true }
+					/* todo: check charge speed mod value */
 				},
 				cost: {
 					credits: 4400,
@@ -278,13 +282,13 @@ export default {
 			{
 				selected: false,
 				name: "Thin Containment Field",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
 					"A weaker containment field takes less energy to create thus producing less heat for Charged Shots. Be aware that any high-energy impact will destabilize the Charged Projectile causing a large area implosion.",
 				stats: {
 					ex10: { name: "No Charged Shot Insta-Overheat", value: 1, boolean: true },
-					ex12: { name: "Thin Containment Field", value: 1, boolean: true }
+					ex8: { name: "Thin Containment Field", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -319,5 +323,137 @@ export default {
 				}
 			}
 		]
+	],
+	/* todo: heavy hitter overclock changed with update 26 */
+	overclocks: [
+		{
+			selected: false,
+			name: "Energy Rerouting",
+			icon: "Icon_Upgrade_ChargeUp",
+			type: "clean",
+			cost: {
+				credits: 7300,
+				bismor: 130,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 100,
+				magnite: 0,
+				umanite: 65,
+				err: 0
+			},
+			text: "A masterwork of engineering that improves charge speed and energy efficiency without affecting overall performance!",
+			stats: {
+				clip: { name: "Battery Capacity", value: 16 },
+				ex5: { name: "Charge Speed", value: 0.4 },
+			}
+		},
+		{
+			selected: false,
+			name: "Magnetic Cooling Unit",
+			icon: "Icon_Upgrade_TemperatureCoolDown",
+			type: "clean",
+			cost: {
+				credits: 8900,
+				bismor: 0,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 80,
+				magnite: 0,
+				umanite: 125,
+				err: 0
+			},
+			text: "A high-tech solution to Cleanly improve the cooling rate increasing the number of slots that can be fired before overheating and also the speed of recovery from an overheat as well as how long a charge can be held.",
+			stats: {
+				reload: { name: "Cooling Rate", value: 25, percent: true },
+				ex6: { name: "Heat Buildup When Charged", value: 30, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Heat Pipe",
+			icon: "Icon_Upgrade_Fuel",
+			type: "balanced",
+			cost: {
+				credits: 7450,
+				bismor: 60,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 95,
+				magnite: 0,
+				umanite: 125,
+				err: 0
+			},
+			text: "By channeling exhaust heat back into the charge chamber a shot can be charged using less energy. This does however make the weapon less efficient at dissipating heat.",
+			stats: {
+				ex4: { name: "Charged Shot Ammo Use", value: 2, subtract: true },
+				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Heavy Hitter",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "balanced",
+			cost: {
+				credits: 8100,
+				bismor: 140,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 60,
+				umanite: 105,
+				err: 0
+			},
+			text: "Some extensive tweaking to how the shots are prepared can increase the pure damage of the weapon but at the cost of a lower projectile velocity and a reduced battery size.",
+			stats: {
+				dmg: { name: "Damage", value: 5 },
+				clip: { name: "Battery Capacity", value: 16, subtract: true },
+				ex12: { name: "Normal Shot Heat", value: 50, percent: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Overcharger",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 7050,
+				bismor: 120,
+				croppa: 95,
+				enorPearl: 60,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Pushing the EPC to the limit will give you a significant increase in charge shot damage but at the heavy cost of slow charge speed and decreased cooling efficiency.",
+			stats: {
+				ex1: { name: "Charged Damage", value: 40 },
+				ex5: { name: "Charge Speed", value: 0.8, subtract: true },
+				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true  },
+			}
+		},
+		{
+			selected: false,
+			name: "Persistent Plasma",
+			icon: "Icon_Upgrade_Duration",
+			type: "unstable",
+			cost: {
+				credits: 8150,
+				bismor: 0,
+				croppa: 75,
+				enorPearl: 0,
+				jadiz: 130,
+				magnite: 95,
+				umanite: 0,
+				err: 0
+			},
+			text: "By changing how the plasma is layered within the charged projectile a slow and persistent discharge can be achieved upon impact. However this does reduce the instance damage done.",
+			stats: {
+				ex13: { name: "Persistent Plasma", value: 1, boolean: true },
+				ex1: { name: "Charged Damage", value: 20, subtract: true },
+				ex2: { name: "Charged Area Damage", value: 20, subtract: true },
+			}
+		}
 	]
-};
+}

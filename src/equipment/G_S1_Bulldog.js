@@ -1,7 +1,7 @@
 export default {
 	selected: false,
 	modified: false,
-	name: '"Bulldog" Heavy Revolver',
+	name: "\"Bulldog\" Heavy Revolver",
 	class: "Revolver",
 	icon: "equipment.G_S1_Bulldog",
 	baseStats: {
@@ -19,7 +19,9 @@ export default {
 		ex9: { name: "Effect Radius", value: 0 },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Dead-Eye", value: 0, boolean: true },
-		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true }
+		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true },
+		ex11: { name: "Ricochet chance on bullets", value: 0, percent: true },
+		ex12: { name: "Magic Bullets", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -29,7 +31,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
 					reload: { name: "Reload Time", value: 0.4, subtract: true }
 				},
@@ -257,11 +259,10 @@ export default {
 					err: 0
 				}
 			},
-			/* todo: neurotoxin icon */
 			{
 				selected: false,
 				name: "Neurotoxin Coating",
-				icon: "Icon_Upgrade_Shot",
+				icon: "Icon_Upgrade_Special",
 				type: "Neurotoxin",
 				text: "Chance to poison your target. Affected creatures move slower and take damage over time.",
 				stats: {
@@ -279,5 +280,135 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Homebrew Powder",
+			icon: "Icon_Overclock_ChangeOfHigherDamage",
+			type: "clean",
+			cost: {
+				credits: 7350,
+				bismor: 0,
+				croppa: 135,
+				enorPearl: 105,
+				jadiz: 0,
+				magnite: 70,
+				umanite: 0,
+				err: 0
+			},
+			text: "More damage on average but it's a bit inconsistent. ",
+			stats: {
+				dmg: { name: "Damage", value: 1.1, multiply: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Lucky Bullets",
+			icon: "Icon_Upgrade_Ricoshet",
+			type: "clean",
+			cost: {
+				credits: 7300,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 80,
+				jadiz: 110,
+				magnite: 120,
+				umanite: 0,
+				err: 0
+			},
+			text: "Missed shots have a chance to ricochet and hit nearby enemies, but there is a pissed-off one-legged rabbit out there somewhere looking for you. ",
+			stats: {
+				ex11: { name: "Ricochet chance on bullets", value: 33, percent: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Feather Trigger",
+			icon: "Icon_Upgrade_FireRate",
+			type: "balanced",
+			cost: {
+				credits: 7350,
+				bismor: 0,
+				croppa: 130,
+				enorPearl: 0,
+				jadiz: 110,
+				magnite: 60,
+				umanite: 0,
+				err: 0
+			},
+			text: "Less weight means you can squeeze out more bullets faster than you can say \"Recoil\" but the stability of the weapon is reduced. ",
+			stats: {
+				rate: { name: "Rate of Fire", value: 4 },
+				ex1: { name: "Base Spread", value: 150, percent: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Five Shooter",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "balanced",
+			cost: {
+				credits: 7750,
+				bismor: 120,
+				croppa: 60,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 100,
+				umanite: 0,
+				err: 0
+			},
+			text: "An updated casing profile lets you squeeze one more round into the cylinder and increases the maximum rate of fire, but all that filling and drilling has compromised the pure damage output of the weapon. ",
+			stats: {
+				clip: { name: "Magazine Size", value: 1 },
+				rate: { name: "Rate of Fire", value: 1 },
+				dmg: { name: "Damage", value: 10, subtract: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Elephant Rounds",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 7300,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 140,
+				jadiz: 0,
+				magnite: 90,
+				umanite: 65,
+				err: 0
+			},
+			text: "Heavy tweaking has made it possible to use modified autocannon rounds in the revolver! The damage is crazy but so is the recoil and you can't carry very many rounds. ",
+			stats: {
+				dmg: { name: "Damage", value: 2, multiply: true },
+				ammo: { name: "Max Ammo", value: 12, subtract: true },
+				ex1: { name: "Base Spread", value: 150, percent: true },
+				ex2: { name: "Spread Per Shot", value: 100, percent: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Magic Bullets",
+			icon: "Icon_Upgrade_Ricoshet",
+			type: "unstable",
+			cost: {
+				credits: 8750,
+				bismor: 0,
+				croppa: 105,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 130,
+				umanite: 75,
+				err: 0
+			},
+			text: "Smaller bouncy bullets ricochet off hard surfaces and hit nearby enemies like magic and you can carry a few more due to their compact size. However the overall damage of the weapon is reduced. ",
+			stats: {
+				ex12: { name: "Magic Bullets", value: 1, boolean: true },
+				ammo: { name: "Max Ammo", value: 8 },
+				dmg: { name: "Damage", value: 20, subtract: true }
+			}
+		}
 	]
 };

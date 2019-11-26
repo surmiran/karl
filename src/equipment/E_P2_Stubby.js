@@ -15,7 +15,9 @@ export default {
 		ex3: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Damage vs Electrically Affected", value: 100, percent: true },
-		ex6: { name: "Electrocution AoE", value: 0, percent: true }
+		ex6: { name: "Electrocution AoE", value: 0, percent: true },
+		ex7: { name: "Turret Arc (10m range)", value: 0, boolean: true },
+		ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -311,5 +313,137 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Super-Slim Rounds",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "clean",
+			cost: {
+				credits: 8550,
+				bismor: 90,
+				croppa: 130,
+				enorPearl: 75,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Same power but in a smaller package giving slightly better accuracay and letting you fit a few more rounds in each mag.",
+			stats: {
+				clip: { name: "Magazine Size", value: 5 },
+				ex3: { name: "Base Spread", value: 0.8, percent: true, multiply: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Well Oiled Machine",
+			icon: "Icon_Upgrade_FireRate",
+			type: "clean",
+			cost: {
+				credits: 8400,
+				bismor: 0,
+				croppa: 65,
+				enorPearl: 0,
+				jadiz: 95,
+				magnite: 140,
+				umanite: 0,
+				err: 0
+			},
+			text: "When you need a little more sustained damage.",
+			stats: {
+				rate: { name: "Rate of Fire", value: 2 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "EM Refire Booster",
+			icon: "Icon_Upgrade_FireRate",
+			type: "balanced",
+			cost: {
+				credits: 8300,
+				bismor: 60,
+				croppa: 0,
+				enorPearl: 90,
+				jadiz: 135,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Use the electron circuit of the SMG to boost its fire rate and damage but the accuracy suffers as a result.",
+			stats: {
+				ex1: { name: "Electric Damage", value: 2 },
+				rate: { name: "Rate of Fire", value: 4 },
+				ex3: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Light-Weight Rounds",
+			icon: "Icon_Upgrade_Ammo",
+			type: "balanced",
+			cost: {
+				credits: 8700,
+				bismor: 90,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 65,
+				magnite: 0,
+				umanite: 135,
+				err: 0
+			},
+			text: "They don't hit quite as hard, and can't handle fast fire rates but you sure can carry a lot more of them!",
+			stats: {
+				ammo: { name: "Max Ammo", value: 180 },
+				dmg: { name: "Damage", value: 1, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Turret Arc",
+			icon: "Icon_Upgrade_Electricity",
+			type: "unstable",
+			cost: {
+				credits: 8350,
+				bismor: 100,
+				croppa: 135,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 60,
+				err: 0
+			},
+			text: "Use the gemini turrests as nodes in an electric arc. Zap! The downside is less ammo and a slower rate of fire.",
+			stats: {
+				ex7: { name: "Turret Arc (10m range)", value: 1, boolean: true },
+				ammo: { name: "Max Ammo", value: 120, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Turret EM Discharge",
+			icon: "Icon_Upgrade_AreaDamage",
+			type: "unstable",
+			cost: {
+				credits: 8450,
+				bismor: 80,
+				croppa: 0,
+				enorPearl: 105,
+				jadiz: 125,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Use a turret as the epicenter of an electric explosion! The bullet modifications unfortunately also lower the direct damage and electrocution chance.",
+			stats: {
+				ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
+				ex2: { name: "Electrocution %", value: 5, percent: true, subtract: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+			}
+		},
 	]
 };

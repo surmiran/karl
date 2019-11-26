@@ -5,21 +5,23 @@ export default {
 	class: "Semi-Automatic Rifle",
 	icon: "equipment.S_P2_M1000",
 	baseStats: {
-		dmg: { name: "Damage", value: 55 },
-		ammo: { name: "Max Ammo", value: 50 },
-		clip: { name: "Clip Size", value: 5 },
-		rate: { name: "Rate of Fire", value: 5.5 },
-		reload: { name: "Reload Time", value: 2.2 },
+		dmg: { name: "Damage", value: 50 },
+		ammo: { name: "Max Ammo", value: 96 },
+		clip: { name: "Clip Size", value: 8 },
+		rate: { name: "Rate of Fire", value: 4 },
+		reload: { name: "Reload Time", value: 2.5 },
 		ex1: { name: "Focus Speed", value: 100, percent: true },
-		ex2: { name: "Focused Shot Damage Bonus", value: 50, percent: true },
-		ex3: { name: "Spread Per Shot", value: 100, percent: true },
+		ex2: { name: "Focused Shot Damage Bonus", value: 100, percent: true },
+		ex3: { name: "Recoil", value: 100, percent: true },
 		ex4: { name: "Max Penetrations", value: 0 },
-		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex6: { name: "Armor Breaking", value: 100, percent: true },
+		ex5: { name: "Weakpoint Damage", value: 110, percent: true },
+		ex6: { name: "Armor Breaking", value: 30, percent: true },
 		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
 		ex9: { name: "Focus Shot Fear", value: 0, boolean: true },
 		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true },
-		ex10: { name: "Focus Shot Kill AoE Fear", value: 0, boolean: true }
+		ex10: { name: "Focus Shot Kill AoE Fear", value: 0, boolean: true },
+		ex11: { name: "Focus Shot Hover", value: 0, boolean: true },
+		ex12: { name: "Electrocuting Focus Shots", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -30,7 +32,7 @@ export default {
 				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					ammo: { name: "Max Ammo", value: 15 }
+					ammo: { name: "Max Ammo", value: 32 }
 				},
 				cost: {
 					credits: 1200,
@@ -68,7 +70,7 @@ export default {
 			{
 				selected: false,
 				name: "Fast-Charging Coils",
-				icon: "Icon_Upgrade_Accuracy",
+				icon: "Icon_Upgrade_ChargeUp",
 				type: "Accuracy",
 				text: "Focus faster when holding down the trigger.",
 				stats: {
@@ -86,6 +88,26 @@ export default {
 				}
 			},
 			{
+				selected: false,
+				name: "Better Weight Balance",
+				icon: "Icon_Upgrade_Recoil",
+				type: "Recoil",
+				text: "Improved hip-shot accuracy.",
+				stats: {
+					ex3: { name: "Recoil", value: 50, percent: true, subtract: true },
+				},
+				cost: {
+					credits: 2000,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 15,
+					jadiz: 24,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			/*{
 				selected: false,
 				name: "Extended Clip",
 				icon: "Icon_Upgrade_ClipSize",
@@ -113,7 +135,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Spread Per Shot", value: 56, percent: true, subtract: true }
+					ex3: { name: "Recoil", value: 56, percent: true, subtract: true },
 				},
 				cost: {
 					credits: 2000,
@@ -125,10 +147,10 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			}
+			}*/
 		],
 		[
-			{
+			/*{
 				selected: false,
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
@@ -147,7 +169,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			},*/
 			{
 				selected: false,
 				name: "Killer Focus",
@@ -155,7 +177,7 @@ export default {
 				type: "Damage",
 				text: "Greater focus damage bonus",
 				stats: {
-					ex2: { name: "Focused Shot Damage Bonus", value: 40, percent: true }
+					ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true }
 				},
 				cost: {
 					credits: 2800,
@@ -170,12 +192,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Oversized Clip",
+				name: "Extended Clip",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					clip: { name: "Clip Size", value: 2 }
+					clip: { name: "Clip Size", value: 6 }
 				},
 				cost: {
 					credits: 4800,
@@ -219,7 +241,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex5: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
+					ex5: { name: "Weakpoint Damage", value: 25, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -240,7 +262,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex6: { name: "Armor Breaking", value: 200, percent: true }
+					ex6: { name: "Armor Breaking", value: 220, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -294,7 +316,160 @@ export default {
 					umanite: 140,
 					err: 0
 				}
+			},
+			{
+				selected: false,
+				name: "Killing Machine",
+				icon: "Icon_Upgrade_Speed",
+				type: "Reload Speed",
+				text: "You can perform a lightning fast reload right after killing an enemy.",
+				stats: {
+					ex10: { name: "Focus Shot Kill AoE Fear", value: 1, boolean: true }
+				},
+				cost: {
+					credits: 5600,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 140,
+					jadiz: 0,
+					magnite: 70,
+					umanite: 64,
+					err: 0
+				}
 			}
 		]
+	],
+	/* todo: electrocuting focus shot overclock changed with update 26 */
+	overclocks: [
+		{
+			selected: false,
+			name: "Hoverclock",
+			icon: "Icon_Overclock_Slowdown",
+			type: "clean",
+			cost: {
+				credits: 7350,
+				bismor: 105,
+				croppa: 135,
+				enorPearl: 0,
+				jadiz: 65,
+				magnite: 0,
+				umanite: 0,
+				err: 0
+			},
+			text: "Your movement slows down for a few seconds while using focus mode in the air.",
+			stats: {
+				ex11: { name: "Focus Shot Hover", value: 1, boolean: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Minimal Clips",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 8200,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 95,
+				jadiz: 130,
+				magnite: 75,
+				umanite: 0,
+				err: 0
+			},
+			text: "Make space for more ammo and speed up reloads by getting rid of dead weight on the clips.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 16 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Active Stability System",
+			icon: "Icon_Upgrade_MovementSpeed",
+			type: "balanced",
+			cost: {
+				credits: 8150,
+				bismor: 90,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 70,
+				umanite: 135,
+				err: 0
+			},
+			text: "Focus without slowing down but the power drain from the coils lowers the power of the focused shots.",
+			stats: {
+				ex8: { name: "Focus Mode Movement Speed", value: 70, percent: true },
+				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
+			}
+		},
+		/* todo: check ingame if hipster + Better Weight Balance give 0% recoil. */
+		{
+			selected: false,
+			name: "Hipster",
+			icon: "Icon_Upgrade_Aim",
+			type: "balanced",
+			cost: {
+				credits: 8900,
+				bismor: 0,
+				croppa: 125,
+				enorPearl: 105,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 80,
+				err: 0
+			},
+			text: "A rebalancing of weight distribution, enlarged vents and a reshaped grip result in a rifle that is more controllable when hip-firing in quick succession but at the cost of pure damage output.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 72 },
+				rate: { name: "Rate of Fire", value: 3 },
+				ex3: { name: "Recoil", value: 50, percent: true, subtract: true },
+				dmg: { name: "Damage", value: 20, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Electrocuting Focus Shots",
+			icon: "Icon_Upgrade_Electricity",
+			type: "unstable",
+			cost: {
+				credits: 8850,
+				bismor: 120,
+				croppa: 95,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 75,
+				err: 0
+			},
+			text: "Embedded capacitors in a copper core carry the electric charge from the EM coils used for focus shots and will electrocute the target at the cost of a reduced focus shot damage bonus.",
+			stats: {
+				ex12: { name: "Electrocuting Focus Shots", value: 1, boolean: true },
+				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Supercooling Chamber",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "unstable",
+			cost: {
+				credits: 8500,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 90,
+				jadiz: 130,
+				magnite: 70,
+				umanite: 0,
+				err: 0
+			},
+			text: "Take the M1000'S focus mode to the extreme by supercooling the rounds before firing to improve their acceleration through the coils, but the extra coolant in the clips limits how much ammo you can bring.",
+			stats: {
+				ex2: { name: "Focused Shot Damage Bonus", value: 125, percent: true },
+				ammo: { name: "Max Ammo", value: 0.635, multiply: true },
+				ex1: { name: "Focus Speed", value: 0.5, percent: true, multiply: true },
+				ex8: { name: "Focus Mode Movement Speed", value: 0, percent: true, multiply: true },
+			}
+		},
 	]
 };

@@ -17,7 +17,8 @@ export default {
 		ex5: { name: "Armor Breaking", value: 70, percent: true },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
-		ex8: { name: "Burst Stun Duration", value: 0 }
+		ex8: { name: "Burst Stun Duration", value: 0 },
+		ex9: { name: "Electro Minelets", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -295,5 +296,159 @@ export default {
 				}
 			}
 		]
+	],
+	overclocks: [
+		{
+			selected: false,
+			name: "Composite Casings",
+			icon: "Icon_Upgrade_FireRate",
+			type: "clean",
+			cost: {
+				credits: 7950,
+				bismor: 0,
+				croppa: 140,
+				enorPearl: 75,
+				jadiz: 0,
+				magnite: 100,
+				umanite: 0,
+				err: 0
+			},
+			text: "Lighter rounds that permit a shorter delay between bursts and you can carry a few more of them as well. What's not to like?",
+			stats: {
+				ammo: { name: "Max Ammo", value: 36 },
+				rate: { name: "Rate of Fire", value: 1 },
+			}
+		},
+		{
+			selected: false,
+			name: "Full Chamber Seal",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "clean",
+			cost: {
+				credits: 7850,
+				bismor: 120,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 75,
+				magnite: 110,
+				umanite: 0,
+				err: 0
+			},
+			text: "Meticulous sealing lets you get a bit more power out of each round and the attention to detail improves how easily the magazine slots in.",
+			stats: {
+				dmg: { name: "Damage", value: 1 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Homebrew Powder",
+			icon: "Icon_Overclock_ChangeOfHigherDamage",
+			type: "clean",
+			cost: {
+				credits: 8050,
+				bismor: 125,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 75,
+				umanite: 105,
+				err: 0
+			},
+			text: "More damage on average but it's a bit inconsistent.",
+			stats: {
+				dmg: { name: "Damage", value: 1.1, multiply: true }
+			}
+		},
+		{
+			selected: false,
+			name: "Compact Mags",
+			icon: "Icon_Upgrade_Ammo",
+			type: "balanced",
+			cost: {
+				credits: 7350,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 75,
+				magnite: 135,
+				umanite: 105,
+				err: 0
+			},
+			text: "You can carry even more ammo but the rate of fire needs to be toned back to avoid a jam and please take more care while reloading.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 72 },
+				rate: { name: "Rate of Fire", value: 1, subtract: true },
+				reload: { name: "Reload Time", value: 0.4 },
+			}
+		},
+		{
+			selected: false,
+			name: "Experimental Rounds",
+			icon: "Icon_Upgrade_DamageGeneral",
+			type: "balanced",
+			cost: {
+				credits: 8550,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 100,
+				jadiz: 75,
+				magnite: 130,
+				umanite: 0,
+				err: 0
+			},
+			text: "A new shape to the bullet delivers a lot more damage but it's odd size means fewer rounds in the clip and a bit less ammo overall.",
+			stats: {
+				dmg: { name: "Damage", value: 5 },
+				ammo: { name: "Max Ammo", value: 36, subtract: true },
+				clip: { name: "Magazine Size", value: 6, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Electro Minelets",
+			icon: "Icon_Upgrade_Electricity",
+			type: "unstable",
+			cost: {
+				credits: 7450,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 80,
+				jadiz: 95,
+				magnite: 0,
+				umanite: 120,
+				err: 0
+			},
+			text: "After impacting terrain, these high-tech bullets convert in to electro-minelets that will electrocute anything unfortunate enough to come close. However they don't last forever and the rounds themselves take more space in the clip and deal less direct damage.",
+			stats: {
+				ex9: { name: "Electro Minelets", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
+				clip: { name: "Magazine Size", value: 6, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Micro Fletchettes",
+			icon: "Icon_Overclock_SmallBullets",
+			type: "unstable",
+			cost: {
+				credits: 7650,
+				bismor: 80,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 100,
+				magnite: 130,
+				umanite: 0,
+				err: 0
+			},
+			text: "Convert the BRT to fire small flechettes instead of slugs. Increases overall ammo and clip size as well as reducing recoil but at the cost of pure damage.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 144 },
+				clip: { name: "Magazine Size", value: 24 },
+				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
+				ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true },
+				dmg: { name: "Damage", value: 0.5, multiply: true },
+			}
+		},
 	]
 };

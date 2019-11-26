@@ -385,7 +385,7 @@ export default {
 		{
 			selected: false,
 			name: "Fat Boy",
-			icon: "Icon_Upgrade_Area_Damage",
+			icon: "Icon_Upgrade_AreaDamage",
 			type: "unstable",
 			cost: {
 				credits: 8300,

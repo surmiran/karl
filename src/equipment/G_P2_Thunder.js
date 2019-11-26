@@ -365,7 +365,7 @@ export default {
 		{
 			selected: false,
 			name: "Carpet Bomber",
-			icon: "Icon_Upgrade_Area_Damage",
+			icon: "Icon_Upgrade_AreaDamage",
 			type: "balanced",
 			cost: {
 				credits: 7350,

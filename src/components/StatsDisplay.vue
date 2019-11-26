@@ -163,7 +163,6 @@
 				let damageTime = timeToEmpty + dpsStats.reloadTime;
 				let magazineDamage = burstDamage * burstMagazine;
 				let damagePerSecond = magazineDamage / damageTime;
-				console.log(dpsStats);
 				return {
 					dps: parseFloat(damagePerSecond).toFixed(2),
 					dpb: burstDamage,
@@ -215,44 +214,46 @@
 		let basePrecision = precisionCalc(originalValue);
 		let precision;
 
-		for (let upgrade of upgradesForStat) {
-			let upgradePrecision = precisionCalc(upgrade.value);
+		for (let upgradeElement of upgradesForStat) {
+			let upgradePrecision = precisionCalc(upgradeElement.value);
 			let precisionTemp = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
 			precision = basePrecision > precisionTemp ? basePrecision : precisionTemp;
 
-			if (upgrade.multiply) {
-				upgradesToMultiply.push(upgrade);
+			if (upgradeElement.multiply) {
+				upgradesToMultiply.push(upgradeElement);
 			} else {
 				// calculation here
-				if (upgrade.subtract) {
-					modifiedValue = (parseFloat(modifiedValue) - parseFloat(upgradesForStat.value)).toFixed(precision);
+				if (upgradeElement.subtract) {
+					modifiedValue = (parseFloat(modifiedValue) - parseFloat(upgradeElement.value)).toFixed(precision);
 				} else {
-					modifiedValue = (parseFloat(modifiedValue) + parseFloat(upgradesForStat.value)).toFixed(precision);
+					modifiedValue = (parseFloat(modifiedValue) + parseFloat(upgradeElement.value)).toFixed(precision);
 				}
 			}
 		}
 		if (upgradesToMultiply.length > 0) {
-			for (let upgrade of upgradesToMultiply) {
+			console.log("multiplying", upgradesToMultiply);
+			for (let upgradetoMultiply of upgradesToMultiply) {
 				// calculation here
-				modifiedValue = modifiedValue * upgrade.value;
+				modifiedValue = (parseFloat(modifiedValue) * parseFloat(upgradetoMultiply.value)).toFixed(precision);
 			}
 		}
 		modifiedValue = (parseFloat(modifiedValue)).toFixed(precision);
-		let difference = modifiedValue - originalValue;
+		let difference = (parseFloat(modifiedValue) - parseFloat(originalValue)).toFixed(precision);
 		stat.modifier = `${difference < 0 ? "" : "+"}${difference}${stat.percent ? "%" : ""}`;
 		stat.modified = true;
+		stat.value = modifiedValue;
+		stat.baseValue = originalValue;
 		return stat;
 	};
 
 	const getModifiedStats = (baseStats, selectedUpgrades) => {
-		console.log("baseStats", baseStats);
-		console.log("selectedUpgrades", selectedUpgrades);
-
 		// loop trough all selected upgrades
 		let upgradesForEachStat = new Map();
+		let costs = [];
 		for (let upgrade of selectedUpgrades) {
+			costs.push(upgrade.cost);
+
 			// loop trough stats of upgrade
-			console.log("upgrade", upgrade);
 			for (let statKey in upgrade.stats) {
 				let statContent = upgrade.stats[statKey];
 				let tempContent = [];
@@ -260,22 +261,26 @@
 					tempContent = upgradesForEachStat.get(statKey);
 				}
 				tempContent.push(statContent);
-				upgradesForEachStat.set();
-				console.log("statKey", statKey);
-				console.log("statContent", statContent);
 				upgradesForEachStat.set(statKey, tempContent);
 			}
-			console.log("upgradesForEachStat", upgradesForEachStat);
 		}
 		// group all upgrades by stat
 		// loop trough groups and calculate new value for each stat
 		// return stats
+		let stats = [];
 		for (let stat in baseStats) {
+			let workingStat = Object.assign({}, baseStats[stat]);
 			if (upgradesForEachStat.has(stat)) {
 				let upgradesForStat = upgradesForEachStat.get(stat);
-				console.log("update this stat", stat);
-				console.log("with upgrades", upgradesForStat);
-				let upgradedStats = calculateUpgradesForStat(baseStats[stat], upgradesForStat);
+				let upgradedStat = calculateUpgradesForStat(workingStat, upgradesForStat);
+				stats.push(upgradedStat);
+			} else {
+				if (workingStat.value === 0) {
+					workingStat.inactive = true;
+				}
+				workingStat.baseValue = workingStat.value;
+				stats.push(workingStat);
+				console.log("this stat will not be upgraded");
 			}
 		}
 
@@ -289,8 +294,7 @@
 		...also
 		*/
 
-		let stats = {};
-		return stats;
+		return {stats: stats, costs: costs};
 	};
 
 	export default {
@@ -326,64 +330,11 @@
 					}
 				}
 
-				getModifiedStats(this.baseStats, aSelectedUpgrades);
-
-				/* todo: cleanup? dont mindlessly iterate over upgrades but iterate over stats and look for anything that would change them*/
-				/* todo: for each stat, iterate trough selected upgrades and look for upgrades to this stat, then walk trough these, adding/subtracting first, then multiplying
-				* in the end, calculate change value */
-				let costsArray = [];
-				let stats = Object.keys(this.baseStats).map(key => {
-					let upgradeForKey = aSelectedUpgrades.filter(element => {
-						return !!element.stats[key];
-					});
-					let modifiedStats = Object.assign({}, this.baseStats[key]);
-					modifiedStats.baseValue = modifiedStats.value;
-					if (upgradeForKey.length > 0) {
-						visible = true;
-
-						let modifier = {
-							value: 0
-						};
-						for (let upgrade of upgradeForKey) {
-							let upgradePrecision = precisionCalc(upgrade.stats[key].value);
-							let statsPrecision = precisionCalc(modifier.value);
-							let basePrecision = precisionCalc(modifiedStats.baseValue);
-							let precisionTemp = statsPrecision > upgradePrecision ? statsPrecision : upgradePrecision;
-							let precision = basePrecision > precisionTemp ? basePrecision : precisionTemp;
-
-							// todo: boolean values as (+) or ( ) instead of 1 and 0
-							if (upgrade.stats[key].subtract) {
-								modifier.value = modifier.value - upgrade.stats[key].value;
-								modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(
-									precision
-								);
-							} else if (upgrade.stats[key].multiply) {
-								modifier.value = modifier.value * upgrade.stats[key].value;
-								modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(
-									precision
-								);
-								console.log("multiply", modifier.value, upgrade.stats[key].value);
-								console.log("modified stats", modifiedStats);
-							} else {
-								modifier.value = modifier.value + upgrade.stats[key].value;
-								modifiedStats.value = (parseFloat(modifiedStats.value) + parseFloat(upgrade.stats[key].value)).toFixed(
-									precision
-								);
-							}
-
-							modifier.subtract = upgrade.stats[key].subtract;
-							modifier.percent = upgrade.stats[key].percent;
-							costsArray.push(upgrade.cost);
-						}
-						modifiedStats.modifier = `${modifier.subtract ? "" : "+"}${modifier.value}${modifier.percent ? "%" : ""}`;
-						modifiedStats.modified = true;
-					}
-					if (modifiedStats.value === 0) {
-						modifiedStats.inactive = true;
-					}
-					return modifiedStats;
-				});
-				console.log("stats modified", stats);
+				let results = getModifiedStats(this.baseStats, aSelectedUpgrades);
+				let stats = results.stats;
+				let costs = results.costs;
+				console.log("new Modified Stats", stats);
+				console.log("new Modified costs", costs);
 
 				let damage = null;
 				let specialEquipment = [
@@ -421,7 +372,7 @@
 					umanite: 0,
 					err: 0
 				};
-				for (let cost of costsArray) {
+				for (let cost of costs) {
 					totalCost.credits += cost.credits;
 					totalCost.bismor += cost.bismor;
 					totalCost.croppa += cost.croppa;
@@ -435,14 +386,14 @@
 					stats: stats,
 					cost: totalCost,
 					visible: visible,
-					dps: damage.dps,
-					dpsw: damage.dpsw,
-					dpb: damage.dpb,
-					dpm: damage.dpm,
-					dpmw: damage.dpmw,
-					dpa: damage.dpa,
-					dpaw: damage.dpaw,
-					ex1: damage.ex1
+					dps: damage.dps ? parseFloat(damage.dps).toFixed(0) : undefined,
+					dpsw: damage.dpsw ? parseFloat(damage.dpsw).toFixed(0) : undefined,
+					dpb: damage.dpb ? parseFloat(damage.dpb).toFixed(0) : undefined,
+					dpm: damage.dpm ? parseFloat(damage.dpm).toFixed(0) : undefined,
+					dpmw: damage.dpmw ? parseFloat(damage.dpmw).toFixed(0) : undefined,
+					dpa: damage.dpa ? parseFloat(damage.dpa).toFixed(0) : undefined,
+					dpaw: damage.dpaw ? parseFloat(damage.dpaw).toFixed(0) : undefined,
+					ex1: damage.ex1 ? parseFloat(damage.ex1).toFixed(0) : undefined
 				};
 			}
 		}

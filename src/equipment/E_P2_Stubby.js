@@ -426,7 +426,7 @@ export default {
 		{
 			selected: false,
 			name: "Turret EM Discharge",
-			icon: "Icon_Upgrade_Area_Damage",
+			icon: "Icon_Upgrade_AreaDamage",
 			type: "unstable",
 			cost: {
 				credits: 8450,

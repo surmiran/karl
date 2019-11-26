@@ -33,6 +33,7 @@
 				<div v-if="tier.length === 2" class="pseudoModDisplay"></div>
 			</div>
 		</div>
+		<!-- todo: only display if there are available overclocks! -->
 		<div class="overclockContainer">
 			<h2>Overclock</h2>
 			<div class="overclockDisplay">

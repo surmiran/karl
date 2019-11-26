@@ -1,7 +1,6 @@
 <template>
 	<div class="modSelection">
 		<h1 class="modSelectionTitle allCaps">Gear modifications</h1>
-		<!-- todo: see feat/overclocks -->
 		<div v-for="(tier, tierId) in availableMods" :key="tierId" class="tierContainer">
 			<h2 v-if="selectedClassId !== 'R'">Tier {{ tierId + 1 }}<p v-if="tierId > 0" class="levelIndicator">Level
 				{{tierId * 4}}</p></h2>
@@ -42,7 +41,6 @@
 				     viewBox="0 0 80 80"
 				     height="100%"
 				     class="mod overclockBackground hundredPercent">
-					<!-- todo: svgs for clean, balanced and unstable overclocks -->
 					<g :display="getCleanDisplay(computedState)">
 						<g> <!-- background layer -->
 							<path style="fill:#379c5d;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"

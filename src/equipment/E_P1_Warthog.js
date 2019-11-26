@@ -296,6 +296,118 @@ export default {
 				}
 			}
 		]
-	]
+	],
 	/* todo: magnetic pellet alignment overclock changed with update 26 */
+	overclocks: [
+		{
+			selected: false,
+			name: "Compact Shells",
+			icon: "Icon_Upgrade_ClipSize",
+			type: "clean",
+			cost: {
+				credits: 7350,
+				bismor: 100,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 135,
+				magnite: 60,
+				umanite: 0,
+				err: 0
+			},
+			text: "Using these shells expands magazine capacity slightly and the weapon can fire them faster!",
+			stats: {
+				clip: { name: "Magazine Size", value: 1 },
+				rate: { name: "Rate of Fire", value: 0.4 },
+			}
+		},
+		{
+			selected: false,
+			name: "Light-Weight Magazines",
+			icon: "Icon_Upgrade_Ammo",
+			type: "clean",
+			cost: {
+				credits: 7250,
+				bismor: 0,
+				croppa: 125,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 105,
+				umanite: 60,
+				err: 0
+			},
+			text: "It's amazing how much material can be removed without affecting anything and lighter magazines means more magazines and faster reloading.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 20 },
+				reload: { name: "Reload Time", value: 0.2, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Magnetic Pellet Alignment",
+			icon: "Icon_Upgrade_Aim",
+			type: "balanced",
+			cost: {
+				credits: 7900,
+				bismor: 0,
+				croppa: 0,
+				enorPearl: 120,
+				jadiz: 105,
+				magnite: 0,
+				umanite: 75,
+				err: 0
+			},
+			text: "Electromagnets in the chamber help reduce shot spread at the cost of a reduced rate of fire and magazine capacity.",
+			stats: {
+				ex5: { name: "Base Spread", value: 0.5, percent: true, multiply: true },
+				clip: { name: "Magazine Size", value: 2, subtract: true },
+				rate: { name: "Rate of Fire", value: 0.4, subtract: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Cycle Overload",
+			icon: "Icon_Upgrade_FireRate",
+			type: "unstable",
+			cost: {
+				credits: 8050,
+				bismor: 125,
+				croppa: 100,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 0,
+				umanite: 80,
+				err: 0
+			},
+			text: "Heavy modification to the chamber greatly increases the maximum rate of fire but reduces the weapon's accuracy and reload speed as a consequence.",
+			stats: {
+				dmg: { name: "Damage", value: 1 },
+				rate: { name: "Rate of Fire", value: 2 },
+				reload: { name: "Reload Time", value: 0.5 },
+				ex5: { name: "Base Spread", value: 2, percent: true, multiply: true },
+			}
+		},
+		{
+			selected: false,
+			name: "Mini Shells",
+			icon: "Icon_Overclock_SmallBullets",
+			type: "unstable",
+			cost: {
+				credits: 7700,
+				bismor: 0,
+				croppa: 125,
+				enorPearl: 65,
+				jadiz: 0,
+				magnite: 90,
+				umanite: 0,
+				err: 0
+			},
+			text: "Smaller shells designed around a new charge type reduce recoil and increase overall ammo and magazine capacity at the cost of raw damage.",
+			stats: {
+				ammo: { name: "Max Ammo", value: 90 },
+				clip: { name: "Magazine Size", value: 6 },
+				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
+				dmg: { name: "Damage", value: 2, subtract: true },
+			}
+		},
+	]
 };

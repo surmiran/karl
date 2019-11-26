@@ -266,7 +266,7 @@ export default {
 				stats: {
 					ex9: { name: "Flying Nightmare", value: 1, boolean: true },
 					ex5: { name: "Charge Speed", value: 0.8, multiply: true }
-					/* todo: charge speed calculation, multiply by X0.8 or whatever */
+					/* todo: check charge speed mod value */
 				},
 				cost: {
 					credits: 4400,

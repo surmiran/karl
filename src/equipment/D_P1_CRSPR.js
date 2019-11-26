@@ -6,22 +6,22 @@ export default {
 	icon: "equipment.D_P1_CRSPR",
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
+		ex11: { name: "Heat", value: 10 },
 		ammo: { name: "Max Fuel", value: 300 },
 		clip: { name: "Tank Size", value: 50 },
 		rate: { name: "Fuel Flow Rate", value: 100, percent: true },
-		reload: { name: "Reload Time", value: 3.0 },
-		ex1: { name: "Sticky Flame Damage", value: 0 },
+		reload: { name: "Reload Time", value: 3 },
+		ex1: { name: "Increased Sticky Flame Damage", value: 0, boolean: true },
 		ex2: { name: "Sticky Flame Burn", value: 0 },
 		ex3: { name: "Sticky Flame Slowdown", value: 0 },
 		ex4: { name: "Sticky Flame Duration", value: 2 },
 		ex5: { name: "Fear Factor", value: 0, percent: true },
 		ex6: { name: "Flame Reach", value: 10 },
 		ex7: { name: "Area Heat", value: 0 },
-		ex8: { name: "Heat Bonus", value: 0, percent: true },
+		/*ex8: { name: "Heat Bonus", value: 0, percent: true },*/
 		ex9: { name: "Killed Targets Explode %", value: 0, percent: true },
 		ex10: { name: "Movement Speed While Using", value: 100, percent: true }
 	},
-	/* todo: base stats and mods changed with update 26 */
 	mods: [
 		[
 			{
@@ -62,26 +62,6 @@ export default {
 				text: "Increases the range of the flame for long distance incineration.",
 				stats: {
 					ex6: { name: "Flame Reach", value: 5 }
-				}
-			},
-			{
-				selected: false,
-				name: "Oversized Valves",
-				icon: "Icon_Upgrade_FireRate",
-				type: "Rate of Fire",
-				cost: {
-					credits: 1200,
-					bismor: 0,
-					croppa: 25,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				},
-				text: "Increased fuel consumption rate for more damage.",
-				stats: {
-					rate: { name: "Fuel Flow Rate", value: 30, percent: true }
 				}
 			}
 		],
@@ -124,7 +104,7 @@ export default {
 				},
 				text: "Fire it up! You set things ablaze much faster. Time to watch the world burn...!",
 				stats: {
-					ex8: { name: "Heat Bonus", value: 100, percent: true }
+					ex11: { name: "Heat", value: 10 },
 				}
 			}, // 1/2
 			{
@@ -144,13 +124,33 @@ export default {
 				},
 				text: "Sticky flames duration increase.",
 				stats: {
-					ex4: { name: "Sticky Flame Duration", value: 2 }
+					ex4: { name: "Sticky Flame Duration", value: 3 }
 				}
 			}
 		],
 		[
 			// 2/0
 			{
+				selected: false,
+				name: "Oversized Valves",
+				icon: "Icon_Upgrade_FireRate",
+				type: "Rate of Fire",
+				cost: {
+					credits: 1200,
+					bismor: 0,
+					croppa: 25,
+					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				},
+				text: "Increased fuel consumption rate for more damage.",
+				stats: {
+					rate: { name: "Fuel Flow Rate", value: 30, percent: true }
+				}
+			},
+			/*{
 				selected: false,
 				name: "Sticky flame duration",
 				icon: "Icon_Upgrade_Duration",
@@ -169,7 +169,7 @@ export default {
 				stats: {
 					ex4: { name: "Sticky Flame Duration", value: 2 }
 				}
-			}, // 2/1
+			},*/ // 2/1
 			{
 				selected: false,
 				name: "Sticky Flame Slowdown",
@@ -215,6 +215,46 @@ export default {
 			// 3/0
 			{
 				selected: false,
+				name: "It Burns!",
+				icon: "Icon_Upgrade_ScareEnemies",
+				type: "Fear",
+				cost: {
+					credits: 5600,
+					bismor: 64,
+					croppa: 0,
+					enorPearl: 70,
+					jadiz: 0,
+					magnite: 140,
+					umanite: 0,
+					err: 0
+				},
+				text: "A chance that your target will flee in terror for every second that it is in your flame.",
+				stats: {
+					ex5: { name: "Fear Factor", value: 13, percent: true }
+				}
+			},
+			{
+				selected: false,
+				name: "Sticky flame duration",
+				icon: "Icon_Upgrade_Duration",
+				type: "Delay",
+				cost: {
+					credits: 4800,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 50,
+					jadiz: 72,
+					magnite: 48,
+					umanite: 0,
+					err: 0
+				},
+				text: "Sticky flames duration increase.",
+				stats: {
+					ex4: { name: "Sticky Flame Duration", value: 3 }
+				}
+			},
+			{
+				selected: false,
 				name: "More Fuel",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
@@ -232,8 +272,8 @@ export default {
 				stats: {
 					ammo: { name: "Max Fuel", value: 75 }
 				}
-			},
-			{
+			}
+			/*{
 				selected: false,
 				name: "Sticky Flame Damage",
 				icon: "Icon_Upgrade_DamageGeneral",
@@ -272,7 +312,7 @@ export default {
 				stats: {
 					ex2: { name: "Sticky Flame Burn", value: 1, boolean: true }
 				}
-			}
+			}*/
 		],
 		[
 			{
@@ -293,26 +333,6 @@ export default {
 				text: "Heat things up in a 5m radius around you.",
 				stats: {
 					ex7: { name: "Area Heat", value: 10 }
-				}
-			},
-			{
-				selected: false,
-				name: "It Burns!",
-				icon: "Icon_Upgrade_ScareEnemies",
-				type: "Fear",
-				cost: {
-					credits: 5600,
-					bismor: 64,
-					croppa: 0,
-					enorPearl: 70,
-					jadiz: 0,
-					magnite: 140,
-					umanite: 0,
-					err: 0
-				},
-				text: "A chance that your target will flee in terror for every second that it is in your flame.",
-				stats: {
-					ex5: { name: "Fear Factor", value: 13, percent: true }
 				}
 			},
 			{
@@ -440,9 +460,9 @@ export default {
 			text: "This crazy bit of tweaking will give a boost in damage but at the cost of both mobility and fuel.",
 			stats: {
 				dmg: { name: "Damage", value: 2 },
-				rate: { name: "Fuel Flow Rate", value: 20, percent: true },
+				rate: { name: "Fuel Flow Rate", value: 30, percent: true },
 				ammo: { name: "Max Fuel", value: 75, subtract: true },
-				ex10: { name: "Movement Speed While Using", value: 100, percent: true, subtract: true }
+				ex10: { name: "Movement Speed While Using", value: 50, percent: true, subtract: true }
 			}
 		},
 		{
@@ -462,9 +482,10 @@ export default {
 			},
 			text: "Special fuel mixture extends the duration of Sticky Flames but at the cost of tank capacity and operational range.",
 			stats: {
+				ex1: { name: "Increased Sticky Flame Damage", value: 1, boolean: true },
 				ex4: { name: "Sticky Flame Duration", value: 6 },
 				clip: { name: "Tank Size", value: 25, subtract: true },
-				ex6: { name: "Flame Reach", value: 2, subtract: true }
+				ammo: { name: "Max Fuel", value: 75, subtract: true },
 			}
 		}
 	]

@@ -409,7 +409,7 @@ export default {
 		{
 			selected: false,
 			name: "Jumbo Shells",
-			icon: "Icon_Overclock_DamageGeneral",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "unstable",
 			cost: {
 				credits: 8800,

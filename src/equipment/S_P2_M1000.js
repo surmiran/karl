@@ -5,17 +5,17 @@ export default {
 	class: "Semi-Automatic Rifle",
 	icon: "equipment.S_P2_M1000",
 	baseStats: {
-		dmg: { name: "Damage", value: 55 },
-		ammo: { name: "Max Ammo", value: 50 },
-		clip: { name: "Clip Size", value: 5 },
-		rate: { name: "Rate of Fire", value: 5.5 },
-		reload: { name: "Reload Time", value: 2.2 },
+		dmg: { name: "Damage", value: 50 },
+		ammo: { name: "Max Ammo", value: 96 },
+		clip: { name: "Clip Size", value: 8 },
+		rate: { name: "Rate of Fire", value: 4 },
+		reload: { name: "Reload Time", value: 2.5 },
 		ex1: { name: "Focus Speed", value: 100, percent: true },
-		ex2: { name: "Focused Shot Damage Bonus", value: 50, percent: true },
-		ex3: { name: "Spread Per Shot", value: 100, percent: true },
+		ex2: { name: "Focused Shot Damage Bonus", value: 100, percent: true },
+		ex3: { name: "Recoil", value: 100, percent: true },
 		ex4: { name: "Max Penetrations", value: 0 },
-		ex5: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex6: { name: "Armor Breaking", value: 100, percent: true },
+		ex5: { name: "Weakpoint Damage", value: 110, percent: true },
+		ex6: { name: "Armor Breaking", value: 30, percent: true },
 		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
 		ex9: { name: "Focus Shot Fear", value: 0, boolean: true },
 		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true },
@@ -23,7 +23,6 @@ export default {
 		ex11: { name: "Focus Shot Hover", value: 0, boolean: true },
 		ex12: { name: "Electrocuting Focus Shots", value: 0, boolean: true },
 	},
-	/* todo: base stats and mods changed with update 26 */
 	mods: [
 		[
 			{
@@ -33,7 +32,7 @@ export default {
 				type: "Total Ammo",
 				text: "You had to give up some sandwich-storage, but your total ammo capacity is increased!",
 				stats: {
-					ammo: { name: "Max Ammo", value: 15 }
+					ammo: { name: "Max Ammo", value: 32 }
 				},
 				cost: {
 					credits: 1200,
@@ -90,6 +89,26 @@ export default {
 			},
 			{
 				selected: false,
+				name: "Better Weight Balance",
+				icon: "Icon_Upgrade_Recoil",
+				type: "Recoil",
+				text: "Improved hip-shot accuracy.",
+				stats: {
+					ex3: { name: "Recoil", value: 50, percent: true, subtract: true },
+				},
+				cost: {
+					credits: 2000,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 15,
+					jadiz: 24,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			/*{
+				selected: false,
 				name: "Extended Clip",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
@@ -116,7 +135,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Spread Per Shot", value: 56, percent: true, subtract: true }
+					ex3: { name: "Recoil", value: 56, percent: true, subtract: true },
 				},
 				cost: {
 					credits: 2000,
@@ -128,10 +147,10 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			}
+			}*/
 		],
 		[
-			{
+			/*{
 				selected: false,
 				name: "High Velocity Rounds",
 				icon: "Icon_Upgrade_DamageGeneral",
@@ -150,7 +169,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			},*/
 			{
 				selected: false,
 				name: "Killer Focus",
@@ -158,7 +177,7 @@ export default {
 				type: "Damage",
 				text: "Greater focus damage bonus",
 				stats: {
-					ex2: { name: "Focused Shot Damage Bonus", value: 40, percent: true }
+					ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true }
 				},
 				cost: {
 					credits: 2800,
@@ -173,12 +192,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Oversized Clip",
+				name: "Extended Clip",
 				icon: "Icon_Upgrade_ClipSize",
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					clip: { name: "Clip Size", value: 2 }
+					clip: { name: "Clip Size", value: 6 }
 				},
 				cost: {
 					credits: 4800,
@@ -222,7 +241,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex5: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
+					ex5: { name: "Weakpoint Damage", value: 25, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -243,7 +262,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex6: { name: "Armor Breaking", value: 200, percent: true }
+					ex6: { name: "Armor Breaking", value: 220, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -295,6 +314,26 @@ export default {
 					jadiz: 0,
 					magnite: 64,
 					umanite: 140,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Killing Machine",
+				icon: "Icon_Upgrade_Speed",
+				type: "Reload Speed",
+				text: "You can perform a lightning fast reload right after killing an enemy.",
+				stats: {
+					ex10: { name: "Focus Shot Kill AoE Fear", value: 1, boolean: true }
+				},
+				cost: {
+					credits: 5600,
+					bismor: 0,
+					croppa: 0,
+					enorPearl: 140,
+					jadiz: 0,
+					magnite: 70,
+					umanite: 64,
 					err: 0
 				}
 			}
@@ -364,6 +403,7 @@ export default {
 				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
 			}
 		},
+		/* todo: check ingame if hipster + Better Weight Balance give 0% recoil. */
 		{
 			selected: false,
 			name: "Hipster",
@@ -383,7 +423,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 72 },
 				rate: { name: "Rate of Fire", value: 3 },
-				ex3: { name: "Spread Per Shot", value: 0.5, percent: true, multiply: true },
+				ex3: { name: "Recoil", value: 50, percent: true, subtract: true },
 				dmg: { name: "Damage", value: 20, subtract: true },
 			}
 		},
@@ -411,7 +451,7 @@ export default {
 		{
 			selected: false,
 			name: "Supercooling Chamber",
-			icon: "Icon_Overclock_DamageGeneral",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "unstable",
 			cost: {
 				credits: 8500,

@@ -322,7 +322,7 @@ export default {
 		{
 			selected: false,
 			name: "Full Chamber Seal",
-			icon: "Icon_Overclock_DamageGeneral",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "clean",
 			cost: {
 				credits: 7850,
@@ -385,7 +385,7 @@ export default {
 		{
 			selected: false,
 			name: "Experimental Rounds",
-			icon: "Icon_Overclock_DamageGeneral",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "balanced",
 			cost: {
 				credits: 8550,

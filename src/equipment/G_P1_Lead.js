@@ -360,7 +360,6 @@ export default {
 				reload: { name: "Cooling Rate", value: 0.5 }
 			}
 		},
-		/* todo: multiply calculations */
 		{
 			selected: false,
 			name: "Burning Hell",
@@ -422,7 +421,7 @@ export default {
 			text: "Increases damage at a cost to accuracy.",
 			stats: {
 				dmg: { name: "Damage", value: 2 },
-				ex3: { name: "Base Spread", value: 150, percent: true }
+				ex3: { name: "Base Spread", value: 2.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -443,7 +442,7 @@ export default {
 			text: "Special bullets that ricochet off all surfaces and even enemies going on to hit nearby targets. However they deal less damage and are less accurate overall.",
 			stats: {
 				dmg: { name: "Damage", value: 3, subtract: true },
-				ex3: { name: "Base Spread", value: 500, percent: true },
+				ex3: { name: "Base Spread", value: 6, percent: true, multiply: true },
 				ex15: { name: "Ricochet chance on bullets", value: 50, percent: true }
 			}
 		},
@@ -465,7 +464,7 @@ export default {
 			text: "Special bullets that ricochet off all surfaces and even enemies going on to hit nearby targets. However they deal less damage and are less accurate overall.",
 			stats: {
 				dmg: { name: "Damage", value: 5 },
-				ex12: { name: "Movement Speed While Using", value: 50, percent: true, subtract: true }
+				ex12: { name: "Movement Speed While Using", value: 0, percent: true, multiply: true }
 			}
 		}
 	]

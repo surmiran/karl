@@ -366,7 +366,7 @@ export default {
 		{
 			selected: false,
 			name: "Gas Recycling",
-			icon: "Icon_Overclock_DamageGeneral",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "unstable",
 			cost: {
 				credits: 7800,

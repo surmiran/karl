@@ -407,7 +407,7 @@ export default {
 		{
 			selected: false,
 			name: "Bullets of Mercy",
-			icon: "Icon_Overclock_DamageGeneral",
+			icon: "Icon_Upgrade_DamageGeneral",
 			type: "balanced",
 			cost: {
 				credits: 8100,

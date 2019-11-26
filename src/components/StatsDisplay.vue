@@ -11,8 +11,8 @@
 					>
 					<span class="statsModifier fixedWidth">{{ stat.modifier }}</span>
 					<span
-							class="statsValue fixedWidth"
-							:class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']"
+						class="statsValue fixedWidth"
+						:class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']"
 					>
 						{{ stat.value }}<span v-if="stat.percent">%</span>
 					</span>
@@ -112,7 +112,6 @@
 			};
 		}
 
-
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
@@ -197,7 +196,7 @@
 	const precisionCalc = a => {
 		if (!isFinite(a)) return 0;
 		var e = 1,
-				p = 0;
+			p = 0;
 		while (Math.round(a * e) / e !== a) {
 			e *= 10;
 			p++;
@@ -222,7 +221,7 @@
 			precision = basePrecision > precisionTemp ? basePrecision : precisionTemp;
 
 			if (upgrade.multiply) {
-				upgradesToMultiply.push(upgrade)
+				upgradesToMultiply.push(upgrade);
 			} else {
 				// calculation here
 				if (upgrade.subtract) {
@@ -235,48 +234,48 @@
 		if (upgradesToMultiply.length > 0) {
 			for (let upgrade of upgradesToMultiply) {
 				// calculation here
-				modifiedValue = modifiedValue * upgrade.value
+				modifiedValue = modifiedValue * upgrade.value;
 			}
 		}
 		modifiedValue = (parseFloat(modifiedValue)).toFixed(precision);
 		let difference = modifiedValue - originalValue;
 		stat.modifier = `${difference < 0 ? "" : "+"}${difference}${stat.percent ? "%" : ""}`;
 		stat.modified = true;
-		return stat
+		return stat;
 	};
 
 	const getModifiedStats = (baseStats, selectedUpgrades) => {
-		console.log("baseStats", baseStats)
-		console.log("selectedUpgrades", selectedUpgrades)
+		console.log("baseStats", baseStats);
+		console.log("selectedUpgrades", selectedUpgrades);
 
 		// loop trough all selected upgrades
 		let upgradesForEachStat = new Map();
 		for (let upgrade of selectedUpgrades) {
 			// loop trough stats of upgrade
-			console.log("upgrade", upgrade)
+			console.log("upgrade", upgrade);
 			for (let statKey in upgrade.stats) {
 				let statContent = upgrade.stats[statKey];
 				let tempContent = [];
 				if (upgradesForEachStat.has(statKey)) {
-					tempContent = upgradesForEachStat.get(statKey)
+					tempContent = upgradesForEachStat.get(statKey);
 				}
-				tempContent.push(statContent)
-				upgradesForEachStat.set()
-				console.log("statKey", statKey)
-				console.log("statContent", statContent)
-				upgradesForEachStat.set(statKey, tempContent)
+				tempContent.push(statContent);
+				upgradesForEachStat.set();
+				console.log("statKey", statKey);
+				console.log("statContent", statContent);
+				upgradesForEachStat.set(statKey, tempContent);
 			}
-			console.log("upgradesForEachStat", upgradesForEachStat)
+			console.log("upgradesForEachStat", upgradesForEachStat);
 		}
 		// group all upgrades by stat
 		// loop trough groups and calculate new value for each stat
 		// return stats
 		for (let stat in baseStats) {
 			if (upgradesForEachStat.has(stat)) {
-				let upgradesForStat = upgradesForEachStat.get(stat)
-				console.log("update this stat", stat)
-				console.log("with upgrades", upgradesForStat)
-				let upgradedStats = calculateUpgradesForStat(baseStats[stat], upgradesForStat)
+				let upgradesForStat = upgradesForEachStat.get(stat);
+				console.log("update this stat", stat);
+				console.log("with upgrades", upgradesForStat);
+				let upgradedStats = calculateUpgradesForStat(baseStats[stat], upgradesForStat);
 			}
 		}
 
@@ -291,7 +290,7 @@
 		*/
 
 		let stats = {};
-		return stats
+		return stats;
 	};
 
 	export default {
@@ -361,10 +360,10 @@
 							} else if (upgrade.stats[key].multiply) {
 								modifier.value = modifier.value * upgrade.stats[key].value;
 								modifiedStats.value = (parseFloat(modifiedStats.value) - parseFloat(upgrade.stats[key].value)).toFixed(
-										precision
+									precision
 								);
-								console.log("multiply", modifier.value, upgrade.stats[key].value)
-								console.log("modified stats", modifiedStats)
+								console.log("multiply", modifier.value, upgrade.stats[key].value);
+								console.log("modified stats", modifiedStats);
 							} else {
 								modifier.value = modifier.value + upgrade.stats[key].value;
 								modifiedStats.value = (parseFloat(modifiedStats.value) + parseFloat(upgrade.stats[key].value)).toFixed(
@@ -384,7 +383,7 @@
 					}
 					return modifiedStats;
 				});
-				console.log("stats modified", stats)
+				console.log("stats modified", stats);
 
 				let damage = null;
 				let specialEquipment = [

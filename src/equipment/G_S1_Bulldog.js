@@ -20,7 +20,7 @@ export default {
 		ex6: { name: "Weakpoint Damage Bonus", value: 15, percent: true },
 		ex7: { name: "Dead-Eye", value: 0, boolean: true },
 		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true },
-		ex11: { name: "Chain Hit", value: 0, boolean: true }
+		ex11: { name: "Chain Hit", value: 0, boolean: true },
 		ex12: { name: "Magic Bullets", value: 0, boolean: true }
 	},
 	mods: [

@@ -5,7 +5,7 @@ export default {
 	class: "Assault Rifle",
 	icon: "equipment.S_P1_GK2",
 	baseStats: {
-		dmg: { name: "Damage", value: 13 },
+		dmg: { name: "Damage", value: 15 },
 		ammo: { name: "Max Ammo", value: 350 },
 		clip: { name: "Magazine Size", value: 25 },
 		rate: { name: "Rate of Fire", value: 7 },
@@ -61,26 +61,6 @@ export default {
 					enorPearl: 25,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			},
-			{
-				selected: false,
-				name: "High Velocity Rounds",
-				icon: "Icon_Upgrade_DamageGeneral",
-				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
-				stats: {
-					dmg: { name: "Damage", value: 2 }
-				},
-				cost: {
-					credits: 1200,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 25,
 					umanite: 0,
 					err: 0
 				}

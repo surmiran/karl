@@ -5,7 +5,7 @@ export default {
 	class: "Revolver",
 	icon: "equipment.G_S1_Bulldog",
 	baseStats: {
-		dmg: { name: "Damage", value: 45 },
+		dmg: { name: "Damage", value: 50 },
 		ammo: { name: "Max Ammo", value: 28 },
 		clip: { name: "Magazine Size", value: 4 },
 		rate: { name: "Rate of Fire", value: 2 },
@@ -17,10 +17,10 @@ export default {
 		ex10: { name: "Stun Duration", value: 1.5 },
 		ex5: { name: "Area Damage", value: 0 },
 		ex9: { name: "Effect Radius", value: 0 },
-		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
+		ex6: { name: "Weakpoint Damage Bonus", value: 15, percent: true },
 		ex7: { name: "Dead-Eye", value: 0, boolean: true },
 		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true },
-		ex11: { name: "Ricochet chance on bullets", value: 0, percent: true },
+		ex11: { name: "Chain Hit", value: 0, boolean: true }
 		ex12: { name: "Magic Bullets", value: 0, boolean: true }
 	},
 	mods: [
@@ -75,7 +75,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 10 }
+					dmg: { name: "Damage", value: 15 }
 				},
 				cost: {
 					credits: 1800,
@@ -96,6 +96,8 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
+					/* todo: replace base spread with recoil */
+					ex1: { name: "Base Spread", value: 75, percent: true },
 					ex2: { name: "Spread Per Shot", value: 80, percent: true, subtract: true }
 				},
 				cost: {
@@ -116,7 +118,7 @@ export default {
 				type: "Total Ammo",
 				text: "Expanded Ammo Bags",
 				stats: {
-					ammo: { name: "Max Ammo", value: 8 }
+					ammo: { name: "Max Ammo", value: 12 }
 				},
 				cost: {
 					credits: 1800,
@@ -159,7 +161,7 @@ export default {
 				type: "Explosion",
 				text: "Bullets detonate creating a radius of damage but deals less direct damage",
 				stats: {
-					dmg: { name: "Damage", value: 22.5, subtract: true },
+					dmg: { name: "Damage", value: 25, subtract: true },
 					ex5: { name: "Area Damage", value: 30 },
 					ex9: { name: "Effect Radius", value: 1.5 }
 				},
@@ -182,7 +184,7 @@ export default {
 				text:
 					"Hit 'em where it hurts! Literally! We've upped the damage you'll be able to do to any creatures fleshy bits. You're welcome.",
 				stats: {
-					ex6: { name: "Weakpoint Damage Bonus", value: 75, percent: true }
+					ex6: { name: "Weakpoint Damage Bonus", value: 50, percent: true }
 				},
 				cost: {
 					credits: 3800,
@@ -224,7 +226,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 20 }
+					dmg: { name: "Damage", value: 15 }
 				},
 				cost: {
 					credits: 3800,
@@ -304,7 +306,7 @@ export default {
 		},
 		{
 			selected: false,
-			name: "Lucky Bullets",
+			name: "Chain Hit",
 			icon: "Icon_Upgrade_Ricoshet",
 			type: "clean",
 			cost: {
@@ -317,9 +319,9 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Missed shots have a chance to ricochet and hit nearby enemies, but there is a pissed-off one-legged rabbit out there somewhere looking for you. ",
+			text: "Any shot that hits a weakspot has a chance to ricochet into a nearby enemy.",
 			stats: {
-				ex11: { name: "Ricochet chance on bullets", value: 33, percent: true }
+				ex11: { name: "Chain Hit", value: 1, boolean: true }
 			}
 		},
 		{

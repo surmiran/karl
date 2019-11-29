@@ -75,7 +75,7 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.5.3 Based on DRG v0.26.xxxxx.0</p><!-- todo: check ingame version -->
+		<p class="versionNumber">KARL v1.5.4 Based on DRG v0.26.xxxxx.0</p><!-- todo: check ingame version -->
 	</div>
 </template>
 
@@ -136,6 +136,7 @@
 				let classInFocus = store.state.selected.class;
 				let equipmentInFocus = store.state.selected.equipment;
 				dataParts[classInFocus][equipmentInFocus].push("focus");
+				// todo: this focus mechanic is not ideal, put in object instead of array: {... focus: {class: S, equipment: S2} ...}
 				let parts = JSON.stringify(dataParts);
 				let uri = `https://surmiran.github.io/karl/?=${Lzs.compressToEncodedURIComponent(parts)}`;
 				let copyTextarea = document.getElementById("idCopyTextArea");
@@ -173,12 +174,13 @@
 
 			this.$nextTick(function() {
 				let storeState = this.getStoreState;
-				if (storeState.loadedFromLink) {
+				if (storeState.loadedFromLink && storeState.loadedOverclockFromLink) {
 					let selectedClassId = storeState.selected.class;
 					let selectedEquipmentId = storeState.selected.equipment;
 					let overclockId = storeState.selected.overclock;
 					let selected = false;
 					this.$children[13].selectOverclock(selectedClassId, selectedEquipmentId, overclockId, selected);
+					this.$children[13].$forceUpdate();
 					// todo: this only works for the displayed overclocks, all other shared gear does not show the selected overclock yet..
 					// todo: the whole overclock display needs to be reworked in order for this to work as intended
 				}

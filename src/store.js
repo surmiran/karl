@@ -130,6 +130,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		loadedFromLink: false,
+		loadedOverclockFromLink: false,
 		selected: {
 			class: "D",
 			equipment: "P1",
@@ -399,6 +400,7 @@ export default new Vuex.Store({
 							} else {
 								state.tree[classId][equipmentId].overclocks[mods[tierId]].selected = true;
 								state.selected.overclock = mods[tierId];
+								state.loadedOverclockFromLink = true;
 							}
 						} else if (mods[tierId] === "focus") {
 							state.selected.class = classId;

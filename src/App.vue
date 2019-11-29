@@ -17,57 +17,57 @@
 			<!-- todo: autoscroll on equipment -->
 			<div v-if="selectedClass === 'D'" class="equipmentSelectContainer">
 				<EquipmentSelect
-						v-for="(equipment, equipmentId) in drillerEquipment"
-						:key="equipmentId"
-						:iconPath="equipment.icon"
-						:name="equipment.name"
-						:classId="'D'"
-						:equipmentId="equipmentId"
-						:data="equipment"
+					v-for="(equipment, equipmentId) in drillerEquipment"
+					:key="equipmentId"
+					:iconPath="equipment.icon"
+					:name="equipment.name"
+					:classId="'D'"
+					:equipmentId="equipmentId"
+					:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'E'" class="equipmentSelectContainer">
 				<EquipmentSelect
-						v-for="(equipment, equipmentId) in engineerEquipment"
-						:key="equipmentId"
-						:iconPath="equipment.icon"
-						:name="equipment.name"
-						:classId="'E'"
-						:equipmentId="equipmentId"
-						:data="equipment"
+					v-for="(equipment, equipmentId) in engineerEquipment"
+					:key="equipmentId"
+					:iconPath="equipment.icon"
+					:name="equipment.name"
+					:classId="'E'"
+					:equipmentId="equipmentId"
+					:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'G'" class="equipmentSelectContainer">
 				<EquipmentSelect
-						v-for="(equipment, equipmentId) in gunnerEquipment"
-						:key="equipmentId"
-						:iconPath="equipment.icon"
-						:name="equipment.name"
-						:classId="'G'"
-						:equipmentId="equipmentId"
-						:data="equipment"
+					v-for="(equipment, equipmentId) in gunnerEquipment"
+					:key="equipmentId"
+					:iconPath="equipment.icon"
+					:name="equipment.name"
+					:classId="'G'"
+					:equipmentId="equipmentId"
+					:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'S'" class="equipmentSelectContainer">
 				<EquipmentSelect
-						v-for="(equipment, equipmentId) in scoutEquipment"
-						:key="equipmentId"
-						:iconPath="equipment.icon"
-						:name="equipment.name"
-						:classId="'S'"
-						:equipmentId="equipmentId"
-						:data="equipment"
+					v-for="(equipment, equipmentId) in scoutEquipment"
+					:key="equipmentId"
+					:iconPath="equipment.icon"
+					:name="equipment.name"
+					:classId="'S'"
+					:equipmentId="equipmentId"
+					:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'R'" class="equipmentSelectContainer">
 				<EquipmentSelect
-						v-for="(equipment, equipmentId) in robotEquipment"
-						:key="equipmentId"
-						:iconPath="equipment.icon"
-						:name="equipment.name"
-						:classId="'R'"
-						:equipmentId="equipmentId"
-						:data="equipment"
+					v-for="(equipment, equipmentId) in robotEquipment"
+					:key="equipmentId"
+					:iconPath="equipment.icon"
+					:name="equipment.name"
+					:classId="'R'"
+					:equipmentId="equipmentId"
+					:data="equipment"
 				/>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.5.1 Based on DRG v0.26.xxxxx.0</p><!-- todo: check ingame version -->
+		<p class="versionNumber">KARL v1.5.2 Based on DRG v0.26.xxxxx.0</p><!-- todo: check ingame version -->
 	</div>
 </template>
 
@@ -125,6 +125,9 @@
 			},
 			classes() {
 				return store.state.tree;
+			},
+			getStoreState() {
+				return store.state;
 			}
 		},
 		methods: {
@@ -169,8 +172,14 @@
 			}
 
 			this.$nextTick(function() {
-				// Code that will run only after the
-				// entire view has been rendered
+				let storeState = this.getStoreState;
+				let selectedClassId = storeState.selected.class;
+				let selectedEquipmentId = storeState.selected.equipment;
+				let overclockId = storeState.selected.overclock;
+				let selected = false;
+				this.$children[13].selectOverclock(selectedClassId, selectedEquipmentId, overclockId, selected);
+				// todo: this only works for the displayed overclocks, all other shared gear does not show the selected overclock yet..
+				// todo: the whole overclock display needs to be reworked in order for this to work as intended
 			});
 		}
 	};

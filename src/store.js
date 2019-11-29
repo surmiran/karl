@@ -136,7 +136,8 @@ export default new Vuex.Store({
 			slot2: 0,
 			slot3: 0,
 			slot4: 0,
-			slot5: 0
+			slot5: 0,
+			overclock: 0
 		},
 		dataParts: {},
 		hovered: {},
@@ -231,7 +232,7 @@ export default new Vuex.Store({
 				Icon_Overclock_Slowdown: Icon_Overclock_Slowdown,
 				Icon_Overclock_SmallBullets: Icon_Overclock_SmallBullets,
 				Icon_Overclock_Special_Magazine: Icon_Overclock_Special_Magazine,
-				Icon_Overclock_Spinning_Linecutter: Icon_Overclock_Spinning_Linecutter,
+				Icon_Overclock_Spinning_Linecutter: Icon_Overclock_Spinning_Linecutter
 			}
 		},
 		tree: {
@@ -382,9 +383,8 @@ export default new Vuex.Store({
 			}
 			state.hovered.increase = increase;
 		},
-		/* todo: save and load selected overclock! */
+
 		loadFromLink: (state, data) => {
-			console.log("data from link", data)
 			state.dataParts = data;
 
 			for (let [classId, equipments] of Object.entries(data)) {
@@ -392,14 +392,11 @@ export default new Vuex.Store({
 					state.tree[classId][equipmentId].modified = true;
 					for (let tierId in mods) {
 						if (parseInt(mods[tierId]) >= 0) {
-							console.log("tierId",tierId)
-							console.log("mods[tierId]",mods[tierId])
 							if (state.tree[classId][equipmentId].mods[tierId]) {
 								state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
 							} else {
-								console.log("overclock selected")
-								/* todo: selected overclock does not show.. */
 								state.tree[classId][equipmentId].overclocks[mods[tierId]].selected = true;
+								state.selected.overclock = mods[tierId];
 							}
 						} else if (mods[tierId] === "focus") {
 							state.selected.class = classId;
@@ -410,8 +407,6 @@ export default new Vuex.Store({
 							// focus
 						}
 					}
-					console.log("mods", mods)
-					console.log("equipmentId", equipmentId)
 				}
 			}
 		}

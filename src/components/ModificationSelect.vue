@@ -319,9 +319,7 @@
 				return store.state.icons.mods[iconPath];
 			},
 			getSelectedOverclockIcon: function(state) {
-				console.log(state);
 				let overclocks = state.tree[state.selected.class][state.selected.equipment].overclocks;
-				console.log(overclocks);
 				let dataParts = state.dataParts[state.selected.class];
 				if (!state || !dataParts) {
 					return "";
@@ -331,7 +329,6 @@
 					return "";
 				}
 				let selectedOverclock = overclocks[dataPartsEquipment["overclock"]];
-				console.log(selectedOverclock);
 				return selectedOverclock ? state.icons.mods[selectedOverclock.icon] : "";
 			},
 			getSelectedOverclockClass: function(state) {
@@ -345,7 +342,6 @@
 					return "clean";
 				}
 				let selectedOverclock = overclocks[dataPartsEquipment["overclock"]];
-				console.log(selectedOverclock);
 				return selectedOverclock ? selectedOverclock.type : "clean";
 			},
 			getOverclocksAvailable: function(state) {
@@ -380,7 +376,7 @@
 	}
 
 	.displayNone {
-		display: none!important;
+		display: none !important;
 	}
 
 	.levelIndicator {
@@ -607,6 +603,7 @@
 			font-size: 1.2rem;
 		}
 	}
+
 	@media (max-width: 400px) {
 		.overclockGrid {
 			left: 5% !important;

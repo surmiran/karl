@@ -231,7 +231,6 @@
 			}
 		}
 		if (upgradesToMultiply.length > 0) {
-			console.log("multiplying", upgradesToMultiply);
 			for (let upgradetoMultiply of upgradesToMultiply) {
 				// calculation here
 				modifiedValue = (parseFloat(modifiedValue) * parseFloat(upgradetoMultiply.value)).toFixed(precision);
@@ -280,7 +279,6 @@
 				}
 				workingStat.baseValue = workingStat.value;
 				stats.push(workingStat);
-				console.log("this stat will not be upgraded");
 			}
 		}
 
@@ -333,8 +331,6 @@
 				let results = getModifiedStats(this.baseStats, aSelectedUpgrades);
 				let stats = results.stats;
 				let costs = results.costs;
-				console.log("new Modified Stats", stats);
-				console.log("new Modified costs", costs);
 
 				let damage = null;
 				let specialEquipment = [

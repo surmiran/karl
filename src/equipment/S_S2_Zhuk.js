@@ -18,7 +18,7 @@ export default {
 		ex6: { name: "Damage vs Electrically Affected", value: 0, percent: true },
 		ex7: { name: "Cryo Minelets", value: 0, boolean: true },
 		ex8: { name: "Embedded Detonators", value: 0, boolean: true },
-		ex9: { name: "Movement Speed While Using", value: 100, percent: true },
+		ex9: { name: "Movement Speed While Using", value: 100, percent: true }
 	},
 	mods: [
 		[
@@ -111,7 +111,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
 					reload: { name: "Reload Time", value: 0.6, subtract: true }
 				},
@@ -295,7 +295,7 @@ export default {
 			text: "By filling away unnecessary material from the magazines you've made them lighter, and that means they pop out faster when reloading. Also the rounds can move more freely increasing the max rate of fire slightly.",
 			stats: {
 				rate: { name: "Combined Rate of Fire", value: 2 },
-				reload: { name: "Reload Time", value: 0.4, subtract: true },
+				reload: { name: "Reload Time", value: 0.4, subtract: true }
 			}
 		},
 		{
@@ -316,7 +316,7 @@ export default {
 			text: "Fit more of these custom rounds in each magazine but at small loss in raw damage.",
 			stats: {
 				clip: { name: "Combined Clip Size", value: 30 },
-				dmg: { name: "Damage", value: 1, subtract: true },
+				dmg: { name: "Damage", value: 1, subtract: true }
 			}
 		},
 		{
@@ -338,7 +338,7 @@ export default {
 			stats: {
 				ex7: { name: "Cryo Minelets", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 1, subtract: true },
-				clip: { name: "Combined Clip Size", value: 10, subtract: true },
+				clip: { name: "Combined Clip Size", value: 10, subtract: true }
 			}
 		},
 		{
@@ -360,7 +360,7 @@ export default {
 			stats: {
 				ex8: { name: "Embedded Detonators", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
-				ammo: { name: "Max Ammo", value: 75, subtract: true },
+				ammo: { name: "Max Ammo", value: 75, subtract: true }
 			}
 		},
 		{
@@ -383,28 +383,8 @@ export default {
 				dmg: { name: "Damage", value: 11 },
 				ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true, multiply: true },
 				ex1: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
-				ex9: { name: "Movement Speed While Using", value: 50, percent: true, subtract: true },
+				ex9: { name: "Movement Speed While Using", value: 50, percent: true, subtract: true }
 			}
-		},
-		{
-			selected: false,
-			name: "Micro",
-			icon: "Icon_Overclock_SmallBullets",
-			type: "clean",
-			cost: {
-				credits: 0,
-				bismor: 0,
-				croppa: 0,
-				enorPearl: 0,
-				jadiz: 0,
-				magnite: 0,
-				umanite: 0,
-				err: 0
-			},
-			text: "",
-			stats: {
-				ammo: { name: "Max Ammo", value: 144 },
-			}
-		},
+		}
 	]
 };

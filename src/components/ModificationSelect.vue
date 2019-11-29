@@ -429,10 +429,10 @@
 	}
 
 	.overclockGrid {
-		width: 15rem !important;
+		width: auto !important;
 		display: grid;
 		grid-gap: 10px;
-		grid-template-columns: auto auto;
+		grid-template-columns: 6rem 6rem 6rem;
 		grid-template-rows: 6rem 6rem 6rem;
 		justify-items: center;
 		background-color: rgba(91, 64, 45, 0.75);
@@ -605,6 +605,12 @@
 
 		.modificationName {
 			font-size: 1.2rem;
+		}
+	}
+	@media (max-width: 400px) {
+		.overclockGrid {
+			left: 5% !important;
+			width: 90% !important;
 		}
 	}
 </style>

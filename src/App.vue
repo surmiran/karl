@@ -75,7 +75,7 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.5.2 Based on DRG v0.26.xxxxx.0</p><!-- todo: check ingame version -->
+		<p class="versionNumber">KARL v1.5.3 Based on DRG v0.26.xxxxx.0</p><!-- todo: check ingame version -->
 	</div>
 </template>
 
@@ -173,13 +173,15 @@
 
 			this.$nextTick(function() {
 				let storeState = this.getStoreState;
-				let selectedClassId = storeState.selected.class;
-				let selectedEquipmentId = storeState.selected.equipment;
-				let overclockId = storeState.selected.overclock;
-				let selected = false;
-				this.$children[13].selectOverclock(selectedClassId, selectedEquipmentId, overclockId, selected);
-				// todo: this only works for the displayed overclocks, all other shared gear does not show the selected overclock yet..
-				// todo: the whole overclock display needs to be reworked in order for this to work as intended
+				if (storeState.loadedFromLink) {
+					let selectedClassId = storeState.selected.class;
+					let selectedEquipmentId = storeState.selected.equipment;
+					let overclockId = storeState.selected.overclock;
+					let selected = false;
+					this.$children[13].selectOverclock(selectedClassId, selectedEquipmentId, overclockId, selected);
+					// todo: this only works for the displayed overclocks, all other shared gear does not show the selected overclock yet..
+					// todo: the whole overclock display needs to be reworked in order for this to work as intended
+				}
 			});
 		}
 	};

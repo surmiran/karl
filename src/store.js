@@ -129,6 +129,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
+		loadedFromLink: false,
 		selected: {
 			class: "D",
 			equipment: "P1",
@@ -386,6 +387,7 @@ export default new Vuex.Store({
 
 		loadFromLink: (state, data) => {
 			state.dataParts = data;
+			state.loadedFromLink = true;
 
 			for (let [classId, equipments] of Object.entries(data)) {
 				for (let [equipmentId, mods] of Object.entries(equipments)) {

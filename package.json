@@ -1,6 +1,6 @@
 {
   "name": "karl",
-  "version": "1.5.3",
+  "version": "1.5.5",
   "private": true,
   "scripts": {
     "start": "npx vue-cli-service serve",

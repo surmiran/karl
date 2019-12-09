@@ -80,6 +80,7 @@
 		let reloadTimeWords = ["Reload Time"];
 		let pelletsWords = ["Pellets"];
 		let dpsStats = {};
+		let specialCaseDoubleBarrel = false;
 		for (let stat of stats) {
 			if (damageWords.includes(stat.name)) {
 				if (dpsStats.damage) {
@@ -99,6 +100,11 @@
 			} else if (ammoWords.includes(stat.name)) {
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			}
+
+			// temporary special case for double barrel oc
+			if (stat.name === "Double Barrel" && stat.value === "1") {
+				specialCaseDoubleBarrel = true;
+			}
 		}
 		if ((dpsStats.maxAmmo && !dpsStats.magazineSize) || (dpsStats.magazineSize && !dpsStats.maxAmmo)) {
 			// special case for minigun
@@ -116,6 +122,17 @@
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
 		let damagePerSecond = magazineDamage / damageTime;
+		if (specialCaseDoubleBarrel) {
+			return {
+				dps: parseFloat(damagePerSecond * 2).toFixed(2),
+				dpsw: parseFloat(damagePerSecond).toFixed(2),
+				dpb: dpsStats.damage * 2,
+				dpm: magazineDamage,
+				dpmw: magazineDamage * 1,
+				dpa: dpsStats.damage * dpsStats.maxAmmo,
+				dpaw: dpsStats.damage * dpsStats.maxAmmo * 1
+			};
+		}
 		return {
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpsw: parseFloat(damagePerSecond * 1).toFixed(2),
@@ -292,7 +309,7 @@
 		...also
 		*/
 
-		return {stats: stats, costs: costs};
+		return { stats: stats, costs: costs };
 	};
 
 	export default {

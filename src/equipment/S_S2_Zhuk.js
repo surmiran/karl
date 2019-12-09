@@ -380,7 +380,7 @@ export default {
 			},
 			text: "Special hardened bullets combined with rerouting escaping gasses back into the chamber greatly increases the raw damage of the weapon but makes it more difficult to control and removes any bonus to weakpoint hits.",
 			stats: {
-				dmg: { name: "Damage", value: 11 },
+				dmg: { name: "Damage", value: 5 },
 				ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true, multiply: true },
 				ex1: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
 				ex9: { name: "Movement Speed While Using", value: 50, percent: true, subtract: true }

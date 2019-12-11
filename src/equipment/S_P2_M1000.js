@@ -94,7 +94,7 @@ export default {
 				type: "Recoil",
 				text: "Improved hip-shot accuracy.",
 				stats: {
-					ex3: { name: "Recoil", value: 50, percent: true, subtract: true },
+					ex3: { name: "Recoil", value: 0.5, multiply: true },
 				},
 				cost: {
 					credits: 2000,
@@ -403,7 +403,6 @@ export default {
 				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
 			}
 		},
-		/* todo: check ingame if hipster + Better Weight Balance give 0% recoil. */
 		{
 			selected: false,
 			name: "Hipster",
@@ -421,9 +420,9 @@ export default {
 			},
 			text: "A rebalancing of weight distribution, enlarged vents and a reshaped grip result in a rifle that is more controllable when hip-firing in quick succession but at the cost of pure damage output.",
 			stats: {
-				ammo: { name: "Max Ammo", value: 72 },
+				ammo: { name: "Max Ammo", value: 96 },
 				rate: { name: "Rate of Fire", value: 3 },
-				ex3: { name: "Recoil", value: 50, percent: true, subtract: true },
+				ex3: { name: "Recoil", value: 0.5, multiply: true },
 				dmg: { name: "Damage", value: 20, subtract: true },
 			}
 		},

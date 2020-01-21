@@ -45,13 +45,12 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Quickfire Ejector",
-				icon: "Icon_Upgrade_Speed",
-				type: "Reload Speed",
-				text:
-					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
+				name: "High Capacity Magazine",
+				icon: "Icon_Upgrade_ClipSize",
+				type: "Magazine Size",
+				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					reload: { name: "Reload Time", value: 1, subtract: true }
+					clip: { name: "Magazine Size", value: 110 },
 				},
 				cost: {
 					credits: 1200,

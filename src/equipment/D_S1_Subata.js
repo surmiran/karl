@@ -356,7 +356,7 @@ export default {
 			text: "Fully automatic action, watch out for the recoil.",
 			stats: {
 				ex8: { name: "Full Auto", value: 1, boolean: true },
-				rate: { name: "Rate of Fire", value: 1.0 },
+				rate: { name: "Rate of Fire", value: 2.0 },
 				ex2: { name: "Base Spread", value: 100, percent: true },
 			}
 		},

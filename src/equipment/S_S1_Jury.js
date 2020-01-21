@@ -341,6 +341,8 @@ export default {
 			text: "Unload both barrels at once, no regrets.",
 			stats: {
 				ex10: { name: "Double Barrel", value: 1, boolean: true },
+				/* todo: Since it lets you make 2 shots at once it should impact dps. RoF might become infinity in that case but it's ok to leave it as it is. */
+				/* todo: Also Damage Per Shot stat in this case should also show doubled amount besides +1 damage increase. */
 				dmg: { name: "Damage", value: 1 },
 			}
 		},

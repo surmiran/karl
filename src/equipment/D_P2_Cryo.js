@@ -40,9 +40,8 @@ export default {
 				stats: {
 					ex3: {
 						name: "Pressure Drop Rate",
-						value: 40,
-						subtract: true,
-						percent: true
+						value: 0.6,
+						multiply: true
 					}
 				}
 			},
@@ -175,7 +174,7 @@ export default {
 				},
 				text: "Faster pressure recovery when not firing.",
 				stats: {
-					ex4: { name: "Pressure Gain Rate", value: 70, percent: true }
+					ex4: { name: "Pressure Gain Rate", value: 1.7, multiply: true }
 				}
 			},
 			{
@@ -195,7 +194,11 @@ export default {
 				},
 				text: "Shoot longer before needing to recharge",
 				stats: {
-					ex3: { name: "Pressure Drop Rate", value: 40, percent: true, subtract: true }
+					ex3: {
+						name: "Pressure Drop Rate",
+						value: 0.6,
+						multiply: true
+					}
 				}
 			},
 			{
@@ -344,7 +347,11 @@ export default {
 			text: "Get all you can from your fuel and lose pressure slower from the main chamber.",
 			stats: {
 				clip: { name: "Tank Capacity", value: 25 },
-				ex3: { name: "Pressure Drop Rate", value: 25, percent: true, subtract: true },
+				ex3: {
+					name: "Pressure Drop Rate",
+					value: 0.75,
+					multiply: true
+				},
 			}
 		},
 		{
@@ -385,8 +392,8 @@ export default {
 			},
 			text: "A low volume high pressure chamber paired with a high power pump improve the overall function rate of the weapon but lower the max duration of sustained flow.",
 			stats: {
-				ex3: { name: "Pressure Drop Rate", value: 125, percent: true },
-				ex4: { name: "Pressure Gain Rate", value: 170, percent: true },
+				ex3: { name: "Pressure Drop Rate", value: 2.25, multiply: true },
+				ex4: { name: "Pressure Gain Rate", value: 2.7, multiply: true },
 			}
 		},
 		{
@@ -430,7 +437,7 @@ export default {
 				dmg: { name: "Damage", value: 8 },
 				ex7: { name: "Flow Rate", value: 10, percent: true },
 				ex2: { name: "Freezing Power", value: 3, subtract: true },
-				ex3: { name: "Pressure Drop Rate", value: 100, percent: true },
+				ex3: { name: "Pressure Drop Rate", value: 2, multiply: true },
 			}
 		},
 		{

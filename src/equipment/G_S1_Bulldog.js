@@ -21,7 +21,8 @@ export default {
 		ex7: { name: "Dead-Eye", value: 0, boolean: true },
 		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true },
 		ex11: { name: "Chain Hit", value: 0, boolean: true },
-		ex12: { name: "Magic Bullets", value: 0, boolean: true }
+		ex12: { name: "Magic Bullets", value: 0, boolean: true },
+		ex13: { name: "Recoil", value: 100, percent: true }
 	},
 	mods: [
 		[
@@ -96,8 +97,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					/* todo: replace base spread with recoil */
-					ex1: { name: "Base Spread", value: 75, percent: true },
+					ex13: { name: "Recoil", value: 0.75, multiply: true },
 					ex2: { name: "Spread Per Shot", value: 80, percent: true, subtract: true }
 				},
 				cost: {
@@ -342,7 +342,7 @@ export default {
 			text: "Less weight means you can squeeze out more bullets faster than you can say \"Recoil\" but the stability of the weapon is reduced. ",
 			stats: {
 				rate: { name: "Rate of Fire", value: 4 },
-				ex1: { name: "Base Spread", value: 150, percent: true }
+				ex13: { name: "Recoil", value: 150, percent: true }
 			}
 		},
 		{
@@ -363,8 +363,8 @@ export default {
 			text: "An updated casing profile lets you squeeze one more round into the cylinder and increases the maximum rate of fire, but all that filling and drilling has compromised the pure damage output of the weapon. ",
 			stats: {
 				clip: { name: "Magazine Size", value: 1 },
-				rate: { name: "Rate of Fire", value: 1 },
-				dmg: { name: "Damage", value: 10, subtract: true }
+				ammo: { name: "Max Ammo", value: 5 },
+				ex1: { name: "Base Spread", value: 1.5, multiply: true },
 			}
 		},
 		{

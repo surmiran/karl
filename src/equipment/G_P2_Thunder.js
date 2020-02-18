@@ -378,7 +378,7 @@ export default {
 			},
 			text: "A few tweaks here and there and the autocannon can now shoot HE rounds! Direct damage is lower but the increased splash damage and range lets you saturate and area like no other weapon can. ",
 			stats: {
-				ex1: { name: "Area Damage", value: 6 },
+				ex1: { name: "Area Damage", value: 4 },
 				ex2: { name: "Effect Radius", value: 1 },
 				dmg: { name: "Damage", value: 6, subtract: true }
 			}

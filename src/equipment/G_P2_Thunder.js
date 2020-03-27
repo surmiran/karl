@@ -8,18 +8,18 @@ export default {
 		dmg: { name: "Damage", value: 14 },
 		ammo: { name: "Max Ammo", value: 440 },
 		clip: { name: "Magazine Size", value: 110 },
-		rate: { name: "Rate of Fire", value: 5.5 },
+		rate: { name: "Top Rate of Fire", value: 5.5 },
 		reload: { name: "Reload Time", value: 5 },
-		ex1: { name: "Area Damage", value: 8 },
-		ex2: { name: "Effect Radius", value: 1.2 },
+		ex1: { name: "Area Damage", value: 9 },
+		ex2: { name: "Effect Radius", value: 1.4 },
 		ex3: { name: "Base Spread", value: 100, percent: true },
-		ex4: { name: "Rate of Fire increase Speed", value: 0, percent: true },
-		ex5: { name: "Armor Break", value: 100, percent: true },
+		ex4: { name: "Rate of Fire Growth Speed", value: 100, percent: true },
+		ex5: { name: "Armor Breaking", value: 100, percent: true },
 		ex6: { name: "Movement Speed While Using", value: 50, percent: true },
-		ex7: { name: "Full RoF Damage Bonus", value: 0, percent: true },
+		ex7: { name: "Top RoF Damage Bonus", value: 0, percent: true },
 		ex8: { name: "Impact Fear AoE", value: 0 },
-		ex9: { name: "Resistance at full rate of fire", value: 0, boolean: true },
-		ex10: { name: "Neurotoxin Payload (20% chance)", value: 0, boolean: true }
+		ex9: { name: "Damage Resistance at Full RoF", value: 0, percent: true },
+		ex10: { name: "Neurotoxin Payload", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -113,7 +113,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 0.825 }
+					rate: { name: "Top Rate of Fire", value: 1.5 }
 				},
 				cost: {
 					credits: 2000,
@@ -133,7 +133,7 @@ export default {
 				type: "Rate of Fire",
 				text: "Reach the max rate of fire faster",
 				stats: {
-					ex4: { name: "Rate of Fire increase Speed", value: 100, percent: true }
+					ex4: { name: "Rate of Fire Growth Speed", value: 100, percent: true }
 					/* todo: dps calculation is off since update 24.. rate of fire increase was tweaked / fixed */
 				},
 				cost: {
@@ -157,7 +157,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 1.925 }
+					rate: { name: "Top Rate of Fire", value: 2 }
 				},
 				cost: {
 					credits: 2800,
@@ -220,7 +220,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those bug buggers like butter. What could be finer?",
 				stats: {
-					ex5: { name: "Armor Break", value: 400, percent: true }
+					ex5: { name: "Armor Breaking", value: 400, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -240,7 +240,7 @@ export default {
 				type: "Area of effect",
 				text: "Greater splash damage radius",
 				stats: {
-					ex2: { name: "Effect Radius", value: 0.5 }
+					ex2: { name: "Effect Radius", value: 0.6 }
 				},
 				cost: {
 					credits: 4800,
@@ -262,7 +262,7 @@ export default {
 				type: "Damage",
 				text: "Increased damage when at max rate of fire",
 				stats: {
-					ex7: { name: "Full RoF Damage Bonus", value: 20, percent: true }
+					ex7: { name: "Top RoF Damage Bonus", value: 20, percent: true }
 				},
 				cost: {
 					credits: 5600,
@@ -302,9 +302,8 @@ export default {
 				type: "Resistance",
 				text: "Take less damage when at max rate of fire",
 				stats: {
-					ex9: { name: "Damage Resistance at Full RoF", value: 1, boolean: true }
+					ex9: { name: "Damage Resistance at Full RoF", value: 33, percent: true }
 				},
-				/* todo: make percentage based (+20%)*/
 				cost: {
 					credits: 5600,
 					bismor: 0,
@@ -378,14 +377,14 @@ export default {
 			},
 			text: "A few tweaks here and there and the autocannon can now shoot HE rounds! Direct damage is lower but the increased splash damage and range lets you saturate and area like no other weapon can. ",
 			stats: {
-				ex1: { name: "Area Damage", value: 4 },
-				ex2: { name: "Effect Radius", value: 1 },
+				ex1: { name: "Area Damage", value: 3 },
+				ex2: { name: "Effect Radius", value: 0.7 },
 				dmg: { name: "Damage", value: 6, subtract: true }
 			}
 		},
 		{
 			selected: false,
-			name: "Combat Mobility ",
+			name: "Combat Mobility",
 			icon: "Icon_Upgrade_MovementSpeed",
 			type: "balanced",
 			cost: {
@@ -424,7 +423,8 @@ export default {
 				dmg: { name: "Damage", value: 12 },
 				clip: { name: "Magazine Size", value: 55, subtract: true },
 				ammo: { name: "Max Ammo", value: 110, subtract: true },
-				rate: { name: "Rate of Fire", value: 1.375, subtract: true }
+				ex3: { name: "Base Spread", value: 30, percent: true, subtract: true },
+				rate: { name: "Top Rate of Fire", value: 1.5, subtract: true }
 			}
 		},
 		{
@@ -444,8 +444,8 @@ export default {
 			},
 			text: "Channel your inner war criminal by mixing some neurotoxin into the explosive compound. The rounds deal less direct damage and splash damage, but affected bugs move slower and take lots of damage over time.",
 			stats: {
-				ex10: { name: "Neurotoxin Payload (20% chance)", value: 1, boolean: true },
-				dmg: { name: "Damage", value: 6, subtract: true },
+				ex10: { name: "Neurotoxin Payload", value: 1, boolean: true },
+				dmg: { name: "Damage", value: 3, subtract: true },
 				ex1: { name: "Area Damage", value: 6, subtract: true }
 			}
 		}

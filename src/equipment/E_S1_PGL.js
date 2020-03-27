@@ -259,7 +259,7 @@ export default {
 				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
-					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100%",
+					"Launched grenades will only detonate when they are in close proximity to an enemy or after the projectile comes to a complete stop. Note: The trigger takes a moment to arm, indicated by a green light, and until then the grenade functions as usual.",
 				stats: {
 					ex7: { name: "Proximity Trigger", value: 1, boolean: true }
 				},

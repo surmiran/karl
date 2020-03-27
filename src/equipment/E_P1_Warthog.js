@@ -5,19 +5,19 @@ export default {
 	class: "Shotgun",
 	icon: "equipment.E_P1_Warthog",
 	baseStats: {
-		dmg: { name: "Damage", value: 6 },
+		dmg: { name: "Damage", value: 7 },
 		ammo: { name: "Max Ammo", value: 90 },
 		clip: { name: "Magazine Size", value: 6 },
-		rate: { name: "Rate of Fire", value: 1.6 },
+		rate: { name: "Rate of Fire", value: 2 },
 		reload: { name: "Reload Time", value: 2 },
 		ex1: { name: "Pellets", value: 8 },
-		ex2: { name: "Stun Duration", value: 2.0 },
-		ex3: { name: "Weakpoint Stun Chance", value: 10, percent: true },
+		ex2: { name: "Weakpoint Stun Duration", value: 3.0 },
+		ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 10, percent: true },
 		ex4: { name: "Recoil", value: 100, percent: true },
 		ex5: { name: "Base Spread", value: 100, percent: true },
 		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
 		ex7: { name: "Turret Whip", value: 0, boolean: true },
-		ex8: { name: "Automatic Fire", value: 0, boolean: true }
+		ex8: { name: "Miner Adjustments", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -29,7 +29,7 @@ export default {
 				text:
 					"We overclocked your gun. It fires faster. Don't ask, just enjoy. Also probably don't tell Management, please.",
 				stats: {
-					rate: { name: "Rate of Fire", value: 0.8 }
+					rate: { name: "Rate of Fire", value: 1 }
 				},
 				cost: {
 					credits: 1200,
@@ -211,15 +211,15 @@ export default {
 					err: 0
 				}
 			},
-			{
+			/*{
 				selected: false,
 				name: "Improved Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
 				text: "Stun enemies more often and for a longer time!",
 				stats: {
-					ex2: { name: "Stun Duration", value: 1 },
-					ex3: { name: "Weakpoint Stun Chance", value: 20, percent: true }
+					ex2: { name: "Weakpoint Stun Duration", value: 1 },
+					ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 20, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -231,7 +231,7 @@ export default {
 					umanite: 48,
 					err: 0
 				}
-			},
+			},*/
 			{
 				selected: false,
 				name: "Bigger Pellets",
@@ -239,7 +239,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 2 }
+					dmg: { name: "Damage", value: 1 }
 				},
 				cost: {
 					credits: 4800,
@@ -281,8 +281,8 @@ export default {
 				type: "Rate of Fire",
 				text: "Fully automatic with an increased rate of fire",
 				stats: {
-					rate: { name: "Rate of Fire", value: 1.2 },
-					ex8: { name: "Automatic Fire", value: 1, boolean: true }
+					rate: { name: "Rate of Fire", value: 0.5 },
+					ex8: { name: "Miner Adjustments", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 5600,
@@ -383,7 +383,8 @@ export default {
 				dmg: { name: "Damage", value: 1 },
 				rate: { name: "Rate of Fire", value: 2 },
 				reload: { name: "Reload Time", value: 0.5 },
-				ex5: { name: "Base Spread", value: 2, percent: true, multiply: true },
+				/* todo: check base spread calc with Choke mod! */
+				ex5: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
 			}
 		},
 		{
@@ -407,6 +408,8 @@ export default {
 				clip: { name: "Magazine Size", value: 6 },
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				dmg: { name: "Damage", value: 2, subtract: true },
+				ex2: { name: "Weakpoint Stun Duration", value: 0, multiply: true },
+				ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 0, percent: true, multiply: true },
 			}
 		},
 	]

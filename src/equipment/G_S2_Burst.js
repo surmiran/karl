@@ -5,20 +5,20 @@ export default {
 	class: "Pistol",
 	icon: "equipment.G_S2_Burst",
 	baseStats: {
-		dmg: { name: "Damage", value: 14 },
-		ammo: { name: "Max Ammo", value: 144 },
-		clip: { name: "Magazine Size", value: 18 },
+		dmg: { name: "Damage", value: 20 },
+		ammo: { name: "Max Ammo", value: 120 },
+		clip: { name: "Magazine Size", value: 24 },
 		rate: { name: "Rate of Fire", value: 2.5 },
 		reload: { name: "Reload Time", value: 2.2 },
 		ex1: { name: "Burst Size", value: 3 },
 		ex2: { name: "Burst Speed", value: 0.05 },
 		ex3: { name: "Spread Per Shot", value: 100, percent: true },
 		ex4: { name: "Recoil", value: 100, percent: true },
-		ex5: { name: "Armor Breaking", value: 70, percent: true },
+		ex5: { name: "Armor Breaking", value: 50, percent: true },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
 		ex8: { name: "Burst Stun Duration", value: 0 },
-		ex9: { name: "Electro Minelets", value: 0, boolean: true },
+		ex9: { name: "Electro Minelets", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -29,7 +29,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 2 }
+					dmg: { name: "Damage", value: 3 }
 				},
 				cost: {
 					credits: 1000,
@@ -44,28 +44,6 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Disabled Safety",
-				icon: "Icon_Upgrade_FireRate",
-				type: "Rate of Fire",
-				text: "Shorter Delay between bursts",
-				stats: {
-					rate: { name: "Rate of Fire", value: 3 }
-				},
-				cost: {
-					credits: 1000,
-					bismor: 20,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			}
-		],
-		[
-			{
-				selected: false,
 				name: "Floating Barrel",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Accuracy",
@@ -75,16 +53,18 @@ export default {
 					ex3: { name: "Spread Per Shot", value: 42, percent: true, subtract: true }
 				},
 				cost: {
-					credits: 1800,
+					credits: 1000,
 					bismor: 0,
-					croppa: 18,
+					croppa: 20,
 					enorPearl: 0,
-					jadiz: 12,
+					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
 					err: 0
 				}
-			},
+			}
+		],
+		[
 			{
 				selected: false,
 				name: "Recoil Dampener",
@@ -112,9 +92,9 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
-					reload: { name: "Reload Time", value: 0.5, subtract: true }
+					reload: { name: "Reload Time", value: 0.7, subtract: true }
 				},
 				cost: {
 					credits: 1800,
@@ -122,6 +102,26 @@ export default {
 					croppa: 12,
 					enorPearl: 0,
 					jadiz: 18,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Disabled Safety",
+				icon: "Icon_Upgrade_FireRate",
+				type: "Rate of Fire",
+				text: "Shorter Delay between bursts",
+				stats: {
+					rate: { name: "Rate of Fire", value: 3 }
+				},
+				cost: {
+					credits: 1000,
+					bismor: 20,
+					croppa: 0,
+					enorPearl: 0,
+					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
 					err: 0
@@ -173,7 +173,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Penetrating Rounds",
+				name: "Hardened Rounds",
 				icon: "Icon_Upgrade_ArmorBreaking",
 				type: "Armor Breaking",
 				text:
@@ -237,32 +237,12 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Burst Damage",
-				icon: "Icon_Upgrade_DamageGeneral",
-				type: "Damage",
-				text: "Damage bonus on last bullet if the first two hit",
-				stats: {
-					ex7: { name: "Burst Damage", value: 10 }
-				},
-				cost: {
-					credits: 4400,
-					bismor: 0,
-					croppa: 40,
-					enorPearl: 0,
-					jadiz: 110,
-					magnite: 0,
-					umanite: 60,
-					err: 0
-				}
-			},
-			{
-				selected: false,
 				name: "Burst Stun",
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
 				text: "Stun target if all shots in a burst hit",
 				stats: {
-					ex8: { name: "Burst Stun Duration", value: 3 }
+					ex8: { name: "Burst Stun Duration", value: 4 }
 				},
 				cost: {
 					credits: 4400,
@@ -316,7 +296,7 @@ export default {
 			text: "Lighter rounds that permit a shorter delay between bursts and you can carry a few more of them as well. What's not to like?",
 			stats: {
 				ammo: { name: "Max Ammo", value: 36 },
-				rate: { name: "Rate of Fire", value: 1 },
+				rate: { name: "Rate of Fire", value: 1 }
 			}
 		},
 		{
@@ -337,7 +317,7 @@ export default {
 			text: "Meticulous sealing lets you get a bit more power out of each round and the attention to detail improves how easily the magazine slots in.",
 			stats: {
 				dmg: { name: "Damage", value: 1 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -379,7 +359,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 72 },
 				rate: { name: "Rate of Fire", value: 1, subtract: true },
-				reload: { name: "Reload Time", value: 0.4 },
+				reload: { name: "Reload Time", value: 0.4 }
 			}
 		},
 		{
@@ -399,9 +379,9 @@ export default {
 			},
 			text: "A new shape to the bullet delivers a lot more damage but it's odd size means fewer rounds in the clip and a bit less ammo overall.",
 			stats: {
-				dmg: { name: "Damage", value: 5 },
+				dmg: { name: "Damage", value: 9 },
 				ammo: { name: "Max Ammo", value: 36, subtract: true },
-				clip: { name: "Magazine Size", value: 6, subtract: true },
+				clip: { name: "Magazine Size", value: 6, subtract: true }
 			}
 		},
 		{
@@ -423,7 +403,7 @@ export default {
 			stats: {
 				ex9: { name: "Electro Minelets", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
-				clip: { name: "Magazine Size", value: 6, subtract: true },
+				clip: { name: "Magazine Size", value: 6, subtract: true }
 			}
 		},
 		{
@@ -443,12 +423,12 @@ export default {
 			},
 			text: "Convert the BRT to fire small flechettes instead of slugs. Increases overall ammo and clip size as well as reducing recoil but at the cost of pure damage.",
 			stats: {
-				ammo: { name: "Max Ammo", value: 144 },
+				ammo: { name: "Max Ammo", value: 120 },
 				clip: { name: "Magazine Size", value: 24 },
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true },
-				dmg: { name: "Damage", value: 0.5, multiply: true },
+				dmg: { name: "Damage", value: 0.5, multiply: true }
 			}
-		},
+		}
 	]
 };

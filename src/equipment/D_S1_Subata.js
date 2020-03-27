@@ -19,7 +19,7 @@ export default {
 		ex7: { name: "Randomized Damage", value: 0, boolean: true },
 		ex8: { name: "Full Auto", value: 0, boolean: true },
 		ex9: { name: "Explosive Reload", value: 0, boolean: true },
-		ex10: { name: "Stun Chance", value: 0, percent: true },
+		ex10: { name: "Stun Chance", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -69,7 +69,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster.',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster.",
 				stats: {
 					reload: { name: "Reload Time", value: 0.6, subtract: true }
 				},
@@ -155,7 +155,7 @@ export default {
 				type: "Accuracy",
 				text: "This little tweak reduces weapon recoil and spread per shot helping you hit consecutive shots.",
 				stats: {
-					ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true},
+					ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2200,
@@ -294,7 +294,7 @@ export default {
 			},
 			text: "Any shot that hits a weakspot has a chance to ricochet into a nearby enemy.",
 			stats: {
-				ex6: { name: "Weakpoint Chain Hit Chance", value: 50, percent: true },
+				ex6: { name: "Weakpoint Chain Hit Chance", value: 50, percent: true }
 			}
 		},
 		{
@@ -335,7 +335,7 @@ export default {
 			text: "Custom magazine that can fit a lot more ammo but it's a bit unwieldy and takes longer to reload.",
 			stats: {
 				clip: { name: "Magazine Size", value: 10 },
-				reload: { name: "Reload Time", value: 0.5 },
+				reload: { name: "Reload Time", value: 0.5 }
 			}
 		},
 		{
@@ -357,7 +357,7 @@ export default {
 			stats: {
 				ex8: { name: "Full Auto", value: 1, boolean: true },
 				rate: { name: "Rate of Fire", value: 2.0 },
-				ex2: { name: "Base Spread", value: 100, percent: true },
+				ex2: { name: "Base Spread", value: 100, percent: true }
 			}
 		},
 		{
@@ -380,7 +380,7 @@ export default {
 				ex9: { name: "Explosive Reload", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
 				ammo: { name: "Max Ammo", value: 40, subtract: true },
-				clip: { name: "Magazine Size", value: 3, subtract: true },
+				clip: { name: "Magazine Size", value: 3, subtract: true }
 			}
 		},
 		{
@@ -402,8 +402,8 @@ export default {
 			stats: {
 				ex10: { name: "Stun Chance", value: 50, percent: true },
 				clip: { name: "Magazine Size", value: 4, subtract: true },
-				rate: { name: "Rate of Fire", value: 4.0, subtract: true },
+				rate: { name: "Rate of Fire", value: 4.0, subtract: true }
 			}
-		},
+		}
 	]
 };

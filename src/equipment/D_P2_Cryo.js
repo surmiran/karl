@@ -5,19 +5,19 @@ export default {
 	class: "Heavy Weapon",
 	icon: "equipment.D_P2_Cryo",
 	baseStats: {
-		dmg: { name: "Damage", value: 7 },
+		dmg: { name: "Damage", value: 6 },
 		clip: { name: "Tank Capacity", value: 400 },
-		rate: { name: "Chargeup Time", value: 0.8 },
-		reload: { name: "Repressurization Delay", value: 1.7 },
-		ex1: { name: "Cold Stream Reach", value: 6 },
-		ex2: { name: "Freezing Power", value: 5 },
+		rate: { name: "Chargeup Time", value: 0.5 },
+		reload: { name: "Repressurization Delay", value: 1 },
+		ex1: { name: "Cold Stream Reach", value: 10 },
+		ex2: { name: "Freezing Power", value: 8 },
 		ex3: { name: "Pressure Drop Rate", value: 100, percent: true },
 		ex4: { name: "Pressure Gain Rate", value: 100, percent: true },
 		ex5: { name: "Frozen Targets can Shatter", value: 0, boolean: true },
 		ex6: { name: "Area Cold Damage", value: 0, boolean: true },
 		ex7: { name: "Flow Rate", value: 100, percent: true },
 		ex8: { name: "Ice Spear", value: 0, boolean: true },
-		ex9: { name: "Snowball (50 ammo max)", value: 0, boolean: true },
+		ex9: { name: "Snowball", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -36,18 +36,18 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Shoot longer before needing to repressurize.",
+				text: "Lets you shoot for a longer time before needing to refill the preassure chamber.",
 				stats: {
 					ex3: {
 						name: "Pressure Drop Rate",
-						value: 0.6,
+						value: 0.5,
 						multiply: true
 					}
 				}
 			},
 			{
 				selected: false,
-				name: "Improved 2nd Stage Pump",
+				name: "Faster Turbine Spinup",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
 				cost: {
@@ -60,11 +60,11 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Shorter chargeup time",
+				text: "Start freezing things as soon as you pull the trigger with a near-instant turbine response",
 				stats: {
 					rate: {
 						name: "Chargeup Time",
-						value: 0.5,
+						value: 0.4,
 						subtract: true
 					}
 				}
@@ -84,7 +84,7 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Freeze things faster",
+				text: "Freeze things at a faster rate.",
 				stats: {
 					ex2: {
 						name: "Freezing Power",
@@ -96,7 +96,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "High Pressure Reserve Tank",
+				name: "Larger Reserve Tank",
 				icon: "Icon_Upgrade_Ammo",
 				type: "Total Ammo",
 				cost: {
@@ -131,7 +131,7 @@ export default {
 				},
 				text: "Longer reach",
 				stats: {
-					ex1: { name: "Cold Stream Reach", value: 3 }
+					ex1: { name: "Cold Stream Reach", value: 5 }
 				}
 			},
 			{
@@ -150,16 +150,16 @@ export default {
 					err: 0
 				},
 				text:
-					"Shorter repressurisation delay. After reaching minimum pressure, the weapon will start the recovery faster.",
+					"If you completely empty the pressure chamber, the weapon will immediately start repressurizing, safety be banned",
 				stats: {
-					reload: { name: "Repressurization Delay", value: 1.1, subtract: true }
+					reload: { name: "Repressurization Delay", value: 0, multiply: true }
 				}
 			}
 		],
 		[
 			{
 				selected: false,
-				name: "Faster 1st Stage Pump",
+				name: "Improved Pump",
 				icon: "Icon_Upgrade_ChargeUp",
 				type: "Charge Speed",
 				cost: {
@@ -172,33 +172,9 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Faster pressure recovery when not firing.",
+				text: "Refill the pressure chamber faster.",
 				stats: {
 					ex4: { name: "Pressure Gain Rate", value: 1.7, multiply: true }
-				}
-			},
-			{
-				selected: false,
-				name: "Increased Chamber Pressure",
-				icon: "Icon_Upgrade_ClipSize",
-				type: "Magazine Size",
-				cost: {
-					credits: 2800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 35,
-					umanite: 50,
-					err: 0
-				},
-				text: "Shoot longer before needing to recharge",
-				stats: {
-					ex3: {
-						name: "Pressure Drop Rate",
-						value: 0.6,
-						multiply: true
-					}
 				}
 			},
 			{
@@ -226,7 +202,7 @@ export default {
 		[
 			{
 				selected: false,
-				name: "Higher Water Content",
+				name: "Hard Mixture",
 				icon: "Icon_Upgrade_DamageGeneral",
 				type: "Damage",
 				cost: {
@@ -239,14 +215,14 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "More ice formation in stream causing more damage",
+				text: "Promotes ice-crystal formation in the stream resulting in more direct damage.",
 				stats: {
 					dmg: { name: "Damage", value: 3 }
 				}
 			},
 			{
 				selected: false,
-				name: "Improved Mixture",
+				name: "Supercooling Mixture",
 				icon: "Icon_Upgrade_Cold",
 				type: "Cold",
 				cost: {
@@ -259,9 +235,9 @@ export default {
 					umanite: 0,
 					err: 0
 				},
-				text: "Freeze things faster",
+				text: "Improves the heat capacity of the stream so you can freeze things at a faster rate.",
 				stats: {
-					ex2: { name: "Freezing Power", value: 2 }
+					ex2: { name: "Freezing Power", value: 1 }
 				}
 			},
 			{
@@ -291,7 +267,7 @@ export default {
 				name: "Fragile",
 				icon: "Icon_Upgrade_Explosion",
 				type: "Special",
-				text: "Frozen targets can spontaniously shatter",
+				text: "There is a chance that frozen targets will spontaneously shatter!",
 				stats: {
 					ex5: { name: "Frozen Targets can Shatter", value: 1, boolean: true }
 				},
@@ -311,7 +287,7 @@ export default {
 				name: "Cold Radiance",
 				icon: "Icon_Upgrade_Cold",
 				type: "Cold",
-				text: "Cool things down in a 5m radius around you",
+				text: "Any enemy that strays within 5m of you while you are firing the Cryo Cannon will start to freeze.",
 				stats: {
 					ex6: { name: "Area Cold Damage", value: 1, boolean: true }
 				},
@@ -351,7 +327,7 @@ export default {
 					name: "Pressure Drop Rate",
 					value: 0.75,
 					multiply: true
-				},
+				}
 			}
 		},
 		{
@@ -371,8 +347,7 @@ export default {
 			},
 			text: "Freeze things faster, no strings attached.",
 			stats: {
-				ex2: { name: "Freezing Power", value: 1 },
-				ex7: { name: "Flow Rate", value: 10, percent: true }
+				ex2: { name: "Freezing Power", value: 1 }
 			}
 		},
 		{
@@ -385,7 +360,7 @@ export default {
 				bismor: 0,
 				croppa: 0,
 				enorPearl: 70,
-				jadiz: 100 ,
+				jadiz: 100,
 				magnite: 125,
 				umanite: 0,
 				err: 0
@@ -394,6 +369,7 @@ export default {
 			stats: {
 				ex3: { name: "Pressure Drop Rate", value: 2.25, multiply: true },
 				ex4: { name: "Pressure Gain Rate", value: 2.7, multiply: true },
+				ex7: { name: "Flow Rate", value: 10, percent: true }
 			}
 		},
 		{
@@ -414,7 +390,7 @@ export default {
 			text: "Pressing the reload button dumps all the fluid in the chamber directly into the turbine, flash freezing it and launching an ice projectile. Side effects include an increased recharge delay and of course the large amount of fuel used.",
 			stats: {
 				reload: { name: "Repressurization Delay", value: 1 },
-				ex8: { name: "Ice Spear", value: 1, boolean: true },
+				ex8: { name: "Ice Spear", value: 1, boolean: true }
 			}
 		},
 		{
@@ -434,10 +410,10 @@ export default {
 			},
 			text: "A change in the fuel mixture along with some heavy cooler unit tweaks means that you'll be doing less freezing and more killing with razor-sharp ice shards. However, the capacity of the pressure chamber suffers.",
 			stats: {
-				dmg: { name: "Damage", value: 8 },
-				ex7: { name: "Flow Rate", value: 10, percent: true },
+				dmg: { name: "Damage", value: 6 },
 				ex2: { name: "Freezing Power", value: 3, subtract: true },
-				ex3: { name: "Pressure Drop Rate", value: 2, multiply: true },
+				clip: { name: "Tank Capacity", value: 50, subtract: true },
+				ex3: { name: "Pressure Drop Rate", value: 1.5, multiply: true }
 			}
 		},
 		{
@@ -457,10 +433,10 @@ export default {
 			},
 			text: "Pressing the reload button shoots all the cryofuel in the chamber at once as an AoE cryo-projectile. Besides the very large amount of fuel consumed the operation overloads the whole system resulting in a much longer delay before regaining pressure and the modifications restrict the total amount of fuel you can carry.",
 			stats: {
-				clip: { name: "Tank Capacity", value: 50, subtract: true },
-				reload: { name: "Repressurization Delay", value: 2 },
-				ex9: { name: "Snowball (50 ammo max)", value: 1, boolean: true },
+				clip: { name: "Tank Capacity", value: 100, subtract: true },
+				reload: { name: "Repressurization Delay", value: 1 },
+				ex9: { name: "Snowball", value: 1, boolean: true }
 			}
-		},
+		}
 	]
 };

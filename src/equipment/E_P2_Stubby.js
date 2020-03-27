@@ -1,23 +1,23 @@
 export default {
 	selected: false,
 	modified: false,
-	name: '"Stubby" Voltaic SMG',
+	name: "\"Stubby\" Voltaic SMG",
 	class: "Submachine Gun",
 	icon: "equipment.E_P2_Stubby",
 	baseStats: {
-		dmg: { name: "Damage", value: 6 },
+		dmg: { name: "Damage", value: 9 },
 		ammo: { name: "Max Ammo", value: 420 },
 		clip: { name: "Magazine Size", value: 30 },
 		rate: { name: "Rate of Fire", value: 11 },
 		reload: { name: "Reload Time", value: 2 },
-		ex1: { name: "Electric Damage", value: 2 },
-		ex2: { name: "Electrocution %", value: 10, percent: true },
-		ex3: { name: "Base Spread", value: 100, percent: true },
+		ex1: { name: "Electric Damage", value: 0 },
+		ex2: { name: "Electrocution %", value: 20, percent: true },
+		ex3: { name: "Recoil", value: 100, percent: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Damage vs Electrically Affected", value: 100, percent: true },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true },
 		ex7: { name: "Turret Arc (10m range)", value: 0, boolean: true },
-		ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
+		ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -48,7 +48,7 @@ export default {
 				type: "Electricity",
 				text: "Better chance to electrocute target",
 				stats: {
-					ex2: { name: "Electrocution %", value: 10, percent: true }
+					ex2: { name: "Electrocution %", value: 30, percent: true }
 				},
 				cost: {
 					credits: 1200,
@@ -105,22 +105,22 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Floating Barrel",
-				icon: "Icon_Upgrade_Accuracy",
-				type: "Accuracy",
+				name: "Recoil Dampener",
+				icon: "Icon_Upgrade_Recoil",
+				type: "Recoil",
 				text:
-					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
+					"Qaulity engineering, the best lasercut parts, the tender loving care of a dedicated R&D Department. The recoil of your gun is drastically reduced.",
 				stats: {
-					ex3: { name: "Base Spread", value: 60, percent: true, subtract: true }
+					ex3: { name: "Recoil", value: 50, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2000,
-					bismor: 0,
+					bismor: 24,
 					croppa: 0,
-					enorPearl: 15,
-					jadiz: 24,
+					enorPearl: 0,
+					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 15,
 					err: 0
 				}
 			},
@@ -212,48 +212,6 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Larger Capacitors",
-				icon: "Icon_Upgrade_Electricity",
-				type: "Electricity",
-				text: "Better chance to electrocute target",
-				stats: {
-					ex2: { name: "Electrocution %", value: 10, percent: true }
-				},
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 50,
-					jadiz: 48,
-					magnite: 72,
-					umanite: 0,
-					err: 0
-				}
-			},
-			{
-				selected: false,
-				name: "Overcharged Rounds",
-				icon: "Icon_Upgrade_Electricity",
-				type: "Electricity",
-				text: "More electric damage",
-				stats: {
-					ex1: { name: "Electric Damage", value: 2 }
-				},
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 50,
-					jadiz: 72,
-					magnite: 48,
-					umanite: 0,
-					err: 0
-				}
-			}
-		],
-		[
-			{
-				selected: false,
 				name: "Conductive Bullets",
 				icon: "Icon_Upgrade_Electricity",
 				type: "Electricity",
@@ -271,7 +229,9 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			}
+		],
+		[
 			{
 				selected: false,
 				name: "Magazine Capacity Tweak",
@@ -332,8 +292,8 @@ export default {
 			},
 			text: "Same power but in a smaller package giving slightly better accuracay and letting you fit a few more rounds in each mag.",
 			stats: {
-				clip: { name: "Magazine Size", value: 5 },
-				ex3: { name: "Base Spread", value: 0.8, percent: true, multiply: true },
+				/* todo: check if recoil or base spread is still affected by this oc */
+				clip: { name: "Magazine Size", value: 5 }
 			}
 		},
 		{
@@ -354,7 +314,7 @@ export default {
 			text: "When you need a little more sustained damage.",
 			stats: {
 				rate: { name: "Rate of Fire", value: 2 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -375,8 +335,7 @@ export default {
 			text: "Use the electron circuit of the SMG to boost its fire rate and damage but the accuracy suffers as a result.",
 			stats: {
 				ex1: { name: "Electric Damage", value: 2 },
-				rate: { name: "Rate of Fire", value: 4 },
-				ex3: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
+				rate: { name: "Rate of Fire", value: 4 }
 			}
 		},
 		{
@@ -398,7 +357,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 180 },
 				dmg: { name: "Damage", value: 1, subtract: true },
-				rate: { name: "Rate of Fire", value: 2, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true }
 			}
 		},
 		{
@@ -420,7 +379,7 @@ export default {
 			stats: {
 				ex7: { name: "Turret Arc (10m range)", value: 1, boolean: true },
 				ammo: { name: "Max Ammo", value: 120, subtract: true },
-				rate: { name: "Rate of Fire", value: 2, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true }
 			}
 		},
 		{
@@ -442,8 +401,8 @@ export default {
 			stats: {
 				ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
 				ex2: { name: "Electrocution %", value: 5, percent: true, subtract: true },
-				dmg: { name: "Damage", value: 3, subtract: true },
+				dmg: { name: "Damage", value: 3, subtract: true }
 			}
-		},
+		}
 	]
 };

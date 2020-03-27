@@ -18,7 +18,6 @@ export default {
 		ex5: { name: "Fear Factor", value: 0, percent: true },
 		ex6: { name: "Flame Reach", value: 10 },
 		ex7: { name: "Area Heat", value: 0 },
-		/*ex8: { name: "Heat Bonus", value: 0, percent: true },*/
 		ex9: { name: "Killed Targets Explode %", value: 0, percent: true },
 		ex10: { name: "Movement Speed While Using", value: 100, percent: true }
 	},
@@ -104,7 +103,7 @@ export default {
 				},
 				text: "Fire it up! You set things ablaze much faster. Time to watch the world burn...!",
 				stats: {
-					ex11: { name: "Heat", value: 10 },
+					ex11: { name: "Heat", value: 10 }
 				}
 			}, // 1/2
 			{
@@ -150,26 +149,6 @@ export default {
 					rate: { name: "Fuel Flow Rate", value: 30, percent: true }
 				}
 			},
-			/*{
-				selected: false,
-				name: "Sticky flame duration",
-				icon: "Icon_Upgrade_Duration",
-				type: "Delay",
-				cost: {
-					credits: 2800,
-					bismor: 50,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 35,
-					umanite: 0,
-					err: 0
-				},
-				text: "Sticky flames duration increase.",
-				stats: {
-					ex4: { name: "Sticky Flame Duration", value: 2 }
-				}
-			},*/ // 2/1
 			{
 				selected: false,
 				name: "Sticky Flame Slowdown",
@@ -273,46 +252,6 @@ export default {
 					ammo: { name: "Max Fuel", value: 75 }
 				}
 			}
-			/*{
-				selected: false,
-				name: "Sticky Flame Damage",
-				icon: "Icon_Upgrade_DamageGeneral",
-				type: "Damage",
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 50,
-					jadiz: 72,
-					magnite: 48,
-					umanite: 0,
-					err: 0
-				},
-				text: "Creatures moving through sticky flames take more damage.",
-				stats: {
-					ex1: { name: "Sticky Flame Damage", value: 1, boolean: true }
-				}
-			},
-			{
-				selected: false,
-				name: "Sticky Flame Ignition",
-				icon: "Icon_Upgrade_Heat",
-				type: "Heat",
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 72,
-					magnite: 50,
-					umanite: 48,
-					err: 0
-				},
-				text: "Creatures moving through sticky flames are quickly set on fire.",
-				stats: {
-					ex2: { name: "Sticky Flame Burn", value: 1, boolean: true }
-				}
-			}*/
 		],
 		[
 			{
@@ -485,7 +424,7 @@ export default {
 				ex1: { name: "Increased Sticky Flame Damage", value: 1, boolean: true },
 				ex4: { name: "Sticky Flame Duration", value: 6 },
 				clip: { name: "Tank Size", value: 25, subtract: true },
-				ammo: { name: "Max Fuel", value: 75, subtract: true },
+				ammo: { name: "Max Fuel", value: 75, subtract: true }
 			}
 		}
 	]

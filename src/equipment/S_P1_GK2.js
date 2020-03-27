@@ -20,7 +20,7 @@ export default {
 		ex8: { name: "Battle Cool", value: 0, boolean: true },
 		ex9: { name: "Bonus Damage to Afflicted Targets", value: 0, percent: true },
 		ex10: { name: "Spread Recovery Speed", value: 100, percent: true },
-		ex11: { name: "Electric Reload (100% chance)", value: 0, boolean: true },
+		ex11: { name: "Electric Reload (100% chance)", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -340,7 +340,7 @@ export default {
 			text: "Increases the weapon's rate of fire without affecting performance and helps with magazine ejection as well.",
 			stats: {
 				rate: { name: "Rate of Fire", value: 1 },
-				reload: { name: "Reload Time", value: 0.3, subtract: true },
+				reload: { name: "Reload Time", value: 0.3, subtract: true }
 			}
 		},
 		{
@@ -360,7 +360,7 @@ export default {
 			},
 			text: "More damage on average but it's a bit inconsistent.",
 			stats: {
-				dmg: { name: "Damage", value: 1.1, multiply: true },
+				dmg: { name: "Damage", value: 1.1, multiply: true }
 			}
 		},
 		{
@@ -381,7 +381,7 @@ export default {
 			text: "Fires more bullets faster and it kicks like a mule.",
 			stats: {
 				rate: { name: "Rate of Fire", value: 3 },
-				ex4: { name: "Spread Per Shot", value: 2.5, percent: true, multiply: true },
+				ex4: { name: "Spread Per Shot", value: 2.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -402,7 +402,7 @@ export default {
 			text: "Put suffering bugs out of their missery with a damage bonus against afflicted enemies.",
 			stats: {
 				ex9: { name: "Bonus Damage to Afflicted Targets", value: 33, percent: true },
-				clip: { name: "Magazine Size", value: 5, subtract: true },
+				clip: { name: "Magazine Size", value: 5, subtract: true }
 			}
 		},
 		{
@@ -425,7 +425,7 @@ export default {
 				ex4: { name: "Spread Per Shot", value: 0, percent: true, multiply: true },
 				ex10: { name: "Spread Recovery Speed", value: 9, percent: true, multiply: true },
 				dmg: { name: "Damage", value: 1, subtract: true },
-				rate: { name: "Rate of Fire", value: 2, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true }
 			}
 		},
 		{
@@ -447,8 +447,8 @@ export default {
 			stats: {
 				ex11: { name: "Electric Reload (100% chance)", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
-				clip: { name: "Magazine Size", value: 5, subtract: true },
+				clip: { name: "Magazine Size", value: 5, subtract: true }
 			}
-		},
+		}
 	]
 };

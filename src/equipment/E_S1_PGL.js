@@ -18,7 +18,7 @@ export default {
 		ex6: { name: "Stun Chance", value: 0, percent: true },
 		ex7: { name: "Proximity Trigger", value: 0, boolean: true },
 		ex8: { name: "Direct Damage", value: 0 },
-		ex10: { name: "RJ250 Compound", value: 0, boolean: true },
+		ex10: { name: "RJ250 Compound", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -197,7 +197,7 @@ export default {
 				type: "Randomized Damage",
 				text: "More damage on average but it's a bit inconsistent with a spread from 80% to 140%",
 				stats: {
-					dmg: { name: "Area Damage", value: 1.1, multiply: true },
+					dmg: { name: "Area Damage", value: 1.1, multiply: true }
 				},
 				cost: {
 					credits: 3800,
@@ -216,7 +216,7 @@ export default {
 				icon: "Icon_Upgrade_Area",
 				type: "Area of effect",
 				text:
-					'Fire in the hole! The Area of Effect is increased. (We advise keeping the term "safe distance" close to your heart)',
+					"Fire in the hole! The Area of Effect is increased. (We advise keeping the term \"safe distance\" close to your heart)",
 				stats: {
 					ex1: { name: "Effect Radius", value: 1.5 }
 				},
@@ -259,7 +259,7 @@ export default {
 				icon: "Icon_Upgrade_Special",
 				type: "Special",
 				text:
-					"Grenades will explode when they are close to an enemy. Damage goes up the longer the projectile flies. Up to +100%",
+					"Launched grenades will only detonate when they are in close proximity to an enemy or after the projectile comes to a complete stop. Note: The trigger takes a moment to arm, indicated by a green light, and until then the grenade functions as usual.",
 				stats: {
 					ex7: { name: "Proximity Trigger", value: 1, boolean: true }
 				},
@@ -316,7 +316,7 @@ export default {
 			text: "Increases the explosion radius and damage without any unwanted effects.",
 			stats: {
 				dmg: { name: "Area Damage", value: 10 },
-				ex1: { name: "Effect Radius", value: 0.5 },
+				ex1: { name: "Effect Radius", value: 0.5 }
 			}
 		},
 		{
@@ -336,7 +336,7 @@ export default {
 			},
 			text: "You found a way to pack away two more rounds somewhere",
 			stats: {
-				ammo: { name: "Max Ammo", value: 2 },
+				ammo: { name: "Max Ammo", value: 2 }
 			}
 		},
 		{
@@ -358,7 +358,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 4 },
 				dmg: { name: "Area Damage", value: 10, subtract: true },
-				ex1: { name: "Effect Radius", value: 0.5, subtract: true },
+				ex1: { name: "Effect Radius", value: 0.5, subtract: true }
 			}
 		},
 		{
@@ -379,7 +379,7 @@ export default {
 			text: "Trade raw damage for the ability to use explosions to move yourself and your teammates.",
 			stats: {
 				ex10: { name: "RJ250 Compound", value: 1, boolean: true },
-				dmg: { name: "Area Damage", value: 25, subtract: true },
+				dmg: { name: "Area Damage", value: 25, subtract: true }
 			}
 		},
 		{
@@ -402,7 +402,7 @@ export default {
 				dmg: { name: "Area Damage", value: 330 },
 				ex1: { name: "Effect Radius", value: 1 },
 				ammo: { name: "Max Ammo", value: 0.3, multiply: true },
-				ex4: { name: "Projectile Velocity", value: 0.7, percent: true, multiply: true },
+				ex4: { name: "Projectile Velocity", value: 0.7, percent: true, multiply: true }
 			}
 		},
 		{
@@ -424,8 +424,8 @@ export default {
 			stats: {
 				ex8: { name: "Direct Damage", value: 250 },
 				ex4: { name: "Projectile Velocity", value: 350, percent: true },
-				ex1: { name: "Effect Radius", value: 0.3, multiply: true },
+				ex1: { name: "Effect Radius", value: 0.3, multiply: true }
 			}
-		},
+		}
 	]
 };

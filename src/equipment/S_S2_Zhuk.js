@@ -12,7 +12,6 @@ export default {
 		reload: { name: "Reload Time", value: 1.8 },
 		ex1: { name: "Base Spread", value: 100, percent: true },
 		ex2: { name: "Max Penetrations", value: 0 },
-		/*ex3: { name: "Stun Chance", value: 0, percent: true },*/
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex5: { name: "Get in, get out", value: 0, boolean: true },
 		ex6: { name: "Damage vs Electrically Affected", value: 0, percent: true },

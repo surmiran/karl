@@ -364,7 +364,7 @@ export default {
 			stats: {
 				clip: { name: "Magazine Size", value: 1 },
 				ammo: { name: "Max Ammo", value: 5 },
-				ex1: { name: "Base Spread", value: 1.5, multiply: true },
+				ex1: { name: "Base Spread", value: 1.5, multiply: true }
 			}
 		},
 		{

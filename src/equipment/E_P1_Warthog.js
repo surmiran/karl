@@ -1,7 +1,7 @@
 export default {
 	selected: true,
 	modified: false,
-	name: '"Warthog" Auto 210',
+	name: "\"Warthog\" Auto 210",
 	class: "Shotgun",
 	icon: "equipment.E_P1_Warthog",
 	baseStats: {
@@ -153,7 +153,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table "adjustments" means your gun can be reloaded significantly faster.',
+					"Experience, training, and a couple of under-the-table \"adjustments\" means your gun can be reloaded significantly faster.",
 				stats: {
 					reload: { name: "Reload Time", value: 0.5, subtract: true }
 				},
@@ -211,27 +211,6 @@ export default {
 					err: 0
 				}
 			},
-			/*{
-				selected: false,
-				name: "Improved Stun",
-				icon: "Icon_Upgrade_Stun",
-				type: "Stun",
-				text: "Stun enemies more often and for a longer time!",
-				stats: {
-					ex2: { name: "Weakpoint Stun Duration", value: 1 },
-					ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 20, percent: true }
-				},
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 72,
-					magnite: 50,
-					umanite: 48,
-					err: 0
-				}
-			},*/
 			{
 				selected: false,
 				name: "Bigger Pellets",
@@ -317,7 +296,7 @@ export default {
 			text: "Using these shells expands magazine capacity slightly and the weapon can fire them faster!",
 			stats: {
 				clip: { name: "Magazine Size", value: 1 },
-				rate: { name: "Rate of Fire", value: 0.4 },
+				rate: { name: "Rate of Fire", value: 0.4 }
 			}
 		},
 		{
@@ -338,7 +317,7 @@ export default {
 			text: "It's amazing how much material can be removed without affecting anything and lighter magazines means more magazines and faster reloading.",
 			stats: {
 				ammo: { name: "Max Ammo", value: 20 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -360,7 +339,7 @@ export default {
 			stats: {
 				ex5: { name: "Base Spread", value: 0.5, percent: true, multiply: true },
 				clip: { name: "Magazine Size", value: 2, subtract: true },
-				rate: { name: "Rate of Fire", value: 0.4, subtract: true },
+				rate: { name: "Rate of Fire", value: 0.4, subtract: true }
 			}
 		},
 		{
@@ -384,7 +363,7 @@ export default {
 				rate: { name: "Rate of Fire", value: 2 },
 				reload: { name: "Reload Time", value: 0.5 },
 				/* todo: check base spread calc with Choke mod! */
-				ex5: { name: "Base Spread", value: 1.5, percent: true, multiply: true },
+				ex5: { name: "Base Spread", value: 1.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -409,8 +388,8 @@ export default {
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				dmg: { name: "Damage", value: 2, subtract: true },
 				ex2: { name: "Weakpoint Stun Duration", value: 0, multiply: true },
-				ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 0, percent: true, multiply: true },
+				ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 0, percent: true, multiply: true }
 			}
-		},
+		}
 	]
 };

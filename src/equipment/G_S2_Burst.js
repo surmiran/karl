@@ -18,7 +18,7 @@ export default {
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
 		ex8: { name: "Burst Stun Duration", value: 0 },
-		ex9: { name: "Electro Minelets", value: 0, boolean: true },
+		ex9: { name: "Electro Minelets", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -62,7 +62,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
+			}
 		],
 		[
 			{
@@ -92,7 +92,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
 					reload: { name: "Reload Time", value: 0.7, subtract: true }
 				},
@@ -296,7 +296,7 @@ export default {
 			text: "Lighter rounds that permit a shorter delay between bursts and you can carry a few more of them as well. What's not to like?",
 			stats: {
 				ammo: { name: "Max Ammo", value: 36 },
-				rate: { name: "Rate of Fire", value: 1 },
+				rate: { name: "Rate of Fire", value: 1 }
 			}
 		},
 		{
@@ -317,7 +317,7 @@ export default {
 			text: "Meticulous sealing lets you get a bit more power out of each round and the attention to detail improves how easily the magazine slots in.",
 			stats: {
 				dmg: { name: "Damage", value: 1 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -359,7 +359,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 72 },
 				rate: { name: "Rate of Fire", value: 1, subtract: true },
-				reload: { name: "Reload Time", value: 0.4 },
+				reload: { name: "Reload Time", value: 0.4 }
 			}
 		},
 		{
@@ -381,7 +381,7 @@ export default {
 			stats: {
 				dmg: { name: "Damage", value: 9 },
 				ammo: { name: "Max Ammo", value: 36, subtract: true },
-				clip: { name: "Magazine Size", value: 6, subtract: true },
+				clip: { name: "Magazine Size", value: 6, subtract: true }
 			}
 		},
 		{
@@ -403,7 +403,7 @@ export default {
 			stats: {
 				ex9: { name: "Electro Minelets", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
-				clip: { name: "Magazine Size", value: 6, subtract: true },
+				clip: { name: "Magazine Size", value: 6, subtract: true }
 			}
 		},
 		{
@@ -427,8 +427,8 @@ export default {
 				clip: { name: "Magazine Size", value: 24 },
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true },
-				dmg: { name: "Damage", value: 0.5, multiply: true },
+				dmg: { name: "Damage", value: 0.5, multiply: true }
 			}
-		},
+		}
 	]
 };

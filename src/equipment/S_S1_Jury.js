@@ -21,7 +21,7 @@ export default {
 		ex8: { name: "Damage % as Fire", value: 0, percent: true },
 		ex10: { name: "Double Barrel", value: 0, boolean: true },
 		ex11: { name: "Shotgun Jump", value: 0, boolean: true },
-		ex12: { name: "Base Spread", value: 100, percent: true },
+		ex12: { name: "Base Spread", value: 100, percent: true }
 	},
 	mods: [
 		[
@@ -94,7 +94,7 @@ export default {
 				icon: "Icon_Upgrade_Speed",
 				type: "Reload Speed",
 				text:
-					'Experience, training, and a couple of under-the-table design "adjustments" means your gun can be reloaded significantly faster. ',
+					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
 					reload: { name: "Reload Time", value: 0.7, subtract: true }
 				},
@@ -320,7 +320,7 @@ export default {
 			text: "You can carry a few more of these compact shells in your pockets and they are a bit faster to reload with.",
 			stats: {
 				ammo: { name: "Max Ammo", value: 6 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -343,7 +343,7 @@ export default {
 				ex10: { name: "Double Barrel", value: 1, boolean: true },
 				/* todo: Since it lets you make 2 shots at once it should impact dps. RoF might become infinity in that case but it's ok to leave it as it is. */
 				/* todo: Also Damage Per Shot stat in this case should also show doubled amount besides +1 damage increase. */
-				dmg: { name: "Damage", value: 1 },
+				dmg: { name: "Damage", value: 1 }
 			}
 		},
 		{
@@ -363,7 +363,7 @@ export default {
 			},
 			text: "Less like gunpowder and more like rocketfuel, this mixture gives a hell of a kick that you can use to get places.",
 			stats: {
-				ex11: { name: "Shotgun Jump", value: 1, boolean: true },
+				ex11: { name: "Shotgun Jump", value: 1, boolean: true }
 			}
 		},
 		{
@@ -384,7 +384,7 @@ export default {
 			text: "With a bit of patience and some luck you can get one more pellet and a few more grains of powder into each shell without affecting the gun's performance or losing an eye in the process.",
 			stats: {
 				dmg: { name: "Damage", value: 1 },
-				ex1: { name: "Pellets", value: 1 },
+				ex1: { name: "Pellets", value: 1 }
 			}
 		},
 		{
@@ -405,7 +405,7 @@ export default {
 			text: "Specially shaped shells result in a tighter shot but the number of pellets is reduced.",
 			stats: {
 				ex12: { name: "Base Spread", value: 35, percent: true, subtract: true },
-				ex1: { name: "Pellets", value: 2, subtract: true },
+				ex1: { name: "Pellets", value: 2, subtract: true }
 			}
 		},
 		{
@@ -427,8 +427,8 @@ export default {
 			stats: {
 				dmg: { name: "Damage", value: 8 },
 				ammo: { name: "Max Ammo", value: 10, subtract: true },
-				reload: { name: "Reload Time", value: 0.5 },
+				reload: { name: "Reload Time", value: 0.5 }
 			}
-		},
+		}
 	]
 };

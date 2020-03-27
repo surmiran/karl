@@ -1,7 +1,7 @@
 export default {
 	selected: false,
 	modified: false,
-	name: '"Stubby" Voltaic SMG',
+	name: "\"Stubby\" Voltaic SMG",
 	class: "Submachine Gun",
 	icon: "equipment.E_P2_Stubby",
 	baseStats: {
@@ -17,7 +17,7 @@ export default {
 		ex5: { name: "Damage vs Electrically Affected", value: 100, percent: true },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true },
 		ex7: { name: "Turret Arc (10m range)", value: 0, boolean: true },
-		ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
+		ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -229,47 +229,7 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
-			/*{
-				selected: false,
-				name: "Larger Capacitors",
-				icon: "Icon_Upgrade_Electricity",
-				type: "Electricity",
-				text: "Better chance to electrocute target",
-				stats: {
-					ex2: { name: "Electrocution %", value: 10, percent: true }
-				},
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 50,
-					jadiz: 48,
-					magnite: 72,
-					umanite: 0,
-					err: 0
-				}
-			},*/
-			/*{
-				selected: false,
-				name: "Overcharged Rounds",
-				icon: "Icon_Upgrade_Electricity",
-				type: "Electricity",
-				text: "More electric damage",
-				stats: {
-					ex1: { name: "Electric Damage", value: 2 }
-				},
-				cost: {
-					credits: 4800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 50,
-					jadiz: 72,
-					magnite: 48,
-					umanite: 0,
-					err: 0
-				}
-			}*/
+			}
 		],
 		[
 			{
@@ -333,7 +293,7 @@ export default {
 			text: "Same power but in a smaller package giving slightly better accuracay and letting you fit a few more rounds in each mag.",
 			stats: {
 				/* todo: check if recoil or base spread is still affected by this oc */
-				clip: { name: "Magazine Size", value: 5 },
+				clip: { name: "Magazine Size", value: 5 }
 			}
 		},
 		{
@@ -354,7 +314,7 @@ export default {
 			text: "When you need a little more sustained damage.",
 			stats: {
 				rate: { name: "Rate of Fire", value: 2 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -375,7 +335,7 @@ export default {
 			text: "Use the electron circuit of the SMG to boost its fire rate and damage but the accuracy suffers as a result.",
 			stats: {
 				ex1: { name: "Electric Damage", value: 2 },
-				rate: { name: "Rate of Fire", value: 4 },
+				rate: { name: "Rate of Fire", value: 4 }
 			}
 		},
 		{
@@ -397,7 +357,7 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 180 },
 				dmg: { name: "Damage", value: 1, subtract: true },
-				rate: { name: "Rate of Fire", value: 2, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true }
 			}
 		},
 		{
@@ -419,7 +379,7 @@ export default {
 			stats: {
 				ex7: { name: "Turret Arc (10m range)", value: 1, boolean: true },
 				ammo: { name: "Max Ammo", value: 120, subtract: true },
-				rate: { name: "Rate of Fire", value: 2, subtract: true },
+				rate: { name: "Rate of Fire", value: 2, subtract: true }
 			}
 		},
 		{
@@ -441,8 +401,8 @@ export default {
 			stats: {
 				ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
 				ex2: { name: "Electrocution %", value: 5, percent: true, subtract: true },
-				dmg: { name: "Damage", value: 3, subtract: true },
+				dmg: { name: "Damage", value: 3, subtract: true }
 			}
-		},
+		}
 	]
 };

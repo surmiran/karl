@@ -50,7 +50,7 @@ export default {
 				type: "Magazine Size",
 				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
 				stats: {
-					clip: { name: "Magazine Size", value: 110 },
+					clip: { name: "Magazine Size", value: 110 }
 				},
 				cost: {
 					credits: 1200,

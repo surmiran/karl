@@ -17,13 +17,12 @@ export default {
 		ex5: { name: "Charge Speed", value: 0.8 },
 		ex6: { name: "Heat Buildup When Charged", value: 100, percent: true },
 		ex7: { name: "Normal Projectile Velocity", value: 100, percent: true },
-		/*ex8: { name: "Heat when Charging", value: 0 },*/
 		ex8: { name: "Thin Containment Field", value: 0, boolean: true },
 		ex9: { name: "Flying Nightmare", value: 0, boolean: true },
 		ex10: { name: "No Charged Shot Insta-Overheat", value: 0, boolean: true },
 		ex11: { name: "Projectile Bounces", value: 0, boolean: true },
 		ex12: { name: "Normal Shot Heat", value: 100, percent: true },
-		ex13: { name: "Persistent Plasma", value: 0, boolean: true },
+		ex13: { name: "Persistent Plasma", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -344,7 +343,7 @@ export default {
 			text: "A masterwork of engineering that improves charge speed and energy efficiency without affecting overall performance!",
 			stats: {
 				clip: { name: "Battery Capacity", value: 16 },
-				ex5: { name: "Charge Speed", value: 0.4 },
+				ex5: { name: "Charge Speed", value: 0.4 }
 			}
 		},
 		{
@@ -365,7 +364,7 @@ export default {
 			text: "A high-tech solution to Cleanly improve the cooling rate increasing the number of slots that can be fired before overheating and also the speed of recovery from an overheat as well as how long a charge can be held.",
 			stats: {
 				reload: { name: "Cooling Rate", value: 25, percent: true },
-				ex6: { name: "Heat Buildup When Charged", value: 30, percent: true, subtract: true },
+				ex6: { name: "Heat Buildup When Charged", value: 30, percent: true, subtract: true }
 			}
 		},
 		{
@@ -386,7 +385,7 @@ export default {
 			text: "By channeling exhaust heat back into the charge chamber a shot can be charged using less energy. This does however make the weapon less efficient at dissipating heat.",
 			stats: {
 				ex4: { name: "Charged Shot Ammo Use", value: 2, subtract: true },
-				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true },
+				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true }
 			}
 		},
 		{
@@ -408,7 +407,7 @@ export default {
 			stats: {
 				dmg: { name: "Damage", value: 5 },
 				clip: { name: "Battery Capacity", value: 16, subtract: true },
-				ex12: { name: "Normal Shot Heat", value: 50, percent: true },
+				ex12: { name: "Normal Shot Heat", value: 50, percent: true }
 			}
 		},
 		{
@@ -430,7 +429,7 @@ export default {
 			stats: {
 				ex1: { name: "Charged Damage", value: 40 },
 				ex5: { name: "Charge Speed", value: 0.8, subtract: true },
-				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true  },
+				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true }
 			}
 		},
 		{
@@ -452,8 +451,8 @@ export default {
 			stats: {
 				ex13: { name: "Persistent Plasma", value: 1, boolean: true },
 				ex1: { name: "Charged Damage", value: 20, subtract: true },
-				ex2: { name: "Charged Area Damage", value: 20, subtract: true },
+				ex2: { name: "Charged Area Damage", value: 20, subtract: true }
 			}
 		}
 	]
-}
+};

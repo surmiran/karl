@@ -17,7 +17,7 @@ export default {
 		ex6: { name: "Area Cold Damage", value: 0, boolean: true },
 		ex7: { name: "Flow Rate", value: 100, percent: true },
 		ex8: { name: "Ice Spear", value: 0, boolean: true },
-		ex9: { name: "Snowball", value: 0, boolean: true },
+		ex9: { name: "Snowball", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -152,7 +152,7 @@ export default {
 				text:
 					"If you completely empty the pressure chamber, the weapon will immediately start repressurizing, safety be banned",
 				stats: {
-					reload: { name: "Repressurization Delay", value: 1, subtract: true }
+					reload: { name: "Repressurization Delay", value: 0, multiply: true }
 				}
 			}
 		],
@@ -177,30 +177,6 @@ export default {
 					ex4: { name: "Pressure Gain Rate", value: 1.7, multiply: true }
 				}
 			},
-			/*{
-				selected: false,
-				name: "Increased Chamber Pressure",
-				icon: "Icon_Upgrade_ClipSize",
-				type: "Magazine Size",
-				cost: {
-					credits: 2800,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 35,
-					umanite: 50,
-					err: 0
-				},
-				text: "Shoot longer before needing to recharge",
-				stats: {
-					ex3: {
-						name: "Pressure Drop Rate",
-						value: 0.6,
-						multiply: true
-					}
-				}
-			},*/
 			{
 				selected: false,
 				name: "Increased Flow Volume",
@@ -351,7 +327,7 @@ export default {
 					name: "Pressure Drop Rate",
 					value: 0.75,
 					multiply: true
-				},
+				}
 			}
 		},
 		{
@@ -384,7 +360,7 @@ export default {
 				bismor: 0,
 				croppa: 0,
 				enorPearl: 70,
-				jadiz: 100 ,
+				jadiz: 100,
 				magnite: 125,
 				umanite: 0,
 				err: 0
@@ -414,7 +390,7 @@ export default {
 			text: "Pressing the reload button dumps all the fluid in the chamber directly into the turbine, flash freezing it and launching an ice projectile. Side effects include an increased recharge delay and of course the large amount of fuel used.",
 			stats: {
 				reload: { name: "Repressurization Delay", value: 1 },
-				ex8: { name: "Ice Spear", value: 1, boolean: true },
+				ex8: { name: "Ice Spear", value: 1, boolean: true }
 			}
 		},
 		{
@@ -437,7 +413,7 @@ export default {
 				dmg: { name: "Damage", value: 6 },
 				ex2: { name: "Freezing Power", value: 3, subtract: true },
 				clip: { name: "Tank Capacity", value: 50, subtract: true },
-				ex3: { name: "Pressure Drop Rate", value: 1.5, multiply: true },
+				ex3: { name: "Pressure Drop Rate", value: 1.5, multiply: true }
 			}
 		},
 		{
@@ -459,8 +435,8 @@ export default {
 			stats: {
 				clip: { name: "Tank Capacity", value: 100, subtract: true },
 				reload: { name: "Repressurization Delay", value: 1 },
-				ex9: { name: "Snowball", value: 1, boolean: true },
+				ex9: { name: "Snowball", value: 1, boolean: true }
 			}
-		},
+		}
 	]
 };

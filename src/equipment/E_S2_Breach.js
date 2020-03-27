@@ -21,7 +21,7 @@ export default {
 		ex9: { name: "Return to Sender", value: 0, boolean: true },
 		ex10: { name: "Spinning Death", value: 0, boolean: true },
 		ex11: { name: "High Voltage Crossover", value: 0, boolean: true },
-		ex12: { name: "Inferno", value: 0, boolean: true },
+		ex12: { name: "Inferno", value: 0, boolean: true }
 	},
 	mods: [
 		/* todo: check all mod costs! */
@@ -199,9 +199,7 @@ export default {
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
 				text: "The plasma beam will stun most of the denizens of Hoxxes on contact",
-				stats: {
-
-				},
+				stats: {},
 				cost: {
 					credits: 3800,
 					bismor: 0,
@@ -317,7 +315,7 @@ export default {
 			text: "Bring more ammo with you and slam those cases in faster!",
 			stats: {
 				ammo: { name: "Max Ammo", value: 4 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -337,7 +335,7 @@ export default {
 			},
 			text: "A few tweaks to the launcher cause it to add roll to the projectile as it is ejected. Holding down the trigger after the line leaves the gun activates a remote connection with on the release of the trigger causes the line to stop rolling.",
 			stats: {
-				ex8: { name: "Roll Control", value: 1, boolean: true },
+				ex8: { name: "Roll Control", value: 1, boolean: true }
 			}
 		},
 		{
@@ -358,7 +356,7 @@ export default {
 			text: "By improving the node's efficiency you can up the raw damage without too much fuss and it lasts a bit longer too!",
 			stats: {
 				dmg: { name: "Beam DPS", value: 50 },
-				ex1: { name: "Projectile Lifetime", value: 0.5 },
+				ex1: { name: "Projectile Lifetime", value: 0.5 }
 			}
 		},
 		{
@@ -379,7 +377,7 @@ export default {
 			text: "Holding down the trigger after line leaves the gun activates a remote connection with on the release of the trigger causes the line to change direction and move back towards the gun.",
 			stats: {
 				ex9: { name: "Return to Sender", value: 1, boolean: true },
-				ammo: { name: "Max Ammo", value: 4, subtract: true },
+				ammo: { name: "Max Ammo", value: 4, subtract: true }
 			}
 		},
 		{
@@ -400,7 +398,7 @@ export default {
 			text: "By passing an electric current through the plasma, the beam electrocutes anything it touches but at the cost of raw damage and the bulky hardware limits magazine capacity.",
 			stats: {
 				ex11: { name: "High Voltage Crossover", value: 1, boolean: true },
-				clip: { name: "Magazine Size", value: 2, subtract: true },
+				clip: { name: "Magazine Size", value: 2, subtract: true }
 			}
 		},
 		{
@@ -447,8 +445,8 @@ export default {
 				ex12: { name: "Inferno", value: 1, boolean: true },
 				dmg: { name: "Beam DPS", value: 175, subtract: true },
 				ammo: { name: "Max Ammo", value: 4, subtract: true },
-				ex4: { name: "Armor Breaking", value: 0.25, percent: true, multiply: true },
+				ex4: { name: "Armor Breaking", value: 0.25, percent: true, multiply: true }
 			}
-		},
+		}
 	]
 };

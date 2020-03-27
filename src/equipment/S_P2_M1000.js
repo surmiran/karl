@@ -21,7 +21,7 @@ export default {
 		ex8: { name: "Focus Mode Movement Speed", value: 30, percent: true },
 		ex10: { name: "Focus Shot Kill AoE Fear", value: 0, boolean: true },
 		ex11: { name: "Focus Shot Hover", value: 0, boolean: true },
-		ex12: { name: "Electrocuting Focus Shots", value: 0, boolean: true },
+		ex12: { name: "Electrocuting Focus Shots", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -94,7 +94,7 @@ export default {
 				type: "Recoil",
 				text: "Improved hip-shot accuracy.",
 				stats: {
-					ex3: { name: "Recoil", value: 0.5, multiply: true },
+					ex3: { name: "Recoil", value: 0.5, multiply: true }
 				},
 				cost: {
 					credits: 2000,
@@ -106,70 +106,9 @@ export default {
 					umanite: 0,
 					err: 0
 				}
-			},
-			/*{
-				selected: false,
-				name: "Extended Clip",
-				icon: "Icon_Upgrade_ClipSize",
-				type: "Magazine Size",
-				text: "The good thing about clips, magazines, ammo drums, fuel tanks... You can always get bigger variants.",
-				stats: {
-					clip: { name: "Clip Size", value: 2 }
-				},
-				cost: {
-					credits: 2000,
-					bismor: 0,
-					croppa: 0,
-					enorPearl: 15,
-					jadiz: 24,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			},
-			{
-				selected: false,
-				name: "Floating Barrel",
-				icon: "Icon_Upgrade_Accuracy",
-				type: "Accuracy",
-				text:
-					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
-				stats: {
-					ex3: { name: "Recoil", value: 56, percent: true, subtract: true },
-				},
-				cost: {
-					credits: 2000,
-					bismor: 24,
-					croppa: 15,
-					enorPearl: 0,
-					jadiz: 0,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			}*/
+			}
 		],
 		[
-			/*{
-				selected: false,
-				name: "High Velocity Rounds",
-				icon: "Icon_Upgrade_DamageGeneral",
-				type: "Damage",
-				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased",
-				stats: {
-					dmg: { name: "Damage", value: 10 }
-				},
-				cost: {
-					credits: 2800,
-					bismor: 0,
-					croppa: 50,
-					enorPearl: 0,
-					jadiz: 35,
-					magnite: 0,
-					umanite: 0,
-					err: 0
-				}
-			},*/
 			{
 				selected: false,
 				name: "Killer Focus",
@@ -358,7 +297,7 @@ export default {
 			},
 			text: "Your movement slows down for a few seconds while using focus mode in the air.",
 			stats: {
-				ex11: { name: "Focus Shot Hover", value: 1, boolean: true },
+				ex11: { name: "Focus Shot Hover", value: 1, boolean: true }
 			}
 		},
 		{
@@ -379,7 +318,7 @@ export default {
 			text: "Make space for more ammo and speed up reloads by getting rid of dead weight on the clips.",
 			stats: {
 				ammo: { name: "Max Ammo", value: 16 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true },
+				reload: { name: "Reload Time", value: 0.2, subtract: true }
 			}
 		},
 		{
@@ -400,7 +339,7 @@ export default {
 			text: "Focus without slowing down but the power drain from the coils lowers the power of the focused shots.",
 			stats: {
 				ex8: { name: "Focus Mode Movement Speed", value: 70, percent: true },
-				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
+				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true }
 			}
 		},
 		{
@@ -423,7 +362,7 @@ export default {
 				ammo: { name: "Max Ammo", value: 96 },
 				rate: { name: "Rate of Fire", value: 3 },
 				ex3: { name: "Recoil", value: 0.5, multiply: true },
-				dmg: { name: "Damage", value: 20, subtract: true },
+				dmg: { name: "Damage", value: 20, subtract: true }
 			}
 		},
 		{
@@ -444,7 +383,7 @@ export default {
 			text: "Embedded capacitors in a copper core carry the electric charge from the EM coils used for focus shots and will electrocute the target at the cost of a reduced focus shot damage bonus.",
 			stats: {
 				ex12: { name: "Electrocuting Focus Shots", value: 1, boolean: true },
-				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true },
+				ex2: { name: "Focused Shot Damage Bonus", value: 25, percent: true, subtract: true }
 			}
 		},
 		{
@@ -467,8 +406,8 @@ export default {
 				ex2: { name: "Focused Shot Damage Bonus", value: 125, percent: true },
 				ammo: { name: "Max Ammo", value: 0.635, multiply: true },
 				ex1: { name: "Focus Speed", value: 0.5, percent: true, multiply: true },
-				ex8: { name: "Focus Mode Movement Speed", value: 0, percent: true, multiply: true },
+				ex8: { name: "Focus Mode Movement Speed", value: 0, percent: true, multiply: true }
 			}
-		},
+		}
 	]
 };

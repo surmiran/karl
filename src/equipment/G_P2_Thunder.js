@@ -4,6 +4,63 @@ export default {
 	name: "\"Thunderhead\" Heavy Autocannon",
 	class: "Heavy Weapon",
 	icon: "equipment.G_P2_Thunder",
+	calculateDamage: (stats) => {
+		let directDamagePerSecond;
+		let areaDamagePerSecond;
+		let damagePerSecond;
+		let directDamagePerBullet;
+		let areaDamagePerBullet;
+		let damagePerBullet;
+		let directDamagePerMagazine;
+		let areaDamagePerMagazine;
+		let damagePerMagazine;
+		let totalDirectDamage;
+		let totalAreaDamage;
+		let totalDamage;
+		let dpsStats = {};
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.directDamage = parseFloat(stat.value);
+			} else if (stat.name === "Area Damage") {
+				dpsStats.areaDamage = parseFloat(stat.value);
+			} else if (stat.name === "Magazine Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
+			} else if (stat.name === "Top Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Reload Time") {
+				dpsStats.reloadTime = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			}
+		}
+		dpsStats.damage = dpsStats.directDamage + dpsStats.areaDamage;
+
+		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+		let damageTime = timeToEmpty + dpsStats.reloadTime;
+
+		directDamagePerMagazine = dpsStats.directDamage * dpsStats.magazineSize;
+		areaDamagePerMagazine = dpsStats.areaDamage * dpsStats.magazineSize;
+		damagePerMagazine = dpsStats.damage * dpsStats.magazineSize;
+
+		directDamagePerSecond = parseFloat(directDamagePerMagazine / damageTime).toFixed(2);
+		areaDamagePerSecond = parseFloat(areaDamagePerMagazine / damageTime).toFixed(2);
+		damagePerSecond = parseFloat(damagePerMagazine / damageTime).toFixed(2);
+
+		directDamagePerBullet = dpsStats.directDamage;
+		areaDamagePerBullet = dpsStats.areaDamage;
+		damagePerBullet = dpsStats.damage;
+
+		totalDirectDamage = dpsStats.directDamage * dpsStats.maxAmmo;
+		totalAreaDamage = dpsStats.areaDamage * dpsStats.maxAmmo;
+		totalDamage = dpsStats.damage * dpsStats.maxAmmo;
+
+		return {
+			dps: `${damagePerSecond} (Direct: ${directDamagePerSecond} / Area: ${areaDamagePerSecond})`, // damage per second
+			dpb: `${damagePerBullet} (Direct: ${directDamagePerBullet} / Area: ${areaDamagePerBullet})`, // damage per bullet
+			dpm: `${damagePerMagazine} (Direct: ${directDamagePerMagazine} / Area: ${areaDamagePerMagazine})`, // damage per magazine
+			dpa: `${totalDamage} (Direct: ${totalDirectDamage} / Area: ${totalAreaDamage})` // total damage available
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 14 },
 		ammo: { name: "Max Ammo", value: 440 },

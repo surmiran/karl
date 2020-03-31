@@ -106,15 +106,6 @@
 				specialCaseDoubleBarrel = true;
 			}
 		}
-		if ((dpsStats.maxAmmo && !dpsStats.magazineSize) || (dpsStats.magazineSize && !dpsStats.maxAmmo)) {
-			// special case for minigun
-			let damagePerSecond = dpsStats.damage * dpsStats.rateOfFire;
-			return {
-				dps: parseFloat(damagePerSecond).toFixed(2),
-				dpb: dpsStats.damage,
-				dpa: dpsStats.damage * dpsStats.maxAmmo,
-			};
-		}
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
@@ -125,14 +116,14 @@
 				dps: parseFloat(damagePerSecond * 2).toFixed(2),
 				dpb: dpsStats.damage * 2,
 				dpm: magazineDamage,
-				dpa: dpsStats.damage * dpsStats.maxAmmo,
+				dpa: dpsStats.damage * dpsStats.maxAmmo
 			};
 		}
 		return {
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpb: dpsStats.damage,
 			dpm: magazineDamage,
-			dpa: dpsStats.damage * dpsStats.maxAmmo,
+			dpa: dpsStats.damage * dpsStats.maxAmmo
 		};
 	};
 
@@ -342,6 +333,7 @@
 				let costs = results.costs;
 
 				let damage = null;
+				/* todo: move these equipments */
 				let specialEquipment = [
 					"Cryo Cannon",
 					"Experimental Plasma Charger",
@@ -354,15 +346,6 @@
 				} else {
 					damage = this.equipment.calculateDamage ? this.equipment.calculateDamage(stats) : _calculateDamage(stats);
 				}
-
-				/* todo: temporary */
-				if (store.state.tree[this.selectedClassId][this.selectedEquipmentId].name === "Zhukov NUK17" ||
-					store.state.tree[this.selectedClassId][this.selectedEquipmentId].name === "\"Lead Storm\" Powered Minigun") {
-					damage.dps = damage.dps / 2;
-					damage.dpm = damage.dpm / 2;
-					damage.dpa = damage.dpa / 2;
-				}
-				/* todo: end temporary */
 
 				let totalCost = {
 					credits: 0,

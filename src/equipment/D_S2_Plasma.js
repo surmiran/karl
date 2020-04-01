@@ -1,10 +1,93 @@
 export default {
-	/* todo: function for stat and dps calc directly in this object */
 	selected: false,
 	modified: false,
 	name: "Experimental Plasma Charger",
 	class: "Pistol",
 	icon: "equipment.D_S2_Plasma",
+	calculateDamage: (stats) => {
+		let directDamagePerSecond;
+		let chargeDirectDamagePerSecond;
+		let chargeAreaDamagePerSecond;
+		let chargeDamagePerSecond;
+
+		let directDamagePerBullet;
+		let chargeDirectDamagePerBullet;
+		let chargeAreaDamagePerBullet;
+		let chargeDamagePerBullet;
+
+		let totalDirectDamage;
+		let totalChargeDirectDamage;
+		let totalChargeAreaDamage;
+		let totalChargeDamage;
+		let dpsStats = {};
+		// todo: calculate charge and single shot dps separately
+		/*
+		Maximum heat is how much you can fire your weapon before it overheat and you need it to cooldown before using it again.
+		By default charged shot reach 100% heat directly. The maximum heat value is 1 or 100% and cannot be changed.
+
+		Cooling Rate is how fast your weapon cool down the accumulated heat (be it overheated or not).
+		The base value is 0.4 heat per second so you’ll recover from overheating (100% heat) in 100% / 0.4 = 2.5 seconds
+
+		Charge Speed is how long in second it take you to prepare a charged shot. No heat is generated while charging a projectile.
+
+		Heat Buildup When Charged is, just as the name implies, how much heat is generated per second while holding the charge
+		(i.e. when the projectile is fully charged). The base value is 2, which means that if you hold a charged projectile
+		starting from 0 heat you will overheat after 0.5 seconds.
+		*/
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.directDamage = parseFloat(stat.value);
+			} else if (stat.name === "Charged Damage") {
+				dpsStats.chargeDamage = parseFloat(stat.value);
+			} else if (stat.name === "Charged Area Damage") {
+				dpsStats.chargeAreaDamage = parseFloat(stat.value);
+			} else if (stat.name === "Charged Shot Ammo Use") {
+				dpsStats.chargeAmmoUse = parseFloat(stat.value);
+			} else if (stat.name === "Charge Speed") {
+				dpsStats.chargeSpeed = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Reload Time") {
+				dpsStats.reloadTime = parseFloat(stat.value);
+			} else if (stat.name === "Battery Capacity") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Cooling Rate") {
+				dpsStats.coolingRate = parseFloat(stat.value);
+				dpsStats.cooldownTime = 2.5 * dpsStats.coolingRate / 100;
+			}
+		}
+		// get damage time for single and charge shots
+		// todo: all calculations without taking overheating into account at the moment (dpsStats.cooldownTime ignored)
+		// todo: check with overcharger overclock (charge speed is 0...)
+		let timePerChargedShot = dpsStats.chargeSpeed;
+		let chargedRateOfFire = 1 / timePerChargedShot;
+
+		// get single and charge shot damage
+		directDamagePerBullet = parseFloat(dpsStats.directDamage).toFixed(0);
+		chargeDirectDamagePerBullet = parseFloat(dpsStats.chargeDamage).toFixed(0);
+		chargeAreaDamagePerBullet = parseFloat(dpsStats.chargeAreaDamage).toFixed(0);
+		chargeDamagePerBullet = parseFloat(dpsStats.chargeDamage + dpsStats.chargeAreaDamage).toFixed(0);
+
+		directDamagePerSecond = parseFloat(directDamagePerBullet * dpsStats.rateOfFire).toFixed(2); // direct dps burst until overheated.
+		chargeDirectDamagePerSecond = parseFloat(chargeDirectDamagePerBullet * chargedRateOfFire).toFixed(2);
+		chargeAreaDamagePerSecond = parseFloat(chargeAreaDamagePerBullet * chargedRateOfFire).toFixed(2);
+		chargeDamagePerSecond = parseFloat(chargeDamagePerBullet * chargedRateOfFire).toFixed(2);
+
+		let chargedShotCapacity = dpsStats.maxAmmo / dpsStats.chargeAmmoUse;
+
+		totalDirectDamage = parseFloat(directDamagePerBullet * dpsStats.maxAmmo).toFixed(0);
+		totalChargeDirectDamage = parseFloat(chargeDirectDamagePerBullet * chargedShotCapacity).toFixed(0);
+		totalChargeAreaDamage = parseFloat(chargeAreaDamagePerBullet * chargedShotCapacity).toFixed(0);
+		totalChargeDamage = parseFloat(chargeDamagePerBullet * chargedShotCapacity).toFixed(0);
+		return {
+			dpsplasma: `${directDamagePerSecond}`, // damage per second for normal shot
+			dpscharged: `${chargeDamagePerSecond} (Direct: ${chargeDirectDamagePerSecond} / Area: ${chargeAreaDamagePerSecond})`, // damage per second for charged shot
+			dpbplasma: `${directDamagePerBullet}`, // damage per shot
+			dpbcharged: `${chargeDamagePerBullet} (Direct: ${chargeDirectDamagePerBullet} / Area: ${chargeAreaDamagePerBullet})`, // damage per charged shot
+			dpaplasma: `${totalDirectDamage}`, // total damage available for normal shots
+			dpacharged: `${totalChargeDamage} (Direct: ${totalChargeDirectDamage} / Area: ${totalChargeAreaDamage})` // total damage available for charged shots
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 20 },
 		clip: { name: "Battery Capacity", value: 120 },
@@ -411,6 +494,7 @@ export default {
 			}
 		},
 		{
+			/* todo: check overcharger charge speed */
 			selected: false,
 			name: "Overcharger",
 			icon: "Icon_Upgrade_DamageGeneral",
@@ -428,7 +512,7 @@ export default {
 			text: "Pushing the EPC to the limit will give you a significant increase in charge shot damage but at the heavy cost of slow charge speed and decreased cooling efficiency.",
 			stats: {
 				ex1: { name: "Charged Damage", value: 40 },
-				ex5: { name: "Charge Speed", value: 0.8, subtract: true },
+				ex5: { name: "Charge Speed", value: 1.5, multiply: true },
 				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true }
 			}
 		},

@@ -4,6 +4,52 @@ export default {
 	name: "BRT7 Burst Fire Gun",
 	class: "Pistol",
 	icon: "equipment.G_S2_Burst",
+	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let burstDamage;
+		let damagePerMagazine;
+		let totalDamage;
+		let dpsStats = {};
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Burst Size") {
+				dpsStats.burstSize = parseFloat(stat.value);
+			} else if (stat.name === "Burst Speed") {
+				dpsStats.burstSpeed = parseFloat(stat.value);
+			} else if (stat.name === "Burst Damage") {
+				dpsStats.burstBonus = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Magazine Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Reload Time") {
+				dpsStats.reloadTime = parseFloat(stat.value);
+			}
+		}
+		// damage over one burst (3 or 6 bullets used)
+		burstDamage = dpsStats.damage * dpsStats.burstSize;
+		if (dpsStats.burstBonus) {
+			burstDamage += dpsStats.burstBonus;
+		}
+		burstDamage = parseFloat(burstDamage).toFixed(0);
+		let burstMagazine = dpsStats.magazineSize / dpsStats.burstSize;
+		// rate of fire is rate of bursts per second (burst speed ignored)
+		let timeToEmpty = burstMagazine / dpsStats.rateOfFire;
+		let damageTime = timeToEmpty + dpsStats.reloadTime;
+		damagePerMagazine = parseFloat(burstDamage * burstMagazine).toFixed(0);
+		damagePerSecond = parseFloat(damagePerMagazine / damageTime).toFixed(2);
+		totalDamage = parseFloat(burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)).toFixed(0);
+
+		return {
+			dps: damagePerSecond,
+			dpb: burstDamage,
+			dpm: damagePerMagazine,
+			dpa: totalDamage
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 20 },
 		ammo: { name: "Max Ammo", value: 120 },

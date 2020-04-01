@@ -4,6 +4,10 @@ export default {
 	name: "Breach Cutter",
 	class: "Heavy Weapon",
 	icon: "equipment.E_S2_Breach",
+	calculateDamage: (stats) => {
+		// todo: calculate simple dps as if beam was in target all the time?
+		return {};
+	},
 	baseStats: {
 		dmg: { name: "Beam DPS", value: 575 },
 		ammo: { name: "Max Ammo", value: 12 },
@@ -21,7 +25,9 @@ export default {
 		ex9: { name: "Return to Sender", value: 0, boolean: true },
 		ex10: { name: "Spinning Death", value: 0, boolean: true },
 		ex11: { name: "High Voltage Crossover", value: 0, boolean: true },
-		ex12: { name: "Inferno", value: 0, boolean: true }
+		ex12: { name: "Inferno", value: 0, boolean: true },
+		ex13: { name: "Stun Chance", value: 0, percent: true },
+		ex14: { name: "Stun Duration", value: 0 }
 	},
 	mods: [
 		/* todo: check all mod costs! */
@@ -199,7 +205,10 @@ export default {
 				icon: "Icon_Upgrade_Stun",
 				type: "Stun",
 				text: "The plasma beam will stun most of the denizens of Hoxxes on contact",
-				stats: {},
+				stats: {
+					ex13: { name: "Stun Chance", value: 100, percent: true },
+					ex14: { name: "Stun Duration", value: 3 }
+					},
 				cost: {
 					credits: 3800,
 					bismor: 0,

@@ -18,21 +18,44 @@
 					</span>
 				</div>
 			</div>
+			<!-- todo: different color for dps numbers -->
 			<h2 v-if="calcStats.dps && calcStats.dps !== 'NaN'">DPS: {{ calcStats.dps }}</h2>
-			<span v-if="!!calcStats.dps && calcStats.dps !== 'NaN'" class="inactiveStat"
-			><i>Theoretical</i> damage per second, ignoring armor break and weakspot bonuses.</span
-			>
+			<span v-if="!!calcStats.dps && calcStats.dps !== 'NaN'" class="inactiveStat">
+				<i>Theoretical</i> damage per second, ignoring armor break and weakspot bonuses.
+			</span>
+
 			<h2 v-if="calcStats.dpb">Damage per shot: {{ calcStats.dpb }}</h2> <!-- damage per bullet -->
+
 			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }}</h2>
-			<span v-if="calcStats.dpm" class="inactiveStat"><i>Theoretical</i> damage per magazine.</span>
+			<span v-if="calcStats.dpm" class="inactiveStat">
+				<i>Theoretical</i> damage per magazine.
+			</span>
+
 			<h2 v-if="calcStats.dpa">Total damage: {{ calcStats.dpa }}</h2>
-			<span v-if="calcStats.dpa" class="inactiveStat"
-			><i>Theoretical</i> total damage available with initial ammunition.</span
-			>
+			<span v-if="calcStats.dpa" class="inactiveStat">
+				<i>Theoretical</i> total damage available with initial ammunition.
+			</span>
+
 			<h2 v-if="calcStats.ex1">Total lighting time: {{ calcStats.ex1 }} minutes</h2>
-			<span v-if="calcStats.ex1" class="inactiveStat"
-			><i>Theoretical</i> total lighting time available with initial ammunition.</span
-			>
+			<span v-if="calcStats.ex1" class="inactiveStat">
+				<i>Theoretical</i> total lighting time available with initial ammunition.
+			</span>
+
+			<h2 v-if="calcStats.dpsplasma && calcStats.dpsplasma !== 'NaN'">Normal shot DPS: {{ calcStats.dpsplasma }}
+				<br/>Charged shot DPS: {{ calcStats.dpscharged }}</h2>
+			<span v-if="!!calcStats.dpsplasma && calcStats.dpsplasma !== 'NaN'" class="inactiveStat">
+				<i>Theoretical</i> damage per second without taking overheat into account, ignoring armor break and weakspot bonuses.
+			</span>
+
+			<h2 v-if="calcStats.dpbplasma">Damage per normal shot: {{ calcStats.dpbplasma }}
+				<br/>Damage per charged shot: {{ calcStats.dpbcharged}}</h2>
+
+			<h2 v-if="calcStats.dpaplasma">Total damage for normal shots: {{ calcStats.dpaplasma }}
+				<br/>Total damage for charged shots: {{ calcStats.dpacharged }}</h2>
+			<span v-if="calcStats.dpaplasma" class="inactiveStat">
+				<i>Theoretical</i> total damage available with initial ammunition.
+			</span>
+
 			<!--todo: add numbers for weakspot damage to all stats-->
 			<h2 v-if="calcStats.visible">Total Costs:</h2>
 			<p class="costList">
@@ -111,6 +134,7 @@
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
 		let damagePerSecond = magazineDamage / damageTime;
+		// todo: move boomstick calculation out of here to remove last special case
 		if (specialCaseDoubleBarrel) {
 			return {
 				dps: parseFloat(damagePerSecond * 2).toFixed(2),
@@ -125,71 +149,6 @@
 			dpm: magazineDamage,
 			dpa: dpsStats.damage * dpsStats.maxAmmo
 		};
-	};
-
-	const _calculateSpecialDamage = (stats, name) => {
-		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
-		let dpsStats = {};
-
-		switch (name) {
-			case "BRT7 Burst Fire Gun": {
-				for (let stat of stats) {
-					if (stat.name === "Damage") {
-						dpsStats.damage = parseFloat(stat.value);
-					} else if (stat.name === "Burst Size") {
-						dpsStats.burstSize = parseFloat(stat.value);
-					} else if (stat.name === "Burst Speed") {
-						dpsStats.burstSpeed = parseFloat(stat.value);
-					} else if (stat.name === "Burst Damage") {
-						dpsStats.burstBonus = parseFloat(stat.value);
-					} else if (stat.name === "Max Ammo") {
-						dpsStats.maxAmmo = parseFloat(stat.value);
-					} else if (stat.name === "Magazine Size") {
-						dpsStats.magazineSize = parseFloat(stat.value);
-					} else if (stat.name === "Rate of Fire") {
-						dpsStats.rateOfFire = parseFloat(stat.value);
-					} else if (stat.name === "Reload Time") {
-						dpsStats.reloadTime = parseFloat(stat.value);
-					}
-				}
-				// damage over one burst (3 or 6 bullets used)
-				let burstDamage = dpsStats.damage * dpsStats.burstSize;
-				if (dpsStats.burstBonus) {
-					burstDamage += dpsStats.burstBonus;
-				}
-				let burstMagazine = dpsStats.magazineSize / dpsStats.burstSize;
-				// rate of fire is rate of bursts per second (burst speed ignored)
-				let timeToEmpty = burstMagazine / dpsStats.rateOfFire;
-				let damageTime = timeToEmpty + dpsStats.reloadTime;
-				let magazineDamage = burstDamage * burstMagazine;
-				let damagePerSecond = magazineDamage / damageTime;
-				return {
-					dps: parseFloat(damagePerSecond).toFixed(2),
-					dpb: burstDamage,
-					dpm: magazineDamage,
-					dpa: burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)
-				};
-			}
-			case "Flare Gun": {
-				for (let stat of stats) {
-					if (stat.name === "Duration") {
-						dpsStats.duration = parseFloat(stat.value);
-					} else if (stat.name === "Magazine Size") {
-						dpsStats.magazineSize = parseFloat(stat.value);
-					} else if (stat.name === "Max Ammo") {
-						dpsStats.maxAmmo = parseFloat(stat.value);
-					}
-				}
-				let lightingSeconds = (dpsStats.magazineSize + dpsStats.maxAmmo) * dpsStats.duration;
-				let lightingMinutes = lightingSeconds / 60;
-				return {
-					ex1: lightingMinutes
-				};
-			}
-			default: {
-				return {};
-			}
-		}
 	};
 
 	const precisionCalc = a => {
@@ -332,20 +291,7 @@
 				let stats = results.stats;
 				let costs = results.costs;
 
-				let damage = null;
-				/* todo: move these equipments */
-				let specialEquipment = [
-					"Cryo Cannon",
-					"Experimental Plasma Charger",
-					"Breach Cutter",
-					"BRT7 Burst Fire Gun",
-					"Flare Gun"
-				];
-				if (specialEquipment.includes(store.state.tree[this.selectedClassId][this.selectedEquipmentId].name)) {
-					damage = _calculateSpecialDamage(stats, store.state.tree[this.selectedClassId][this.selectedEquipmentId].name);
-				} else {
-					damage = this.equipment.calculateDamage ? this.equipment.calculateDamage(stats) : _calculateDamage(stats);
-				}
+				let damage = this.equipment.calculateDamage ? this.equipment.calculateDamage(stats) : _calculateDamage(stats);
 
 				let totalCost = {
 					credits: 0,
@@ -376,7 +322,13 @@
 					dpb: damage.dpb ? damage.dpb : undefined,
 					dpm: damage.dpm ? damage.dpm : undefined,
 					dpa: damage.dpa ? damage.dpa : undefined,
-					ex1: damage.ex1 ? damage.ex1 : undefined
+					ex1: damage.ex1 ? damage.ex1 : undefined,
+					dpsplasma: damage.dpsplasma ? damage.dpsplasma : undefined,
+					dpscharged: damage.dpscharged ? damage.dpscharged : undefined,
+					dpbplasma: damage.dpbplasma ? damage.dpbplasma : undefined,
+					dpbcharged: damage.dpbcharged ? damage.dpbcharged : undefined,
+					dpaplasma: damage.dpaplasma ? damage.dpaplasma : undefined,
+					dpacharged: damage.dpacharged ? damage.dpacharged : undefined
 				};
 			}
 		}

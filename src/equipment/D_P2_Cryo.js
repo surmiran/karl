@@ -4,6 +4,10 @@ export default {
 	name: "Cryo Cannon",
 	class: "Heavy Weapon",
 	icon: "equipment.D_P2_Cryo",
+	calculateDamage: (stats) => {
+		// todo: dps from damage and flow rate (take 10 shots/s for 100% flow rate?)
+		return {};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 6 },
 		clip: { name: "Tank Capacity", value: 400 },

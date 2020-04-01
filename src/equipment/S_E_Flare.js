@@ -4,6 +4,24 @@ export default {
 	name: "Flare Gun",
 	class: "Support Tool",
 	icon: "equipment.S_E_Flare",
+	calculateDamage: (stats) => {
+		let lightingMinutes;
+		let dpsStats = {};
+		for (let stat of stats) {
+			if (stat.name === "Duration") {
+				dpsStats.duration = parseFloat(stat.value);
+			} else if (stat.name === "Magazine Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			}
+		}
+		let lightingSeconds = (dpsStats.magazineSize + dpsStats.maxAmmo) * dpsStats.duration;
+		lightingMinutes = lightingSeconds / 60;
+		return {
+			ex1: lightingMinutes
+		};
+	},
 	baseStats: {
 		duration: { name: "Duration", value: 75 },
 		clip: { name: "Magazine Size", value: 3 },

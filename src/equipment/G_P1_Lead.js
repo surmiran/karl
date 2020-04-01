@@ -9,6 +9,7 @@ export default {
 		let damagePerBullet;
 		let totalDamage;
 		let dpsStats = {};
+		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
 		for (let stat of stats) {
 			if (stat.name === "Damage") {
 				dpsStats.damage = parseFloat(stat.value);

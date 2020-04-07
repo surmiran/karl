@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "4138ecef649d4047ea8f",
-    "url": "/karl/css/app.b08383d9.css"
+    "revision": "b9dfefd0dc42b8d0fa5c",
+    "url": "/karl/css/app.c17afe6c.css"
   },
   {
-    "revision": "4138ecef649d4047ea8f",
-    "url": "/karl/js/app.5c6af8a0.js"
+    "revision": "b9dfefd0dc42b8d0fa5c",
+    "url": "/karl/js/app.631174c5.js"
   },
   {
     "revision": "51c88262e463d0484038",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/karl/img/Jadiz_icon.efaa5489.png"
   },
   {
-    "revision": "41e8c4f08f36492a388ce2bebbef6ac8",
+    "revision": "569b2de98359883eb067f466b8e404cf",
     "url": "/karl/index.html"
   },
   {

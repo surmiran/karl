@@ -4,6 +4,36 @@ export default {
 	name: "\"Lead Storm\" Powered Minigun",
 	class: "Heavy Weapon",
 	icon: "equipment.G_P1_Lead",
+	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let damagePerBullet;
+		let totalDamage;
+		let dpsStats = {};
+		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Reload Time") {
+				dpsStats.reloadTime = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			}
+		}
+
+		damagePerSecond = parseFloat(dpsStats.damage * dpsStats.rateOfFire / 2).toFixed(2);
+
+		damagePerBullet = parseFloat(dpsStats.damage).toFixed(0);
+
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
+
+		return {
+			dps: `${damagePerSecond} (Burst until overheated)`, // damage per second
+			dpb: damagePerBullet, // damage per bullet
+			dpa: totalDamage // total damage available
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
 		ammo: { name: "Max Ammo", value: 2400 },
@@ -461,7 +491,7 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Special bullets that ricochet off all surfaces and even enemies going on to hit nearby targets. However they deal less damage and are less accurate overall.",
+			text: "Pushing things to the limit this overclock greatly increases damage output but the kickback makes it almost impossible to move.",
 			stats: {
 				dmg: { name: "Damage", value: 4 },
 				ex12: { name: "Movement Speed While Using", value: 0.5, percent: true, multiply: true },

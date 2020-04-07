@@ -4,6 +4,44 @@ export default {
 	name: "Zhukov NUK17",
 	class: "Submachine Gun",
 	icon: "equipment.S_S2_Zhuk",
+	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let damagePerBullet;
+		let damagePerMagazine;
+		let totalDamage;
+		let dpsStats = {};
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Combined Clip Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
+			} else if (stat.name === "Combined Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Reload Time") {
+				dpsStats.reloadTime = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			}
+		}
+
+		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+		let damageTime = timeToEmpty + dpsStats.reloadTime;
+
+		damagePerMagazine = parseFloat(dpsStats.damage * dpsStats.magazineSize / 2).toFixed(0);
+
+		damagePerSecond = parseFloat(damagePerMagazine / damageTime).toFixed(2);
+
+		damagePerBullet = parseFloat(dpsStats.damage).toFixed(0);
+
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
+
+		return {
+			dps: damagePerSecond, // damage per second
+			dpb: damagePerBullet, // damage per bullet
+			dpm: damagePerMagazine, // damage per magazine
+			dpa: totalDamage // total damage available
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 11 },
 		ammo: { name: "Max Ammo", value: 600 },

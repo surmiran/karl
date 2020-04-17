@@ -473,8 +473,7 @@ export default {
 			},
 			text: "It ain't pretty but this overclock will tear apart anything that gets close, tough it gets a bit iffy at range.",
 			stats: {
-				// todo: check if damage is *x or +13
-				dmg: { name: "Damage", value: 13 },
+				dmg: { name: "Damage", value: 1.5, multiply: true },
 				ex10: { name: "Base Spread", value: 400, percent: true }
 			}
 		},
@@ -497,10 +496,8 @@ export default {
 			stats: {
 				ammo: { name: "Max Ammo", value: 120 },
 				clip: { name: "Magazine Size", value: 30 },
-				// todo: check if recoil is *0.5 or -50%
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				ex3: { name: "Spread Per Shot", value: 50, percent: true, subtract: true },
-				// todo: check if recoil is *0.5 or -13%
 				dmg: { name: "Damage", value: 0.5, multiply: true }
 			}
 		}

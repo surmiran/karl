@@ -290,10 +290,10 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Same power but in a smaller package giving slightly better accuracay and letting you fit a few more rounds in each mag.",
+			text: "Same power but in a smaller package giving slightly better accuracy and letting you fit a few more rounds in each magazine.",
 			stats: {
-				/* todo: check if recoil or base spread is still affected by this oc */
 				clip: { name: "Magazine Size", value: 5 }
+				// todo: base spread is mentioned in text but not represented in stats..
 			}
 		},
 		{

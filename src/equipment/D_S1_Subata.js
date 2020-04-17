@@ -17,7 +17,7 @@ export default {
 		ex5: { name: "Damage Vs Mactera", value: 0, percent: true },
 		ex6: { name: "Weakpoint Chain Hit Chance", value: 0, percent: true },
 		ex7: { name: "Randomized Damage", value: 0, boolean: true },
-		ex8: { name: "Full Auto", value: 0, boolean: true },
+		ex8: { name: "Automatic Fire", value: 0, boolean: true },
 		ex9: { name: "Explosive Reload", value: 0, boolean: true },
 		ex10: { name: "Stun Chance", value: 0, percent: true }
 	},
@@ -30,7 +30,7 @@ export default {
 				type: "Accuracy",
 				text: "Pin-point accuracy on first shot",
 				stats: {
-					ex2: { name: "Base Spread", value: 100, percent: true, subtract: true }
+					ex2: { name: "Base Spread", value: 0, percent: true, multiply: true }
 				},
 				cost: {
 					credits: 1000,
@@ -275,7 +275,6 @@ export default {
 			}
 		]
 	],
-	/* todo: automatic fire overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,
@@ -355,8 +354,8 @@ export default {
 			},
 			text: "Fully automatic action, watch out for the recoil.",
 			stats: {
-				ex8: { name: "Full Auto", value: 1, boolean: true },
-				rate: { name: "Rate of Fire", value: 2.0 },
+				ex8: { name: "Automatic Fire", value: 1, boolean: true },
+				rate: { name: "Rate of Fire", value: 2 },
 				ex2: { name: "Base Spread", value: 100, percent: true }
 			}
 		},

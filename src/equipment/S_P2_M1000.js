@@ -278,7 +278,6 @@ export default {
 			}
 		]
 	],
-	/* todo: electrocuting focus shot overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,

@@ -352,7 +352,6 @@ export default {
 			}
 		]
 	],
-	/* todo: hyper propellant overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,

@@ -112,7 +112,7 @@ export default {
 				type: "Accuracy",
 				text: "Decreased shot spread",
 				stats: {
-					ex5: { name: "Base Spread", value: 50, percent: true, subtract: true }
+					ex5: { name: "Base Spread", value: 0.5, percent: true, multiply: true }
 				},
 				cost: {
 					credits: 2800,
@@ -361,7 +361,6 @@ export default {
 				dmg: { name: "Damage", value: 1 },
 				rate: { name: "Rate of Fire", value: 2 },
 				reload: { name: "Reload Time", value: 0.5 },
-				/* todo: check base spread calc with Choke mod! */
 				ex5: { name: "Base Spread", value: 1.5, percent: true, multiply: true }
 			}
 		},

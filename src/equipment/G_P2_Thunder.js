@@ -191,7 +191,6 @@ export default {
 				text: "Reach the max rate of fire faster",
 				stats: {
 					ex4: { name: "Rate of Fire Growth Speed", value: 100, percent: true }
-					/* todo: dps calculation is off since update 24.. rate of fire increase was tweaked / fixed */
 				},
 				cost: {
 					credits: 2000,

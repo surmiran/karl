@@ -57,7 +57,7 @@ export default {
 		}
 		// get damage time for single and charge shots
 		// todo: all calculations without taking overheating into account at the moment (dpsStats.cooldownTime ignored)
-		// todo: check with overcharger overclock (charge speed is 0...)
+		// todo: check with overcharger overclock
 		let timePerChargedShot = dpsStats.chargeSpeed;
 		let chargedRateOfFire = 1 / timePerChargedShot;
 
@@ -259,7 +259,7 @@ export default {
 				type: "Charge Speed",
 				text: "Prepare a charged shot much faster.",
 				stats: {
-					ex5: { name: "Charge Speed", value: 1.6 }
+					ex5: { name: "Charge Speed", value: 3, multiply: true }
 				},
 				cost: {
 					credits: 2200,
@@ -346,8 +346,7 @@ export default {
 				text: "The charged projectile deals damage to nearby enemies while it flies but takes longer to charge up.",
 				stats: {
 					ex9: { name: "Flying Nightmare", value: 1, boolean: true },
-					ex5: { name: "Charge Speed", value: 0.8, multiply: true }
-					/* todo: check charge speed mod value */
+					ex5: { name: "Charge Speed", value: 0.7, multiply: true }
 				},
 				cost: {
 					credits: 4400,
@@ -405,7 +404,6 @@ export default {
 			}
 		]
 	],
-	/* todo: heavy hitter overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,
@@ -425,7 +423,7 @@ export default {
 			text: "A masterwork of engineering that improves charge speed and energy efficiency without affecting overall performance!",
 			stats: {
 				clip: { name: "Battery Capacity", value: 16 },
-				ex5: { name: "Charge Speed", value: 0.4 }
+				ex5: { name: "Charge Speed", value: 1.5, multiply: true }
 			}
 		},
 		{
@@ -487,13 +485,12 @@ export default {
 			},
 			text: "Some extensive tweaking to how the shots are prepared can increase the pure damage of the weapon but at the cost of a lower projectile velocity and a reduced battery size.",
 			stats: {
-				dmg: { name: "Damage", value: 5 },
+				dmg: { name: "Damage", value: 10 },
 				clip: { name: "Battery Capacity", value: 16, subtract: true },
 				ex12: { name: "Normal Shot Heat", value: 50, percent: true }
 			}
 		},
 		{
-			/* todo: check overcharger charge speed */
 			selected: false,
 			name: "Overcharger",
 			icon: "Icon_Upgrade_DamageGeneral",
@@ -511,7 +508,7 @@ export default {
 			text: "Pushing the EPC to the limit will give you a significant increase in charge shot damage but at the heavy cost of slow charge speed and decreased cooling efficiency.",
 			stats: {
 				ex1: { name: "Charged Damage", value: 40 },
-				ex5: { name: "Charge Speed", value: 1.5, multiply: true },
+				ex5: { name: "Charge Speed", value: 0.5, multiply: true },
 				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true }
 			}
 		},

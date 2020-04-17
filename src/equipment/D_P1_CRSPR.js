@@ -296,7 +296,6 @@ export default {
 			}
 		]
 	],
-	/* todo: fuel stream diffuser and sticky fuel overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,
@@ -375,10 +374,10 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Increases operation range at the cost of direct damage and heat.",
+			text: "Increases operational range but decreases the fuel flow rate.",
 			stats: {
 				ex6: { name: "Flame Reach", value: 5 },
-				dmg: { name: "Damage", value: 2, subtract: true }
+				rate: { name: "Fuel Flow Rate", value: 20, percent: true, subtract: true },
 			}
 		},
 		{
@@ -419,7 +418,7 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Special fuel mixture extends the duration of Sticky Flames but at the cost of tank capacity and operational range.",
+			text: "Special fues mixture extends the duration and damage of Sticky Flames but at the cost of tank capacity and total fuel.",
 			stats: {
 				ex1: { name: "Increased Sticky Flame Damage", value: 1, boolean: true },
 				ex4: { name: "Sticky Flame Duration", value: 6 },

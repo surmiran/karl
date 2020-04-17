@@ -13,7 +13,7 @@ export default {
 		ex1: { name: "Weakpoint Stun Duration", value: 1.5 },
 		ex2: { name: "Weakpoint Stun Chance", value: 10, percent: true },
 		ex3: { name: "Base Spread", value: 100, percent: true },
-		ex4: { name: "Spread Per Shot", value: 100, percent: true },
+		ex4: { name: "Recoil", value: 100, percent: true },
 		ex5: { name: "Weakpoint Damage Bonus", value: 10, percent: true },
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Battle Frenzy", value: 0, boolean: true },
@@ -117,7 +117,7 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex4: { name: "Spread Per Shot", value: 50, percent: true, subtract: true }
+					ex4: { name: "Recoil", value: 50, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 2800,
@@ -318,8 +318,7 @@ export default {
 			text: "Stuff a few more of these compact rounds into each magazine and they have a bit less recoil as well.",
 			stats: {
 				clip: { name: "Magazine Size", value: 5 },
-				/* todo: replace "spread per shot" with "recoil" on all weapons */
-				ex4: { name: "Spread Per Shot", value: 0.7, percent: true, multiply: true }
+				ex4: { name: "Recoil", value: 0.7, percent: true, multiply: true }
 			}
 		},
 		{
@@ -381,7 +380,7 @@ export default {
 			text: "Fires more bullets faster and it kicks like a mule.",
 			stats: {
 				rate: { name: "Rate of Fire", value: 3 },
-				ex4: { name: "Spread Per Shot", value: 2.5, percent: true, multiply: true }
+				ex4: { name: "Recoil", value: 2.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -422,7 +421,7 @@ export default {
 			},
 			text: "It's like it knows what you are going to do before you do it, compensating for all recoil and bullet spread but the system requires a lower rate of fire and the modified firing chamber reduces overall damage.",
 			stats: {
-				ex4: { name: "Spread Per Shot", value: 0, percent: true, multiply: true },
+				ex4: { name: "Recoil", value: 0, percent: true, multiply: true },
 				ex10: { name: "Spread Recovery Speed", value: 9, percent: true, multiply: true },
 				dmg: { name: "Damage", value: 1, subtract: true },
 				rate: { name: "Rate of Fire", value: 2, subtract: true }

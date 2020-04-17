@@ -77,7 +77,7 @@ export default {
 				type: "Damage",
 				text: "The good folk in R&D have been busy. The overall damage of your weapon is increased.",
 				stats: {
-					dmg: { name: "Damage", value: 15 }
+					dmg: { name: "Damage", value: 1.3, multiply: true }
 				},
 				cost: {
 					credits: 1800,
@@ -162,7 +162,7 @@ export default {
 				type: "Explosion",
 				text: "Bullets detonate creating a radius of damage but deals less direct damage",
 				stats: {
-					dmg: { name: "Damage", value: 25, subtract: true },
+					dmg: { name: "Damage", value: 0.5, multiply: true },
 					ex5: { name: "Area Damage", value: 30 },
 					ex9: { name: "Effect Radius", value: 1.5 }
 				},
@@ -367,8 +367,7 @@ export default {
 				ammo: { name: "Max Ammo", value: 8 },
 				rate: { name: "Rate of Fire", value: 4 },
 				reload: { name: "Reload Time", value: 0.5 },
-				ex1: { name: "Base Spread", value: 15, percent: true }
-				// todo: check if base spread is *1.15 or just +15%
+				ex1: { name: "Base Spread", value: 1.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -388,13 +387,11 @@ export default {
 			},
 			text: "Heavy tweaking has made it possible to use modified autocannon rounds in the revolver! The damage is crazy but so is the recoil and you can't carry very many rounds. Also only 3 rounds fit in the gun and reload time is a bit slower but base accuracy is improved.",
 			stats: {
-				// todo: check if damage is *2 or +65
 				dmg: { name: "Damage", value: 2, multiply: true },
 				ammo: { name: "Max Ammo", value: 13, subtract: true },
 				clip: { name: "Magazine Size", value: 1, subtract: true },
 				reload: { name: "Reload Time", value: 0.5 },
-				// todo: check if recoil is *1.5 or +150
-				ex13: { name: "Recoil", value: 150, percent: true },
+				ex13: { name: "Recoil", value: 2.5, percent: true, multiply: true },
 				ex1: { name: "Base Spread", value: 15, percent: true, subtract: true },
 				ex2: { name: "Spread Per Shot", value: 71, percent: true }
 			}

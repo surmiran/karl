@@ -492,6 +492,7 @@ export default {
 				err: 0
 			},
 			text: "Pushing things to the limit this overclock greatly increases damage output but the kickback makes it almost impossible to move.",
+			/* todo: check ingame if movement speed is halved (*0.5) or zero (-50%) */
 			stats: {
 				dmg: { name: "Damage", value: 4 },
 				ex12: { name: "Movement Speed While Using", value: 0.5, percent: true, multiply: true },

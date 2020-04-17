@@ -503,7 +503,8 @@ export default {
 			stats: {
 				ex10: { name: "Neurotoxin Payload", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
-				ex1: { name: "Area Damage", value: 6, subtract: true }
+				ex1: { name: "Area Damage", value: 6, subtract: true },
+				ex2: { name: "Effect Radius", value: 0.3 },
 			}
 		}
 	]

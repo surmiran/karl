@@ -7,7 +7,7 @@ export default {
 	baseStats: {
 		dmg: { name: "Damage", value: 5 },
 		ammo: { name: "Max Fuel", value: 38 },
-		rate: { name: "Mining rate", value: 1 },
+		rate: { name: "Mining rate", value: 100, percent: true },
 		ex1: { name: "Overheat Duration", value: 8 },
 		ex2: { name: "Cooling Rate", value: 2 },
 		ex3: { name: "Movement speed while drilling", value: 0, percent: true },
@@ -42,7 +42,7 @@ export default {
 				type: "Digging",
 				text: "Drill faster",
 				stats: {
-					rate: { name: "Mining rate", value: 1 },
+					rate: { name: "Mining rate", value: 50, percent: true },
 					ex3: { name: "Movement speed while drilling", value: 10, percent: true }
 				},
 				cost: {
@@ -127,7 +127,7 @@ export default {
 				type: "Digging",
 				text: "Drill faster.",
 				stats: {
-					rate: { name: "Mining rate", value: 1 },
+					rate: { name: "Mining rate", value: 50, percent: true },
 					ex3: { name: "Movement speed while drilling", value: 10, percent: true }
 				},
 				cost: {

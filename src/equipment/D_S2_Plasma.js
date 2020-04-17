@@ -20,7 +20,6 @@ export default {
 		let totalChargeAreaDamage;
 		let totalChargeDamage;
 		let dpsStats = {};
-		// todo: calculate charge and single shot dps separately
 		/*
 		Maximum heat is how much you can fire your weapon before it overheat and you need it to cooldown before using it again.
 		By default charged shot reach 100% heat directly. The maximum heat value is 1 or 100% and cannot be changed.

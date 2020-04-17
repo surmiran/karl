@@ -11,10 +11,10 @@ export default {
 		ex1: { name: "Mining Expert", value: 0, percent: true },
 		ex2: { name: "Rocket Attacks", value: 0 },
 		ex3: { name: "Rocket Area Damage", value: 0 },
-		ex4: { name: "Rocket Damage Radius", value: 0 },
+		ex4: { name: "Rocket Effect Radius", value: 0 },
 		ex5: { name: "Rocket Regeneration Time", value: 0 },
 		ex6: { name: "Rocket Fear Factor", value: 0, percent: true },
-		ex7: { name: "Rocket Armor Break Bonus", value: 0, percent: true },
+		ex7: { name: "Rocket Armor Breaking", value: 100, percent: true },
 		ex8: { name: "Cryo Rocket", value: 0, boolean: true },
 		ex9: { name: "Electrocution Chance", value: 0, percent: true }
 	},
@@ -92,7 +92,7 @@ export default {
 				stats: {
 					ex2: { name: "Rocket Attacks", value: 2 },
 					ex3: { name: "Rocket Area Damage", value: 120 },
-					ex4: { name: "Rocket Damage Radius", value: 2.5 },
+					ex4: { name: "Rocket Effect Radius", value: 2.5 },
 					ex5: { name: "Rocket Regeneration Time", value: 90 }
 				},
 				cost: {
@@ -197,7 +197,7 @@ export default {
 				type: "Armor Breaking",
 				text: "Higher chance for the rocket to shatter armor.",
 				stats: {
-					ex7: { name: "Rocket Armor Break Bonus", value: 600, percent: true }
+					ex7: { name: "Rocket Armor Breaking", value: 600, percent: true }
 				},
 				cost: {
 					credits: 1800,
@@ -219,7 +219,8 @@ export default {
 					"Adds cryogenic liquid to the explosion of the rocket. Cold slows down enemies and can eventually freeze them. The rocket deals almost no damage, but the area of effect increases.",
 				stats: {
 					ex8: { name: "Cryo Rocket", value: 1, boolean: true },
-					ex4: { name: "Rocket Damage Radius", value: 1 }
+					ex3: { name: "Rocket Area Damage", value: 20, subtract: true },
+					ex4: { name: "Rocket Effect Radius", value: 1 }
 				},
 				cost: {
 					credits: 1800,
@@ -241,7 +242,7 @@ export default {
 				type: "Area",
 				text: "Increased area of effect for the explosion of the rocket.",
 				stats: {
-					ex4: { name: "Rocket Damage Radius", value: 2 }
+					ex4: { name: "Rocket Effect Radius", value: 2 }
 				},
 				cost: {
 					credits: 2200,

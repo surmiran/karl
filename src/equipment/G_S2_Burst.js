@@ -59,12 +59,14 @@ export default {
 		ex1: { name: "Burst Size", value: 3 },
 		ex2: { name: "Burst Speed", value: 0.05 },
 		ex3: { name: "Spread Per Shot", value: 100, percent: true },
+		ex10: { name: "Base Spread", value: 100, percent: true },
 		ex4: { name: "Recoil", value: 100, percent: true },
 		ex5: { name: "Armor Breaking", value: 50, percent: true },
 		ex6: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex7: { name: "Burst Damage", value: 0 },
 		ex8: { name: "Burst Stun Duration", value: 0 },
-		ex9: { name: "Electro Minelets", value: 0, boolean: true }
+		ex9: { name: "Electro Minelets", value: 0, boolean: true },
+		ex11: { name: "Max Penetrations", value: 1 }
 	},
 	mods: [
 		[
@@ -96,13 +98,35 @@ export default {
 				text:
 					"Sweet, sweet optimization. We called in a few friends and managed to significantly improve the stability of this gun.",
 				stats: {
-					ex3: { name: "Spread Per Shot", value: 42, percent: true, subtract: true }
+					ex10: { name: "Base Spread", value: 30, percent: true, subtract: true },
+					ex3: { name: "Spread Per Shot", value: 40, percent: true, subtract: true }
 				},
 				cost: {
 					credits: 1000,
 					bismor: 0,
 					croppa: 20,
 					enorPearl: 0,
+					jadiz: 0,
+					magnite: 0,
+					umanite: 0,
+					err: 0
+				}
+			},
+			{
+				selected: false,
+				name: "Blowthrough Rounds",
+				icon: "Icon_Upgrade_BulletPenetration",
+				type: "Blow Through",
+				text:
+					"Shaped projectiles designed to over-penetrate targets with a minimal loss of energy. In other words: Fire straight trough an enemy!",
+				stats: {
+					ex11: { name: "Max Penetrations", value: 1 }
+				},
+				cost: {
+					credits: 1800,
+					bismor: 18,
+					croppa: 0,
+					enorPearl: 12,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -368,26 +392,6 @@ export default {
 		},
 		{
 			selected: false,
-			name: "Homebrew Powder",
-			icon: "Icon_Overclock_ChangeOfHigherDamage",
-			type: "clean",
-			cost: {
-				credits: 8050,
-				bismor: 125,
-				croppa: 0,
-				enorPearl: 0,
-				jadiz: 0,
-				magnite: 75,
-				umanite: 105,
-				err: 0
-			},
-			text: "More damage on average but it's a bit inconsistent.",
-			stats: {
-				dmg: { name: "Damage", value: 1.1, multiply: true }
-			}
-		},
-		{
-			selected: false,
 			name: "Compact Mags",
 			icon: "Icon_Upgrade_Ammo",
 			type: "balanced",
@@ -403,7 +407,7 @@ export default {
 			},
 			text: "You can carry even more ammo but the rate of fire needs to be toned back to avoid a jam and please take more care while reloading.",
 			stats: {
-				ammo: { name: "Max Ammo", value: 72 },
+				ammo: { name: "Max Ammo", value: 84 },
 				rate: { name: "Rate of Fire", value: 1, subtract: true },
 				reload: { name: "Reload Time", value: 0.4 }
 			}
@@ -454,6 +458,28 @@ export default {
 		},
 		{
 			selected: false,
+			name: "Lead Spray",
+			icon: "Icon_Upgrade_Special",
+			type: "unstable",
+			cost: {
+				credits: 8050,
+				bismor: 125,
+				croppa: 0,
+				enorPearl: 0,
+				jadiz: 0,
+				magnite: 75,
+				umanite: 105,
+				err: 0
+			},
+			text: "It ain't pretty but this overclock will tear apart anything that gets close, tough it gets a bit iffy at range.",
+			stats: {
+				// todo: check if damage is *x or +13
+				dmg: { name: "Damage", value: 13 },
+				ex10: { name: "Base Spread", value: 400, percent: true }
+			}
+		},
+		{
+			selected: false,
 			name: "Micro Fletchettes",
 			icon: "Icon_Overclock_SmallBullets",
 			type: "unstable",
@@ -470,9 +496,11 @@ export default {
 			text: "Convert the BRT to fire small flechettes instead of slugs. Increases overall ammo and clip size as well as reducing recoil but at the cost of pure damage.",
 			stats: {
 				ammo: { name: "Max Ammo", value: 120 },
-				clip: { name: "Magazine Size", value: 24 },
+				clip: { name: "Magazine Size", value: 30 },
+				// todo: check if recoil is *0.5 or -50%
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
-				ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true },
+				ex3: { name: "Spread Per Shot", value: 50, percent: true, subtract: true },
+				// todo: check if recoil is *0.5 or -13%
 				dmg: { name: "Damage", value: 0.5, multiply: true }
 			}
 		}

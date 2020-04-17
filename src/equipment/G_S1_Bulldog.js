@@ -22,7 +22,8 @@ export default {
 		ex8: { name: "Neurotoxin Coating", value: 0, boolean: true },
 		ex11: { name: "Chain Hit", value: 0, boolean: true },
 		ex12: { name: "Magic Bullets", value: 0, boolean: true },
-		ex13: { name: "Recoil", value: 100, percent: true }
+		ex13: { name: "Recoil", value: 100, percent: true },
+		ex14: { name: "Damage Vs Burning", value: 0, percent: true }
 	},
 	mods: [
 		[
@@ -34,7 +35,7 @@ export default {
 				text:
 					"Experience, training, and a couple of under-the-table design \"adjustments\" means your gun can be reloaded significantly faster. ",
 				stats: {
-					reload: { name: "Reload Time", value: 0.4, subtract: true }
+					reload: { name: "Reload Time", value: 0.7, subtract: true }
 				},
 				cost: {
 					credits: 1000,
@@ -326,7 +327,7 @@ export default {
 		},
 		{
 			selected: false,
-			name: "Feather Trigger",
+			name: "Volatile Bullets",
 			icon: "Icon_Upgrade_FireRate",
 			type: "balanced",
 			cost: {
@@ -339,15 +340,15 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Less weight means you can squeeze out more bullets faster than you can say \"Recoil\" but the stability of the weapon is reduced. ",
+			text: "Fuel on the fire! These rounds are extremely effective against burning targets but at the cost of direct damage dealt to unaffected creatures.",
 			stats: {
-				rate: { name: "Rate of Fire", value: 4 },
-				ex13: { name: "Recoil", value: 150, percent: true }
+				dmg: { name: "Damage", value: 25, subtract: true },
+				ex14: { name: "Damage Vs Burning", value: 300, percent: true }
 			}
 		},
 		{
 			selected: false,
-			name: "Five Shooter",
+			name: "Six Shooter",
 			icon: "Icon_Upgrade_ClipSize",
 			type: "balanced",
 			cost: {
@@ -362,9 +363,12 @@ export default {
 			},
 			text: "An updated casing profile lets you squeeze one more round into the cylinder and increases the maximum rate of fire, but all that filling and drilling has compromised the pure damage output of the weapon. ",
 			stats: {
-				clip: { name: "Magazine Size", value: 1 },
-				ammo: { name: "Max Ammo", value: 5 },
-				ex1: { name: "Base Spread", value: 1.5, multiply: true }
+				clip: { name: "Magazine Size", value: 2 },
+				ammo: { name: "Max Ammo", value: 8 },
+				rate: { name: "Rate of Fire", value: 4 },
+				reload: { name: "Reload Time", value: 0.5 },
+				ex1: { name: "Base Spread", value: 15, percent: true }
+				// todo: check if base spread is *1.15 or just +15%
 			}
 		},
 		{
@@ -382,12 +386,17 @@ export default {
 				umanite: 65,
 				err: 0
 			},
-			text: "Heavy tweaking has made it possible to use modified autocannon rounds in the revolver! The damage is crazy but so is the recoil and you can't carry very many rounds. ",
+			text: "Heavy tweaking has made it possible to use modified autocannon rounds in the revolver! The damage is crazy but so is the recoil and you can't carry very many rounds. Also only 3 rounds fit in the gun and reload time is a bit slower but base accuracy is improved.",
 			stats: {
+				// todo: check if damage is *2 or +65
 				dmg: { name: "Damage", value: 2, multiply: true },
-				ammo: { name: "Max Ammo", value: 12, subtract: true },
-				ex1: { name: "Base Spread", value: 150, percent: true },
-				ex2: { name: "Spread Per Shot", value: 100, percent: true }
+				ammo: { name: "Max Ammo", value: 13, subtract: true },
+				clip: { name: "Magazine Size", value: 1, subtract: true },
+				reload: { name: "Reload Time", value: 0.5 },
+				// todo: check if recoil is *1.5 or +150
+				ex13: { name: "Recoil", value: 150, percent: true },
+				ex1: { name: "Base Spread", value: 15, percent: true, subtract: true },
+				ex2: { name: "Spread Per Shot", value: 71, percent: true }
 			}
 		},
 		{

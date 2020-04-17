@@ -9,14 +9,14 @@ export default {
 		rate: { name: "Construction Time", value: 4 },
 		clip: { name: "Sentry Ammo Capacity", value: 90 },
 		reload: { name: "Reload Ammo Per Second", value: 45 },
-		dmg: { name: "Damage", value: 4.5 },
+		dmg: { name: "Damage", value: 5 },
 		dmg2: { name: "Damage Bonus", value: 0, percent: true },
-		range: { name: "Max Targeting Range", value: 15 },
+		range: { name: "Max Targeting Range", value: 20 },
 		amount: { name: "Number of Sentries", value: 1 },
-		ex1: { name: "Armor Break Bonus", value: 0, percent: true },
+		ex1: { name: "Armor Breaking", value: 100, percent: true },
 		ex2: { name: "Stun Chance", value: 0, percent: true },
 		ex3: { name: "Defender System", value: 0, boolean: true },
-		ex4: { name: "Manual Targeting", value: 0, boolean: true }
+		ex4: { name: "Hawkeye System", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -48,8 +48,8 @@ export default {
 				text: "An upgraded model with more punch, longer range and greater ammo capacity.",
 				stats: {
 					clip: { name: "Sentry Ammo Capacity", value: 15 },
-					dmg: { name: "Damage", value: 2.5 },
-					range: { name: "Max Targeting Range", value: 10 }
+					dmg: { name: "Damage", value: 2 },
+					range: { name: "Max Targeting Range", value: 5 }
 				},
 				cost: {
 					credits: 360,
@@ -134,7 +134,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex1: { name: "Armor Break Bonus", value: 300, percent: true }
+					ex1: { name: "Armor Breaking", value: 300, percent: true }
 				},
 				cost: {
 					credits: 920,
@@ -212,12 +212,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Defender System",
+				name: "Hawkeye System",
 				icon: "Icon_Upgrade_Accuracy",
 				type: "Special",
-				text: "Paint a target with your laser pointer and the LMG will take care of the rest.",
+				text: "Upgraded sensors increase the effective range and target acquisition speed of the LMG and are synchronised with your laser pointer, prioritizing the target you highlight.",
 				stats: {
-					ex4: { name: "Manual Targeting", value: 1, boolean: true }
+					range: { name: "Max Targeting Range", value: 15 },
+					ex4: { name: "Hawkeye System", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 1000,

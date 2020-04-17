@@ -14,7 +14,7 @@ export default {
 		ex2: { name: "Electrocution %", value: 20, percent: true },
 		ex3: { name: "Recoil", value: 100, percent: true },
 		ex4: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
-		ex5: { name: "Damage vs Electrically Affected", value: 100, percent: true },
+		ex5: { name: "Damage vs Electrically Affected", value: 0, percent: true },
 		ex6: { name: "Electrocution AoE", value: 0, percent: true },
 		ex7: { name: "Turret Arc (10m range)", value: 0, boolean: true },
 		ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true }
@@ -399,7 +399,7 @@ export default {
 			},
 			text: "Use a turret as the epicenter of an electric explosion! The bullet modifications unfortunately also lower the direct damage and electrocution chance.",
 			stats: {
-				ex8: { name: "Turret EM Discharge (5m range)", value: 0, boolean: true },
+				ex8: { name: "Turret EM Discharge (5m range)", value: 1, boolean: true },
 				ex2: { name: "Electrocution %", value: 5, percent: true, subtract: true },
 				dmg: { name: "Damage", value: 3, subtract: true }
 			}

@@ -13,11 +13,12 @@ export default {
 		ex1: { name: "Pellets", value: 8 },
 		ex2: { name: "Weakpoint Stun Duration", value: 3.0 },
 		ex3: { name: "Weakpoint Stun Chance Per Pellet", value: 10, percent: true },
+		ex9: { name: "Weakpoint Damage Bonus", value: 0, percent: true },
 		ex4: { name: "Recoil", value: 100, percent: true },
 		ex5: { name: "Base Spread", value: 100, percent: true },
-		ex6: { name: "Armor Break Bonus", value: 0, percent: true },
+		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Turret Whip", value: 0, boolean: true },
-		ex8: { name: "Miner Adjustments", value: 0, boolean: true }
+		ex8: { name: "Miner Adjustments", value: 0, boolean: true },
 	},
 	mods: [
 		[
@@ -198,7 +199,7 @@ export default {
 				text:
 					"We're proud of this one. Armor shredding. Tear through that high-impact plating of those big buggers like butter. What could be finer?",
 				stats: {
-					ex6: { name: "Armor Break Bonus", value: 400, percent: true }
+					ex6: { name: "Armor Breaking", value: 400, percent: true }
 				},
 				cost: {
 					credits: 4800,
@@ -276,11 +277,10 @@ export default {
 			}
 		]
 	],
-	/* todo: magnetic pellet alignment overclock changed with update 26 */
 	overclocks: [
 		{
 			selected: false,
-			name: "Compact Shells",
+			name: "Stunner",
 			icon: "Icon_Upgrade_ClipSize",
 			type: "clean",
 			cost: {
@@ -293,10 +293,8 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Using these shells expands magazine capacity slightly and the weapon can fire them faster!",
+			text: "Heavier rounds allow for stun chance on all body parts, not just weakpoints. Shooting already stunned enemies with this overclock will deal extra damage.",
 			stats: {
-				clip: { name: "Magazine Size", value: 1 },
-				rate: { name: "Rate of Fire", value: 0.4 }
 			}
 		},
 		{
@@ -317,13 +315,13 @@ export default {
 			text: "It's amazing how much material can be removed without affecting anything and lighter magazines means more magazines and faster reloading.",
 			stats: {
 				ammo: { name: "Max Ammo", value: 20 },
-				reload: { name: "Reload Time", value: 0.2, subtract: true }
+				reload: { name: "Reload Time", value: 0.4, subtract: true }
 			}
 		},
 		{
 			selected: false,
 			name: "Magnetic Pellet Alignment",
-			icon: "Icon_Upgrade_Aim",
+			icon: "Icon_Upgrade_Accuracy",
 			type: "balanced",
 			cost: {
 				credits: 7900,
@@ -338,6 +336,7 @@ export default {
 			text: "Electromagnets in the chamber help reduce shot spread at the cost of a reduced rate of fire and magazine capacity.",
 			stats: {
 				ex5: { name: "Base Spread", value: 0.5, percent: true, multiply: true },
+				ex9: { name: "Weakpoint Damage Bonus", value: 30, percent: true },
 				clip: { name: "Magazine Size", value: 2, subtract: true },
 				rate: { name: "Rate of Fire", value: 0.4, subtract: true }
 			}

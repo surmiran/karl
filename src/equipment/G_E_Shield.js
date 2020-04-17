@@ -5,7 +5,7 @@ export default {
 	class: "Support Tool",
 	icon: "equipment.G_E_Shield",
 	baseStats: {
-		ammo: { name: "Carried Amount", value: 4 },
+		ammo: { name: "Carried Amount", value: 1 },
 		radius: { name: "Shield Radius", value: 2.7 },
 		duration: { name: "Duration", value: 6 },
 		rate: { name: "Shield Regen per second", value: 10 },

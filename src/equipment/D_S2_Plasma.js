@@ -102,8 +102,8 @@ export default {
 		ex8: { name: "Thin Containment Field", value: 0, boolean: true },
 		ex9: { name: "Flying Nightmare", value: 0, boolean: true },
 		ex10: { name: "No Charged Shot Insta-Overheat", value: 0, boolean: true },
-		ex11: { name: "Projectile Bounces", value: 0, boolean: true },
-		ex12: { name: "Normal Shot Heat", value: 100, percent: true },
+		ex11: { name: "Plasma Burn", value: 0, boolean: true },
+		ex12: { name: "Normal Shot Heat Generation", value: 100, percent: true },
 		ex13: { name: "Persistent Plasma", value: 0, boolean: true }
 	},
 	mods: [
@@ -151,11 +151,12 @@ export default {
 			{
 				selected: false,
 				name: "Higher Charged Plasma Energy",
-				icon: "Icon_Upgrade_DamageGeneral",
+				icon: "Icon_Upgrade_AreaDamage",
 				type: "Damage",
 				text: "Increases the direct damage for the charged projectile.",
 				stats: {
-					ex1: { name: "Charged Damage", value: 30 }
+					ex1: { name: "Charged Damage", value: 15 },
+					ex2: { name: "Charged Area Damage", value: 15 }
 				},
 				cost: {
 					credits: 1000,
@@ -177,7 +178,7 @@ export default {
 				type: "Area of effect",
 				text: "Greater damage radius for the charged projectile explosion",
 				stats: {
-					ex3: { name: "Charged Effect Radius", value: 1.5 }
+					ex3: { name: "Charged Effect Radius", value: 1 }
 				},
 				cost: {
 					credits: 1800,
@@ -217,7 +218,8 @@ export default {
 				type: "Area Damage",
 				text: "More bang for the buck! Increases the damage done within the Area of Effect!",
 				stats: {
-					ex2: { name: "Charged Area Damage", value: 20 }
+					ex1: { name: "Charged Damage", value: 15 },
+					ex2: { name: "Charged Area Damage", value: 15 }
 				},
 				cost: {
 					credits: 1800,
@@ -259,7 +261,7 @@ export default {
 				type: "Charge Speed",
 				text: "Prepare a charged shot much faster.",
 				stats: {
-					ex5: { name: "Charge Speed", value: 3, multiply: true }
+					ex5: { name: "Charge Speed", value: 2.5, multiply: true }
 				},
 				cost: {
 					credits: 2200,
@@ -368,6 +370,7 @@ export default {
 					"A weaker containment field takes less energy to create thus producing less heat for Charged Shots. Be aware that any high-energy impact will destabilize the Charged Projectile causing a large area implosion.",
 				stats: {
 					ex10: { name: "No Charged Shot Insta-Overheat", value: 1, boolean: true },
+					ex12: { name: "Normal Shot Heat Generation", value: 0.8, percent: true, multiply: true },
 					ex8: { name: "Thin Containment Field", value: 1, boolean: true }
 				},
 				cost: {
@@ -383,13 +386,13 @@ export default {
 			},
 			{
 				selected: false,
-				name: "Bouncy Plasma",
-				icon: "Icon_Upgrade_Ricoshet",
-				type: "Ricochet",
+				name: "Plasma Burn",
+				icon: "Icon_Upgrade_Heat",
+				type: "Heat",
 				text:
-					"Regular shots now ricochet, please try not to hit yourself or your teammates while pulling off trick shots.",
+					"A modified containment field causes regular shots to heat up the target proportionally to the amount of damage dealt.",
 				stats: {
-					ex11: { name: "Projectile Bounces", value: 1, boolean: true }
+					ex11: { name: "Plasma Burn", value: 1, boolean: true }
 				},
 				cost: {
 					credits: 4400,
@@ -462,10 +465,11 @@ export default {
 				umanite: 125,
 				err: 0
 			},
-			text: "By channeling exhaust heat back into the charge chamber a shot can be charged using less energy. This does however make the weapon less efficient at dissipating heat.",
+			text: "By channeling exhaust heat back into the charge chamber a shot can be charged using less energy. This does however make the weapon less efficient at dissipating heat from normal shots.",
 			stats: {
 				ex4: { name: "Charged Shot Ammo Use", value: 2, subtract: true },
-				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true }
+				ex5: { name: "Charge Speed", value: 1.3, multiply: true },
+				ex12: { name: "Normal Shot Heat Generation", value: 1.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -485,9 +489,9 @@ export default {
 			},
 			text: "Some extensive tweaking to how the shots are prepared can increase the pure damage of the weapon but at the cost of a lower projectile velocity and a reduced battery size.",
 			stats: {
-				dmg: { name: "Damage", value: 10 },
-				clip: { name: "Battery Capacity", value: 16, subtract: true },
-				ex12: { name: "Normal Shot Heat", value: 50, percent: true }
+				dmg: { name: "Damage", value: 12 },
+				clip: { name: "Battery Capacity", value: 32, subtract: true },
+				ex12: { name: "Normal Shot Heat Generation", value: 1.5, percent: true, multiply: true }
 			}
 		},
 		{
@@ -505,11 +509,13 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Pushing the EPC to the limit will give you a significant increase in charge shot damage but at the heavy cost of slow charge speed and decreased cooling efficiency.",
+			text: "Pushing the EPC to the limit will give you a significant increase in charge shot damage and a boost in the size of the explosion but at the cost of thermal efficiency and energy consumption.",
 			stats: {
-				ex1: { name: "Charged Damage", value: 40 },
-				ex5: { name: "Charge Speed", value: 0.5, multiply: true },
-				reload: { name: "Cooling Rate", value: 50, percent: true, subtract: true }
+				ex1: { name: "Charged Damage", value: 30 },
+				ex2: { name: "Charged Area Damage", value: 30 },
+				ex3: { name: "Charged Effect Radius", value: 0.4 },
+				ex4: { name: "Charged Shot Ammo Use", value: 4 },
+				reload: { name: "Cooling Rate", value: 25, percent: true, subtract: true }
 			}
 		},
 		{

@@ -10,6 +10,7 @@ export default {
 		clip: { name: "Magazine Size", value: 12 },
 		rate: { name: "Rate of Fire", value: 8.0 },
 		reload: { name: "Reload Time", value: 1.9 },
+		recoil: {name: "Recoil", value: 100, percent: true},
 		ex1: { name: "Weakpoint Damage Bonus", value: 20, percent: true },
 		ex2: { name: "Base Spread", value: 100, percent: true },
 		ex3: { name: "Spread Per Shot", value: 100, percent: true },
@@ -155,7 +156,8 @@ export default {
 				type: "Accuracy",
 				text: "This little tweak reduces weapon recoil and spread per shot helping you hit consecutive shots.",
 				stats: {
-					ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true }
+					ex3: { name: "Spread Per Shot", value: 20, percent: true, subtract: true },
+					recoil: {name: "Recoil", value: 0.5, percent: true, multiply: true }
 				},
 				cost: {
 					credits: 2200,
@@ -352,11 +354,12 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Fully automatic action, watch out for the recoil.", //why is the recoil stat not displayed? is this intentional?
+			text: "Fully automatic action, watch out for the recoil.",
 			stats: {
 				ex8: { name: "Automatic Fire", value: 1, boolean: true },
 				rate: { name: "Rate of Fire", value: 2 },
-				ex2: { name: "Base Spread", value: 100, percent: true }
+				ex2: { name: "Base Spread", value: 100, percent: true },
+				recoil: {name: "Recoil", value: 2.5, percent: true, multiply:true },
 			}
 		},
 		{

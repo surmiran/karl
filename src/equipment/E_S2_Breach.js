@@ -428,10 +428,10 @@ export default {
 			text: "These heavily tweaked plasma nodes convert most of the forward momentum into angular momentum continuously doing damage to the immediate area where it was launched. The plasma beams also last much longer but they deal less damage every second and are big and heavy so both magazine and total capacity is greatly reduced.",
 			stats: {
 				ex10: { name: "Spinning Death", value: 1, boolean: true },
-				dmg: { name: "Beam DPS", value: 460, subtract: true },
-				ex1: { name: "Projectile Lifetime", value: 2.2 },
-				ammo: { name: "Max Ammo", value: 6, subtract: true },
-				clip: { name: "Magazine Size", value: 3, subtract: true }
+				dmg: { name: "Beam DPS", value: 0.2, multiply: true },
+				ex1: { name: "Projectile Lifetime", value: 2.5, multiply: true },
+				ammo: { name: "Max Ammo", value: 0.5, multiply: true },
+				clip: { name: "Magazine Size", value: 0.25, multiply: true }
 			}
 		},
 		{

@@ -10,6 +10,7 @@ export default {
 		clip: { name: "Magazine Size", value: 30 },
 		rate: { name: "Rate of Fire", value: 11 },
 		reload: { name: "Reload Time", value: 2 },
+		spread: {name: "Base Spread", value: 100, percent: true},
 		ex1: { name: "Electric Damage", value: 0 },
 		ex2: { name: "Electrocution %", value: 20, percent: true },
 		ex3: { name: "Recoil", value: 100, percent: true },
@@ -292,8 +293,9 @@ export default {
 			},
 			text: "Same power but in a smaller package giving slightly better accuracy and letting you fit a few more rounds in each magazine.",
 			stats: {
-				clip: { name: "Magazine Size", value: 5 }
-				// todo: base spread is mentioned in text but not represented in stats..
+				clip: { name: "Magazine Size", value: 5 },
+				spread: { name: "Base Spread", value: 0.8, percent: true, multiply: true }
+				
 			}
 		},
 		{
@@ -335,7 +337,8 @@ export default {
 			text: "Use the electron circuit of the SMG to boost its fire rate and damage but the accuracy suffers as a result.",
 			stats: {
 				ex1: { name: "Electric Damage", value: 2 },
-				rate: { name: "Rate of Fire", value: 4 }
+				rate: { name: "Rate of Fire", value: 4 },
+				spead: { name: "Base Spread", value: 1.5, percent: true, multiply: true }
 			}
 		},
 		{

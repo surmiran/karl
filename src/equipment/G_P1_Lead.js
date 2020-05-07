@@ -432,19 +432,18 @@ export default {
 				rate: { name: "Rate of Fire", value: 4, subtract: true }
 			}
 		},
-		/* todo: cost */
 		{
 			selected: false,
 			name: "Exhaust Vectoring",
 			icon: "Icon_Upgrade_DamageGeneral",
 			type: "balanced",
 			cost: {
-				credits: 0,
-				bismor: 0,
-				croppa: 0,
+				credits: 7400,
+				bismor: 140,
+				croppa: 95,
 				enorPearl: 0,
 				jadiz: 0,
-				magnite: 0,
+				magnite: 65,
 				umanite: 0,
 				err: 0
 			},

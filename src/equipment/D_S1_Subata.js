@@ -352,7 +352,7 @@ export default {
 				umanite: 0,
 				err: 0
 			},
-			text: "Fully automatic action, watch out for the recoil.",
+			text: "Fully automatic action, watch out for the recoil.", //why is the recoil stat not displayed? is this intentional?
 			stats: {
 				ex8: { name: "Automatic Fire", value: 1, boolean: true },
 				rate: { name: "Rate of Fire", value: 2 },

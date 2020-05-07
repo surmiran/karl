@@ -454,7 +454,7 @@ export default {
 			},
 			text: "Big and deadly and dirty. Too bad plutonium is so heavy that you can only take a few rounds with you. And remember to take care with the fallout.",
 			stats: {
-				dmg: { name: "Area Damage", value: 330 },
+				dmg: { name: "Area Damage", value: 4, multiply: true },
 				ex1: { name: "Effect Radius", value: 1 },
 				ammo: { name: "Max Ammo", value: 0.3, multiply: true },
 				ex4: { name: "Projectile Velocity", value: 0.7, percent: true, multiply: true }

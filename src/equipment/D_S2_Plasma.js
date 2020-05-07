@@ -489,7 +489,7 @@ export default {
 			},
 			text: "Some extensive tweaking to how the shots are prepared can increase the pure damage of the weapon but at the cost of a lower projectile velocity and a reduced battery size.",
 			stats: {
-				dmg: { name: "Damage", value: 12 },
+				dmg: { name: "Damage", value: 1.6, multiply: true },
 				clip: { name: "Battery Capacity", value: 32, subtract: true },
 				ex12: { name: "Normal Shot Heat Generation", value: 1.5, percent: true, multiply: true }
 			}
@@ -511,10 +511,10 @@ export default {
 			},
 			text: "Pushing the EPC to the limit will give you a significant increase in charge shot damage and a boost in the size of the explosion but at the cost of thermal efficiency and energy consumption.",
 			stats: {
-				ex1: { name: "Charged Damage", value: 30 },
-				ex2: { name: "Charged Area Damage", value: 30 },
-				ex3: { name: "Charged Effect Radius", value: 0.4 },
-				ex4: { name: "Charged Shot Ammo Use", value: 4 },
+				ex1: { name: "Charged Damage", value: 1.5, multiply: true },
+				ex2: { name: "Charged Area Damage", value: 1.5, multiply: true },
+				ex3: { name: "Charged Effect Radius", value: 0.6 },
+				ex4: { name: "Charged Shot Ammo Use", value: 1.5, multiply: true},
 				reload: { name: "Cooling Rate", value: 25, percent: true, subtract: true }
 			}
 		},

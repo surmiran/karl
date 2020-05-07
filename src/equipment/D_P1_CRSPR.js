@@ -24,6 +24,7 @@ export default {
 			dps: damagePerSecond, // damage per second
 			dpa: totalDamage // total damage available
 		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
 		ex11: { name: "Heat", value: 10 },

@@ -135,9 +135,13 @@
 				let dataParts = store.state.dataParts;
 				let classInFocus = store.state.selected.class;
 				let equipmentInFocus = store.state.selected.equipment;
-				dataParts[classInFocus][equipmentInFocus].push("focus");
-				// todo: this focus mechanic is not ideal, put in object instead of array: {... focus: {class: S, equipment: S2} ...}
-				let parts = JSON.stringify(dataParts);
+				let linkObject = {
+					dataParts: dataParts,
+					classInFocus: classInFocus,
+					equipmentInFocus: equipmentInFocus
+				};
+				console.log("linkObject", linkObject);
+				let parts = JSON.stringify(linkObject);
 				let uri = `https://surmiran.github.io/karl/?=${Lzs.compressToEncodedURIComponent(parts)}`;
 				let copyTextarea = document.getElementById("idCopyTextArea");
 				copyTextarea.disabled = false;
@@ -164,6 +168,7 @@
 			if (dataString) {
 				try {
 					let parts = JSON.parse(Lzs.decompressFromEncodedURIComponent(dataString));
+					console.log("parts loaded", parts);
 					this.$toasted.show("For Karl!", toastOptions);
 					store.commit("loadFromLink", parts);
 				} catch (err) {

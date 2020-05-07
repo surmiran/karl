@@ -387,32 +387,44 @@ export default new Vuex.Store({
 		},
 
 		loadFromLink: (state, data) => {
-			state.dataParts = data;
-			state.loadedFromLink = true;
+			console.log("load from link", state, data);
+			if (data.dataParts) {
+				console.log("new link");
+				// new link
+				state.dataParts = data.dataParts;
+				state.selected.class = data.classInFocus;
+				state.selected.class = data.equipmentInFocus;
+			} else {
+				console.log("old link");
+				// old link
+				state.dataParts = data;
+				state.loadedFromLink = true;
 
-			for (let [classId, equipments] of Object.entries(data)) {
-				for (let [equipmentId, mods] of Object.entries(equipments)) {
-					state.tree[classId][equipmentId].modified = true;
-					for (let tierId in mods) {
-						if (parseInt(mods[tierId]) >= 0) {
-							if (state.tree[classId][equipmentId].mods[tierId]) {
-								state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
-							} else {
-								state.tree[classId][equipmentId].overclocks[mods[tierId]].selected = true;
-								state.selected.overclock = mods[tierId];
-								state.loadedOverclockFromLink = true;
+				for (let [classId, equipments] of Object.entries(data)) {
+					for (let [equipmentId, mods] of Object.entries(equipments)) {
+						state.tree[classId][equipmentId].modified = true;
+						for (let tierId in mods) {
+							if (parseInt(mods[tierId]) >= 0) {
+								if (state.tree[classId][equipmentId].mods[tierId]) {
+									state.tree[classId][equipmentId].mods[tierId][mods[tierId]].selected = true;
+								} else {
+									state.tree[classId][equipmentId].overclocks[mods[tierId]].selected = true;
+									state.selected.overclock = mods[tierId];
+									state.loadedOverclockFromLink = true;
+								}
+							} else if (mods[tierId] === "focus") {
+								state.selected.class = classId;
+								state.selected.equipment = equipmentId;
+								for (let equipment in state.tree[classId]) {
+									state.tree[classId][equipment].selected = equipment === equipmentId;
+								}
+								// focus
 							}
-						} else if (mods[tierId] === "focus") {
-							state.selected.class = classId;
-							state.selected.equipment = equipmentId;
-							for (let equipment in state.tree[classId]) {
-								state.tree[classId][equipment].selected = equipment === equipmentId;
-							}
-							// focus
 						}
 					}
 				}
 			}
+
 		}
 	},
 	actions: {}

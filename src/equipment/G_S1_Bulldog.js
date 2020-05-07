@@ -392,7 +392,7 @@ export default {
 				clip: { name: "Magazine Size", value: 1, subtract: true },
 				reload: { name: "Reload Time", value: 0.5 },
 				ex13: { name: "Recoil", value: 2.5, percent: true, multiply: true },
-				ex1: { name: "Base Spread", value: 15, percent: true, subtract: true },
+				ex1: { name: "Base Spread", value: 0.5, percent: true, multiply: true },
 				ex2: { name: "Spread Per Shot", value: 71, percent: true }
 			}
 		},

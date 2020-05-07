@@ -327,11 +327,7 @@ export default {
 			text: "Get all you can from your fuel and lose pressure slower from the main chamber.",
 			stats: {
 				clip: { name: "Tank Capacity", value: 25 },
-				ex3: {
-					name: "Pressure Drop Rate",
-					value: 0.75,
-					multiply: true
-				}
+				ex3: { name: "Pressure Drop Rate", value: 0.75, multiply: true }
 			}
 		},
 		{
@@ -414,7 +410,7 @@ export default {
 			},
 			text: "A change in the fuel mixture along with some heavy cooler unit tweaks means that you'll be doing less freezing and more killing with razor-sharp ice shards. However, the capacity of the pressure chamber suffers.",
 			stats: {
-				dmg: { name: "Damage", value: 6 },
+				dmg: { name: "Damage", value: 2, multiply: true },
 				ex2: { name: "Freezing Power", value: 3, subtract: true },
 				clip: { name: "Tank Capacity", value: 50, subtract: true },
 				ex3: { name: "Pressure Drop Rate", value: 1.5, multiply: true }

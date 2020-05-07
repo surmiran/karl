@@ -477,7 +477,7 @@ export default {
 			text: "Extensive tweaks give a huge bump in raw damage at the cost of ammo capacity and fire rate. ",
 			stats: {
 				dmg: { name: "Damage", value: 12 },
-				clip: { name: "Magazine Size", value: 55, subtract: true },
+				clip: { name: "Magazine Size", value: 0.5, multiply: true },
 				ammo: { name: "Max Ammo", value: 110, subtract: true },
 				ex3: { name: "Base Spread", value: 30, percent: true, subtract: true },
 				rate: { name: "Top Rate of Fire", value: 1.5, subtract: true }

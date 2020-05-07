@@ -358,10 +358,10 @@ export default {
 			},
 			text: "A rebalancing of weight distribution, enlarged vents and a reshaped grip result in a rifle that is more controllable when hip-firing in quick succession but at the cost of pure damage output.",
 			stats: {
-				ammo: { name: "Max Ammo", value: 96 },
+				ammo: { name: "Max Ammo", value: 1.75, multiply: true },
 				rate: { name: "Rate of Fire", value: 3 },
 				ex3: { name: "Recoil", value: 0.5, multiply: true },
-				dmg: { name: "Damage", value: 20, subtract: true }
+				dmg: { name: "Damage", value: 0.6, multiply: true }
 			}
 		},
 		{

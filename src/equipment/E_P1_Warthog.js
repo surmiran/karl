@@ -337,8 +337,7 @@ export default {
 			stats: {
 				ex5: { name: "Base Spread", value: 0.5, percent: true, multiply: true },
 				ex9: { name: "Weakpoint Damage Bonus", value: 30, percent: true },
-				clip: { name: "Magazine Size", value: 2, subtract: true },
-				rate: { name: "Rate of Fire", value: 0.4, subtract: true }
+				rate: { name: "Rate of Fire", value: 0.75, multiply: true }
 			}
 		},
 		{

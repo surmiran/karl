@@ -474,7 +474,7 @@ export default {
 			text: "It ain't pretty but this overclock will tear apart anything that gets close, tough it gets a bit iffy at range.",
 			stats: {
 				dmg: { name: "Damage", value: 1.5, multiply: true },
-				ex10: { name: "Base Spread", value: 400, percent: true }
+				ex10: { name: "Base Spread", value: 4, percent: true, multiply: true }
 			}
 		},
 		{
@@ -494,7 +494,7 @@ export default {
 			},
 			text: "Convert the BRT to fire small flechettes instead of slugs. Increases overall ammo and clip size as well as reducing recoil but at the cost of pure damage.",
 			stats: {
-				ammo: { name: "Max Ammo", value: 120 },
+				ammo: { name: "Max Ammo", value: 2, multiply: true },
 				clip: { name: "Magazine Size", value: 30 },
 				ex4: { name: "Recoil", value: 0.5, percent: true, multiply: true },
 				ex3: { name: "Spread Per Shot", value: 50, percent: true, subtract: true },

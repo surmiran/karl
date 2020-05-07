@@ -4,6 +4,26 @@ export default {
 	name: "CRSPR Flamethrower",
 	class: "Heavy Weapon",
 	icon: "equipment.D_P1_CRSPR",
+	calculateDamage: (stats) => {
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Flow Rate") {
+				dpsStats.flowRate = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			}
+		}
+		rof = (dpsStats.flowRate / 100) * 6
+
+		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
+
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
+
+		return {
+			dps: damagePerSecond, // damage per second
+			dpa: totalDamage // total damage available
+		};
 	baseStats: {
 		dmg: { name: "Damage", value: 10 },
 		ex11: { name: "Heat", value: 10 },

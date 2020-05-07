@@ -6,3 +6,6 @@ This project is not finished yet but base functionality is there. Any modificati
 
 If you find any bugs or wrong data, please let me know. I would appreciate any ideas for improvement.
 
+---
+
+Test your local changes with `npm start`

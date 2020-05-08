@@ -16,8 +16,6 @@ export default {
 
 		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
 
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
-
 		return {
 			dps: damagePerSecond, // damage per second
 		};

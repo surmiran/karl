@@ -4,13 +4,31 @@ export default {
 	name: "LMG Gun Platform",
 	class: "Sentry Gun",
 	icon: "equipment.E_E_Sentry",
+	calculateDamage: (stats) => {
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			}
+		}
+
+		damagePerSecond = parseFloat(dpsStats.damage * dpsStats.rateOfFire).toFixed(2);
+
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo).toFixed(0);
+
+		return {
+			dps: damagePerSecond, // damage per second
+			dpa: totalDamage, //total damage available
+		};
+	},
 	baseStats: {
 		ammo: { name: "Carried Amount", value: 425 },
 		rate: { name: "Construction Time", value: 4 },
 		clip: { name: "Sentry Ammo Capacity", value: 90 },
 		reload: { name: "Reload Ammo Per Second", value: 45 },
 		dmg: { name: "Damage", value: 5 },
-		dmg2: { name: "Damage Bonus", value: 0, percent: true },
+		rof: { name: "Rate of Fire", value: 7.5 },
 		range: { name: "Max Targeting Range", value: 20 },
 		amount: { name: "Number of Sentries", value: 1 },
 		ex1: { name: "Armor Breaking", value: 100, percent: true },
@@ -196,7 +214,7 @@ export default {
 				type: "Special",
 				text: "A design variation with greatly increased shot power and a focused scan angle.",
 				stats: {
-					dmg2: { name: "Damage Bonus", value: 100, percent: true },
+					dmg: { name: "Damage", value: 2, multiply: true },
 					ex3: { name: "Defender System", value: 1, boolean: true }
 				},
 				cost: {

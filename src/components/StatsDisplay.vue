@@ -94,7 +94,6 @@
 <!--todo: show most cost effective upgrade in tier (most change %)-->
 <script>
 	import store from "../store";
-
 	const _calculateDamage = stats => {
 		let damageWords = ["Damage", "Area Damage", "Electric Damage", "Direct Damage"];
 		let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size", "Combined Clip Size"];
@@ -147,7 +146,7 @@
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpb: dpsStats.damage,
 			dpm: magazineDamage,
-			dpa: dpsStats.damage * dpsStats.maxAmmo
+			dpa: dpsStats.damage * (dpsStats.maxAmmo + dpsStats.magazineSize)
 		};
 	};
 

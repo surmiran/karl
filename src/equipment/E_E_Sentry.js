@@ -5,17 +5,26 @@ export default {
 	class: "Sentry Gun",
 	icon: "equipment.E_E_Sentry",
 	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let totalDamage;
+		let dpsStats = {};
 		for (let stat of stats) {
 			if (stat.name === "Damage") {
 				dpsStats.damage = parseFloat(stat.value);
 			} else if (stat.name === "Rate of Fire") {
 				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Carried Amount") {
+				dpsStats.carriedAmount = parseFloat(stat.value);
+			} else if (stat.name === "Sentry Ammo Capacity") {
+				dpsStats.sentryAmmoCapacity = parseFloat(stat.value);
 			}
 		}
 
+		dpsStats.carriedAmount = dpsStats.carriedAmount + dpsStats.sentryAmmoCapacity;
+
 		damagePerSecond = parseFloat(dpsStats.damage * dpsStats.rateOfFire).toFixed(2);
 
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo).toFixed(0);
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.carriedAmount).toFixed(0);
 
 		return {
 			dps: damagePerSecond, // damage per second

@@ -128,6 +128,7 @@
 				specialCaseDoubleBarrel = true;
 			}
 		}
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
@@ -146,7 +147,7 @@
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpb: dpsStats.damage,
 			dpm: magazineDamage,
-			dpa: dpsStats.damage * (dpsStats.maxAmmo + dpsStats.magazineSize)
+			dpa: dpsStats.damage * (dpsStats.maxAmmo)
 		};
 	};
 

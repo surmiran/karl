@@ -5,21 +5,25 @@ export default {
 	class: "Heavy Weapon",
 	icon: "equipment.D_P2_Cryo",
 	calculateDamage: (stats) => {
-		// todo: dps from damage and flow rate (take 10 shots/s for 100% flow rate?)
+		let damagePerSecond;
+		let totalDamage;
+		let rof;
+		let dpsStats = {};
 		for (let stat of stats) {
 			if (stat.name === "Damage") {
 				dpsStats.damage = parseFloat(stat.value);
 			} else if (stat.name === "Flow Rate") {
 				dpsStats.flowRate = parseFloat(stat.value);
-			} else if (stat.name === "Max Ammo") {
-				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Tank Capacity") {
+				dpsStats.tankCapacity = parseFloat(stat.value);
 			}
 		}
+
 		rof = (dpsStats.flowRate / 100) * 8
 
 		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
 
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.tankCapacity).toFixed(0);
 
 		return {
 			dps: damagePerSecond, // damage per second

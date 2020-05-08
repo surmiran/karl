@@ -24,6 +24,8 @@ export default {
 			}
 		}
 
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
 

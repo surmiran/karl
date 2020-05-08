@@ -30,6 +30,9 @@ export default {
 			}
 		}
 		// damage over one burst (3 or 6 bullets used)
+
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+
 		burstDamage = dpsStats.damage * dpsStats.burstSize;
 		if (dpsStats.burstBonus) {
 			burstDamage += dpsStats.burstBonus;

@@ -33,6 +33,10 @@ export default {
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			}
 		}
+
+		
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+		
 		dpsStats.damage = dpsStats.directDamage + dpsStats.areaDamage;
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;

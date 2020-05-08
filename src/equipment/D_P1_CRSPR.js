@@ -5,20 +5,29 @@ export default {
 	class: "Heavy Weapon",
 	icon: "equipment.D_P1_CRSPR",
 	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let totalDamage;
+		let rof;
+		let dpsStats = {};
 		for (let stat of stats) {
 			if (stat.name === "Damage") {
 				dpsStats.damage = parseFloat(stat.value);
-			} else if (stat.name === "Flow Rate") {
+			} else if (stat.name === "Fuel Flow Rate") {
 				dpsStats.flowRate = parseFloat(stat.value);
-			} else if (stat.name === "Max Ammo") {
-				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Max Fuel") {
+				dpsStats.maxFuel = parseFloat(stat.value);
+			} else if (stat.name === "Tank Size") {
+				dpsStats.tankSize = parseFloat(stat.value);
 			}
 		}
+
+		dpsStats.maxFuel = dpsStats.maxFuel + dpsStats.tankSize;
+
 		rof = (dpsStats.flowRate / 100) * 6
 
 		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
 
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxFuel).toFixed(0);
 
 		return {
 			dps: damagePerSecond, // damage per second

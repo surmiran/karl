@@ -17,57 +17,57 @@
 			<!-- todo: autoscroll on equipment -->
 			<div v-if="selectedClass === 'D'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in drillerEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'D'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in drillerEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'D'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'E'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in engineerEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'E'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in engineerEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'E'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'G'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in gunnerEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'G'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in gunnerEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'G'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'S'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in scoutEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'S'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in scoutEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'S'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 			<div v-if="selectedClass === 'R'" class="equipmentSelectContainer">
 				<EquipmentSelect
-					v-for="(equipment, equipmentId) in robotEquipment"
-					:key="equipmentId"
-					:iconPath="equipment.icon"
-					:name="equipment.name"
-					:classId="'R'"
-					:equipmentId="equipmentId"
-					:data="equipment"
+						v-for="(equipment, equipmentId) in robotEquipment"
+						:key="equipmentId"
+						:iconPath="equipment.icon"
+						:name="equipment.name"
+						:classId="'R'"
+						:equipmentId="equipmentId"
+						:data="equipment"
 				/>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.6.6 Based on DRG v0.29.39685.0</p>
+		<p class="versionNumber">KARL v1.6.7 Based on DRG v0.29.39685.0</p>
 	</div>
 </template>
 
@@ -221,8 +221,6 @@
 		margin-top: 60px;
 		width: 1000px;
 	}
-
-	/*todo: semi transparent backgrounds!*/
 
 	.versionNumber {
 		font-size: 0.7rem;

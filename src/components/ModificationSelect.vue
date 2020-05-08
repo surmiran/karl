@@ -19,7 +19,7 @@
 					     class="mod"
 					     :class="[mod.selected ? 'modBackgroundActive' : 'modBackground']">
 						<path
-							d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
+								d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
 						<g>
 							<svg xmlns="http://www.w3.org/2000/svg"
 							     y="10%"
@@ -45,9 +45,9 @@
 					<g :display="getCleanDisplay(computedState)">
 						<g> <!-- background layer -->
 							<path
-								style="fill:#379c5d;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-								d="M 16.645549,6.8857899 63.523153,6.92059 79.999998,30.39618 52.538582,73.114198 26.69254,73.0896 2.5e-7,30.232339 Z"
-								id="path817"/>
+									style="fill:#379c5d;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+									d="M 16.645549,6.8857899 63.523153,6.92059 79.999998,30.39618 52.538582,73.114198 26.69254,73.0896 2.5e-7,30.232339 Z"
+									id="path817"/>
 						</g>
 						<g transform="translate(0,-217)">
 							<path style="fill:#000000;stroke-width:0.32307553"
@@ -58,8 +58,8 @@
 					<g :display="getBalancedDisplay(computedState)">
 						<g>
 							<path
-								style="fill:#e9ca37;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-								d="M 0.676502,26.11698 5.2900339,23.37613 V 19.90961 L 39.830893,0 74.387947,19.8847 v 3.47593 l 4.935551,2.80812 V 53.989009 L 74.419528,56.68047 74.223427,60.412899 40.283264,79.999998 5.4545499,60.39224 5.125512,56.603608 0.84802198,54.13516 Z"
+									style="fill:#e9ca37;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+									d="M 0.676502,26.11698 5.2900339,23.37613 V 19.90961 L 39.830893,0 74.387947,19.8847 v 3.47593 l 4.935551,2.80812 V 53.989009 L 74.419528,56.68047 74.223427,60.412899 40.283264,79.999998 5.4545499,60.39224 5.125512,56.603608 0.84802198,54.13516 Z"
 							/>
 						</g>
 						<g transform="translate(0,-217)">
@@ -71,8 +71,8 @@
 					<g :display="getUnstableDisplay(computedState)">
 						<g>
 							<path
-								style="fill:#d13500;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-								d="M 8.4999998e-5,40.126319 8.4302848,33.505759 V 13.11006 l 4.6897602,-4.6584702 20.295218,-0.006 6.685852,-8.4074599 6.696559,8.41266 h 20.13055 l 4.689771,4.6584701 v 20.151169 l 8.381918,7.054062 -8.37692,6.661528 -0.006,20.327659 -4.368421,4.334931 H 46.596244 L 39.857415,79.961869 33.539996,71.9618 H 13.120045 L 8.4302848,67.303329 v -20.47685 z"
+									style="fill:#d13500;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+									d="M 8.4999998e-5,40.126319 8.4302848,33.505759 V 13.11006 l 4.6897602,-4.6584702 20.295218,-0.006 6.685852,-8.4074599 6.696559,8.41266 h 20.13055 l 4.689771,4.6584701 v 20.151169 l 8.381918,7.054062 -8.37692,6.661528 -0.006,20.327659 -4.368421,4.334931 H 46.596244 L 39.857415,79.961869 33.539996,71.9618 H 13.120045 L 8.4302848,67.303329 v -20.47685 z"
 							/>
 						</g>
 						<g transform="translate(0,-217)">
@@ -107,9 +107,9 @@
 						<g :display="getCleanDisplayByOverclock(overclock)">
 							<g> <!-- background layer -->
 								<path
-									style="fill:#379c5d;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-									d="M 16.645549,6.8857899 63.523153,6.92059 79.999998,30.39618 52.538582,73.114198 26.69254,73.0896 2.5e-7,30.232339 Z"
-									id="path817"/>
+										style="fill:#379c5d;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+										d="M 16.645549,6.8857899 63.523153,6.92059 79.999998,30.39618 52.538582,73.114198 26.69254,73.0896 2.5e-7,30.232339 Z"
+										id="path817"/>
 							</g>
 							<g transform="translate(0,-217)">
 								<path style="fill:#000000;stroke-width:0.32307553"
@@ -120,8 +120,8 @@
 						<g :display="getBalancedDisplayByOverclock(overclock)">
 							<g>
 								<path
-									style="fill:#e9ca37;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-									d="M 0.676502,26.11698 5.2900339,23.37613 V 19.90961 L 39.830893,0 74.387947,19.8847 v 3.47593 l 4.935551,2.80812 V 53.989009 L 74.419528,56.68047 74.223427,60.412899 40.283264,79.999998 5.4545499,60.39224 5.125512,56.603608 0.84802198,54.13516 Z"
+										style="fill:#e9ca37;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+										d="M 0.676502,26.11698 5.2900339,23.37613 V 19.90961 L 39.830893,0 74.387947,19.8847 v 3.47593 l 4.935551,2.80812 V 53.989009 L 74.419528,56.68047 74.223427,60.412899 40.283264,79.999998 5.4545499,60.39224 5.125512,56.603608 0.84802198,54.13516 Z"
 								/>
 							</g>
 							<g transform="translate(0,-217)">
@@ -133,8 +133,8 @@
 						<g :display="getUnstableDisplayByOverclock(overclock)">
 							<g>
 								<path
-									style="fill:#d13500;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-									d="M 8.4999998e-5,40.126319 8.4302848,33.505759 V 13.11006 l 4.6897602,-4.6584702 20.295218,-0.006 6.685852,-8.4074599 6.696559,8.41266 h 20.13055 l 4.689771,4.6584701 v 20.151169 l 8.381918,7.054062 -8.37692,6.661528 -0.006,20.327659 -4.368421,4.334931 H 46.596244 L 39.857415,79.961869 33.539996,71.9618 H 13.120045 L 8.4302848,67.303329 v -20.47685 z"
+										style="fill:#d13500;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+										d="M 8.4999998e-5,40.126319 8.4302848,33.505759 V 13.11006 l 4.6897602,-4.6584702 20.295218,-0.006 6.685852,-8.4074599 6.696559,8.41266 h 20.13055 l 4.689771,4.6584701 v 20.151169 l 8.381918,7.054062 -8.37692,6.661528 -0.006,20.327659 -4.368421,4.334931 H 46.596244 L 39.857415,79.961869 33.539996,71.9618 H 13.120045 L 8.4302848,67.303329 v -20.47685 z"
 								/>
 							</g>
 							<g transform="translate(0,-217)">
@@ -162,7 +162,7 @@
 				<div class="modTextBoxIcon">
 					<svg viewBox="0 0 80 50" height="100%" class="modPadding modBackgroundActiveNoStroke">
 						<path
-							d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
+								d="M 0.3679663,25 13.7826,0.609756 H 66.221625 L 79.636259,25 66.221625,49.390244 H 13.7826 L 0.3679663,25"/>
 						<g>
 							<svg xmlns="http://www.w3.org/2000/svg"
 							     y="10%"
@@ -212,10 +212,6 @@
 			<div>
 				{{ hoveredMod.text }}
 			</div>
-			<!--todo: calculate correctly for all stats-->
-			<!--<div v-if="hoveredMod.increase" class="increaseOverBase">
-				Increase over base stat: {{ parseInt(hoveredMod.increase) }}%
-			</div>-->
 		</div>
 	</div>
 </template>
@@ -445,22 +441,22 @@
 
 	.tierBackgroundGradient {
 		background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0) 40%,
-			rgba(40, 33, 23, 1) 40%,
-			rgba(40, 33, 23, 1) 60%,
-			rgba(0, 0, 0, 0) 60%
+				to bottom,
+				rgba(0, 0, 0, 0) 40%,
+				rgba(40, 33, 23, 1) 40%,
+				rgba(40, 33, 23, 1) 60%,
+				rgba(0, 0, 0, 0) 60%
 		) no-repeat;
 		background-size: 100% 100%;
 	}
 
 	.tierBackgroundGradientHalf {
 		background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0) 40%,
-			rgba(40, 33, 23, 1) 40%,
-			rgba(40, 33, 23, 1) 60%,
-			rgba(0, 0, 0, 0) 60%
+				to bottom,
+				rgba(0, 0, 0, 0) 40%,
+				rgba(40, 33, 23, 1) 40%,
+				rgba(40, 33, 23, 1) 60%,
+				rgba(0, 0, 0, 0) 60%
 		) no-repeat;
 		background-size: 50% 100%;
 	}

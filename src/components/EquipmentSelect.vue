@@ -1,14 +1,12 @@
 <template>
 	<div class="weaponSelectContainer" v-on:click="selectEquip()" :title="[getModified ? 'Equipment is modified' : '']">
 		<div class="flexboxWeaponSelect" :class="[getSelected ? 'equipmentActive' : 'equipment']">
-			<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 180 90"
-					:class="[getSelected ? 'equipmentIconActive' : 'equipmentIcon']"
-					height="70%"
-					preserveAspectRatio="xMidYMid meet"
-					v-html="getIconFromPath"
-			></svg>
+			<svg xmlns="http://www.w3.org/2000/svg"
+			     viewBox="0 0 180 90"
+			     :class="[getSelected ? 'equipmentIconActive' : 'equipmentIcon']"
+			     height="70%"
+			     preserveAspectRatio="xMidYMid meet"
+			     v-html="getIconFromPath"></svg>
 		</div>
 		<div :class="[getSelected ? 'equipmentTextActive' : 'equipmentText']">
 			<h4>{{ name }}<span v-if="getModified"> *</span></h4>

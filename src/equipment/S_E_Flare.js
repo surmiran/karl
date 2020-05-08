@@ -18,7 +18,7 @@ export default {
 		}
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
-		let lightingSeconds = (dpsStats.magazineSize) * dpsStats.duration;
+		let lightingSeconds = (dpsStats.maxAmmo) * dpsStats.duration;
 		lightingMinutes = lightingSeconds / 60;
 		return {
 			ex1: lightingMinutes

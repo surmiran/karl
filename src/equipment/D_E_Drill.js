@@ -4,6 +4,24 @@ export default {
 	name: "Reinforced power drills",
 	class: "support tool",
 	icon: "equipment.D_E_Drill",
+	calculateDamage: (stats) => {
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Mining Rate") {
+				dpsStats.miningRate = parseFloat(stat.value);
+			}
+		}
+		rof = (dpsStats.miningRate / 100) * 2
+
+		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
+
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
+
+		return {
+			dps: damagePerSecond, // damage per second
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 5 },
 		ammo: { name: "Max Fuel", value: 38 },

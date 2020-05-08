@@ -317,7 +317,6 @@ export default {
 					err: 0
 				}
 			},
-			/* todo: check price */
 			{
 				selected: false,
 				name: "High Density Battery",
@@ -329,12 +328,12 @@ export default {
 				},
 				cost: {
 					credits: 3800,
-					bismor: 0,
+					bismor: 15,
 					croppa: 0,
-					enorPearl: 36,
-					jadiz: 25,
+					enorPearl: 0,
+					jadiz: 0,
 					magnite: 0,
-					umanite: 15,
+					umanite: 0,
 					err: 0
 				}
 			}

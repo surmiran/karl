@@ -31,7 +31,7 @@ export default {
 
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
-		damagePerSecond = parseFloat(dpsStats.damage * dpsStats.rateOfFire).toFixed(2);
+		damagePerSecond = parseFloat(damagePerBullet * dpsStats.rateOfFire).toFixed(2);
 
 		damagePerBullet = parseFloat(dpsStats.damage * dpsStats.pellets).toFixed(0);
 

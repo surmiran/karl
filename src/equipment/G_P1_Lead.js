@@ -6,7 +6,6 @@ export default {
 	icon: "equipment.G_P1_Lead",
 	calculateDamage: (stats) => {
 		let damagePerSecond;
-		let damagePerBullet;
 		let totalDamage;
 		let dpsStats = {};
 		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
@@ -15,8 +14,6 @@ export default {
 				dpsStats.damage = parseFloat(stat.value);
 			} else if (stat.name === "Rate of Fire") {
 				dpsStats.rateOfFire = parseFloat(stat.value);
-			} else if (stat.name === "Reload Time") {
-				dpsStats.reloadTime = parseFloat(stat.value);
 			} else if (stat.name === "Max Ammo") {
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			}

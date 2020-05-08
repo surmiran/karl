@@ -75,7 +75,7 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.6.6 Based on DRG v0.29.39685.0</p>
+		<p class="versionNumber">KARL v1.6.7 Based on DRG v0.29.39685.0</p>
 	</div>
 </template>
 

@@ -14,7 +14,7 @@ export default {
 		ex2: { name: "Focused Shot Damage Bonus", value: 100, percent: true },
 		ex3: { name: "Recoil", value: 100, percent: true },
 		ex4: { name: "Max Penetrations", value: 0 },
-		ex5: { name: "Weakpoint Damage", value: 110, percent: true },
+		ex5: { name: "Weakpoint Damage Bonus", value: 10, percent: true },
 		ex6: { name: "Armor Breaking", value: 30, percent: true },
 		ex7: { name: "Focused Shot Stun Chance", value: 0, percent: true },
 		ex9: { name: "Focus Shot Fear", value: 0, boolean: true },

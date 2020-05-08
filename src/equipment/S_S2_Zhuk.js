@@ -21,6 +21,8 @@ export default {
 				dpsStats.reloadTime = parseFloat(stat.value);
 			} else if (stat.name === "Max Ammo") {
 				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Weakpoint Damage Bonus") {
+				dpsStats.weakPoint = parseFloat(stat.value);
 			}
 		}
 
@@ -38,8 +40,8 @@ export default {
 		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
 
 		return {
+			wpd: parseFloat(dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2), // damage on crit
 			dps: damagePerSecond, // damage per second
-			dpb: damagePerBullet, // damage per bullet
 			dpm: damagePerMagazine, // damage per magazine
 			dpa: totalDamage // total damage available
 		};

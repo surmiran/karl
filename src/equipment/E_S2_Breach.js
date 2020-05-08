@@ -30,7 +30,6 @@ export default {
 		ex14: { name: "Stun Duration", value: 0 }
 	},
 	mods: [
-		/* todo: check all mod costs! */
 		[
 			{
 				selected: false,

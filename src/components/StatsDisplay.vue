@@ -24,6 +24,11 @@
 
 			<h2 v-if="calcStats.dpb">Damage per shot: {{ calcStats.dpb }}</h2> <!-- damage per bullet -->
 
+			<h2 v-if="calcStats.wpd">Damage per crit: {{ calcStats.wpd }}</h2>
+			<span v-if="calcStats.dpm" class="inactiveStat">
+				<i>Important,</i> this damage will be multiplied by the creature weakpoint damage multiplier (most common case for grunts and similar enemies is x2).
+			</span>
+
 			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }}</h2>
 			<span v-if="calcStats.dpm" class="inactiveStat">
 				<i>Theoretical</i> damage per magazine.
@@ -100,6 +105,7 @@
 		let rateOfFireWords = ["Rate of Fire", "Combined Rate of Fire"];
 		let reloadTimeWords = ["Reload Time"];
 		let pelletsWords = ["Pellets"];
+		let weakPointWords = ["Weakpoint Damage Bonus"];
 		let dpsStats = {};
 		for (let stat of stats) {
 			if (damageWords.includes(stat.name)) {
@@ -119,6 +125,8 @@
 				dpsStats.damage = dpsStats.damage * parseFloat(stat.value);
 			} else if (ammoWords.includes(stat.name)) {
 				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (weakPointWords.includes(stat.name)) {
+				dpsStats.weakPoint = parseFloat(stat.value);
 			}
 
 		}
@@ -130,6 +138,7 @@
 		let damagePerSecond = magazineDamage / damageTime;
 
 		return {
+			wpd: parseFloat(dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2),
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpm: magazineDamage,
 			dpa: dpsStats.damage * (dpsStats.maxAmmo)
@@ -303,6 +312,7 @@
 					stats: stats,
 					cost: totalCost,
 					visible: visible,
+					wpd: damage.wpd ? damage.wpd : undefined,
 					dps: damage.dps ? damage.dps : undefined,
 					dpb: damage.dpb ? damage.dpb : undefined,
 					dpm: damage.dpm ? damage.dpm : undefined,

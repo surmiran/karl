@@ -27,6 +27,8 @@ export default {
 				dpsStats.rateOfFire = parseFloat(stat.value);
 			} else if (stat.name === "Reload Time") {
 				dpsStats.reloadTime = parseFloat(stat.value);
+			} else if (stat.name === "Weakpoint Damage Bonus") {
+				dpsStats.weakPoint = parseFloat(stat.value);
 			}
 		}
 		// damage over one burst (3 or 6 bullets used)
@@ -47,6 +49,7 @@ export default {
 		totalDamage = parseFloat(burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)).toFixed(0);
 
 		return {
+			wpd: parseFloat(dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2),
 			dps: damagePerSecond,
 			dpb: burstDamage,
 			dpm: damagePerMagazine,

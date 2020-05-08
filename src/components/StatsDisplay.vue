@@ -6,14 +6,12 @@
 			<div v-for="(stat, statId) in calcStats.stats" :key="statId" class="statsContainer">
 				<span class="statsText" :class="[stat.inactive ? 'inactiveStat' : '']">{{ stat.name }}:</span>
 				<div class="statsValueContainer">
-					<span class="statsValue fixedWidth" :class="[stat.inactive ? 'inactiveStat' : '']"
-					>{{ stat.baseValue }}<span v-if="stat.percent">%</span></span
-					>
+					<span class="statsValue fixedWidth" :class="[stat.inactive ? 'inactiveStat' : '']">
+						{{ stat.baseValue }}<span v-if="stat.percent">%</span>
+					</span>
 					<span class="statsModifier fixedWidth">{{ stat.modifier }}</span>
-					<span
-						class="statsValue fixedWidth"
-						:class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']"
-					>
+					<span class="statsValue fixedWidth"
+					      :class="[stat.modified ? 'modifiedStat' : stat.inactive ? 'inactiveStat' : '']">
 						{{ stat.value }}<span v-if="stat.percent">%</span>
 					</span>
 				</div>
@@ -94,6 +92,7 @@
 <!--todo: show most cost effective upgrade in tier (most change %)-->
 <script>
 	import store from "../store";
+
 	const _calculateDamage = stats => {
 		let damageWords = ["Damage", "Area Damage", "Electric Damage", "Direct Damage"];
 		let magazineSizeWords = ["Tank Size", "Magazine Size", "Clip Size", "Combined Clip Size"];
@@ -102,7 +101,6 @@
 		let reloadTimeWords = ["Reload Time"];
 		let pelletsWords = ["Pellets"];
 		let dpsStats = {};
-		let specialCaseDoubleBarrel = false;
 		for (let stat of stats) {
 			if (damageWords.includes(stat.name)) {
 				if (dpsStats.damage) {
@@ -300,7 +298,7 @@
 					totalCost.umanite += cost.umanite;
 					totalCost.err += cost.err;
 				}
-				console.log("damage", damage);
+
 				return {
 					stats: stats,
 					cost: totalCost,

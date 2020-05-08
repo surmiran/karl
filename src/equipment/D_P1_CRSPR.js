@@ -23,7 +23,7 @@ export default {
 
 		dpsStats.maxFuel = dpsStats.maxFuel + dpsStats.tankSize;
 
-		rof = (dpsStats.flowRate / 100) * 6
+		rof = (dpsStats.flowRate / 100) * 6;
 
 		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
 
@@ -407,7 +407,7 @@ export default {
 			text: "Increases operational range but decreases the fuel flow rate.",
 			stats: {
 				ex6: { name: "Flame Reach", value: 5 },
-				rate: { name: "Fuel Flow Rate", value: 20, percent: true, subtract: true },
+				rate: { name: "Fuel Flow Rate", value: 20, percent: true, subtract: true }
 			}
 		},
 		{

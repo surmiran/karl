@@ -208,7 +208,7 @@ export default {
 				stats: {
 					ex13: { name: "Stun Chance", value: 100, percent: true },
 					ex14: { name: "Stun Duration", value: 3 }
-					},
+				},
 				cost: {
 					credits: 3800,
 					bismor: 0,

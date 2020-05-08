@@ -9,8 +9,9 @@ export default {
 		let damagePerBullet;
 		let totalDamage;
 		let magazineDamage;
+		let timeToEmpty;
+		let damageTime;
 		let dpsStats = {};
-		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
 		for (let stat of stats) {
 			if (stat.name === "Damage") {
 				dpsStats.damage = parseFloat(stat.value);
@@ -28,22 +29,21 @@ export default {
 		}
 
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+		timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+		damageTime = timeToEmpty + dpsStats.reloadTime;
 
-		damagePerSecond = parseFloat(damagePerBullet * dpsStats.rateOfFire).toFixed(2);
+		damagePerBullet = parseFloat(dpsStats.damage * dpsStats.pellets).toFixed(0);
+		magazineDamage = parseFloat(damagePerBullet * dpsStats.magazineSize).toFixed(0);
+		damagePerSecond = parseFloat(magazineDamage / damageTime).toFixed(2);
+		totalDamage = parseFloat(damagePerBullet * dpsStats.maxAmmo).toFixed(0);
 
-		damagePerBullet = parseFloat(dpsStats.damage).toFixed(0);
-
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo).toFixed(0);
-
-		magazineDamage = dpsStats.damage * dpsStats.magazineSize;
-		
 		return {
-			dps: parseFloat(damagePerSecond).toFixed(2),
-			dpb: dpsStats.damage * dpsStats.pellets,
+			dps: damagePerSecond,
+			dpb: damagePerBullet,
 			dpm: magazineDamage,
-			dpa: dpsStats.damage * dpsStats.maxAmmo
+			dpa: totalDamage
 		};
-},
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 7 },
 		ammo: { name: "Max Ammo", value: 90 },
@@ -59,6 +59,8 @@ export default {
 		ex6: { name: "Armor Breaking", value: 100, percent: true },
 		ex7: { name: "Turret Whip", value: 0, boolean: true },
 		ex8: { name: "Miner Adjustments", value: 0, boolean: true },
+		ex10: { name: "Stun Chance on all body parts", value: 0, boolean: true },
+		ex11: { name: "Bonus Damage Vs Stunned", value: 0, boolean: true }
 	},
 	mods: [
 		[
@@ -335,6 +337,8 @@ export default {
 			},
 			text: "Heavier rounds allow for stun chance on all body parts, not just weakpoints. Shooting already stunned enemies with this overclock will deal extra damage.",
 			stats: {
+				ex10: { name: "Stun Chance on all body parts", value: 1, boolean: true },
+				ex11: { name: "Bonus Damage Vs Stunned", value: 1, boolean: true }
 			}
 		},
 		{

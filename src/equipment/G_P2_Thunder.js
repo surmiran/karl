@@ -34,9 +34,7 @@ export default {
 			}
 		}
 
-		
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
-		
 		dpsStats.damage = dpsStats.directDamage + dpsStats.areaDamage;
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
@@ -507,7 +505,7 @@ export default {
 				ex10: { name: "Neurotoxin Payload", value: 1, boolean: true },
 				dmg: { name: "Damage", value: 3, subtract: true },
 				ex1: { name: "Area Damage", value: 6, subtract: true },
-				ex2: { name: "Effect Radius", value: 0.3 },
+				ex2: { name: "Effect Radius", value: 0.3 }
 			}
 		}
 	]

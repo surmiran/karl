@@ -9,8 +9,9 @@ export default {
 		let damagePerBullet;
 		let totalDamage;
 		let magazineDamage;
+		let timeToEmpty;
+		let damageTime;
 		let dpsStats = {};
-		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
 		for (let stat of stats) {
 			if (stat.name === "Damage") {
 				dpsStats.damage = parseFloat(stat.value);
@@ -21,8 +22,8 @@ export default {
 			} else if (stat.name === "Max Ammo") {
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			} else if (stat.name === "Double Barrel" && stat.value === "1") {
-				dpsStats.doubleBarrel = true
-			}else if (stat.name === "Magazine Size") {
+				dpsStats.doubleBarrel = true;
+			} else if (stat.name === "Magazine Size") {
 				dpsStats.magazineSize = parseFloat(stat.value);
 			} else if (stat.name === "Pellets") {
 				dpsStats.pellets = parseFloat(stat.value);
@@ -31,29 +32,30 @@ export default {
 
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
-		damagePerSecond = parseFloat(damagePerBullet * dpsStats.rateOfFire).toFixed(2);
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+		timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+		damageTime = timeToEmpty + dpsStats.reloadTime;
 
 		damagePerBullet = parseFloat(dpsStats.damage * dpsStats.pellets).toFixed(0);
-
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo).toFixed(0);
-
-		magazineDamage = dpsStats.damage * dpsStats.magazineSize;
+		magazineDamage = parseFloat(damagePerBullet * dpsStats.magazineSize).toFixed(0);
+		damagePerSecond = parseFloat(magazineDamage / damageTime).toFixed(2);
+		totalDamage = parseFloat(damagePerBullet * dpsStats.maxAmmo).toFixed(0);
 
 		if (dpsStats.doubleBarrel) {
 			return {
 				dps: parseFloat(damagePerSecond * 2).toFixed(2),
 				dpb: damagePerBullet * 2,
 				dpm: magazineDamage,
-				dpa: dpsStats.damage * dpsStats.maxAmmo
+				dpa: totalDamage
 			};
 		} else {
-		return {
-			dps: parseFloat(damagePerSecond).toFixed(2),
-			dpb: damagePerBullet,
-			dpm: magazineDamage,
-			dpa: dpsStats.damage * dpsStats.maxAmmo
-		};
-	}
+			return {
+				dps: parseFloat(damagePerSecond).toFixed(2),
+				dpb: damagePerBullet,
+				dpm: magazineDamage,
+				dpa: totalDamage
+			};
+		}
 	},
 	baseStats: {
 		dmg: { name: "Damage", value: 12 },

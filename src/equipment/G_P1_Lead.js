@@ -24,13 +24,10 @@ export default {
 
 		damagePerSecond = parseFloat(dpsStats.damage * dpsStats.rateOfFire / 2).toFixed(2);
 
-		damagePerBullet = parseFloat(dpsStats.damage).toFixed(0);
-
 		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
 
 		return {
 			dps: `${damagePerSecond} (Burst until overheated)`, // damage per second
-			dpb: damagePerBullet, // damage per bullet
 			dpa: totalDamage // total damage available
 		};
 	},

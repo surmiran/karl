@@ -19,7 +19,7 @@ export default {
 			}
 		}
 
-		rof = (dpsStats.flowRate / 100) * 8
+		rof = (dpsStats.flowRate / 100) * 8;
 
 		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
 

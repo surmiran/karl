@@ -6,7 +6,7 @@ export default {
 	icon: "equipment.D_E_Drill",
 	calculateDamage: (stats) => {
 		let damagePerSecond;
-		let totalDamage
+		let totalDamage;
 		let rof;
 		let dpsStats = {};
 		for (let stat of stats) {
@@ -18,7 +18,7 @@ export default {
 				dpsStats.maxFuel = parseFloat(stat.value);
 			}
 		}
-		rof = (dpsStats.miningRate / 100) * 2
+		rof = (dpsStats.miningRate / 100) * 2;
 
 		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxFuel).toFixed(0);
 
@@ -26,7 +26,7 @@ export default {
 
 		return {
 			dpa: totalDamage, // total damage available
-			dps: damagePerSecond, // damage per second
+			dps: damagePerSecond // damage per second
 		};
 	},
 	baseStats: {

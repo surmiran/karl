@@ -28,7 +28,7 @@ export default {
 
 		return {
 			dps: damagePerSecond, // damage per second
-			dpa: totalDamage, //total damage available
+			dpa: totalDamage //total damage available
 		};
 	},
 	baseStats: {

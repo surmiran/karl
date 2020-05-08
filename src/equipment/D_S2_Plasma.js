@@ -513,7 +513,7 @@ export default {
 				ex1: { name: "Charged Damage", value: 1.5, multiply: true },
 				ex2: { name: "Charged Area Damage", value: 1.5, multiply: true },
 				ex3: { name: "Charged Effect Radius", value: 0.6 },
-				ex4: { name: "Charged Shot Ammo Use", value: 1.5, multiply: true},
+				ex4: { name: "Charged Shot Ammo Use", value: 1.5, multiply: true },
 				reload: { name: "Cooling Rate", value: 25, percent: true, subtract: true }
 			}
 		},

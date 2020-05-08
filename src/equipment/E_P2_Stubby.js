@@ -10,7 +10,7 @@ export default {
 		clip: { name: "Magazine Size", value: 30 },
 		rate: { name: "Rate of Fire", value: 11 },
 		reload: { name: "Reload Time", value: 2 },
-		spread: {name: "Base Spread", value: 100, percent: true},
+		spread: { name: "Base Spread", value: 100, percent: true },
 		ex1: { name: "Electric Damage", value: 0 },
 		ex2: { name: "Electrocution %", value: 20, percent: true },
 		ex3: { name: "Recoil", value: 100, percent: true },
@@ -295,7 +295,7 @@ export default {
 			stats: {
 				clip: { name: "Magazine Size", value: 5 },
 				spread: { name: "Base Spread", value: 0.8, percent: true, multiply: true }
-				
+
 			}
 		},
 		{

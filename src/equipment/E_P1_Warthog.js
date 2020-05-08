@@ -4,6 +4,46 @@ export default {
 	name: "\"Warthog\" Auto 210",
 	class: "Shotgun",
 	icon: "equipment.E_P1_Warthog",
+	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let damagePerBullet;
+		let totalDamage;
+		let magazineDamage;
+		let dpsStats = {};
+		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Reload Time") {
+				dpsStats.reloadTime = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Magazine Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
+			} else if (stat.name === "Pellets") {
+				dpsStats.pellets = parseFloat(stat.value);
+			}
+		}
+
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+
+		damagePerSecond = parseFloat(dpsStats.damage * dpsStats.rateOfFire).toFixed(2);
+
+		damagePerBullet = parseFloat(dpsStats.damage).toFixed(0);
+
+		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo).toFixed(0);
+
+		magazineDamage = dpsStats.damage * dpsStats.magazineSize;
+		
+		return {
+			dps: parseFloat(damagePerSecond).toFixed(2),
+			dpb: dpsStats.damage * dpsStats.pellets,
+			dpm: magazineDamage,
+			dpa: dpsStats.damage * dpsStats.maxAmmo
+		};
+},
 	baseStats: {
 		dmg: { name: "Damage", value: 7 },
 		ammo: { name: "Max Ammo", value: 90 },

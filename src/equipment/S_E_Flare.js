@@ -16,13 +16,16 @@ export default {
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			}
 		}
-		let lightingSeconds = (dpsStats.magazineSize + dpsStats.maxAmmo) * dpsStats.duration;
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
+
+		let lightingSeconds = (dpsStats.maxAmmo) * dpsStats.duration;
 		lightingMinutes = lightingSeconds / 60;
 		return {
 			ex1: lightingMinutes
 		};
 	},
 	baseStats: {
+		dmg: { name: "Damage", value: 40 },
 		duration: { name: "Duration", value: 75 },
 		clip: { name: "Magazine Size", value: 3 },
 		ammo: { name: "Max Ammo", value: 12 },

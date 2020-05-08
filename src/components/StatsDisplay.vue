@@ -123,10 +123,6 @@
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			}
 
-			// temporary special case for double barrel oc
-			if (stat.name === "Double Barrel" && stat.value === "1") {
-				specialCaseDoubleBarrel = true;
-			}
 		}
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
@@ -134,18 +130,9 @@
 		let damageTime = timeToEmpty + dpsStats.reloadTime;
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
 		let damagePerSecond = magazineDamage / damageTime;
-		// todo: move boomstick calculation out of here to remove last special case
-		if (specialCaseDoubleBarrel) {
-			return {
-				dps: parseFloat(damagePerSecond * 2).toFixed(2),
-				dpb: dpsStats.damage * 2,
-				dpm: magazineDamage,
-				dpa: dpsStats.damage * dpsStats.maxAmmo
-			};
-		}
+
 		return {
 			dps: parseFloat(damagePerSecond).toFixed(2),
-			dpb: dpsStats.damage,
 			dpm: magazineDamage,
 			dpa: dpsStats.damage * (dpsStats.maxAmmo)
 		};

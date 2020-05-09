@@ -4,6 +4,32 @@ export default {
 	name: "\"Stubby\" Voltaic SMG",
 	class: "Submachine Gun",
 	icon: "equipment.E_P2_Stubby",
+	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let totalDamage;
+		let dpsStats = {};
+		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Electric Damage") {
+				dpsStats.eDamage = parseFloat(stat.value);
+			}
+		}
+
+		damagePerSecond = parseFloat((dpsStats.damage + dpsStats.eDamage) * dpsStats.rateOfFire).toFixed(2);
+
+		totalDamage = parseFloat((dpsStats.damage + dpsStats.eDamage) * dpsStats.maxAmmo).toFixed(0);
+
+		return {
+			dps: damagePerSecond, // damage per second
+			dpa: totalDamage // total damage available
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 9 },
 		ammo: { name: "Max Ammo", value: 420 },

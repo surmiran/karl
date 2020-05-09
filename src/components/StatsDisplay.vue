@@ -24,7 +24,7 @@
 
 			<h2 v-if="calcStats.dpb">Damage per shot: {{ calcStats.dpb }}</h2> <!-- damage per bullet -->
 
-			<h2 v-if="calcStats.wpd">Damage per crit: {{ `(1x: ${calcStats.wpd} / 2x: ${(calcStats.wpd * 2).toFixed(2)} / 3x: ${(calcStats.wpd * 3).toFixed(2)})` }}</h2>
+			<h2 v-if="calcStats.wpd">Weakpoint Damage: {{ `(1x: ${calcStats.wpd} / 2x: ${(calcStats.wpd * 2).toFixed(2)} / 3x: ${(calcStats.wpd * 3).toFixed(2)})` }}</h2>
 			<span v-if="calcStats.wpd" class="inactiveStat">
 				<i>Important,</i> 1x damage is applied to praetorians and oppressors. 2x damage is applied to all grunts and most enemies. 3x is applied to bulks, breeders, mactera, etc.
 			</span>

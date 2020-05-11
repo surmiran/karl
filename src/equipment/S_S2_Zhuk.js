@@ -40,6 +40,7 @@ export default {
 		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxAmmo / 2).toFixed(0);
 
 		return {
+			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
 			wpd: parseFloat(dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2), // damage on crit
 			dps: damagePerSecond, // damage per second
 			dpm: damagePerMagazine, // damage per magazine

@@ -30,14 +30,14 @@ export default {
 
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 		timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
-		damageTime = timeToEmpty + dpsStats.reloadTime;
 
 		damagePerBullet = parseFloat(dpsStats.damage * dpsStats.pellets).toFixed(0);
 		magazineDamage = parseFloat(damagePerBullet * dpsStats.magazineSize).toFixed(0);
-		damagePerSecond = parseFloat(magazineDamage / damageTime).toFixed(2);
+		damagePerSecond = parseFloat(damagePerBullet * dpsStats.rateOfFire).toFixed(2);
 		totalDamage = parseFloat(damagePerBullet * dpsStats.maxAmmo).toFixed(0);
 
 		return {
+			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
 			dps: damagePerSecond,
 			dpb: damagePerBullet,
 			dpm: magazineDamage,

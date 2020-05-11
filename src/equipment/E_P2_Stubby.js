@@ -18,16 +18,23 @@ export default {
 				dpsStats.maxAmmo = parseFloat(stat.value);
 			} else if (stat.name === "Electric Damage") {
 				dpsStats.eDamage = parseFloat(stat.value);
+			} else if (stat.name === "Magazine Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
 			}
 		}
 
-		damagePerSecond = parseFloat((dpsStats.damage + dpsStats.eDamage) * dpsStats.rateOfFire).toFixed(2);
+		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
-		totalDamage = parseFloat((dpsStats.damage + dpsStats.eDamage) * dpsStats.maxAmmo).toFixed(0);
+		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+		// let damageTime = timeToEmpty + dpsStats.reloadTime; (use this for the time to empty all ammo stat?)
+		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
+		damagePerSecond = (dpsStats.damage + dpsStats.eDamage) * dpsStats.rateOfFire;
 
 		return {
-			dps: damagePerSecond, // damage per second
-			dpa: totalDamage // total damage available
+			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
+			dps: parseFloat(damagePerSecond).toFixed(2),
+			dpm: magazineDamage,
+			dpa: dpsStats.damage * dpsStats.maxAmmo
 		};
 	},
 	baseStats: {

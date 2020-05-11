@@ -49,6 +49,7 @@ export default {
 		totalDamage = parseFloat(burstDamage * (dpsStats.maxAmmo / dpsStats.burstSize)).toFixed(0);
 
 		return {
+			tte: timeToEmpty.toFixed(2),
 			wpd: parseFloat(dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2),
 			dps: damagePerSecond,
 			dpb: burstDamage,

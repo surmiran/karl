@@ -57,6 +57,7 @@ export default {
 		totalDamage = dpsStats.damage * dpsStats.maxAmmo;
 
 		return {
+			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
 			dps: `${damagePerSecond} (Direct: ${directDamagePerSecond} / Area: ${areaDamagePerSecond})`, // damage per second
 			dpb: `${damagePerBullet} (Direct: ${directDamagePerBullet} / Area: ${areaDamagePerBullet})`, // damage per bullet
 			dpm: `${damagePerMagazine} (Direct: ${directDamagePerMagazine} / Area: ${areaDamagePerMagazine})`, // damage per magazine

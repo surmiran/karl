@@ -29,9 +29,9 @@
 				<i>Important,</i> 1x damage is applied to praetorians and oppressors. 2x damage is applied to all grunts and most enemies. 3x is applied to bulks, breeders, mactera, etc.
 			</span>
 
-			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }}</h2>
+			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }} / Time to empty mag: {{ calcStats.tte }}S</h2>
 			<span v-if="calcStats.dpm" class="inactiveStat">
-				<i>Theoretical</i> damage per magazine.
+				<i>Theoretical</i> damage per magazine and how long it takes to empty it.
 			</span>
 
 			<h2 v-if="calcStats.dpa">Total damage: {{ calcStats.dpa }}</h2>
@@ -133,11 +133,12 @@
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
-		let damageTime = timeToEmpty + dpsStats.reloadTime;
+		// let damageTime = timeToEmpty + dpsStats.reloadTime; (use this for the time to empty all ammo stat?)
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
-		let damagePerSecond = magazineDamage / damageTime;
+		let damagePerSecond = dpsStats.damage * dpsStats.rateOfFire;
 
 		return {
+			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
 			wpd: dpsStats.damage * (1 + (dpsStats.weakPoint / 100)).toFixed(2),
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpm: magazineDamage,
@@ -312,6 +313,7 @@
 					stats: stats,
 					cost: totalCost,
 					visible: visible,
+					tte: damage.tte ? damage.tte : undefined,
 					wpd: damage.wpd ? damage.wpd : undefined,
 					dps: damage.dps ? damage.dps : undefined,
 					dpb: damage.dpb ? damage.dpb : undefined,

@@ -30,6 +30,8 @@ export default {
 		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxFuel).toFixed(0);
 
 		return {
+			tte: (dpsStats.tankSize / rof).toFixed(2),
+			dpm: dpsStats.tankSize * dpsStats.damage,
 			dps: damagePerSecond, // damage per second
 			dpa: totalDamage // total damage available
 		};

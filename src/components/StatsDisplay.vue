@@ -138,7 +138,7 @@
 		let damagePerSecond = magazineDamage / damageTime;
 
 		return {
-			wpd: parseFloat(dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2),
+			wpd: dpsStats.damage * (1 + (dpsStats.weakPoint / 100)).toFixed(2),
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpm: magazineDamage,
 			dpa: dpsStats.damage * (dpsStats.maxAmmo)

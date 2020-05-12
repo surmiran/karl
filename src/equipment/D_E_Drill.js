@@ -18,9 +18,9 @@ export default {
 				dpsStats.maxFuel = parseFloat(stat.value);
 			}
 		}
-		rof = (dpsStats.miningRate / 100) * 2;
+		rof = (dpsStats.miningRate / 100) * 1.5;
 
-		totalDamage = parseFloat(dpsStats.damage * dpsStats.maxFuel).toFixed(0);
+		totalDamage = parseFloat(dpsStats.damage * (dpsStats.maxFuel * 3)).toFixed(0);
 
 		damagePerSecond = parseFloat(dpsStats.damage * rof).toFixed(2);
 

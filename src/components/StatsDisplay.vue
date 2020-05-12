@@ -24,9 +24,16 @@
 
 			<h2 v-if="calcStats.dpb">Damage per shot: {{ calcStats.dpb }}</h2> <!-- damage per bullet -->
 
-			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }}</h2>
+			<h2 v-if="calcStats.wpd">Weakpoint Damage: {{ `(1x: ${calcStats.wpd} / 2x: ${(calcStats.wpd * 2).toFixed(2)}
+				/ 3x: ${(calcStats.wpd * 3).toFixed(2)})` }}</h2>
+			<span v-if="calcStats.wpd" class="inactiveStat">
+				<i>Important,</i> 1x damage is applied to praetorians and oppressors. 2x damage is applied to all grunts and most enemies. 3x is applied to bulks, breeders, mactera, etc.
+			</span>
+
+			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }}<span v-if="calcStats.tte"> / Time to empty mag: {{ calcStats.tte }}S</span>
+			</h2>
 			<span v-if="calcStats.dpm" class="inactiveStat">
-				<i>Theoretical</i> damage per magazine.
+				<i>Theoretical</i> damage per magazine and how long it takes to empty it.
 			</span>
 
 			<h2 v-if="calcStats.dpa">Total damage: {{ calcStats.dpa }}</h2>
@@ -100,6 +107,7 @@
 		let rateOfFireWords = ["Rate of Fire", "Combined Rate of Fire"];
 		let reloadTimeWords = ["Reload Time"];
 		let pelletsWords = ["Pellets"];
+		let weakPointWords = ["Weakpoint Damage Bonus"];
 		let dpsStats = {};
 		for (let stat of stats) {
 			if (damageWords.includes(stat.name)) {
@@ -119,17 +127,21 @@
 				dpsStats.damage = dpsStats.damage * parseFloat(stat.value);
 			} else if (ammoWords.includes(stat.name)) {
 				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (weakPointWords.includes(stat.name)) {
+				dpsStats.weakPoint = parseFloat(stat.value);
 			}
 
 		}
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
-		let damageTime = timeToEmpty + dpsStats.reloadTime;
+		let damageTime = timeToEmpty + dpsStats.reloadTime; // sequence of shooting and reloading for calculating dps
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
 		let damagePerSecond = magazineDamage / damageTime;
 
 		return {
+			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
+			wpd: (dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2),
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpm: magazineDamage,
 			dpa: dpsStats.damage * (dpsStats.maxAmmo)
@@ -303,6 +315,8 @@
 					stats: stats,
 					cost: totalCost,
 					visible: visible,
+					tte: damage.tte ? damage.tte : undefined,
+					wpd: damage.wpd ? damage.wpd : undefined,
 					dps: damage.dps ? damage.dps : undefined,
 					dpb: damage.dpb ? damage.dpb : undefined,
 					dpm: damage.dpm ? damage.dpm : undefined,

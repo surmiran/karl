@@ -54,6 +54,7 @@ export default {
 				type: "Special",
 				text: "Can deploy two separate sentries at once.",
 				stats: {
+					rof: { name: "Rate of Fire", value: 2, multiply: true },
 					amount: { name: "Number of Sentries", value: 1 }
 				},
 				cost: {

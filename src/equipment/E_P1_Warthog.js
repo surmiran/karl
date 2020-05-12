@@ -38,6 +38,7 @@ export default {
 		totalDamage = parseFloat(damagePerBullet * dpsStats.maxAmmo).toFixed(0);
 
 		return {
+			tte: parseFloat(timeToEmpty).toFixed(2),
 			dps: damagePerSecond,
 			dpb: damagePerBullet,
 			dpm: magazineDamage,

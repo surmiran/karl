@@ -30,7 +30,6 @@ export default {
 		ex14: { name: "Stun Duration", value: 0 }
 	},
 	mods: [
-		/* todo: check all mod costs! */
 		[
 			{
 				selected: false,
@@ -44,12 +43,12 @@ export default {
 				},
 				cost: {
 					credits: 1000,
-					bismor: 20,
+					bismor: 0,
 					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 20,
 					err: 0
 				}
 			},
@@ -64,9 +63,9 @@ export default {
 				},
 				cost: {
 					credits: 1000,
-					bismor: 0,
+					bismor: 20,
 					croppa: 0,
-					enorPearl: 20,
+					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
 					umanite: 0,
@@ -87,11 +86,11 @@ export default {
 				cost: {
 					credits: 1800,
 					bismor: 18,
-					croppa: 12,
+					croppa: 0,
 					enorPearl: 0,
 					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 12,
 					err: 0
 				}
 			},
@@ -105,13 +104,13 @@ export default {
 					dmg: { name: "Beam DPS", value: 175 }
 				},
 				cost: {
-					credits: 2200,
+					credits: 1800,
 					bismor: 0,
 					croppa: 0,
-					enorPearl: 0,
-					jadiz: 30,
+					enorPearl: 12,
+					jadiz: 0,
 					magnite: 0,
-					umanite: 20,
+					umanite: 18,
 					err: 0
 				}
 			},
@@ -129,8 +128,8 @@ export default {
 					bismor: 0,
 					croppa: 18,
 					enorPearl: 0,
-					jadiz: 12,
-					magnite: 0,
+					jadiz: 0,
+					magnite: 12,
 					umanite: 0,
 					err: 0
 				}
@@ -149,11 +148,11 @@ export default {
 				cost: {
 					credits: 2200,
 					bismor: 0,
-					croppa: 20,
-					enorPearl: 0,
-					jadiz: 30,
+					croppa: 0,
+					enorPearl: 30,
+					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 20,
 					err: 0
 				}
 			},
@@ -189,13 +188,13 @@ export default {
 					ex4: { name: "Armor Breaking", value: 200, percent: true }
 				},
 				cost: {
-					credits: 2200,
-					bismor: 0,
-					croppa: 20,
+					credits: 3800,
+					bismor: 25,
+					croppa: 36,
 					enorPearl: 0,
-					jadiz: 30,
+					jadiz: 0,
 					magnite: 0,
-					umanite: 0,
+					umanite: 15,
 					err: 0
 				}
 			},
@@ -215,8 +214,8 @@ export default {
 					croppa: 0,
 					enorPearl: 36,
 					jadiz: 0,
-					magnite: 25,
-					umanite: 15,
+					magnite: 15,
+					umanite: 25,
 					err: 0
 				}
 			}

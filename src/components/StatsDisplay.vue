@@ -24,12 +24,14 @@
 
 			<h2 v-if="calcStats.dpb">Damage per shot: {{ calcStats.dpb }}</h2> <!-- damage per bullet -->
 
-			<h2 v-if="calcStats.wpd">Weakpoint Damage: {{ `(1x: ${calcStats.wpd} / 2x: ${(calcStats.wpd * 2).toFixed(2)} / 3x: ${(calcStats.wpd * 3).toFixed(2)})` }}</h2>
+			<h2 v-if="calcStats.wpd">Weakpoint Damage: {{ `(1x: ${calcStats.wpd} / 2x: ${(calcStats.wpd * 2).toFixed(2)}
+				/ 3x: ${(calcStats.wpd * 3).toFixed(2)})` }}</h2>
 			<span v-if="calcStats.wpd" class="inactiveStat">
 				<i>Important,</i> 1x damage is applied to praetorians and oppressors. 2x damage is applied to all grunts and most enemies. 3x is applied to bulks, breeders, mactera, etc.
 			</span>
 
-			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }} / Time to empty mag: {{ calcStats.tte }}S</h2>
+			<h2 v-if="calcStats.dpm">Magazine damage: {{ calcStats.dpm }}<span v-if="calcStats.tte"> / Time to empty mag: {{ calcStats.tte }}S</span>
+			</h2>
 			<span v-if="calcStats.dpm" class="inactiveStat">
 				<i>Theoretical</i> damage per magazine and how long it takes to empty it.
 			</span>
@@ -133,13 +135,13 @@
 		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
 
 		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
-		// let damageTime = timeToEmpty + dpsStats.reloadTime; (use this for the time to empty all ammo stat?)
+		let damageTime = timeToEmpty + dpsStats.reloadTime; // sequence of shooting and reloading for calculating dps
 		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
-		let damagePerSecond = dpsStats.damage * dpsStats.rateOfFire;
+		let damagePerSecond = magazineDamage / damageTime;
 
 		return {
 			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
-			wpd: dpsStats.damage * (1 + (dpsStats.weakPoint / 100)).toFixed(2),
+			wpd: (dpsStats.damage * (1 + (dpsStats.weakPoint / 100))).toFixed(2),
 			dps: parseFloat(damagePerSecond).toFixed(2),
 			dpm: magazineDamage,
 			dpa: dpsStats.damage * (dpsStats.maxAmmo)

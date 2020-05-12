@@ -4,39 +4,6 @@ export default {
 	name: "\"Stubby\" Voltaic SMG",
 	class: "Submachine Gun",
 	icon: "equipment.E_P2_Stubby",
-	calculateDamage: (stats) => {
-		let damagePerSecond;
-		let totalDamage;
-		let dpsStats = {};
-		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
-		for (let stat of stats) {
-			if (stat.name === "Damage") {
-				dpsStats.damage = parseFloat(stat.value);
-			} else if (stat.name === "Rate of Fire") {
-				dpsStats.rateOfFire = parseFloat(stat.value);
-			} else if (stat.name === "Max Ammo") {
-				dpsStats.maxAmmo = parseFloat(stat.value);
-			} else if (stat.name === "Electric Damage") {
-				dpsStats.eDamage = parseFloat(stat.value);
-			} else if (stat.name === "Magazine Size") {
-				dpsStats.magazineSize = parseFloat(stat.value);
-			}
-		}
-
-		dpsStats.maxAmmo = dpsStats.maxAmmo + dpsStats.magazineSize;
-
-		let timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
-		// let damageTime = timeToEmpty + dpsStats.reloadTime; (use this for the time to empty all ammo stat?)
-		let magazineDamage = dpsStats.damage * dpsStats.magazineSize;
-		damagePerSecond = (dpsStats.damage + dpsStats.eDamage) * dpsStats.rateOfFire;
-
-		return {
-			tte: (dpsStats.magazineSize / dpsStats.rateOfFire).toFixed(2),
-			dps: parseFloat(damagePerSecond).toFixed(2),
-			dpm: magazineDamage,
-			dpa: dpsStats.damage * dpsStats.maxAmmo
-		};
-	},
 	baseStats: {
 		dmg: { name: "Damage", value: 9 },
 		ammo: { name: "Max Ammo", value: 420 },

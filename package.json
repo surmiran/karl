@@ -12,6 +12,7 @@
     "lz-string": "^1.4.4",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
+    "vue-js-modal": "^2.0.0-rc.6",
     "vue-js-popover": "^1.1.8",
     "vue-toasted": "^1.1.27",
     "vuex": "^3.1.1"

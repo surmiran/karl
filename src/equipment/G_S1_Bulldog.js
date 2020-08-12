@@ -4,6 +4,41 @@ export default {
 	name: "\"Bulldog\" Heavy Revolver",
 	class: "Revolver",
 	icon: "equipment.G_S1_Bulldog",
+	calculateDamage: (stats) => {
+		let damagePerSecond;
+		let totalDamage;
+		let timeToEmpty;
+		let magazineDamage;
+		let dpsStats = {};
+		// todo: minigun should include spinup time in dps, aswell as cooling rate! -> spinup time + how much damage can be done until overheated.
+		for (let stat of stats) {
+			if (stat.name === "Damage") {
+				dpsStats.damage = parseFloat(stat.value);
+			} else if (stat.name === "Rate of Fire") {
+				dpsStats.rateOfFire = parseFloat(stat.value);
+			} else if (stat.name === "Max Ammo") {
+				dpsStats.maxAmmo = parseFloat(stat.value);
+			} else if (stat.name === "Magazine Size") {
+				dpsStats.magazineSize = parseFloat(stat.value);
+			} else if (stat.name === "Weakpoint Damage Bonus") {
+				dpsStats.weakPoint = parseFloat(stat.value);
+			} else if (stat.name === "Area Damage") {
+				dpsStats.areaDamage = parseFloat(stat.value);
+			}
+		}
+
+		damagePerSecond = parseFloat((dpsStats.damage + dpsStats.areaDamage)* dpsStats.rateOfFire / 2).toFixed(2);
+		magazineDamage = (dpsStats.damage + dpsStats.areaDamage) * dpsStats.magazineSize;
+		totalDamage = parseFloat((dpsStats.damage + dpsStats.areaDamage) * (dpsStats.maxAmmo + dpsStats.magazineSize)).toFixed(0);
+		timeToEmpty = dpsStats.magazineSize / dpsStats.rateOfFire;
+		return {
+			tte: timeToEmpty,
+			wpd: ((dpsStats.damage * (1 + (dpsStats.weakPoint / 100))) + dpsStats.areaDamage).toFixed(2),
+			dps: damagePerSecond, // damage per second
+			dpm: magazineDamage,
+			dpa: totalDamage // total damage available
+		};
+	},
 	baseStats: {
 		dmg: { name: "Damage", value: 50 },
 		ammo: { name: "Max Ammo", value: 28 },

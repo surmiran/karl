@@ -75,7 +75,30 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.6.8 Based on DRG v0.29.39685.0</p>
+		<p class="versionNumber">KARL v1.6.9 Based on DRG v0.29.39685.0</p>
+		<modal name="messageModal" class="loadoutModal">
+			<div class="contentContainer">
+				<h1 class="modalTitle">Miners!</h1>
+				<h2>
+					It's been over a year since Deep Rock Galactic provided its employees with Karl's Advanced Remote Loadout, or KARL for short.
+					Since there's been an influx of new employees recently, management has decided to spend a big sack of your hard earned credits and create <a href="https://karl.gg">KARL: Born Ready</a>.
+					With all the features you know and love from the original KARL, but with exciting new functionalities including:
+					- Saving loadouts to your profile
+					- Browsing trough loadouts other employees created
+					- Show respect to your favorite loadouts by saluting
+					- Coming in the near future: Advanced statistics and calculations for your loadouts and guns. Grenades, perks, pickaxes. Public API with weapon, mod, and overclock data. And many more.
+
+					Please note that this version of KARL will not be updated anymore.</h2>
+			</div>
+			<div class="buttonContainer">
+				<div class="button" v-on:click="onCloseModal">
+					<h1 class="buttonText">Use old KARL</h1>
+				</div>
+				<div class="button" v-on:click="onNavToKarl">
+					<h1 class="buttonText">KARL: Born Ready!</h1>
+				</div>
+			</div>
+		</modal>
 	</div>
 </template>
 
@@ -156,9 +179,16 @@
 					this.$toasted.show("By the beard! Copying to clipboard was not successful", toastOptions);
 				}
 				copyTextarea.disabled = true;
+			},
+			onNavToKarl() {
+				window.location.assign('https://karl.gg');
+			},
+			onCloseModal() {
+				this.$modal.hide("messageModal");
 			}
 		},
 		mounted: function() {
+			this.$modal.show("messageModal");
 			let dataString = window.location.search.substr(2);
 
 			if (dataString) {
@@ -190,6 +220,103 @@
 </script>
 
 <style>
+	@font-face {
+		font-family: 'BebasNeue';
+		src: url('assets/fonts/BebasNeue.eot'); /* IE9 Compat Modes */
+		src: url('assets/fonts/BebasNeue.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('assets/fonts/BebasNeue.woff2') format('woff2'), /* Super Modern Browsers */ url('assets/fonts/BebasNeue.woff') format('woff'), /* Pretty Modern Browsers */ url('assets/fonts/BebasNeue.ttf') format('truetype'), /* Safari, Android, iOS */ url('assets/fonts/BebasNeue.svg#svgFontName') format('svg'); /* Legacy iOS */
+	}
+
+	.loadoutModal .vm--modal {
+		background-color: #130e09;
+		padding: 1rem;
+		top: 20% !important;
+		left: 10% !important;
+		height: 70% !important;
+		width: 80% !important;
+		overflow: auto;
+	}
+
+	.loadoutModal a {
+		color: #fc9e00;
+	}
+	.loadoutModal h1 {
+		color: #fc9e00;
+		display: block;
+		font-size: 2rem;
+		letter-spacing: 0.1rem;
+		font-weight: bold;
+		font-family: BebasNeue, sans-serif;
+		margin-block-start: 0.67em;
+		margin-block-end: 0.67em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	}
+
+	.loadoutModal h2 {
+		color: #fffbff;
+		display: block;
+		font-size: 1.6rem;
+		letter-spacing: 0.05rem;
+		font-weight: normal !important;
+		font-family: BebasNeue, sans-serif;
+		margin-block-start: 0.83em;
+		margin-block-end: 0.83em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		/* todo: wrap! */
+		white-space: pre-line;
+	}
+
+	.loadoutModal .vm--modal h1.modalTitle {
+		margin-top: 0;
+	}
+
+	.loadoutModal .vm--modal h2 {
+		margin-top: 1rem;
+		margin-bottom: 0;
+	}
+
+	.buttonContainer {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	@media (max-width: 600px) {
+		.buttonContainer {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+		}
+	}
+
+	.button {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0.5rem 0 0.5rem 1rem;
+		min-width: 8rem;
+		height: 2.2rem;
+		background: linear-gradient(90deg, #fc9e00 4%, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0) 8%, #fc9e00 8%, #fc9e00 92%, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0) 96%, #fc9e00 96%);
+	}
+
+	/* todo: base all hover effects on this one, like buttons ingame */
+	.button:hover {
+		background: linear-gradient(90deg, #ffd200 4%, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0) 8%, #ffd200 8%, #ffd200 92%, rgba(0, 0, 0, 0) 92%, rgba(0, 0, 0, 0) 96%, #ffd200 96%);
+	}
+
+	h1.buttonText {
+		color: #000000;
+		font-size: 1.6rem;
+		letter-spacing: 0.05rem;
+		font-weight: bold;
+		font-family: BebasNeue, sans-serif;
+	}
+
 	/*todo: only three different font sizes!*/
 	/*todo: web fonts*/
 

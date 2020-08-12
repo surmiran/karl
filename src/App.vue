@@ -75,7 +75,7 @@
 			<StatsDisplay/>
 			<ModificationSelect/>
 		</div>
-		<p class="versionNumber">KARL v1.6.8 Based on DRG v0.29.39685.0</p>
+		<p class="versionNumber">KARL v1.6.9 Based on DRG v0.29.39685.0</p>
 		<modal name="messageModal" class="loadoutModal">
 			<div class="contentContainer">
 				<h1 class="modalTitle">Miners!</h1>
